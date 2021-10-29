@@ -4,6 +4,7 @@
 Outdoor game for families
 
 ## Setup Development Environment with Docker
+Based on the article [How to dockerize flutter apps](https://blog.codemagic.io/how-to-dockerize-flutter-apps/)
 ### Prerequisites
 * Setup [Docker](https://docs.docker.com/desktop/windows/install) on your Windows 10 system.
 * Setup [VSCode](https://code.visualstudio.com) with two extensions [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) & [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
