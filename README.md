@@ -21,5 +21,5 @@ samples, guidance on mobile development, and a full API reference.
 
 ## Start Developing
 
-1. Clone this project into your local machine (see tutorial for details and more).
+1. Clone this project into your local machine (see tutorial for details and more or else).
 2. Ask for membership in the project to contribute code.
