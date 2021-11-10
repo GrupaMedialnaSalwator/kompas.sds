@@ -26,3 +26,4 @@ samples, guidance on mobile development, and a full API reference.
 
 (this is a test piece of text)
 testing mk_test protection here
+testing Include administrators Enforce all configured restrictions above for administrators.
