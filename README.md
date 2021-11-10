@@ -25,3 +25,4 @@ samples, guidance on mobile development, and a full API reference.
 2. Ask for membership in the project to contribute code.
 
 (this is a test piece of text)
+testing mk_test protection here
