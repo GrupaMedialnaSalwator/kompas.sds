@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gra_terenowa/extras/routes.dart';
 import 'package:gra_terenowa/extras/text_styles.dart';
-import 'package:gra_terenowa/views/home_screen.dart';
+import 'package:gra_terenowa/view/home_screen.dart';
 
 import 'extras/colors.dart';
 

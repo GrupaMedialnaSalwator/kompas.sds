@@ -1,26 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:gra_terenowa/controller/trip_controller.dart';
 import 'package:gra_terenowa/extras/colors.dart';
-import 'package:gra_terenowa/extras/routes.dart';
 import 'package:gra_terenowa/widgets/select_widget.dart';
+import 'package:gra_terenowa/widgets/tripCard_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
-  static const List<String> tripAssets = [
-    "assets/images/trip_01.png",
-    "assets/images/trip_02.png",
-    "assets/images/trip_03.png",
-  ];
-  static const List<String> tripTitles = [
-    "W Parku",
-    "W Labiryncie",
-    "Droga Krzyżowa",
-  ];
-
   @override
   Widget build(BuildContext context) {
+    // This variable allows observing trip data for downloading new trips
+    final TripController _tripController = Get.put(TripController());
+
     return DefaultTabController(
       initialIndex: 0,
       length: 3,
@@ -116,56 +109,16 @@ class HomePage extends StatelessWidget {
                           VerticalDivider(
                               width: 20, color: AppColors.primaryWhite),
                       itemBuilder: (BuildContext context, int index) {
-                        return Card(
-                          semanticContainer: true,
-                          clipBehavior: Clip.antiAliasWithSaveLayer,
-                          child: InkWell(
-                            onTap: () {
-                              Get.bottomSheet(
-                                SelectWidget(args: Arguments(index)),
-                                isScrollControlled: true,
-                              );
-
-                              // Get.toNamed(AppRoutes.select,
-                              //                               arguments: Arguments(index)),
-                            },
-                            child: Stack(
-                              children: [
-                                Container(
-                                  height: 350,
-                                  width: 250,
-                                  padding: EdgeInsets.all(16.0),
-                                  alignment: Alignment.bottomLeft,
-                                  decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                      image: AssetImage(tripAssets[index]),
-                                      fit: BoxFit.fitWidth, //DecorationImage
-                                    ),
-                                  ), //BoxDecoration
-
-                                  child: Text(
-                                    tripTitles[index],
-                                    //style: Theme.of(context).textTheme.headline2,
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .headline3
-                                        ?.copyWith(
-                                            color: AppColors.primaryWhite),
-                                  ),
-                                ), //Text
-
-                                // Image.asset(
-                                //   tripAssets[index],
-                                //   fit: BoxFit.fitWidth,
-                                // ),
-                              ],
-                            ),
-                          ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20.0),
-                          ),
-                          elevation: 8,
-                          margin: EdgeInsets.all(4),
+                        return tripCard(
+                          cardHeight: 350,
+                          cardWidth: 250,
+                          tripIndex: index,
+                          onTapCard: () {
+                            Get.bottomSheet(
+                              selectTripSheet(tripIndex: index),
+                              isScrollControlled: true,
+                            );
+                          },
                         );
                       },
                       scrollDirection: Axis.horizontal,
