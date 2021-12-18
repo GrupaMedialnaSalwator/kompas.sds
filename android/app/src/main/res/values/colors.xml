@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--
+        Cutty Sark
+    -->
+    <color name="primary_normal">#ff57766e</color>
+    <color name="primary_dark">#ff18211f</color>
+    <color name="primary_light">#ff96cbbd</color>
+    <!--
+        Tint 90%
+    -->
+    <color name="primary_gray">#ffcdd6d4</color>
+    <!--
+        Tint 90%
+    -->
+    <color name="primary_white">#ffeef1f1</color>
+
+    <color name="selection_blue">#ff7fd6dd</color>
+    <color name="selection_violet">#ffe5b6fc</color>
+    <color name="selection_pink">#ffffa2bf</color>
+    <color name="selection_yellow">#fffbdd65</color>
+
+
+</resources>
