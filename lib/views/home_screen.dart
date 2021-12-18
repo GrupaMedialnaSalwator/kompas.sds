@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gra_terenowa/extras/colors.dart';
 import 'package:gra_terenowa/extras/routes.dart';
+import 'package:gra_terenowa/widgets/select_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -118,8 +119,15 @@ class HomePage extends StatelessWidget {
                         semanticContainer: true,
                         clipBehavior: Clip.antiAliasWithSaveLayer,
                         child: InkWell(
-                          onTap: () => Get.toNamed(AppRoutes.select,
-                              arguments: Arguments(index)),
+                          onTap: () {
+                            Get.bottomSheet(
+                              SelectWidget(args: Arguments(index)),
+                              isScrollControlled: true,
+                            );
+
+// Get.toNamed(AppRoutes.select,
+//                               arguments: Arguments(index)),
+                          },
                           child: Stack(
                             children: [
                               Container(

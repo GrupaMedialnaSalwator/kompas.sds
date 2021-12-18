@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:gra_terenowa/extras/routes.dart';
 import 'package:gra_terenowa/extras/text_styles.dart';
 import 'package:gra_terenowa/views/home_screen.dart';
-import 'package:gra_terenowa/views/select_screen.dart';
 
 import 'extras/colors.dart';
 
@@ -48,7 +47,6 @@ class MyApp extends StatelessWidget {
       initialRoute: AppRoutes.home,
       getPages: [
         GetPage(name: AppRoutes.home, page: () => HomePage()),
-        GetPage(name: AppRoutes.select, page: () => SelectPage()),
       ],
     );
   }

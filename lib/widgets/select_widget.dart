@@ -1,29 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:gra_terenowa/extras/colors.dart';
 import 'package:gra_terenowa/extras/routes.dart';
 
-class SelectPage extends StatefulWidget {
-  SelectPage({Key? key}) : super(key: key);
+class SelectWidget extends StatelessWidget {
+  const SelectWidget({
+    Key? key,
+    required Arguments args,
+  })  : _args = args,
+        super(key: key);
 
-  @override
-  State<SelectPage> createState() => _SelectPageState();
-}
-
-class _SelectPageState extends State<SelectPage> {
-  late final Arguments _args;
-
-  @override
-  void initState() {
-    super.initState();
-    _args = Get.arguments;
-  }
+  final Arguments _args;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.primaryDark,
-      body: Stack(
+    return Container(
+      height: MediaQuery.of(context).size.height,
+      child: Stack(
         fit: StackFit.expand,
         alignment: AlignmentDirectional.topCenter,
         children: [
@@ -37,10 +29,10 @@ class _SelectPageState extends State<SelectPage> {
             ),
           ),
           Positioned(
-            top: MediaQuery.of(context).size.height * 0.4 - 30,
+            top: MediaQuery.of(context).size.height * 0.4 - 20,
             child: Container(
               width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height * 0.6 + 30,
+              height: MediaQuery.of(context).size.height * 0.6 + 20,
               decoration: BoxDecoration(
                 color: AppColors.primaryNormal,
                 borderRadius: BorderRadius.vertical(
@@ -76,8 +68,15 @@ class _SelectPageState extends State<SelectPage> {
                   Padding(padding: EdgeInsets.all(60)),
                   TextButton(
                     child: Text("Zaczynamy"),
+                    style: ButtonStyle(
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20.0),
+                    ))),
                     onPressed: () {
                       print('Pressed');
+                      //Get.back();
                     },
                   ),
                 ],
