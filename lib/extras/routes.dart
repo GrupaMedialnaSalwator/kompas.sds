@@ -2,7 +2,7 @@ class AppRoutes {
   /// home = "/"
   static const String home = "/";
 
-  static const String select = "/select";
+  static const String selectTrip = "/selectTrip";
 }
 
 class Arguments {

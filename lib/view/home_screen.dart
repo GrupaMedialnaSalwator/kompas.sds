@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gra_terenowa/controller/trip_controller.dart';
 import 'package:gra_terenowa/extras/colors.dart';
-import 'package:gra_terenowa/widgets/select_widget.dart';
-import 'package:gra_terenowa/widgets/tripCard_widget.dart';
+import 'package:gra_terenowa/extras/ifdef.dart';
+import 'package:gra_terenowa/view/selectTrip_screen.dart';
+import 'package:gra_terenowa/widgets/selectTrip_widget.dart';
+import 'package:gra_terenowa/widgets/cardHero_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -109,15 +111,33 @@ class HomePage extends StatelessWidget {
                           VerticalDivider(
                               width: 20, color: AppColors.primaryWhite),
                       itemBuilder: (BuildContext context, int index) {
-                        return tripCard(
+                        return CardHero(
                           cardHeight: 350,
                           cardWidth: 250,
                           tripIndex: index,
-                          onTapCard: () {
-                            Get.bottomSheet(
-                              selectTripSheet(tripIndex: index),
-                              isScrollControlled: true,
-                            );
+                          onTap: () {
+                            if (IfDef.heroAnimation) {
+                              Get.to(() => SelectTripPage(
+                                    tripIndex: index,
+                                  ));
+                              Get.bottomSheet(
+                                SelectTrip(
+                                  tripIndex: index,
+                                  onTapButton: () {},
+                                ),
+                                isScrollControlled: true,
+                                barrierColor:
+                                    Color.fromRGBO(0, 0, 0, 0), // 100% opacity
+                              ).whenComplete(() => Get.back());
+                            } else {
+                              Get.bottomSheet(
+                                SelectTrip(
+                                  tripIndex: index,
+                                  onTapButton: () {},
+                                ),
+                                isScrollControlled: true,
+                              );
+                            }
                           },
                         );
                       },

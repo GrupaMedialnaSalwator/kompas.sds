@@ -5,6 +5,7 @@ import 'package:gra_terenowa/extras/text_styles.dart';
 import 'package:gra_terenowa/view/home_screen.dart';
 
 import 'extras/colors.dart';
+import 'view/selectTrip_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -47,6 +48,9 @@ class MyApp extends StatelessWidget {
       initialRoute: AppRoutes.home,
       getPages: [
         GetPage(name: AppRoutes.home, page: () => HomePage()),
+        GetPage(
+            name: AppRoutes.selectTrip,
+            page: () => SelectTripPage(tripIndex: 0)),
       ],
     );
   }
