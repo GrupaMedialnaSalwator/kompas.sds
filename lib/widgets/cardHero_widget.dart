@@ -8,8 +8,8 @@ class CardHero extends StatelessWidget {
   const CardHero(
       {Key? key,
       required this.onTap,
-      this.cardHeight = 200,
-      this.cardWidth = 200,
+      required this.cardHeight,
+      required this.cardWidth,
       required this.tripIndex})
       : super(key: key);
 
@@ -24,6 +24,7 @@ class CardHero extends StatelessWidget {
 
     return Card(
       elevation: 8,
+      color: AppColors.primaryWhite,
       margin: EdgeInsets.all(Statics.cardMargin),
       clipBehavior: Clip.antiAliasWithSaveLayer,
       child: InkWell(
@@ -33,30 +34,18 @@ class CardHero extends StatelessWidget {
         child: Stack(
           alignment: AlignmentDirectional.bottomStart,
           children: [
-            Visibility(
-              visible: true,
-              child: Container(
-                  height: cardHeight - 8,
-                  width: cardWidth - 16,
-                  padding: EdgeInsets.all(0.0),
-                  alignment: Alignment.bottomLeft,
-                  // decoration: BoxDecoration(
-                  //   image: DecorationImage(
-                  //     image: AssetImage(_tripController
-                  //         .getTripItem(index: tripIndex)
-                  //         .imageAsset),
-                  //     fit: BoxFit.fitWidth, //DecorationImage
-                  //   ),
-                  // ), //BoxDecoration
-                  child: Hero(
-                    tag: tripIndex.toString(),
-                    child: Material(
-                      child: Image.asset(_tripController
-                          .getTripItem(index: tripIndex)
-                          .imageAsset),
+            SizedBox(
+                height: cardHeight,
+                width: cardWidth,
+                child: Hero(
+                  tag: tripIndex.toString(),
+                  child: Container(
+                    child: Image.asset(
+                      _tripController.getTripItem(index: tripIndex).imageAsset,
+                      fit: BoxFit.cover,
                     ),
-                  )),
-            ),
+                  ),
+                )),
             SizedBox(
               width: cardWidth - Statics.cardMargin - Statics.cardMargin,
               child: ListTile(

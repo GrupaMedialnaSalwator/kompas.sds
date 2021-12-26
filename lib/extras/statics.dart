@@ -1,4 +1,10 @@
 class Statics {
+  /// cardWidthRatio = 2 / 3
+  static const double cardWidthRatio = 2 / 3;
+
+  /// cardHeightRatio = 1 / 2
+  static const double cardHeightRatio = 1 / 2;
+
   /// minMargin = 4.0
   static const double minMargin = 4.0;
 

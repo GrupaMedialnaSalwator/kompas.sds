@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:gra_terenowa/controller/trip_controller.dart';
 import 'package:gra_terenowa/extras/colors.dart';
 import 'package:gra_terenowa/extras/ifdef.dart';
+import 'package:gra_terenowa/extras/statics.dart';
 import 'package:gra_terenowa/view/selectTrip_screen.dart';
 import 'package:gra_terenowa/widgets/selectTrip_widget.dart';
 import 'package:gra_terenowa/widgets/cardHero_widget.dart';
@@ -104,8 +105,7 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    height: 350,
-                    //width: 250,
+                    height: Get.height * Statics.cardHeightRatio,
                     child: ListView.separated(
                       padding: EdgeInsets.all(20),
                       itemCount: 3,
@@ -114,8 +114,8 @@ class HomePage extends StatelessWidget {
                               width: 20, color: AppColors.primaryWhite),
                       itemBuilder: (BuildContext context, int index) {
                         return CardHero(
-                          cardHeight: 350,
-                          cardWidth: 250,
+                          cardHeight: Get.height * Statics.cardHeightRatio,
+                          cardWidth: Get.width * Statics.cardWidthRatio,
                           tripIndex: index,
                           onTap: () {
                             if (IfDef.heroAnimation) {
