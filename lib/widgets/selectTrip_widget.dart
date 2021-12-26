@@ -20,15 +20,20 @@ class SelectTrip extends StatelessWidget {
     if (IfDef.heroAnimation) {
       return Container(
         // bottomsheet starts 60% lower because it is without an image at the top
-        height: Get.height * 0.6 + Statics.borderRadius,
+        height:
+            Get.height * Statics.tripBottomSheetRatio + Statics.borderRadius,
         child: _cardStack(_tripController, tripIndex, 0),
       );
     } else {
+      // TODO: remove the undesired option after user testing
       return Container(
         // bottomsheet has full height, because it includes an image at the top
         height: Get.height,
-        child: _cardStack(_tripController, tripIndex,
-            Get.height * 0.4 - Statics.borderRadius),
+        child: _cardStack(
+            _tripController,
+            tripIndex,
+            Get.height * (1 - Statics.tripBottomSheetRatio) -
+                Statics.borderRadius),
       );
     }
   }
@@ -46,7 +51,7 @@ Stack _cardStack(
           child: Image.asset(
             tripController.getTripItem(index: tripIndex).imageAsset,
             width: Get.width,
-            height: Get.height * 0.4,
+            height: Get.height * (1 - Statics.tripBottomSheetRatio),
             fit: BoxFit.fitWidth,
           ),
         ),
@@ -54,7 +59,8 @@ Stack _cardStack(
         top: topStart,
         child: Container(
           width: Get.width,
-          height: Get.height * 0.6 + Statics.borderRadius,
+          height:
+              Get.height * Statics.tripBottomSheetRatio + Statics.borderRadius,
           decoration: BoxDecoration(
             color: AppColors.primaryNormal,
             borderRadius: BorderRadius.vertical(

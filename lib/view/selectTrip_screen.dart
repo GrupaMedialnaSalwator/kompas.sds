@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gra_terenowa/controller/trip_controller.dart';
 import 'package:gra_terenowa/extras/colors.dart';
+import 'package:gra_terenowa/extras/statics.dart';
 
 class SelectTripPage extends StatelessWidget {
   const SelectTripPage({
@@ -17,24 +18,16 @@ class SelectTripPage extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: AppColors.primaryWhite,
-      body: Stack(
-        //fit: StackFit.expand,
-        alignment: AlignmentDirectional.topCenter,
-        children: [
-          Container(
-            height: Get.height * 0.4,
-            width: Get.width,
-            child: Hero(
-              tag: tripIndex.toString(),
-              child: Material(
-                child: Image.asset(
-                  _tripController.getTripItem(index: tripIndex).imageAsset,
-                  fit: BoxFit.fill,
-                ),
-              ),
-            ),
+      body: Container(
+        height: Get.height * (1 - Statics.tripBottomSheetRatio),
+        width: Get.width,
+        child: Hero(
+          tag: tripIndex.toString(),
+          child: Image.asset(
+            _tripController.getTripItem(index: tripIndex).imageAsset,
+            fit: BoxFit.fill,
           ),
-        ],
+        ),
       ),
     );
   }

@@ -1,9 +1,12 @@
 class Statics {
-  /// cardWidthRatio = 2 / 3
+  /// cardWidthRatio = 2 / 3 relative to the screen width
   static const double cardWidthRatio = 2 / 3;
 
-  /// cardHeightRatio = 1 / 2
+  /// cardHeightRatio = 1 / 2 relative to the screen height
   static const double cardHeightRatio = 1 / 2;
+
+  /// tripBottomSheetRatio = 60% relative to the screen height
+  static const double tripBottomSheetRatio = 0.6;
 
   /// minMargin = 4.0
   static const double minMargin = 4.0;

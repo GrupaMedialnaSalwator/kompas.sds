@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:line_icons/line_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gra_terenowa/controller/trip_controller.dart';
@@ -55,15 +55,18 @@ class HomePage extends StatelessWidget {
           tabs: [
             Tab(
                 icon: Icon(
-              CupertinoIcons.compass,
+              LineIcons.tripadvisor,
+              //CupertinoIcons.compass,
             )),
             Tab(
                 icon: Icon(
-              CupertinoIcons.map,
+              LineIcons.mapMarked,
+              //CupertinoIcons.map,
             )),
             Tab(
                 icon: Icon(
-              CupertinoIcons.question,
+              LineIcons.firstAid,
+              //CupertinoIcons.question,
             )),
           ],
         ),
