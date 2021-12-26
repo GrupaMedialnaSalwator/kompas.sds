@@ -7,6 +7,7 @@ import 'package:gra_terenowa/extras/ifdef.dart';
 import 'package:gra_terenowa/view/selectTrip_screen.dart';
 import 'package:gra_terenowa/widgets/selectTrip_widget.dart';
 import 'package:gra_terenowa/widgets/cardHero_widget.dart';
+import 'package:gra_terenowa/widgets/tabOutlineIndicator.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -14,6 +15,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // This variable allows observing trip data for downloading new trips
+    // ignore: unused_local_variable
     final TripController _tripController = Get.put(TripController());
 
     return DefaultTabController(
@@ -46,21 +48,21 @@ class HomePage extends StatelessWidget {
           ],
         ),
         bottomNavigationBar: TabBar(
+          labelColor: AppColors.primaryWhite,
+          unselectedLabelColor: AppColors.primaryNormal,
+          indicator: TabOutlineIndicator(),
           tabs: [
             Tab(
                 icon: Icon(
               CupertinoIcons.compass,
-              color: AppColors.primaryNormal,
             )),
             Tab(
                 icon: Icon(
               CupertinoIcons.map,
-              color: AppColors.primaryNormal,
             )),
             Tab(
                 icon: Icon(
               CupertinoIcons.question,
-              color: AppColors.primaryNormal,
             )),
           ],
         ),
