@@ -116,6 +116,10 @@ class HomePage extends StatelessWidget {
                           VerticalDivider(
                               width: 20, color: AppColors.primaryWhite),
                       itemBuilder: (BuildContext context, int index) {
+                        print("Width: " +
+                            Get.width.toString() +
+                            " and Height: " +
+                            Get.height.toString());
                         return CardHero(
                           cardHeight: Get.height * Statics.cardHeightRatio,
                           cardWidth: Get.width * Statics.cardWidthRatio,

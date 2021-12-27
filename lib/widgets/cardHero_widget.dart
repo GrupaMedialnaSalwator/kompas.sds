@@ -46,6 +46,35 @@ class CardHero extends StatelessWidget {
                     ),
                   ),
                 )),
+            Positioned(
+              child: Container(
+                padding: EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: AppColors.primaryNormal.withOpacity(0.75),
+                  shape: BoxShape.circle,
+                  border: Border.all(width: 1.5, color: AppColors.primaryWhite),
+                ),
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        _tripController.getTripItem(index: tripIndex).time,
+                        style: Get.context!.textTheme.headline2
+                            ?.copyWith(color: AppColors.primaryWhite),
+                      ),
+                      Text(
+                        "min",
+                        style: Get.context!.textTheme.bodyText2
+                            ?.copyWith(color: AppColors.primaryWhite),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              top: Statics.cardMargin,
+              right: Statics.cardMargin,
+            ),
             SizedBox(
               width: cardWidth - Statics.cardMargin - Statics.cardMargin,
               child: ListTile(
@@ -61,7 +90,7 @@ class CardHero extends StatelessWidget {
                       ?.copyWith(color: AppColors.primaryWhite),
                 ),
               ),
-            ), //Text
+            ),
           ],
         ),
       ),
