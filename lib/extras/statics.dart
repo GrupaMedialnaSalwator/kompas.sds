@@ -14,6 +14,9 @@ class Statics {
   /// cardMargin = 8.0
   static const double cardMargin = 8.0;
 
+  /// bottomMargin = 16.0
+  static const double bottomMargin = 16.0;
+
   /// borderRadius = 20.0
   static const double borderRadius = 20.0;
 }
