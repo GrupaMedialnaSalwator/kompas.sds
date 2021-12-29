@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:gra_terenowa/controller/trip_controller.dart';
+import 'package:gra_terenowa/controller/trip_db_controller.dart';
 import 'package:gra_terenowa/extras/colors.dart';
 import 'package:gra_terenowa/extras/ifdef.dart';
 import 'package:gra_terenowa/extras/statics.dart';
 import 'package:gra_terenowa/model/trip_db.dart';
+import 'package:gra_terenowa/view/trip_screen.dart';
 import 'package:gra_terenowa/widgets/tripProperty_widget.dart';
 
 class SelectTrip extends StatelessWidget {
@@ -18,7 +19,7 @@ class SelectTrip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TripController _tripController = Get.find();
+    final TripDBController _tripController = Get.find();
     if (IfDef.heroAnimation) {
       return SafeArea(
         child: Container(
@@ -46,7 +47,7 @@ class SelectTrip extends StatelessWidget {
 }
 
 Stack _cardStack(
-    TripController tripController, int tripIndex, double topStart) {
+    TripDBController tripController, int tripIndex, double topStart) {
   return Stack(
     fit: StackFit.expand,
     alignment: AlignmentDirectional.topCenter,
@@ -161,7 +162,9 @@ Stack _cardStack(
                     ))),
                     onPressed: () {
                       print("screen width: " + Get.width.toString());
-                      //Get.back();
+                      Get.to(() => TripPage(
+                            tripIndex: tripIndex,
+                          ));
                     },
                   ),
                 ),

@@ -1,7 +1,8 @@
+import 'package:gra_terenowa/controller/app_controller.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:gra_terenowa/controller/trip_controller.dart';
+import 'package:gra_terenowa/controller/trip_db_controller.dart';
 import 'package:gra_terenowa/extras/colors.dart';
 import 'package:gra_terenowa/extras/ifdef.dart';
 import 'package:gra_terenowa/extras/statics.dart';
@@ -15,9 +16,11 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // This variable allows observing trip data for downloading new trips
+    // Controllers used throughout the app
     // ignore: unused_local_variable
-    final TripController _tripController = Get.put(TripController());
+    final TripDBController _tripController = Get.put(TripDBController());
+    // ignore: unused_local_variable
+    final AppController _appController = Get.put(AppController());
 
     return DefaultTabController(
       initialIndex: 0,

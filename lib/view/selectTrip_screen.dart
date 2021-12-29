@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:gra_terenowa/controller/trip_controller.dart';
+import 'package:gra_terenowa/controller/trip_db_controller.dart';
 import 'package:gra_terenowa/extras/colors.dart';
 import 'package:gra_terenowa/extras/statics.dart';
 
@@ -14,7 +14,7 @@ class SelectTripPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TripController _tripController = Get.find();
+    final TripDBController _tripController = Get.find();
 
     return Scaffold(
       backgroundColor: AppColors.primaryWhite,

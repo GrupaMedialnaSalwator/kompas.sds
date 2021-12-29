@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 
-class AppColors {
+class AppColors extends Color {
   /// Cutty Sark
   static const primaryNormal = Color(0xff57766e);
 
@@ -24,5 +24,5 @@ class AppColors {
 
   static const selectionYellow = Color(0xfffbdd65);
 
-  AppColors._();
+  AppColors(int value) : super(value);
 }
