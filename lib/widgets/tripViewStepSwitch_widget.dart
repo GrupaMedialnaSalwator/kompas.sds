@@ -26,153 +26,182 @@ class TripViewStepSwitch extends StatelessWidget {
     switch (
         tripDataController.getStepItem(tripDataSelect: tripDataSelect).type) {
       case StepType.info:
-        return Column(
-          children: [
-            Container(
-              alignment: Alignment.topLeft,
-              margin: EdgeInsets.fromLTRB(16, 20, 16, 20),
-              child: Text(
-                tripDataController
-                    .getStepItem(tripDataSelect: tripDataSelect)
-                    .title,
-                style: Get.context!.textTheme.headline3
-                    ?.copyWith(color: AppColors.primaryDark),
+        return Expanded(
+          child: ListView(
+            padding: EdgeInsets.all(Constants.insideMargin),
+            children: [
+              Container(
+                alignment: Alignment.topLeft,
+                margin: EdgeInsets.all(Constants.insideMargin),
+                child: Text(
+                  tripDataController
+                      .getStepItem(tripDataSelect: tripDataSelect)
+                      .title,
+                  style: Get.context!.textTheme.headline3
+                      ?.copyWith(color: AppColors.primaryDark),
+                ),
               ),
-            ),
-            Container(
-              alignment: Alignment.topLeft,
-              margin: EdgeInsets.fromLTRB(16, 20, 16, 20),
-              child: Text(
-                tripDataController
-                    .getStepItem(tripDataSelect: tripDataSelect)
-                    .description,
-                style: Get.context!.textTheme.bodyText1
-                    ?.copyWith(color: AppColors.primaryDark),
+              Container(
+                alignment: Alignment.topLeft,
+                margin: EdgeInsets.all(Constants.insideMargin),
+                child: Text(
+                  tripDataController
+                      .getStepItem(tripDataSelect: tripDataSelect)
+                      .description,
+                  style: Get.context!.textTheme.bodyText1
+                      ?.copyWith(color: AppColors.primaryDark),
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         );
       case StepType.select:
         int selectionLength = tripDataController
             .getStepItem(tripDataSelect: tripDataSelect)
             .selection
             .length;
-        return GridView.count(
-          padding: EdgeInsets.zero,
-          scrollDirection: Axis.vertical,
-          shrinkWrap: true,
-          crossAxisCount: selectionLength ~/ 2, // truncated division
-          crossAxisSpacing: Constants.insideMargin,
-          mainAxisSpacing: Constants.insideMargin,
-          children: List<Widget>.generate(selectionLength, (int index) {
-            return TripStepSelectBox(
-              tripDataSelect: tripDataSelect,
-              selectionNum: index,
-              boxColor: AppColors.selectionColorList[index],
-            );
-          }),
+        return Expanded(
+          child: GridView.count(
+            padding: EdgeInsets.all(Constants.insideMargin),
+            scrollDirection: getAxisLayout(),
+            physics: NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            crossAxisCount: selectionLength ~/ 2, // truncated division
+            crossAxisSpacing: Constants.insideMargin,
+            mainAxisSpacing: Constants.insideMargin,
+            children: List<Widget>.generate(selectionLength, (int index) {
+              return TripStepSelectBox(
+                tripDataSelect: tripDataSelect,
+                selectionNum: index,
+                boxColor: AppColors.selectionColorList[index],
+              );
+            }),
+          ),
         );
       case StepType.answer:
-        return Column(
-          children: [
-            Container(
-              alignment: Alignment.topLeft,
-              margin: EdgeInsets.fromLTRB(16, 20, 16, 20),
-              child: Text(
-                tripDataController
-                    .getStepItem(tripDataSelect: tripDataSelect)
-                    .title,
-                style: Get.context!.textTheme.headline3
-                    ?.copyWith(color: AppColors.primaryDark),
-              ),
-            ),
-            if (tripStateController.getCurrentAnswer() ==
-                tripDataController
-                    .getPrevStepItem(tripDataSelect: tripDataSelect)
-                    .correctSelection)
+        return Expanded(
+          child: ListView(
+            padding: EdgeInsets.all(Constants.insideMargin),
+            children: [
               Container(
                 alignment: Alignment.topLeft,
-                margin: EdgeInsets.fromLTRB(16, 20, 16, 20),
+                margin: EdgeInsets.all(Constants.insideMargin),
                 child: Text(
                   tripDataController
                       .getStepItem(tripDataSelect: tripDataSelect)
-                      .correctAnswer,
-                  style: Get.context!.textTheme.bodyText1
-                      ?.copyWith(color: AppColors.primaryDark),
-                ),
-              )
-            else
-              Container(
-                alignment: Alignment.topLeft,
-                margin: EdgeInsets.fromLTRB(16, 20, 16, 20),
-                child: Text(
-                  tripDataController
-                      .getStepItem(tripDataSelect: tripDataSelect)
-                      .incorrectAnswer,
-                  style: Get.context!.textTheme.bodyText1
+                      .title,
+                  style: Get.context!.textTheme.headline3
                       ?.copyWith(color: AppColors.primaryDark),
                 ),
               ),
-          ],
+              if (tripStateController.getCurrentAnswer() ==
+                  tripDataController
+                      .getPrevStepItem(tripDataSelect: tripDataSelect)
+                      .correctSelection)
+                Container(
+                  alignment: Alignment.topLeft,
+                  margin: EdgeInsets.all(Constants.insideMargin),
+                  child: Text(
+                    tripDataController
+                        .getStepItem(tripDataSelect: tripDataSelect)
+                        .correctAnswer,
+                    style: Get.context!.textTheme.bodyText1
+                        ?.copyWith(color: AppColors.primaryDark),
+                  ),
+                )
+              else
+                Container(
+                  alignment: Alignment.topLeft,
+                  margin: EdgeInsets.all(Constants.insideMargin),
+                  child: Text(
+                    tripDataController
+                        .getStepItem(tripDataSelect: tripDataSelect)
+                        .incorrectAnswer,
+                    style: Get.context!.textTheme.bodyText1
+                        ?.copyWith(color: AppColors.primaryDark),
+                  ),
+                ),
+            ],
+          ),
         );
       case StepType.end:
-        return Column(
-          children: [
-            Container(
-              alignment: Alignment.topLeft,
-              margin: EdgeInsets.fromLTRB(16, 20, 16, 20),
-              child: Text(
-                tripDataController
-                    .getStepItem(tripDataSelect: tripDataSelect)
-                    .title,
-                style: Get.context!.textTheme.headline3
-                    ?.copyWith(color: AppColors.primaryDark),
-              ),
-            ),
-            Container(
-              alignment: Alignment.topLeft,
-              margin: EdgeInsets.fromLTRB(16, 20, 16, 20),
-              child: Text(
-                tripDataController
-                    .getStepItem(tripDataSelect: tripDataSelect)
-                    .description,
-                style: Get.context!.textTheme.bodyText1
-                    ?.copyWith(color: AppColors.primaryDark),
-              ),
-            ),
-            Container(
-              alignment: Alignment.bottomCenter,
-              child: Padding(
-                padding: const EdgeInsets.all(Constants.bottomMargin),
-                child: TextButton(
-                  child: Text(
-                    "Koniec",
-                    style: Get.context!.textTheme.headline3
-                        ?.copyWith(color: AppColors.primaryWhite),
-                  ),
-                  style: ButtonStyle(
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius:
-                            BorderRadius.circular(Constants.borderRadius),
-                      ),
-                    ),
-                    backgroundColor: MaterialStateProperty.all<Color>(
-                      AppColors.primaryNormal,
-                    ),
-                  ),
-                  onPressed: () {
-                    tripStateController.resetState();
-                    Get.until((route) => Get.currentRoute == AppRoutes.home);
-                  },
+        return Expanded(
+          child: ListView(
+            padding: EdgeInsets.all(Constants.insideMargin),
+            children: [
+              Container(
+                alignment: Alignment.topLeft,
+                margin: EdgeInsets.all(Constants.insideMargin),
+                child: Text(
+                  tripDataController
+                      .getStepItem(tripDataSelect: tripDataSelect)
+                      .title,
+                  style: Get.context!.textTheme.headline3
+                      ?.copyWith(color: AppColors.primaryDark),
                 ),
               ),
-            ),
-          ],
+              Container(
+                alignment: Alignment.topLeft,
+                margin: EdgeInsets.all(Constants.insideMargin),
+                child: Text(
+                  tripDataController
+                      .getStepItem(tripDataSelect: tripDataSelect)
+                      .description,
+                  style: Get.context!.textTheme.bodyText1
+                      ?.copyWith(color: AppColors.primaryDark),
+                ),
+              ),
+              Container(
+                alignment: Alignment.bottomCenter,
+                child: Padding(
+                  padding: const EdgeInsets.all(Constants.bottomMargin),
+                  child: TextButton(
+                    child: Text(
+                      "Koniec",
+                      style: Get.context!.textTheme.headline3
+                          ?.copyWith(color: AppColors.primaryWhite),
+                    ),
+                    style: ButtonStyle(
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius:
+                              BorderRadius.circular(Constants.borderRadius),
+                        ),
+                      ),
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                        AppColors.primaryNormal,
+                      ),
+                    ),
+                    onPressed: () {
+                      tripStateController.resetState();
+                      Get.until((route) => Get.currentRoute == AppRoutes.home);
+                    },
+                  ),
+                ),
+              ),
+            ],
+          ),
         );
       default:
         assert(false, 'TripViewStepSwitch must have a valid switch type');
         return Container();
     }
   }
+}
+
+/// Helper function
+///
+Axis getAxisLayout() {
+  // total height minus height of top image minus height of bottom navigation
+  var availableHeight = Get.height -
+      (Get.width * Constants.defaultImageRatio) -
+      80; // TODO: programatically find height of the navigation
+  print('availableHeight = ' +
+      availableHeight.toString() +
+      ', screen width = ' +
+      Get.width.toString());
+  if (availableHeight > Get.width)
+    return Axis.vertical;
+  else
+    return Axis.horizontal;
 }

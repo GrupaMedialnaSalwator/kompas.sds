@@ -29,19 +29,12 @@ class TripViewStep extends StatelessWidget {
               .imageAsset,
           fit: BoxFit.fill,
         ),
-        Container(
-          alignment: Alignment.topCenter,
-          margin: EdgeInsets.all(Constants.insideMargin),
-          child: TripViewStepSwitch(
-            tripStateController: tripStateController,
-            tripDataController: tripDataController,
-            tripDataSelect: tripDataSelect,
-          ),
+        TripViewStepSwitch(
+          tripStateController: tripStateController,
+          tripDataController: tripDataController,
+          tripDataSelect: tripDataSelect,
         ),
-        // This takes space between bottom menu
-        Spacer(
-          flex: 1,
-        ),
+
         // Button menu
         Container(
           margin: EdgeInsets.all(Constants.insideMargin),
