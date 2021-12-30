@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:gra_terenowa/controller/tripData_controller.dart';
 import 'package:gra_terenowa/controller/tripState_controller.dart';
 import 'package:gra_terenowa/extras/colors.dart';
-import 'package:gra_terenowa/extras/statics.dart';
+import 'package:gra_terenowa/extras/constants.dart';
 import 'package:gra_terenowa/widgets/tripViewStepButtons_widget.dart';
 import 'package:gra_terenowa/widgets/tripViewStepSwitch_widget.dart';
 
@@ -31,7 +31,7 @@ class TripViewStep extends StatelessWidget {
         ),
         Container(
           alignment: Alignment.topCenter,
-          margin: EdgeInsets.all(Statics.insideMargin),
+          margin: EdgeInsets.all(Constants.insideMargin),
           child: TripViewStepSwitch(
             tripStateController: tripStateController,
             tripDataController: tripDataController,
@@ -44,7 +44,7 @@ class TripViewStep extends StatelessWidget {
         ),
         // Button menu
         Container(
-          margin: EdgeInsets.all(Statics.insideMargin),
+          margin: EdgeInsets.all(Constants.insideMargin),
           child: TripViewStepButtons(
             tripStateController: tripStateController,
             tripDataController: tripDataController,

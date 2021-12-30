@@ -1,6 +1,6 @@
 /// This class will handle data loading from FireBase
 
-import 'package:gra_terenowa/extras/statics.dart';
+import 'package:gra_terenowa/extras/constants.dart';
 
 enum TripPropertyType {
   time,
@@ -85,7 +85,7 @@ class TripItem {
 class StepItem {
   StepItem({
     this.type = StepType.info,
-    this.imageAsset = Statics.defaultImage, // TODO: create default image
+    this.imageAsset = Constants.defaultImage, // TODO: create default image
     this.title = "Title",
     this.subtitle = "subtitle",
     this.description = "Description",

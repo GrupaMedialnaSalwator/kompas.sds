@@ -1,4 +1,4 @@
-class Statics {
+class Constants {
   /// cardWidthRatio = 2 / 3 relative to the screen width
   static const double cardWidthRatio = 2 / 3;
 

@@ -4,7 +4,7 @@ import 'package:gra_terenowa/controller/tripData_controller.dart';
 import 'package:gra_terenowa/controller/tripState_controller.dart';
 import 'package:gra_terenowa/extras/colors.dart';
 import 'package:gra_terenowa/extras/routes.dart';
-import 'package:gra_terenowa/extras/statics.dart';
+import 'package:gra_terenowa/extras/constants.dart';
 import 'package:gra_terenowa/widgets/tripViewStep_widget.dart';
 
 class TripPage extends StatelessWidget {
@@ -24,7 +24,8 @@ class TripPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.primaryWhite,
       appBar: AppBar(
-        backgroundColor: AppColors.primaryNormal.withOpacity(Statics.opacity25),
+        backgroundColor:
+            AppColors.primaryNormal.withOpacity(Constants.opacity25),
         foregroundColor: AppColors.primaryWhite,
         automaticallyImplyLeading: false,
         title: Text(

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:gra_terenowa/extras/colors.dart';
-import 'package:gra_terenowa/extras/statics.dart';
+import 'package:gra_terenowa/extras/constants.dart';
 
 class TabOutlineIndicator extends Decoration {
   const TabOutlineIndicator({
     this.color = AppColors.primaryNormal,
     this.strokeWidth = 0,
-    this.radius = const Radius.circular(Statics.borderRadius),
+    this.radius = const Radius.circular(Constants.borderRadius),
   });
 
   final Color color;
@@ -41,9 +41,9 @@ class _OutlinePainter extends BoxPainter {
   void paint(Canvas canvas, Offset offset, ImageConfiguration configuration) {
     assert(configuration.size != null);
     // compute rounded rectangle specs to fill the icon
-    var marginDy = Statics.minMargin;
+    var marginDy = Constants.minMargin;
     var height = configuration.size!.height - (2 * marginDy);
-    var width = height + Statics.borderRadius;
+    var width = height + Constants.borderRadius;
     var marginDx = (configuration.size!.width - width) / 2;
     var rect = Rect.fromLTWH(
         offset.dx + marginDx, offset.dy + marginDy, width, height);

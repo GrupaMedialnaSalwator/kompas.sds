@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:gra_terenowa/controller/tripData_controller.dart';
 import 'package:gra_terenowa/controller/tripState_controller.dart';
 import 'package:gra_terenowa/extras/colors.dart';
-import 'package:gra_terenowa/extras/statics.dart';
+import 'package:gra_terenowa/extras/constants.dart';
 
 class TripStepSelectBox extends StatelessWidget {
   const TripStepSelectBox({
@@ -24,7 +24,7 @@ class TripStepSelectBox extends StatelessWidget {
     return InkWell(
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(Statics.borderRadius),
+          borderRadius: BorderRadius.circular(Constants.borderRadius),
           color: boxColor,
         ),
         child: Center(

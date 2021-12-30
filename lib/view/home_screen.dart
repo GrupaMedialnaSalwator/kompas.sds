@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gra_terenowa/controller/tripData_controller.dart';
 import 'package:gra_terenowa/extras/colors.dart';
-import 'package:gra_terenowa/extras/statics.dart';
+import 'package:gra_terenowa/extras/constants.dart';
 import 'package:gra_terenowa/view/selectTrip_screen.dart';
 import 'package:gra_terenowa/widgets/selectTrip_widget.dart';
 import 'package:gra_terenowa/widgets/cardHero_widget.dart';
@@ -112,7 +112,7 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    height: Get.height * Statics.cardHeightRatio,
+                    height: Get.height * Constants.cardHeightRatio,
                     child: ListView.separated(
                       padding: EdgeInsets.all(20),
                       itemCount: 3,
@@ -125,8 +125,8 @@ class HomePage extends StatelessWidget {
                             " and Height: " +
                             Get.height.toString());
                         return CardHero(
-                          cardHeight: Get.height * Statics.cardHeightRatio,
-                          cardWidth: Get.width * Statics.cardWidthRatio,
+                          cardHeight: Get.height * Constants.cardHeightRatio,
+                          cardWidth: Get.width * Constants.cardWidthRatio,
                           tripIndex: index,
                           onTap: () {
                             Get.to(() => SelectTripPage(

@@ -4,7 +4,7 @@ import 'package:gra_terenowa/controller/tripData_controller.dart';
 import 'package:gra_terenowa/controller/tripState_controller.dart';
 import 'package:gra_terenowa/extras/colors.dart';
 import 'package:gra_terenowa/extras/routes.dart';
-import 'package:gra_terenowa/extras/statics.dart';
+import 'package:gra_terenowa/extras/constants.dart';
 import 'package:gra_terenowa/model/database.dart';
 import 'package:gra_terenowa/widgets/tripStepSelectBox_widget.dart';
 
@@ -62,8 +62,8 @@ class TripViewStepSwitch extends StatelessWidget {
           scrollDirection: Axis.vertical,
           shrinkWrap: true,
           crossAxisCount: selectionLength ~/ 2, // truncated division
-          crossAxisSpacing: Statics.insideMargin,
-          mainAxisSpacing: Statics.insideMargin,
+          crossAxisSpacing: Constants.insideMargin,
+          mainAxisSpacing: Constants.insideMargin,
           children: List<Widget>.generate(selectionLength, (int index) {
             return TripStepSelectBox(
               tripDataSelect: tripDataSelect,
@@ -143,7 +143,7 @@ class TripViewStepSwitch extends StatelessWidget {
             Container(
               alignment: Alignment.bottomCenter,
               child: Padding(
-                padding: const EdgeInsets.all(Statics.bottomMargin),
+                padding: const EdgeInsets.all(Constants.bottomMargin),
                 child: TextButton(
                   child: Text(
                     "Koniec",
@@ -154,7 +154,7 @@ class TripViewStepSwitch extends StatelessWidget {
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
                         borderRadius:
-                            BorderRadius.circular(Statics.borderRadius),
+                            BorderRadius.circular(Constants.borderRadius),
                       ),
                     ),
                     backgroundColor: MaterialStateProperty.all<Color>(

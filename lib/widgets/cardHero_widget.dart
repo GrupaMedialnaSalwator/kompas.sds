@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gra_terenowa/controller/tripData_controller.dart';
 import 'package:gra_terenowa/extras/colors.dart';
-import 'package:gra_terenowa/extras/statics.dart';
+import 'package:gra_terenowa/extras/constants.dart';
 
 class CardHero extends StatelessWidget {
   const CardHero(
@@ -25,7 +25,7 @@ class CardHero extends StatelessWidget {
     return Card(
       elevation: 8,
       color: AppColors.primaryWhite,
-      margin: EdgeInsets.all(Statics.cardMargin),
+      margin: EdgeInsets.all(Constants.cardMargin),
       clipBehavior: Clip.antiAliasWithSaveLayer,
       child: InkWell(
         onTap: () {
@@ -52,7 +52,8 @@ class CardHero extends StatelessWidget {
               child: Container(
                 padding: EdgeInsets.all(12),
                 decoration: BoxDecoration(
-                  color: AppColors.primaryNormal.withOpacity(Statics.opacity75),
+                  color:
+                      AppColors.primaryNormal.withOpacity(Constants.opacity75),
                   shape: BoxShape.circle,
                   border: Border.all(width: 1.5, color: AppColors.primaryWhite),
                 ),
@@ -74,11 +75,11 @@ class CardHero extends StatelessWidget {
                   ),
                 ),
               ),
-              top: Statics.cardMargin,
-              right: Statics.cardMargin,
+              top: Constants.cardMargin,
+              right: Constants.cardMargin,
             ),
             SizedBox(
-              width: cardWidth - Statics.cardMargin - Statics.cardMargin,
+              width: cardWidth - Constants.cardMargin - Constants.cardMargin,
               child: ListTile(
                 visualDensity: VisualDensity.comfortable,
                 title: Text(
@@ -97,7 +98,7 @@ class CardHero extends StatelessWidget {
         ),
       ),
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(Statics.borderRadius),
+        borderRadius: BorderRadius.circular(Constants.borderRadius),
       ),
     );
   }

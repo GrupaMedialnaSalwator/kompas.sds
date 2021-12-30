@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gra_terenowa/controller/tripData_controller.dart';
 import 'package:gra_terenowa/extras/colors.dart';
-import 'package:gra_terenowa/extras/statics.dart';
+import 'package:gra_terenowa/extras/constants.dart';
 import 'package:gra_terenowa/model/database.dart';
 import 'package:gra_terenowa/view/trip_screen.dart';
 import 'package:gra_terenowa/widgets/tripProperty_widget.dart';
@@ -22,8 +22,8 @@ class SelectTrip extends StatelessWidget {
     return SafeArea(
       child: Container(
         // bottomsheet starts 60% lower because it is without an image at the top
-        height:
-            Get.height * Statics.tripBottomSheetRatio + Statics.borderRadius,
+        height: Get.height * Constants.tripBottomSheetRatio +
+            Constants.borderRadius,
         child: _cardStack(_tripDataController, tripIndex, 0),
       ),
     );
@@ -40,25 +40,25 @@ Stack _cardStack(
         top: topStart,
         child: Container(
           width: Get.width,
-          height:
-              Get.height * Statics.tripBottomSheetRatio + Statics.borderRadius,
+          height: Get.height * Constants.tripBottomSheetRatio +
+              Constants.borderRadius,
           decoration: BoxDecoration(
             color: AppColors.primaryNormal,
             borderRadius: BorderRadius.vertical(
-              top: Radius.circular(Statics.borderRadius),
+              top: Radius.circular(Constants.borderRadius),
               bottom: Radius.zero,
             ),
           ),
           child: Container(
             margin: EdgeInsets.fromLTRB(
-                Statics.borderRadius, 0, Statics.borderRadius, 0),
+                Constants.borderRadius, 0, Constants.borderRadius, 0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Column(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.all(Statics.cardMargin),
+                      padding: const EdgeInsets.all(Constants.cardMargin),
                       child: Center(
                         child: Icon(
                           CupertinoIcons.chevron_compact_down,
@@ -125,14 +125,15 @@ Stack _cardStack(
                   ],
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(Statics.bottomMargin),
+                  padding: const EdgeInsets.all(Constants.bottomMargin),
                   child: TextButton(
                     child: Text("Zaczynamy"),
                     style: ButtonStyle(
                         shape:
                             MaterialStateProperty.all<RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(Statics.borderRadius),
+                      borderRadius:
+                          BorderRadius.circular(Constants.borderRadius),
                     ))),
                     onPressed: () {
                       print("screen width: " + Get.width.toString());
