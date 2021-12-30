@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gra_terenowa/controller/tripData_controller.dart';
 import 'package:gra_terenowa/extras/colors.dart';
-import 'package:gra_terenowa/extras/ifdef.dart';
 import 'package:gra_terenowa/extras/statics.dart';
 import 'package:gra_terenowa/view/selectTrip_screen.dart';
 import 'package:gra_terenowa/widgets/selectTrip_widget.dart';
@@ -130,28 +129,18 @@ class HomePage extends StatelessWidget {
                           cardWidth: Get.width * Statics.cardWidthRatio,
                           tripIndex: index,
                           onTap: () {
-                            if (IfDef.heroAnimation) {
-                              Get.to(() => SelectTripPage(
-                                    tripIndex: index,
-                                  ));
-                              Get.bottomSheet(
-                                SelectTrip(
+                            Get.to(() => SelectTripPage(
                                   tripIndex: index,
-                                  onTapButton: () {},
-                                ),
-                                isScrollControlled: true,
-                                barrierColor:
-                                    Color.fromRGBO(0, 0, 0, 0), // 100% opacity
-                              ).whenComplete(() => Get.back());
-                            } else {
-                              Get.bottomSheet(
-                                SelectTrip(
-                                  tripIndex: index,
-                                  onTapButton: () {},
-                                ),
-                                isScrollControlled: true,
-                              );
-                            }
+                                ));
+                            Get.bottomSheet(
+                              SelectTrip(
+                                tripIndex: index,
+                                onTapButton: () {},
+                              ),
+                              isScrollControlled: true,
+                              barrierColor:
+                                  Color.fromRGBO(0, 0, 0, 0), // 100% opacity
+                            ).whenComplete(() => Get.back());
                           },
                         );
                       },

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gra_terenowa/controller/tripData_controller.dart';
 import 'package:gra_terenowa/extras/colors.dart';
-import 'package:gra_terenowa/extras/ifdef.dart';
 import 'package:gra_terenowa/extras/statics.dart';
 import 'package:gra_terenowa/model/database.dart';
 import 'package:gra_terenowa/view/trip_screen.dart';
@@ -20,29 +19,14 @@ class SelectTrip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final TripDataController _tripDataController = Get.find();
-    if (IfDef.heroAnimation) {
-      return SafeArea(
-        child: Container(
-          // bottomsheet starts 60% lower because it is without an image at the top
-          height:
-              Get.height * Statics.tripBottomSheetRatio + Statics.borderRadius,
-          child: _cardStack(_tripDataController, tripIndex, 0),
-        ),
-      );
-    } else {
-      // TODO: remove the undesired option after user testing
-      return SafeArea(
-        child: Container(
-          // bottomsheet has full height, because it includes an image at the top
-          height: Get.height,
-          child: _cardStack(
-              _tripDataController,
-              tripIndex,
-              Get.height * (1 - Statics.tripBottomSheetRatio) -
-                  Statics.borderRadius),
-        ),
-      );
-    }
+    return SafeArea(
+      child: Container(
+        // bottomsheet starts 60% lower because it is without an image at the top
+        height:
+            Get.height * Statics.tripBottomSheetRatio + Statics.borderRadius,
+        child: _cardStack(_tripDataController, tripIndex, 0),
+      ),
+    );
   }
 }
 
@@ -52,16 +36,6 @@ Stack _cardStack(
     fit: StackFit.expand,
     alignment: AlignmentDirectional.topCenter,
     children: [
-      if (IfDef.heroAnimation == false)
-        Positioned(
-          top: 0,
-          child: Image.asset(
-            tripController.getTripItem(index: tripIndex).imageAsset,
-            width: Get.width,
-            height: Get.height * (1 - Statics.tripBottomSheetRatio),
-            fit: BoxFit.fitWidth,
-          ),
-        ),
       Positioned(
         top: topStart,
         child: Container(
