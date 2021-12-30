@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:gra_terenowa/controller/app_controller.dart';
-import 'package:gra_terenowa/controller/tripTab_controller.dart';
-import 'package:gra_terenowa/controller/trip_db_controller.dart';
+import 'package:gra_terenowa/controller/tripData_controller.dart';
+import 'package:gra_terenowa/controller/tripState_controller.dart';
 import 'package:gra_terenowa/extras/colors.dart';
 import 'package:gra_terenowa/extras/routes.dart';
 import 'package:gra_terenowa/extras/statics.dart';
-import 'package:gra_terenowa/widgets/tripStepView_widget.dart';
+import 'package:gra_terenowa/widgets/tripViewStep_widget.dart';
 
 class TripPage extends StatelessWidget {
   const TripPage({
@@ -18,63 +17,41 @@ class TripPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TripDBController _tripController = Get.find();
-    final AppController _appController = Get.find();
-    TripTabController _tabController = Get.put(TripTabController(
-        tripIndex: tripIndex,
-        initLength: _tripController.getStepsLength(
-            tripIndex: tripIndex,
-            runIndex: _appController.getCurrentRun().value)));
+    final TripDataController _tripDataController = Get.find();
+    final TripStateController _tripStateController =
+        Get.put(TripStateController());
 
-    return SafeArea(
-      child: Obx(
-        () => DefaultTabController(
-          length: _tripController.getStepsLength(
+    return Scaffold(
+      backgroundColor: AppColors.primaryWhite,
+      appBar: AppBar(
+        backgroundColor: AppColors.primaryNormal.withOpacity(Statics.opacity25),
+        foregroundColor: AppColors.primaryWhite,
+        automaticallyImplyLeading: false,
+        title: Text(
+          _tripDataController.getTripItem(index: tripIndex).title,
+          style: TextStyle(color: AppColors.primaryWhite),
+        ),
+        elevation: 1,
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.close),
+            color: AppColors.primaryWhite,
+            onPressed: () {
+              _tripStateController
+                  .resetState(); // redundant, since controller will be destroyed
+              Get.until((route) => Get.currentRoute == AppRoutes.home);
+            },
+          )
+        ],
+      ),
+      extendBodyBehindAppBar: true,
+      body: Obx(
+        () => TripViewStep(
+          tripStateController: _tripStateController,
+          tripDataController: _tripDataController,
+          tripDataSelect: TripDataSelect(
               tripIndex: tripIndex,
-              runIndex: _appController.getCurrentRun().value),
-          child: Scaffold(
-            backgroundColor: AppColors.primaryWhite,
-            appBar: AppBar(
-              backgroundColor:
-                  AppColors.primaryNormal.withOpacity(Statics.opacity25),
-              foregroundColor: AppColors.primaryWhite,
-              automaticallyImplyLeading: false,
-              title: Text(
-                _tripController.getTripItem(index: tripIndex).title,
-                style: TextStyle(color: AppColors.primaryWhite),
-              ),
-              elevation: 1,
-              actions: <Widget>[
-                IconButton(
-                  icon: const Icon(Icons.close),
-                  color: AppColors.primaryWhite,
-                  onPressed: () {
-                    _appController.resetCurrentRun();
-                    Get.until((route) => Get.currentRoute == AppRoutes.home);
-                  },
-                )
-              ],
-            ),
-            extendBodyBehindAppBar: true,
-            body: Obx(
-              () => TabBarView(
-                controller: _tabController.controller,
-                children: List<Widget>.generate(
-                    _tripController.getStepsLength(
-                        tripIndex: tripIndex,
-                        runIndex: _appController.getCurrentRun().value),
-                    (int index) {
-                  return TripStepView(
-                    tripController: _tripController,
-                    tripSelect: TripSelect(
-                        tripIndex: tripIndex,
-                        runIndex: _appController.getCurrentRun().value,
-                        stepIndex: index),
-                  );
-                }),
-              ),
-            ),
-          ),
+              stepIndex: _tripStateController.getCurrentStep()),
         ),
       ),
     );

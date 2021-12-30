@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:gra_terenowa/controller/trip_db_controller.dart';
+import 'package:gra_terenowa/controller/tripData_controller.dart';
 import 'package:gra_terenowa/extras/colors.dart';
 import 'package:gra_terenowa/extras/statics.dart';
 
@@ -20,7 +20,7 @@ class CardHero extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TripDBController _tripController = Get.find();
+    final TripDataController _tripDataController = Get.find();
 
     return Card(
       elevation: 8,
@@ -41,7 +41,9 @@ class CardHero extends StatelessWidget {
                   tag: tripIndex.toString(),
                   child: Container(
                     child: Image.asset(
-                      _tripController.getTripItem(index: tripIndex).imageAsset,
+                      _tripDataController
+                          .getTripItem(index: tripIndex)
+                          .imageAsset,
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -59,7 +61,7 @@ class CardHero extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        _tripController.getTripItem(index: tripIndex).time,
+                        _tripDataController.getTripItem(index: tripIndex).time,
                         style: Get.context!.textTheme.headline2
                             ?.copyWith(color: AppColors.primaryWhite),
                       ),
@@ -80,12 +82,12 @@ class CardHero extends StatelessWidget {
               child: ListTile(
                 visualDensity: VisualDensity.comfortable,
                 title: Text(
-                  _tripController.getTripItem(index: tripIndex).title,
+                  _tripDataController.getTripItem(index: tripIndex).title,
                   style: Get.context!.textTheme.headline3
                       ?.copyWith(color: AppColors.primaryWhite),
                 ),
                 subtitle: Text(
-                  _tripController.getTripItem(index: tripIndex).subtitle,
+                  _tripDataController.getTripItem(index: tripIndex).subtitle,
                   style: Get.context!.textTheme.headline4
                       ?.copyWith(color: AppColors.primaryWhite),
                 ),

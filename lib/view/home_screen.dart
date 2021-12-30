@@ -1,8 +1,8 @@
-import 'package:gra_terenowa/controller/app_controller.dart';
+import 'package:gra_terenowa/controller/tripState_controller.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:gra_terenowa/controller/trip_db_controller.dart';
+import 'package:gra_terenowa/controller/tripData_controller.dart';
 import 'package:gra_terenowa/extras/colors.dart';
 import 'package:gra_terenowa/extras/ifdef.dart';
 import 'package:gra_terenowa/extras/statics.dart';
@@ -18,9 +18,11 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     // Controllers used throughout the app
     // ignore: unused_local_variable
-    final TripDBController _tripController = Get.put(TripDBController());
+    final TripDataController _tripDataController =
+        Get.put(TripDataController());
     // ignore: unused_local_variable
-    final AppController _appController = Get.put(AppController());
+    final TripStateController _tripStateController =
+        Get.put(TripStateController());
 
     return DefaultTabController(
       initialIndex: 0,

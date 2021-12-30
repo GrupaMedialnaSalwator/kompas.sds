@@ -16,6 +16,13 @@ class AppColors extends Color {
   /// Tint 90%
   static const primaryWhite = Color(0xffeef1f1);
 
+  static const selectionColorList = [
+    selectionBlue,
+    selectionViolet,
+    selectionPink,
+    selectionYellow,
+  ];
+
   static const selectionBlue = Color(0xff7fd6dd);
 
   static const selectionViolet = Color(0xffe5b6fc);

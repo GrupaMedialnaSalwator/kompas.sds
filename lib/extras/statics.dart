@@ -23,6 +23,9 @@ class Statics {
   /// borderRadius = 20.0
   static const double borderRadius = 20.0;
 
+  /// bottomMargin = 20.0
+  static const double buttonMargin = 20.0;
+
   /// defaultImage of size 414x276 DPI=1
   static const String defaultImage = "assets/images/trip_01.png";
 

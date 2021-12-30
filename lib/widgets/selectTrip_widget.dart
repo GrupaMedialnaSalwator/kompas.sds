@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:gra_terenowa/controller/trip_db_controller.dart';
+import 'package:gra_terenowa/controller/tripData_controller.dart';
 import 'package:gra_terenowa/extras/colors.dart';
 import 'package:gra_terenowa/extras/ifdef.dart';
 import 'package:gra_terenowa/extras/statics.dart';
-import 'package:gra_terenowa/model/trip_db.dart';
+import 'package:gra_terenowa/model/database.dart';
 import 'package:gra_terenowa/view/trip_screen.dart';
 import 'package:gra_terenowa/widgets/tripProperty_widget.dart';
 
@@ -19,14 +19,14 @@ class SelectTrip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TripDBController _tripController = Get.find();
+    final TripDataController _tripDataController = Get.find();
     if (IfDef.heroAnimation) {
       return SafeArea(
         child: Container(
           // bottomsheet starts 60% lower because it is without an image at the top
           height:
               Get.height * Statics.tripBottomSheetRatio + Statics.borderRadius,
-          child: _cardStack(_tripController, tripIndex, 0),
+          child: _cardStack(_tripDataController, tripIndex, 0),
         ),
       );
     } else {
@@ -36,7 +36,7 @@ class SelectTrip extends StatelessWidget {
           // bottomsheet has full height, because it includes an image at the top
           height: Get.height,
           child: _cardStack(
-              _tripController,
+              _tripDataController,
               tripIndex,
               Get.height * (1 - Statics.tripBottomSheetRatio) -
                   Statics.borderRadius),
@@ -47,7 +47,7 @@ class SelectTrip extends StatelessWidget {
 }
 
 Stack _cardStack(
-    TripDBController tripController, int tripIndex, double topStart) {
+    TripDataController tripController, int tripIndex, double topStart) {
   return Stack(
     fit: StackFit.expand,
     alignment: AlignmentDirectional.topCenter,

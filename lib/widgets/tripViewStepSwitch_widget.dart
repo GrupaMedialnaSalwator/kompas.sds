@@ -1,28 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:gra_terenowa/controller/app_controller.dart';
-import 'package:gra_terenowa/controller/trip_db_controller.dart';
+import 'package:gra_terenowa/controller/tripData_controller.dart';
+import 'package:gra_terenowa/controller/tripState_controller.dart';
 import 'package:gra_terenowa/extras/colors.dart';
 import 'package:gra_terenowa/extras/routes.dart';
 import 'package:gra_terenowa/extras/statics.dart';
-import 'package:gra_terenowa/model/trip_db.dart';
+import 'package:gra_terenowa/model/database.dart';
 import 'package:gra_terenowa/widgets/tripStepSelectBox_widget.dart';
 
 /// Displays trip content based on step type
-class TripStepSwitch extends StatelessWidget {
-  const TripStepSwitch({
+class TripViewStepSwitch extends StatelessWidget {
+  const TripViewStepSwitch({
     Key? key,
-    required this.tripController,
-    required this.tripSelect,
+    required this.tripDataController,
+    required this.tripStateController,
+    required this.tripDataSelect,
   }) : super(key: key);
 
-  final TripDBController tripController;
-  final TripSelect tripSelect;
+  final TripDataController tripDataController;
+  final TripStateController tripStateController;
+  final TripDataSelect tripDataSelect;
 
   @override
   Widget build(BuildContext context) {
-    final AppController _appController = Get.find();
-    switch (tripController.getStepItem(tripSelect: tripSelect).type) {
+    switch (
+        tripDataController.getStepItem(tripDataSelect: tripDataSelect).type) {
       case StepType.info:
         return Column(
           children: [
@@ -30,7 +32,9 @@ class TripStepSwitch extends StatelessWidget {
               alignment: Alignment.topLeft,
               margin: EdgeInsets.fromLTRB(16, 20, 16, 20),
               child: Text(
-                tripController.getStepItem(tripSelect: tripSelect).title,
+                tripDataController
+                    .getStepItem(tripDataSelect: tripDataSelect)
+                    .title,
                 style: Get.context!.textTheme.headline3
                     ?.copyWith(color: AppColors.primaryDark),
               ),
@@ -39,7 +43,9 @@ class TripStepSwitch extends StatelessWidget {
               alignment: Alignment.topLeft,
               margin: EdgeInsets.fromLTRB(16, 20, 16, 20),
               child: Text(
-                tripController.getStepItem(tripSelect: tripSelect).description,
+                tripDataController
+                    .getStepItem(tripDataSelect: tripDataSelect)
+                    .description,
                 style: Get.context!.textTheme.bodyText1
                     ?.copyWith(color: AppColors.primaryDark),
               ),
@@ -47,39 +53,24 @@ class TripStepSwitch extends StatelessWidget {
           ],
         );
       case StepType.select:
+        int selectionLength = tripDataController
+            .getStepItem(tripDataSelect: tripDataSelect)
+            .selection
+            .length;
         return GridView.count(
           padding: EdgeInsets.zero,
           scrollDirection: Axis.vertical,
           shrinkWrap: true,
-          crossAxisCount: 2,
+          crossAxisCount: selectionLength ~/ 2, // truncated division
           crossAxisSpacing: Statics.insideMargin,
           mainAxisSpacing: Statics.insideMargin,
-          children: [
-            TripStepSelectBox(
-              selectionNum: 1,
-              text:
-                  tripController.getStepItem(tripSelect: tripSelect).selection1,
-              boxColor: AppColors.selectionBlue,
-            ),
-            TripStepSelectBox(
-              selectionNum: 2,
-              text:
-                  tripController.getStepItem(tripSelect: tripSelect).selection2,
-              boxColor: AppColors.selectionPink,
-            ),
-            TripStepSelectBox(
-              selectionNum: 3,
-              text:
-                  tripController.getStepItem(tripSelect: tripSelect).selection3,
-              boxColor: AppColors.selectionViolet,
-            ),
-            TripStepSelectBox(
-              selectionNum: 4,
-              text:
-                  tripController.getStepItem(tripSelect: tripSelect).selection4,
-              boxColor: AppColors.selectionYellow,
-            ),
-          ],
+          children: List<Widget>.generate(selectionLength, (int index) {
+            return TripStepSelectBox(
+              tripDataSelect: tripDataSelect,
+              selectionNum: index,
+              boxColor: AppColors.selectionColorList[index],
+            );
+          }),
         );
       case StepType.answer:
         return Column(
@@ -88,19 +79,23 @@ class TripStepSwitch extends StatelessWidget {
               alignment: Alignment.topLeft,
               margin: EdgeInsets.fromLTRB(16, 20, 16, 20),
               child: Text(
-                tripController.getStepItem(tripSelect: tripSelect).title,
+                tripDataController
+                    .getStepItem(tripDataSelect: tripDataSelect)
+                    .title,
                 style: Get.context!.textTheme.headline3
                     ?.copyWith(color: AppColors.primaryDark),
               ),
             ),
-            if (_appController.getCurrentAnswer() ==
-                tripController.getRunAnswer(tripSelect: tripSelect))
+            if (tripStateController.getCurrentAnswer() ==
+                tripDataController
+                    .getPrevStepItem(tripDataSelect: tripDataSelect)
+                    .correctSelection)
               Container(
                 alignment: Alignment.topLeft,
                 margin: EdgeInsets.fromLTRB(16, 20, 16, 20),
                 child: Text(
-                  tripController
-                      .getStepItem(tripSelect: tripSelect)
+                  tripDataController
+                      .getStepItem(tripDataSelect: tripDataSelect)
                       .correctAnswer,
                   style: Get.context!.textTheme.bodyText1
                       ?.copyWith(color: AppColors.primaryDark),
@@ -111,8 +106,8 @@ class TripStepSwitch extends StatelessWidget {
                 alignment: Alignment.topLeft,
                 margin: EdgeInsets.fromLTRB(16, 20, 16, 20),
                 child: Text(
-                  tripController
-                      .getStepItem(tripSelect: tripSelect)
+                  tripDataController
+                      .getStepItem(tripDataSelect: tripDataSelect)
                       .incorrectAnswer,
                   style: Get.context!.textTheme.bodyText1
                       ?.copyWith(color: AppColors.primaryDark),
@@ -127,7 +122,9 @@ class TripStepSwitch extends StatelessWidget {
               alignment: Alignment.topLeft,
               margin: EdgeInsets.fromLTRB(16, 20, 16, 20),
               child: Text(
-                tripController.getStepItem(tripSelect: tripSelect).title,
+                tripDataController
+                    .getStepItem(tripDataSelect: tripDataSelect)
+                    .title,
                 style: Get.context!.textTheme.headline3
                     ?.copyWith(color: AppColors.primaryDark),
               ),
@@ -136,7 +133,9 @@ class TripStepSwitch extends StatelessWidget {
               alignment: Alignment.topLeft,
               margin: EdgeInsets.fromLTRB(16, 20, 16, 20),
               child: Text(
-                tripController.getStepItem(tripSelect: tripSelect).description,
+                tripDataController
+                    .getStepItem(tripDataSelect: tripDataSelect)
+                    .description,
                 style: Get.context!.textTheme.bodyText1
                     ?.copyWith(color: AppColors.primaryDark),
               ),
@@ -163,7 +162,7 @@ class TripStepSwitch extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {
-                    _appController.resetCurrentRun();
+                    tripStateController.resetState();
                     Get.until((route) => Get.currentRoute == AppRoutes.home);
                   },
                 ),
@@ -172,6 +171,7 @@ class TripStepSwitch extends StatelessWidget {
           ],
         );
       default:
+        assert(false, 'TripViewStepSwitch must have a valid switch type');
         return Container();
     }
   }
