@@ -1,26 +1,28 @@
-import 'package:flutter/cupertino.dart';
+import 'package:gra_terenowa/controller/tripState_controller.dart';
+import 'package:line_icons/line_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:gra_terenowa/controller/tripData_controller.dart';
 import 'package:gra_terenowa/extras/colors.dart';
-import 'package:gra_terenowa/extras/routes.dart';
-import 'package:gra_terenowa/widgets/select_widget.dart';
+import 'package:gra_terenowa/extras/constants.dart';
+import 'package:gra_terenowa/view/selectTrip_screen.dart';
+import 'package:gra_terenowa/widgets/selectTrip_widget.dart';
+import 'package:gra_terenowa/widgets/cardHero_widget.dart';
+import 'package:gra_terenowa/widgets/tabOutlineIndicator.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
-  static const List<String> tripAssets = [
-    "assets/images/trip_01.png",
-    "assets/images/trip_02.png",
-    "assets/images/trip_03.png",
-  ];
-  static const List<String> tripTitles = [
-    "W Parku",
-    "W Labiryncie",
-    "Droga Krzyżowa",
-  ];
-
   @override
   Widget build(BuildContext context) {
+    // Controllers used throughout the app
+    // ignore: unused_local_variable
+    final TripDataController _tripDataController =
+        Get.put(TripDataController());
+    // ignore: unused_local_variable
+    final TripStateController _tripStateController =
+        Get.put(TripStateController());
+
     return DefaultTabController(
       initialIndex: 0,
       length: 3,
@@ -51,21 +53,24 @@ class HomePage extends StatelessWidget {
           ],
         ),
         bottomNavigationBar: TabBar(
+          labelColor: AppColors.primaryWhite,
+          unselectedLabelColor: AppColors.primaryNormal,
+          indicator: TabOutlineIndicator(),
           tabs: [
             Tab(
                 icon: Icon(
-              CupertinoIcons.compass,
-              color: AppColors.primaryNormal,
+              LineIcons.tripadvisor,
+              //CupertinoIcons.compass,
             )),
             Tab(
                 icon: Icon(
-              CupertinoIcons.map,
-              color: AppColors.primaryNormal,
+              LineIcons.mapMarked,
+              //CupertinoIcons.map,
             )),
             Tab(
                 icon: Icon(
-              CupertinoIcons.question,
-              color: AppColors.primaryNormal,
+              LineIcons.firstAid,
+              //CupertinoIcons.question,
             )),
           ],
         ),
@@ -107,8 +112,7 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    height: 350,
-                    //width: 250,
+                    height: Get.height * Constants.cardHeightRatio,
                     child: ListView.separated(
                       padding: EdgeInsets.all(20),
                       itemCount: 3,
@@ -116,56 +120,28 @@ class HomePage extends StatelessWidget {
                           VerticalDivider(
                               width: 20, color: AppColors.primaryWhite),
                       itemBuilder: (BuildContext context, int index) {
-                        return Card(
-                          semanticContainer: true,
-                          clipBehavior: Clip.antiAliasWithSaveLayer,
-                          child: InkWell(
-                            onTap: () {
-                              Get.bottomSheet(
-                                SelectWidget(args: Arguments(index)),
-                                isScrollControlled: true,
-                              );
-
-                              // Get.toNamed(AppRoutes.select,
-                              //                               arguments: Arguments(index)),
-                            },
-                            child: Stack(
-                              children: [
-                                Container(
-                                  height: 350,
-                                  width: 250,
-                                  padding: EdgeInsets.all(16.0),
-                                  alignment: Alignment.bottomLeft,
-                                  decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                      image: AssetImage(tripAssets[index]),
-                                      fit: BoxFit.fitWidth, //DecorationImage
-                                    ),
-                                  ), //BoxDecoration
-
-                                  child: Text(
-                                    tripTitles[index],
-                                    //style: Theme.of(context).textTheme.headline2,
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .headline3
-                                        ?.copyWith(
-                                            color: AppColors.primaryWhite),
-                                  ),
-                                ), //Text
-
-                                // Image.asset(
-                                //   tripAssets[index],
-                                //   fit: BoxFit.fitWidth,
-                                // ),
-                              ],
-                            ),
-                          ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20.0),
-                          ),
-                          elevation: 8,
-                          margin: EdgeInsets.all(4),
+                        print("Width: " +
+                            Get.width.toString() +
+                            " and Height: " +
+                            Get.height.toString());
+                        return CardHero(
+                          cardHeight: Get.height * Constants.cardHeightRatio,
+                          cardWidth: Get.width * Constants.cardWidthRatio,
+                          tripIndex: index,
+                          onTap: () {
+                            Get.to(() => SelectTripPage(
+                                  tripIndex: index,
+                                ));
+                            Get.bottomSheet(
+                              SelectTrip(
+                                tripIndex: index,
+                                onTapButton: () {},
+                              ),
+                              isScrollControlled: true,
+                              barrierColor:
+                                  Color.fromRGBO(0, 0, 0, 0), // 100% opacity
+                            ).whenComplete(() => Get.back());
+                          },
                         );
                       },
                       scrollDirection: Axis.horizontal,

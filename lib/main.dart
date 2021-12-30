@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gra_terenowa/extras/routes.dart';
 import 'package:gra_terenowa/extras/text_styles.dart';
-import 'package:gra_terenowa/views/home_screen.dart';
+import 'package:gra_terenowa/view/home_screen.dart';
+import 'package:gra_terenowa/view/trip_screen.dart';
 
 import 'extras/colors.dart';
+import 'view/selectTrip_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -47,6 +49,10 @@ class MyApp extends StatelessWidget {
       initialRoute: AppRoutes.home,
       getPages: [
         GetPage(name: AppRoutes.home, page: () => HomePage()),
+        GetPage(
+            name: AppRoutes.selectTrip,
+            page: () => SelectTripPage(tripIndex: 0)),
+        GetPage(name: AppRoutes.trip, page: () => TripPage(tripIndex: 0)),
       ],
     );
   }
