@@ -6,6 +6,7 @@ import 'package:gra_terenowa/extras/colors.dart';
 import 'package:gra_terenowa/extras/routes.dart';
 import 'package:gra_terenowa/extras/constants.dart';
 import 'package:gra_terenowa/widgets/tripViewStep_widget.dart';
+import 'package:line_icons/line_icons.dart';
 
 class TripPage extends StatelessWidget {
   const TripPage({
@@ -28,9 +29,23 @@ class TripPage extends StatelessWidget {
             AppColors.primaryNormal.withOpacity(Constants.opacity25),
         foregroundColor: AppColors.primaryWhite,
         automaticallyImplyLeading: false,
-        title: Text(
-          _tripDataController.getTripItem(index: tripIndex).title,
-          style: TextStyle(color: AppColors.primaryWhite),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              _tripDataController.getTripItem(index: tripIndex).title,
+              style: TextStyle(color: AppColors.primaryWhite),
+            ),
+            Row(children: [
+              const Icon(LineIcons.trophy),
+              Obx(
+                () => Text(
+                  ' ' + _tripStateController.getCurrentPoints().toString(),
+                  style: TextStyle(color: AppColors.primaryWhite),
+                ),
+              ),
+            ]),
+          ],
         ),
         elevation: 1,
         actions: <Widget>[

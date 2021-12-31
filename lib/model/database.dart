@@ -90,7 +90,8 @@ class StepItem {
     this.subtitle = "subtitle",
     this.description = "Description",
     this.selection = const [],
-    this.correctSelection = 0, // default is invalid
+    this.correctSelection =
+        0, // TODO: run tests to check if this variable is set the same for select and answer steps
     this.correctAnswer = "Correct!",
     this.incorrectAnswer = "Unfortunately this is not correct.",
     this.previousStep = -1,
@@ -168,7 +169,7 @@ List<TripItem> generateTripItems() {
         StepItem(
           type: StepType.answer,
           title: "Miejsca parkingowe",
-          correctSelection: 1,
+          correctSelection: 0,
           correctAnswer:
               "Gratuluję! Rozwiązałeś pierwszą zagadkę. Możemy ruszać dalej.",
           incorrectAnswer:
@@ -208,7 +209,7 @@ List<TripItem> generateTripItems() {
         StepItem(
           type: StepType.answer,
           title: "Błogosławiony Franciszek Jordan",
-          correctSelection: 3,
+          correctSelection: 2,
           correctAnswer:
               'Wspaniale! Pierwsza literka oznacza "Błogosławiony". Ojciec Franciszek Jordan jest założycielem Zgromadzenia Salwatorianów i sióstr Salwatorianek, którzy dzisiaj zamieszkują to miejsce. Został beatyfikowany 15 maja 2021 roku.',
           incorrectAnswer:
@@ -218,7 +219,7 @@ List<TripItem> generateTripItems() {
         ),
         StepItem(
           type: StepType.info,
-          title: "Idziemy do altanki?",
+          title: "Idziemy do altanki",
           description:
               "Teraz czas, aby wejść głębiej do parku. Idąc po schodkach zobaczysz po lewej stronie piękną niebieską altankę. Znalazłeś już do niej drzwi?",
           imageAsset: "assets/images/trip01/trip01_07.jpg",
@@ -226,12 +227,115 @@ List<TripItem> generateTripItems() {
         ),
         StepItem(
           type: StepType.info,
-          title: "Brakuje ci już sił?",
+          title: "Policz słupki",
           description:
-              "Widzę, że jesteś zmęczony(a) i chcesz troszeczkę odpocząć. Usiądź sobie wygodnie w altance. Dokończymy innym razem.",
+              'To zadanie wymaga, abyś wszedł do altanki. A teraz popatrz przez szybę na zewnątrz i policz charakterystyczne słupki, które stoją przy alejce. Ile ich jest?',
           imageAsset: "assets/images/trip01/trip01_08.jpg",
           previousStep: 9,
           nextStep: 11,
+        ),
+        StepItem(
+          type: StepType.select,
+          selection: [
+            SelectionItem(text: "6", stepLink: 12),
+            SelectionItem(text: "4", stepLink: 12),
+            SelectionItem(text: "5", stepLink: 12),
+            SelectionItem(text: "7", stepLink: 12),
+          ],
+          correctSelection: 2,
+          imageAsset: "assets/images/trip01/trip01_08.jpg",
+          previousStep: 10,
+        ),
+        StepItem(
+          type: StepType.answer,
+          title: "Słupki z lampkami",
+          correctSelection: 2,
+          correctAnswer:
+              'Brawo! To są słupki, które w nocy świecą, aby siostry i bracia zakonni mogli w zimowe wieczory bezpiecznie przechodzić pomiędzy zamkiem a ogrodem.',
+          incorrectAnswer:
+              'Niestety! Jest tam 5 słupków, które w nocy świecą, aby siostry i bracia zakonni mogli w zimowe wieczory bezpiecznie przechodzić pomiędzy zamkiem a ogrodem. Jesteś gotowy do dalszej drogi?',
+          imageAsset: "assets/images/trip01/trip01_09.jpg",
+          nextStep: 13,
+        ),
+        StepItem(
+          type: StepType.info,
+          title: "Szukamy labiryntu",
+          description:
+              'Z altanki jest już bardzo blisko do labiryntu. Ale czy potrafisz go odnaleźć? Idź za słupkami, które właśnie policzyłeś, a znajdziesz wejście do labiryntu',
+          imageAsset: "assets/images/trip01/trip01_10.jpg",
+          nextStep: 14,
+        ),
+        StepItem(
+          type: StepType.info,
+          title: "Kto to powiedział?",
+          description:
+              'W labiryncie łatwo się zgubić. Poszukaj drogowskazu ze zdjęcia, a obok niego będzie nabliczka z napisem: "Gdy człowiek nie wie, co zrobić, sumienie mówi mu tylko jedno: szukaj!" Pod tym napisem znajdują się imiona i nazwisko autora. Podaj jego inicjały.',
+          imageAsset: "assets/images/trip01/trip01_11.jpg",
+          previousStep: 13,
+          nextStep: 15,
+        ),
+        StepItem(
+          type: StepType.select,
+          selection: [
+            SelectionItem(text: "TA", stepLink: 16),
+            SelectionItem(text: "TS", stepLink: 16),
+            SelectionItem(text: "A", stepLink: 16),
+            SelectionItem(text: "JST", stepLink: 16),
+          ],
+          correctSelection: 3,
+          imageAsset: "assets/images/trip01/trip01_11.jpg",
+          previousStep: 14,
+        ),
+        StepItem(
+          type: StepType.answer,
+          title: "Józef Stanisław Tischner",
+          correctSelection: 3,
+          correctAnswer:
+              'Gratuluję! Odkryłeś myśl sławnego polskiego filozofa, którą warto zapamiętać. Czy jesteś gotowy na kolejne wyzwanie?',
+          incorrectAnswer:
+              'Niestety! To nie jest właściwa odpowiedź. Szukaliśmy myśli sławnego polskiego filozofa - Józefa Stanisława Tischnera, którą warto zapamiętać. Czy jesteś gotowy na kolejne wyzwanie?',
+          imageAsset: "assets/images/trip01/trip01_12.jpg",
+          nextStep: 17,
+        ),
+        StepItem(
+          type: StepType.info,
+          title: "Kierujemy się do Matki Bożej",
+          description:
+              'Wychodzimy wreszcie z labiryntu, skręcamy w lewo w stronę altanki, a przy altance znowu skręcamy w lewo. Przed tobą będzie alejka, a na jej końcu coś ciekawego wisi na drzewie. Czy wiesz już co to jest?',
+          imageAsset: "assets/images/trip01/trip01_13.jpg",
+          nextStep: 18,
+        ),
+        StepItem(
+          type: StepType.info,
+          title: "Co to za drzewo?",
+          description:
+              'Salwatorianie bardzo kochają Matkę Bożą i często się do Niej modlą. Pod tą ikoną na drzewie jest napis: "Przechodząc obok, pozdrów Maryję". Czy potrafisz odgadnąć na jakim drzewie wisi ta ikona? Podpowiedź znajduje się nieopodal na małym zielonym znaczku.',
+          imageAsset: "assets/images/trip01/trip01_14.jpg",
+          previousStep: 17,
+          nextStep: 19,
+        ),
+        StepItem(
+          type: StepType.select,
+          selection: [
+            SelectionItem(text: "Dąb", stepLink: 20),
+            SelectionItem(text: "Buk", stepLink: 20),
+            SelectionItem(text: "Sosna", stepLink: 20),
+            SelectionItem(text: "Topola", stepLink: 20),
+          ],
+          correctSelection: 0,
+          imageAsset: "assets/images/trip01/trip01_14.jpg",
+          previousStep: 18,
+        ),
+        StepItem(
+          type: StepType.answer,
+          title: "Dąb szypułkowy",
+          correctSelection: 0,
+          correctAnswer:
+              'Tak jest! Dąb to silne i wspaniałe drzewo. Jeśli się rozejrzysz, to zauważysz, że w parku znajduje się wiele ogromnych dębów.',
+          incorrectAnswer:
+              'Niestety! Odpowiedź to dąb - silne i wspaniałe drzewo. Jeśli się rozejrzysz, to zauważysz, że w parku znajduje się wiele ogromnych dębów.',
+          imageAsset: "assets/images/trip01/trip01_15.jpg",
+          nextStep: 21,
         ),
         StepItem(
           type: StepType.end,

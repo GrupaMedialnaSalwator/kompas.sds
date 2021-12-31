@@ -45,21 +45,12 @@ class TripStepSelectBox extends StatelessWidget {
             .getStepItem(tripDataSelect: tripDataSelect)
             .selection[selectionNum]
             .stepLink);
-
-        // TODO: fix flickering bug - resetIndex and incrementCurrentRun are not instantenous
-
-        // 1. set current answer and set firstRender
-        //_appController.setCurrentAnswer(selectionNum);
-        //_tabController.setFirstRender();
-
-        // 2. on first render draw all steps without the last one, which prevents flicker - automatically Obx()
-        //_appController.incrementCurrentRun();
-
-        // 3. reset tabIndex to zero - automatically by changine controller.index
-        //_tabController.resetIndex();
-
-        // 4. draw last step on final render
-        //_tabController.resetFirstRender();
+        if (selectionNum ==
+            _tripDataController
+                .getStepItem(tripDataSelect: tripDataSelect)
+                .correctSelection) {
+          _tripStateController.incrementCurrentPoints();
+        }
       },
     );
   }

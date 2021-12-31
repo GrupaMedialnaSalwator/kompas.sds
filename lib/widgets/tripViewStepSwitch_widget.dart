@@ -220,3 +220,21 @@ Axis getAxisLayout() {
   else
     return Axis.horizontal;
 }
+
+String getAnswerText(
+    {required TripStateController tripStateController,
+    required TripDataController tripDataController,
+    required TripDataSelect tripDataSelect}) {
+  if (tripStateController.getCurrentAnswer() ==
+      tripDataController
+          .getStepItem(tripDataSelect: tripDataSelect)
+          .correctSelection) {
+    return tripDataController
+        .getStepItem(tripDataSelect: tripDataSelect)
+        .correctAnswer;
+  } else {
+    return tripDataController
+        .getStepItem(tripDataSelect: tripDataSelect)
+        .incorrectAnswer;
+  }
+}

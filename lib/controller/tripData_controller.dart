@@ -21,13 +21,6 @@ class TripDataController extends GetxController {
         .stepList[tripDataSelect.stepIndex];
   }
 
-  StepItem getPrevStepItem({required TripDataSelect tripDataSelect}) {
-    assert(tripDataSelect.stepIndex - 1 >= 0,
-        'previous stepIndex must be valid: greater than 0');
-    return _tripData[tripDataSelect.tripIndex]
-        .stepList[tripDataSelect.stepIndex - 1];
-  }
-
   int getNextStepIndex({required TripDataSelect tripDataSelect}) {
     return _tripData[tripDataSelect.tripIndex]
         .stepList[tripDataSelect.stepIndex]

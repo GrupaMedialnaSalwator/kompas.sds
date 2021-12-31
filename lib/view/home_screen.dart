@@ -1,5 +1,7 @@
+import 'package:flutter/gestures.dart';
 import 'package:gra_terenowa/controller/tripState_controller.dart';
 import 'package:gra_terenowa/widgets/achievementTracker_widget.dart';
+import 'package:gra_terenowa/widgets/mapView_widget.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -91,6 +93,7 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
         body: TabBarView(
+          physics: NeverScrollableScrollPhysics(),
           children: [
             SingleChildScrollView(
               child: Column(
@@ -255,15 +258,13 @@ class _HomePageState extends State<HomePage> {
                                     left: Constants.insideMargin),
                                 child: Text(
                                   "Na terenie Klasztoru w Bagnie mieszka 28 zakonników.",
-                                  
                                 )),
                             SizedBox(height: 10),
                           ]),
                       ExpansionTile(
                           title: Text(
                               "Co mieści się w budynku z napisem \"ToTu\"?",
-                              style: 
-                              TextStyle(
+                              style: TextStyle(
                                   color: AppColors.primaryNormal,
                                   fontWeight: FontWeight.bold)),
                           children: [
@@ -272,7 +273,6 @@ class _HomePageState extends State<HomePage> {
                                   EdgeInsets.only(left: Constants.insideMargin),
                               child: Text(
                                   "W tym budynku znajduje się Ruch Młodzieży Salwatoriańskiej."),
-                                  
                             ),
                             SizedBox(height: 10),
                           ]),

@@ -1,0 +1,20 @@
+[
+    {
+      "Subject": "Cultuur - Culture ",
+      "Organization": "Museum aan de stroom ",
+      "Short description": "The MAS is a museum that provides you with permanent and temporary exhibitions. These offer a refreshing look at the city and it's history. At the top, on the tenth floor, you can enjoy a 360-degree panorama of the city, the port and the river.",
+      "Address": "Hanzestedenplaats 1, 2000 Antwerpen",
+      "Phone number": "+32 3 338 44 00",
+      "Contact info": "www.mas.be",
+      "Tags": ["Meeting place", "Museum", "Antwerp", "Art"]
+    },
+    {
+      "Subject": "Cultuur - Culture ",
+      "Organization": "Red star line museum ",
+      "Short description": "Through personal story's of immigrants the Red star line museum paints a picture of the immigration history in Antwerp. ",
+      "Address": "Montevideostraat 3, 2000 Antwerpen",
+      "Phone number": "+32 3 298 27 70",
+      "Contact info": "www.redstarline.be",
+      "Tags": ["Museum", "Antwerp", "History", "Immigration"]
+    }
+  ]

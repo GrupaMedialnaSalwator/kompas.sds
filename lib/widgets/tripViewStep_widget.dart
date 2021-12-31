@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gra_terenowa/controller/tripData_controller.dart';
 import 'package:gra_terenowa/controller/tripState_controller.dart';
-import 'package:gra_terenowa/extras/colors.dart';
 import 'package:gra_terenowa/extras/constants.dart';
 import 'package:gra_terenowa/widgets/tripViewStepButtons_widget.dart';
 import 'package:gra_terenowa/widgets/tripViewStepSwitch_widget.dart';
