@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:gra_terenowa/extras/routes.dart';
-import 'package:gra_terenowa/extras/text_styles.dart';
+import 'package:gra_terenowa/statics/routes.dart';
+import 'package:gra_terenowa/statics/text_styles.dart';
 import 'package:gra_terenowa/view/home_screen.dart';
 import 'package:gra_terenowa/view/trip_screen.dart';
 
-import 'extras/colors.dart';
+import 'statics/colors.dart';
 import 'view/selectTrip_screen.dart';
 /* TODO: turn firebase back on once needed import 'services/firebase_options.dart';
 import 'services/firebase_helper.dart'; //TODO: remove this test-purposes import in the future

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:gra_terenowa/extras/colors.dart';
+import 'package:gra_terenowa/statics/colors.dart';
 import 'package:gra_terenowa/model/database.dart';
 
 class TripProperty extends StatelessWidget {

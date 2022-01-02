@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gra_terenowa/controller/tripData_controller.dart';
 import 'package:gra_terenowa/controller/tripState_controller.dart';
-import 'package:gra_terenowa/extras/colors.dart';
-import 'package:gra_terenowa/extras/constants.dart';
+import 'package:gra_terenowa/statics/colors.dart';
+import 'package:gra_terenowa/statics/constants.dart';
 
 /// Displays trip content based on step type
 class TripViewStepButtons extends StatelessWidget {

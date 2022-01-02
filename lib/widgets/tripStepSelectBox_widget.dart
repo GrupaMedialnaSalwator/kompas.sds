@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gra_terenowa/controller/tripData_controller.dart';
 import 'package:gra_terenowa/controller/tripState_controller.dart';
-import 'package:gra_terenowa/extras/colors.dart';
-import 'package:gra_terenowa/extras/constants.dart';
+import 'package:gra_terenowa/statics/colors.dart';
+import 'package:gra_terenowa/statics/constants.dart';
 
 class TripStepSelectBox extends StatelessWidget {
   const TripStepSelectBox({
