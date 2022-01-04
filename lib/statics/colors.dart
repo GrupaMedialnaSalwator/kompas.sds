@@ -19,6 +19,9 @@ class AppColors extends Color {
   /// red[600]
   static const accentRed = Color(0xffe53935);
 
+  /// transparent
+  static const transparent = Color(0x00ffffff);
+
   static const selectionColorList = [
     selectionBlue,
     selectionViolet,

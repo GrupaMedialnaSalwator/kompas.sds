@@ -128,6 +128,16 @@ List<TripItem> generateTripItems() {
   return [
     TripItem(
       uid: "01", // TODO: must fix
+      title: "W Parku",
+      subtitle: "dla najmłodszych",
+      time: "30",
+      age: "6+",
+      distance: "1,6",
+      rating: "4,8",
+      description:
+          "Poznaj tajemnice klasztornego parku poprzez wyszukiwanie ciekawych miejsc i rozwiązywanie zadań.",
+      imageAsset: "assets/images/trip_01.png",
+      enabled: true,
       stepList: <StepItem>[
         StepItem(
           type: StepType.info,
@@ -346,16 +356,6 @@ List<TripItem> generateTripItems() {
           nextStep: -1,
         ),
       ],
-      title: "W Parku",
-      subtitle: "dla najmłodszych",
-      time: "30",
-      age: "6+",
-      distance: "1,6",
-      rating: "4,8",
-      description:
-          "Poznaj tajemnice klasztornego parku poprzez wyszukiwanie ciekawych miejsc i rozwiązywanie zadań.",
-      imageAsset: "assets/images/trip_01.png",
-      enabled: true,
     ),
     TripItem(
       uid: "02", // TODO: must fix

@@ -2,11 +2,11 @@
 ///
 
 import 'package:get/get.dart';
-import 'package:gra_terenowa/model/database.dart';
+import 'package:gra_terenowa/model/tripDatabase.dart';
 
 class TripDataController extends GetxController {
   /// Holds data for all available trips
-  final _tripData = generateTripItems();
+  final List<TripItem> _tripData = generateTripItems();
 
   TripItem getTripItem({required int index}) {
     return _tripData[index];

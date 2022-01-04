@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gra_terenowa/controller/tripData_controller.dart';
-import 'package:gra_terenowa/statics/colors.dart';
 import 'package:gra_terenowa/statics/constants.dart';
 
 class SelectTripPage extends StatelessWidget {
@@ -17,7 +16,6 @@ class SelectTripPage extends StatelessWidget {
     final TripDataController _tripDataController = Get.find();
 
     return Scaffold(
-      backgroundColor: AppColors.primaryWhite,
       body: Container(
         height: Get.height * (1 - Constants.tripBottomSheetRatio),
         width: Get.width,

@@ -1,3 +1,4 @@
+import 'package:gra_terenowa/controller/mapData_controller.dart';
 import 'package:gra_terenowa/controller/tripState_controller.dart';
 import 'package:gra_terenowa/widgets/achievementTracker_widget.dart';
 import 'package:gra_terenowa/statics/constants.dart';
@@ -38,6 +39,8 @@ class _HomePageState extends State<HomePage> {
     // ignore: unused_local_variable
     final TripStateController _tripStateController =
         Get.put(TripStateController());
+    // ignore: unused_local_variable
+    final MapDataController _mapDataController = Get.put(MapDataController());
 
     return DefaultTabController(
       initialIndex: 0,

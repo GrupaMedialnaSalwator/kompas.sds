@@ -60,10 +60,6 @@ class _HomeViewState extends State<HomeView>
               separatorBuilder: (BuildContext context, int index) =>
                   VerticalDivider(width: 20, color: AppColors.primaryWhite),
               itemBuilder: (BuildContext context, int index) {
-                print("Width: " +
-                    Get.width.toString() +
-                    " and Height: " +
-                    Get.height.toString());
                 return CardHero(
                   cardHeight: Get.height * Constants.cardHeightRatio,
                   cardWidth: Get.width * Constants.cardWidthRatio,
@@ -78,8 +74,7 @@ class _HomeViewState extends State<HomeView>
                         onTapButton: () {},
                       ),
                       isScrollControlled: true,
-                      barrierColor:
-                          AppColors.primaryWhite.withOpacity(1), // 100% opacity
+                      barrierColor: AppColors.transparent,
                     ).whenComplete(() => Get.back());
                   },
                 );
