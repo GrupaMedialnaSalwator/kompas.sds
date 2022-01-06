@@ -8,8 +8,7 @@ class MapTransformController extends TransformationController {
 
   MapTransformController() {
     // initialize map view on first load
-    this.value =
-        Matrix4(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, init_x, init_y, 0, 1);
+    this.value = Matrix4.identity()..translate(init_x, init_y);
   }
   MapTransformController.init(double x, double y) {
     // initialize map view on first load
@@ -18,7 +17,7 @@ class MapTransformController extends TransformationController {
 
   /// x and y parameters are counted as positive values from the top left corner
   void setView(double x, double y) {
-    this.value = Matrix4(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -x, -y, 0, 1);
+    this.value = Matrix4.identity()..translate(-x, -y);
   }
 
   /// x and y parameters are counter as positive values from the top left corner
@@ -49,7 +48,7 @@ class MapTransformController extends TransformationController {
     }
 
     print('dx=' + dx.toString() + ' dy=' + dy.toString());
-    this.value = Matrix4(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -dx, -dy, 0, 1);
+    this.value = Matrix4.identity()..translate(-dx, -dy);
   }
 }
 

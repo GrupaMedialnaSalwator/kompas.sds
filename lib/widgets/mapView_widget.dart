@@ -34,7 +34,8 @@ class _MapViewState extends State<MapView>
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       floatingActionButton: Padding(
-        padding: const EdgeInsets.fromLTRB(0, 0, 0, 58),
+        padding: const EdgeInsets.fromLTRB(
+            0, 0, 0, Constants.mapCardHeight - Constants.buttonMargin),
         child: FloatingActionButton(
           elevation: 8,
           //isExtended: true,
@@ -45,14 +46,7 @@ class _MapViewState extends State<MapView>
           ),
           backgroundColor: AppColors.primaryWhite,
           onPressed: () {
-            controller.setViewCenter(630, 400);
-            // Get.snackbar('Jesteś tutaj!', '',
-            //     borderRadius: 0,
-            //     margin: EdgeInsets.zero,
-            //     backgroundColor: AppColors.primaryNormal,
-            //     colorText: AppColors.primaryWhite,
-            //     snackPosition: SnackPosition.BOTTOM,
-            //     snackStyle: SnackStyle.FLOATING);
+            controller.setViewCenter(680, 400); // TODO: current place on GPS
             ScaffoldMessenger.of(context).removeCurrentSnackBar();
             ScaffoldMessenger.of(context).showSnackBar(
               const SnackBar(
@@ -108,12 +102,12 @@ class _MapViewState extends State<MapView>
             },
           ),
           Positioned(
-            height: 100,
+            height: Constants.mapCardHeight,
             width: Get.width,
             left: 0,
             bottom: 0,
             child: Container(
-              height: 100,
+              height: Constants.mapCardHeight,
               color: AppColors.transparent,
               child: ListView.separated(
                 controller: _scrollController,

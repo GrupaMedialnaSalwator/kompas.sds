@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:gra_terenowa/controller/mapData_controller.dart';
 import 'package:gra_terenowa/statics/colors.dart';
 import 'package:gra_terenowa/statics/constants.dart';
+import 'package:gra_terenowa/view/mapCard_screen.dart';
 
 class MapCardHero extends StatelessWidget {
   const MapCardHero({Key? key, required this.onTap, required this.mapItemIndex})
@@ -61,7 +62,8 @@ class MapCardHero extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      //padding: EdgeInsets.all(8),
+                      padding:
+                          EdgeInsets.symmetric(vertical: Constants.minMargin),
                       alignment: Alignment.topLeft,
                       child: Text(
                         _mapDataController
@@ -71,6 +73,35 @@ class MapCardHero extends StatelessWidget {
                             ?.copyWith(color: AppColors.primaryNormal),
                       ),
                     ),
+                    Spacer(),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: List<Icon>.generate(
+                              5,
+                              (index) => Icon(
+                                    Icons.star,
+                                    size: 24,
+                                    color: AppColors.primaryNormal,
+                                  )),
+                        ),
+                        IconButton(
+                            onPressed: () => {
+                                  print('info pressed...'),
+                                  Get.to(
+                                    () => MapCardPage(
+                                      mapItemIndex: mapItemIndex,
+                                    ),
+                                  ),
+                                },
+                            icon: Icon(
+                              Icons.info_outline_rounded,
+                              size: 36,
+                              color: AppColors.primaryLight,
+                            )),
+                      ],
+                    )
                   ],
                 ),
               ),

@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:gra_terenowa/statics/routes.dart';
 import 'package:gra_terenowa/statics/text_styles.dart';
 import 'package:gra_terenowa/view/home_screen.dart';
+import 'package:gra_terenowa/view/mapCard_screen.dart';
 import 'package:gra_terenowa/view/trip_screen.dart';
 
 import 'statics/colors.dart';
@@ -64,6 +65,8 @@ class MyApp extends StatelessWidget {
             name: AppRoutes.selectTrip,
             page: () => SelectTripPage(tripIndex: 0)),
         GetPage(name: AppRoutes.trip, page: () => TripPage(tripIndex: 0)),
+        GetPage(
+            name: AppRoutes.mapCard, page: () => MapCardPage(mapItemIndex: 0)),
       ],
     );
   }

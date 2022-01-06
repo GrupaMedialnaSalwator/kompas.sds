@@ -35,10 +35,10 @@ class Constants {
   /// TODO: run tests to check if this assumption holds for all trip images
   static const double defaultImageRatio = 2 / 3;
 
-  /// mapCardHeight = 100,0
-  static const double mapCardHeight = 100.0;
+  /// mapCardHeight = 130,0
+  static const double mapCardHeight = 130.0;
 
-  /// mapCardHeight = 300,0
+  /// mapCardWidth = 300,0
   static const double mapCardWidth = 300.0;
 
   /// opacity25 = 0.25

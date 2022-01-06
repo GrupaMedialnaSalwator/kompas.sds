@@ -86,8 +86,8 @@ class MapItem {
 /// Future work: dynamically load data from online DB (Firebase)
 MapData generateMapData() {
   return MapData(
-    initX: 630,
-    initY: 400,
+    initX: 800,
+    initY: 500,
     mapItems: [
       MapItem(
         locationX: 630,
