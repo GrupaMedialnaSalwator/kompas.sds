@@ -3,23 +3,14 @@ import 'package:gra_terenowa/statics/colors.dart';
 import 'package:gra_terenowa/statics/constants.dart';
 import 'package:gra_terenowa/widgets/achievementTracker_widget.dart';
 
-class InfoView extends StatefulWidget {
+class InfoView extends StatelessWidget {
   const InfoView({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<InfoView> createState() => _InfoViewState();
-}
-
-class _InfoViewState extends State<InfoView>
-    with AutomaticKeepAliveClientMixin<InfoView> {
-  @override
-  bool get wantKeepAlive =>
-      true; // prevent view from reloading and preserves current view
-  @override
   Widget build(BuildContext context) {
-    super.build(context); // need to call super method.
+    //super.build(context); // need to call super method.
     //return Center(child: Text("This tab shows Info View"));
     return Container(
       margin: EdgeInsets.all(Constants.insideMargin),

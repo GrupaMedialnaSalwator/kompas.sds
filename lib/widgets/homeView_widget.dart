@@ -7,23 +7,13 @@ import 'package:gra_terenowa/widgets/selectTrip_widget.dart';
 
 import 'cardHero_widget.dart';
 
-class HomeView extends StatefulWidget {
+class HomeView extends StatelessWidget {
   const HomeView({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<HomeView> createState() => _HomeViewState();
-}
-
-class _HomeViewState extends State<HomeView>
-    with AutomaticKeepAliveClientMixin<HomeView> {
-  @override
-  bool get wantKeepAlive =>
-      true; // prevent view from reloading and preserves current view
-  @override
   Widget build(BuildContext context) {
-    super.build(context); // need to call super method.
     return SingleChildScrollView(
       child: Column(
         children: [

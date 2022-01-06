@@ -9,26 +9,16 @@ import 'package:gra_terenowa/widgets/mapPoint_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:line_icons/line_icons.dart';
 
-class MapView extends StatefulWidget {
-  const MapView({
+class MapView extends StatelessWidget {
+  MapView({
     Key? key,
   }) : super(key: key);
 
-  @override
-  State<MapView> createState() => _MapViewState();
-}
-
-class _MapViewState extends State<MapView>
-    with AutomaticKeepAliveClientMixin<MapView> {
   MapDataController mapDataController = Get.find();
   final _scrollController = ScrollController();
 
   @override
-  bool get wantKeepAlive =>
-      true; // prevent view from reloading and preserves current view
-  @override
   Widget build(BuildContext context) {
-    super.build(context); // need to call super method.
     MapTransformController controller = MapTransformController.init(
         mapDataController.getMapInitX(), mapDataController.getMapInitY());
     return Scaffold(

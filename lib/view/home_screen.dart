@@ -2,6 +2,7 @@ import 'package:gra_terenowa/controller/mapData_controller.dart';
 import 'package:gra_terenowa/controller/tripState_controller.dart';
 import 'package:gra_terenowa/widgets/achievementTracker_widget.dart';
 import 'package:gra_terenowa/statics/constants.dart';
+import 'package:gra_terenowa/statics/keepAliveWrapper.dart';
 import 'package:gra_terenowa/widgets/homeView_widget.dart';
 import 'package:gra_terenowa/widgets/infoView_widget.dart';
 import 'package:gra_terenowa/widgets/mapView_widget.dart';
@@ -99,9 +100,9 @@ class _HomePageState extends State<HomePage> {
         body: TabBarView(
           physics: NeverScrollableScrollPhysics(),
           children: [
-            HomeView(),
-            MapView(),
-            InfoView(),
+            KeepAliveWrapper(child: HomeView()),
+            KeepAliveWrapper(child: MapView()),
+            KeepAliveWrapper(child: InfoView()),
           ],
         ),
       ),
