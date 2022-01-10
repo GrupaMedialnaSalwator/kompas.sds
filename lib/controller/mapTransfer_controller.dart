@@ -3,25 +3,23 @@ import 'package:get/get.dart';
 import 'package:gra_terenowa/statics/constants.dart';
 
 class MapTransformController extends TransformationController {
-  static const double init_x = 0;
-  static const double init_y = 0;
-
   MapTransformController() {
-    // initialize map view on first load
-    this.value = Matrix4.identity()..translate(init_x, init_y);
+    // initialize map view on first load to default
+    setView(getCenteredViewMatrix(0, 0));
   }
+
   MapTransformController.init(double x, double y) {
     // initialize map view on first load
-    setViewCenter(x, y);
+    setView(getCenteredViewMatrix(x, y));
   }
 
-  /// x and y parameters are counted as positive values from the top left corner
-  void setView(double x, double y) {
-    this.value = Matrix4.identity()..translate(-x, -y);
-  }
+  setView(Matrix4 m) => this.value = m;
+  getViewX() => -this.value.row0.w;
+  getViewY() => -this.value.row1.w;
 
-  /// x and y parameters are counter as positive values from the top left corner
-  void setViewCenter(double x, double y) {
+  /// Returns transformation matrix to move view to the center with x,y coordinates
+  /// x and y parameters are positive values from the top left corner
+  Matrix4 getCenteredViewMatrix(double x, double y) {
     double dx, dy;
     double screenWidth = Get.width;
     double screenHeight =
@@ -47,8 +45,7 @@ class MapTransformController extends TransformationController {
       dy = Constants.maxMapSizeY - (screenHeight);
     }
 
-    print('dx=' + dx.toString() + ' dy=' + dy.toString());
-    this.value = Matrix4.identity()..translate(-dx, -dy);
+    return Matrix4.translationValues(-dx, -dy, 0);
   }
 }
 

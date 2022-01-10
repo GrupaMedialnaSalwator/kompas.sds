@@ -36,7 +36,8 @@ class MapView extends StatelessWidget {
           ),
           backgroundColor: AppColors.primaryWhite,
           onPressed: () {
-            controller.setViewCenter(680, 400); // TODO: current place on GPS
+            controller.setView(controller.getCenteredViewMatrix(
+                680, 400)); // TODO: GPS values for current real map position
             ScaffoldMessenger.of(context).removeCurrentSnackBar();
             ScaffoldMessenger.of(context).showSnackBar(
               const SnackBar(
@@ -63,6 +64,7 @@ class MapView extends StatelessWidget {
                   List<Widget>.generate(
                     mapDataController.getLength(),
                     (int index) => MapPoint(
+                      mapTransformController: controller,
                       mapItemIndex: index,
                       mapDataController: mapDataController,
                       scrollController: _scrollController,
@@ -75,6 +77,7 @@ class MapView extends StatelessWidget {
             },
             onInteractionEnd: (ScaleEndDetails scaleEndDetails) {
               // user clicked on the map view
+              mapDataController.setCurrentMapIconIndex(-1);
               print("x=" +
                   controller.value.getTranslation().x.toString() +
                   " y=" +
@@ -112,11 +115,20 @@ class MapView extends StatelessWidget {
                 itemBuilder: (BuildContext context, int index) => MapCardHero(
                   mapItemIndex: index,
                   onTap: () {
-                    print('tapped MapCardHero');
-                    // center the map view on the item icon
-                    controller.setViewCenter(
+                    print('tapped map card... x:' +
+                        controller.getViewX().toString() +
+                        ' y:' +
+                        controller.getViewY().toString());
+
+                    // center and animate the map view on the item icon
+                    var start = controller.value;
+                    var end = controller.getCenteredViewMatrix(
                         mapDataController.getMapItem(index: index).locationX,
                         mapDataController.getMapItem(index: index).locationY);
+                    mapDataController.setupMapAnimation(controller);
+                    mapDataController.navigateFromToPoint(
+                        start: start, end: end);
+                    mapDataController.setCurrentMapIconIndex(index);
                   },
                 ),
               ),

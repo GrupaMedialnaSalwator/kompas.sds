@@ -20,7 +20,6 @@ class MapCardHero extends StatelessWidget {
       elevation: 8,
       color: AppColors.primaryWhite,
       margin: EdgeInsets.all(Constants.cardMargin),
-      clipBehavior: Clip.antiAliasWithSaveLayer,
       child: InkWell(
         onTap: () {
           onTap();
