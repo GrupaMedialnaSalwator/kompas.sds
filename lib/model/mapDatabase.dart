@@ -86,12 +86,12 @@ class MapItem {
 /// Future work: dynamically load data from online DB (Firebase)
 MapData generateMapData() {
   return MapData(
-    initX: 800,
-    initY: 500,
+    initX: 900,
+    initY: 900,
     mapItems: [
       MapItem(
-        locationX: 630,
-        locationY: 400,
+        locationX: 760,
+        locationY: 790,
         uid: '01', // TODO: implement proper UID
         imageAsset: Constants.defaultImage,
         type: MapItemType.building_large,
@@ -103,8 +103,8 @@ MapData generateMapData() {
         enabled: true,
       ),
       MapItem(
-        locationX: 600,
-        locationY: 800,
+        locationX: 730,
+        locationY: 1190,
         uid: '02', // TODO: implement proper UID
         imageAsset: Constants.defaultImage,
         type: MapItemType.house,
@@ -114,22 +114,21 @@ MapData generateMapData() {
         rating: '5,0',
         enabled: true,
       ),
-      // MapItem(
-      //   locationX: 830,
-      //   locationY: 320,
-      //   uid: '03', // TODO: implement proper UID
-      //   imageAsset: Constants.defaultImage,
-      //   type: MapItemType.pin,
-      //   title: 'Jesteś tutaj',
-      //   subtitle: 'szukam GPS...',
-      //   description: 'GPS wskazuje, że znajdujesz się w tym miejscu.',
-      //   color: AppColors.accentRed,
-      //   rating: '5,0',
-      //   enabled: false,
-      // ),
       MapItem(
-        locationX: 760,
-        locationY: 570,
+        locationX: 590,
+        locationY: 1320,
+        uid: '03', // TODO: implement proper UID
+        imageAsset: Constants.defaultImage,
+        type: MapItemType.house,
+        title: 'Pomnik',
+        subtitle: 'Postument SDS',
+        description: 'W tym miejscu znajduje się postument SDS...',
+        rating: '4,5',
+        enabled: true,
+      ),
+      MapItem(
+        locationX: 890,
+        locationY: 960,
         uid: '04', // TODO: implement proper UID
         imageAsset: Constants.defaultImage,
         type: MapItemType.house,
@@ -140,9 +139,22 @@ MapData generateMapData() {
         enabled: true,
       ),
       MapItem(
-        locationX: 865,
-        locationY: 420,
+        locationX: 990,
+        locationY: 750,
         uid: '05', // TODO: implement proper UID
+        imageAsset: Constants.defaultImage,
+        type: MapItemType.house,
+        title: 'Pomnik',
+        subtitle: 'Bł. Franciszka Jordana',
+        description:
+            'W tym miejscu znajduje się pomnik błogosławionego Franciszka Jordana...',
+        rating: '5,0',
+        enabled: true,
+      ),
+      MapItem(
+        locationX: 995,
+        locationY: 810,
+        uid: '06', // TODO: implement proper UID
         imageAsset: Constants.defaultImage,
         type: MapItemType.house,
         title: 'Altanka filozofów',
@@ -152,9 +164,9 @@ MapData generateMapData() {
         enabled: true,
       ),
       MapItem(
-        locationX: 440,
-        locationY: 390,
-        uid: '06', // TODO: implement proper UID
+        locationX: 570,
+        locationY: 780,
+        uid: '07', // TODO: implement proper UID
         imageAsset: Constants.defaultImage,
         type: MapItemType.tree,
         title: 'Buk płaczący',
@@ -164,9 +176,9 @@ MapData generateMapData() {
         enabled: true,
       ),
       MapItem(
-        locationX: 290,
-        locationY: 410,
-        uid: '07', // TODO: implement proper UID
+        locationX: 420,
+        locationY: 800,
+        uid: '08', // TODO: implement proper UID
         imageAsset: Constants.defaultImage,
         type: MapItemType.building_small,
         title: 'Nowicjat',
@@ -176,9 +188,9 @@ MapData generateMapData() {
         enabled: true,
       ),
       MapItem(
-        locationX: 210,
-        locationY: 210,
-        uid: '08', // TODO: implement proper UID
+        locationX: 340,
+        locationY: 600,
+        uid: '09', // TODO: implement proper UID
         imageAsset: Constants.defaultImage,
         type: MapItemType.building_small,
         title: 'Dom "ToTu"',
@@ -188,9 +200,9 @@ MapData generateMapData() {
         enabled: true,
       ),
       MapItem(
-        locationX: 1000,
-        locationY: 600,
-        uid: '09', // TODO: implement proper UID
+        locationX: 1130,
+        locationY: 990,
+        uid: '10', // TODO: implement proper UID
         imageAsset: Constants.defaultImage,
         type: MapItemType.plant,
         title: 'Ogród zakonny',
@@ -200,14 +212,27 @@ MapData generateMapData() {
         enabled: true,
       ),
       MapItem(
-        locationX: 950,
-        locationY: 430,
-        uid: '10', // TODO: implement proper UID
+        locationX: 1080,
+        locationY: 820,
+        uid: '11', // TODO: implement proper UID
         imageAsset: Constants.defaultImage,
         type: MapItemType.info,
         title: 'Labirynt Filozofów',
         subtitle: 'dla szukających mądrości',
         description: 'W tym miejscu znajduje się labirynt filozofów',
+        rating: '5,0',
+        enabled: true,
+      ),
+      MapItem(
+        locationX: 1290,
+        locationY: 205,
+        uid: '11', // TODO: implement proper UID
+        imageAsset: Constants.defaultImage,
+        type: MapItemType.building_large,
+        title: 'Kościół',
+        subtitle: 'parafialny',
+        description:
+            'W tym miejscu znajduje się kościół parafialny pw. Wniebowzięcia Najświętszej Maryi Panny.',
         rating: '5,0',
         enabled: true,
       ),

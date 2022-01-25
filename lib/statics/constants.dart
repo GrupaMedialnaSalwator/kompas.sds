@@ -50,8 +50,8 @@ class Constants {
   static Coords churchCoords = Coords(51.339036023319544, 16.820975113189657);
 
   /// maxMapSizeX = 1499.0
-  static const double maxMapSizeX = 1499.0; // TODO: check for this - testing
+  static const double maxMapSizeX = 1600.0; // TODO: check for this - testing
 
   /// maxMapSizeY = 1014.0
-  static const double maxMapSizeY = 1014.0; // TODO: check for this - testing
+  static const double maxMapSizeY = 1600.0; // TODO: check for this - testing
 }
