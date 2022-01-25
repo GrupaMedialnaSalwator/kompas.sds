@@ -93,7 +93,7 @@ MapData generateMapData() {
         locationX: 760,
         locationY: 790,
         uid: '01', // TODO: implement proper UID
-        imageAsset: Constants.defaultImage,
+        imageAsset: "assets/images/map01/mapItem_01.png",
         type: MapItemType.building_large,
         title: 'Zamek',
         subtitle: 'WSD Salwatorianów',
@@ -106,7 +106,7 @@ MapData generateMapData() {
         locationX: 730,
         locationY: 1190,
         uid: '02', // TODO: implement proper UID
-        imageAsset: Constants.defaultImage,
+        imageAsset: "assets/images/map01/mapItem_02.png",
         type: MapItemType.house,
         title: 'Diaspora',
         subtitle: 'drewniana kapliczka',
@@ -118,7 +118,7 @@ MapData generateMapData() {
         locationX: 590,
         locationY: 1320,
         uid: '03', // TODO: implement proper UID
-        imageAsset: Constants.defaultImage,
+        imageAsset: "assets/images/map01/mapItem_03.png",
         type: MapItemType.house,
         title: 'Pomnik',
         subtitle: 'Postument SDS',
@@ -130,7 +130,7 @@ MapData generateMapData() {
         locationX: 890,
         locationY: 960,
         uid: '04', // TODO: implement proper UID
-        imageAsset: Constants.defaultImage,
+        imageAsset: "assets/images/map01/mapItem_04.png",
         type: MapItemType.house,
         title: 'Grota Matki Bożej',
         subtitle: 'miejsce modlitwy',
@@ -142,7 +142,7 @@ MapData generateMapData() {
         locationX: 990,
         locationY: 750,
         uid: '05', // TODO: implement proper UID
-        imageAsset: Constants.defaultImage,
+        imageAsset: "assets/images/map01/mapItem_05.png",
         type: MapItemType.house,
         title: 'Pomnik',
         subtitle: 'Bł. Franciszka Jordana',
@@ -155,7 +155,7 @@ MapData generateMapData() {
         locationX: 995,
         locationY: 810,
         uid: '06', // TODO: implement proper UID
-        imageAsset: Constants.defaultImage,
+        imageAsset: "assets/images/map01/mapItem_06.png",
         type: MapItemType.house,
         title: 'Altanka filozofów',
         subtitle: 'miejsce odpoczynku',
@@ -167,7 +167,7 @@ MapData generateMapData() {
         locationX: 570,
         locationY: 780,
         uid: '07', // TODO: implement proper UID
-        imageAsset: Constants.defaultImage,
+        imageAsset: "assets/images/map01/mapItem_07.png",
         type: MapItemType.tree,
         title: 'Buk płaczący',
         subtitle: 'ciekawe drzewo',
@@ -179,7 +179,7 @@ MapData generateMapData() {
         locationX: 420,
         locationY: 800,
         uid: '08', // TODO: implement proper UID
-        imageAsset: Constants.defaultImage,
+        imageAsset: "assets/images/map01/mapItem_08.png",
         type: MapItemType.building_small,
         title: 'Nowicjat',
         subtitle: 'dom formacyjny',
@@ -191,7 +191,7 @@ MapData generateMapData() {
         locationX: 340,
         locationY: 600,
         uid: '09', // TODO: implement proper UID
-        imageAsset: Constants.defaultImage,
+        imageAsset: "assets/images/map01/mapItem_09.png",
         type: MapItemType.building_small,
         title: 'Dom "ToTu"',
         subtitle: 'apostolaty RMS i SOP',
@@ -203,7 +203,7 @@ MapData generateMapData() {
         locationX: 1130,
         locationY: 990,
         uid: '10', // TODO: implement proper UID
-        imageAsset: Constants.defaultImage,
+        imageAsset: "assets/images/map01/mapItem_10.png",
         type: MapItemType.plant,
         title: 'Ogród zakonny',
         subtitle: 'miejsce naszej pracy',
@@ -215,7 +215,7 @@ MapData generateMapData() {
         locationX: 1080,
         locationY: 820,
         uid: '11', // TODO: implement proper UID
-        imageAsset: Constants.defaultImage,
+        imageAsset: "assets/images/map01/mapItem_11.png",
         type: MapItemType.info,
         title: 'Labirynt Filozofów',
         subtitle: 'dla szukających mądrości',
@@ -227,7 +227,7 @@ MapData generateMapData() {
         locationX: 1290,
         locationY: 205,
         uid: '11', // TODO: implement proper UID
-        imageAsset: Constants.defaultImage,
+        imageAsset: "assets/images/map01/mapItem_12.png",
         type: MapItemType.building_large,
         title: 'Kościół',
         subtitle: 'parafialny',
