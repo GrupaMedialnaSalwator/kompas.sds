@@ -84,8 +84,6 @@ class AchievementOperations {
 
   void incrementAnswerScore(TripDataSelect tripDataSelect) async {
     Box answerScoreBox = await Hive.openBox('AnswerScore');
-    print(
-        "BOX NAME IS ${tripDataSelect.tripIndex}_${tripDataSelect.stepIndex}");
     answerScoreBox.put(
         "${tripDataSelect.tripIndex}_${tripDataSelect.stepIndex}", 1);
   }
