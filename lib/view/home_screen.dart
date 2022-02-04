@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
   Future<void> navigateCoordinates() async {
     await MapLauncher.showMarker(
       mapType: MapType.google,
-      coords: Coords(51.339036023319544, 16.820975113189657),
+      coords: Constants.churchCoords,
       title: "Kościół w Bagnie",
       description: "Nawiguję do kościoła w Bagnie",
     );
