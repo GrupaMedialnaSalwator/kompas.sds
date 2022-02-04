@@ -255,14 +255,15 @@ class _HomePageState extends State<HomePage> {
                                     left: Constants.insideMargin),
                                 child: Text(
                                   "Na terenie Klasztoru w Bagnie mieszka 28 zakonników.",
-                                  textAlign: TextAlign.left,
+                                  
                                 )),
                             SizedBox(height: 10),
                           ]),
                       ExpansionTile(
                           title: Text(
                               "Co mieści się w budynku z napisem \"ToTu\"?",
-                              style: TextStyle(
+                              style: 
+                              TextStyle(
                                   color: AppColors.primaryNormal,
                                   fontWeight: FontWeight.bold)),
                           children: [
@@ -271,6 +272,7 @@ class _HomePageState extends State<HomePage> {
                                   EdgeInsets.only(left: Constants.insideMargin),
                               child: Text(
                                   "W tym budynku znajduje się Ruch Młodzieży Salwatoriańskiej."),
+                                  
                             ),
                             SizedBox(height: 10),
                           ]),
