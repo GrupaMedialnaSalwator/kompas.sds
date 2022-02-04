@@ -16,16 +16,28 @@ enum MapItemType {
 
 class MapData {
   MapData({
-    required this.mapItems,
     this.uid = "",
+    required this.gpsMinX,
+    required this.gpsMinY,
+    required this.gpsMaxX,
+    required this.gpsMaxY,
+    required this.mapSizeX,
+    required this.mapSizeY,
     this.initX = 0,
     this.initY = 0,
+    required this.mapItems,
   });
 
   String uid;
-  List<MapItem> mapItems;
+  double gpsMinX;
+  double gpsMinY;
+  double gpsMaxX;
+  double gpsMaxY;
+  double mapSizeX;
+  double mapSizeY;
   double initX;
   double initY;
+  List<MapItem> mapItems;
 }
 
 /// API for map item data
@@ -47,13 +59,13 @@ class MapItem {
     this.enabled = true,
   });
 
+  double locationX;
+  double locationY;
+  double initX;
+  double initY;
   String uid;
   String imageAsset;
   MapItemType type;
-  double locationX;
-  double initX;
-  double locationY;
-  double initY;
   String title;
   String subtitle;
   String rating;
@@ -86,8 +98,14 @@ class MapItem {
 /// Future work: dynamically load data from online DB (Firebase)
 MapData generateMapData() {
   return MapData(
+    gpsMinX: 16.813265024669818,
+    gpsMinY: 51.33952905079323,
+    gpsMaxX: 16.821820563147043,
+    gpsMaxY: 51.33429396425001,
     initX: 900,
     initY: 900,
+    mapSizeX: 1600.0,
+    mapSizeY: 1600.0,
     mapItems: [
       MapItem(
         locationX: 760,

@@ -89,4 +89,11 @@ class MapDataController extends GetxController
 
   getMapInitX() => _mapData.initX;
   getMapInitY() => _mapData.initY;
+
+  getMapGPSMinX() => _mapData.gpsMinX;
+  getMapGPSMinY() => _mapData.gpsMinY;
+  getMapGPSMaxX() => _mapData.gpsMaxX;
+  getMapGPSMaxY() => _mapData.gpsMaxY;
+  getMapGPSMapSizeX() => _mapData.mapSizeX;
+  getMapGPSMapSizeY() => _mapData.mapSizeY;
 }

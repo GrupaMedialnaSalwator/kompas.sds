@@ -32,6 +32,7 @@ dependencies:
   get:
   line_icons: ^2.0.1
   cupertino_icons: ^1.0.2
+  geolocator: ^8.1.0
 
 dev_dependencies:
   flutter_test:

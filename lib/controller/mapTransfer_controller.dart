@@ -17,6 +17,23 @@ class MapTransformController extends TransformationController {
   getViewX() => -this.value.row0.w;
   getViewY() => -this.value.row1.w;
 
+  Matrix4 getCenteredViewMatrixGPS(
+      double longitude,
+      double latitude,
+      double minX,
+      double minY,
+      double maxX,
+      double maxY,
+      double mapSizeX,
+      double mapSizeY) {
+    // Convert longitude and latitude to x,y on the map
+    double x, y;
+    x = ((longitude - minX) / (maxX - minX)) * mapSizeX;
+    y = ((latitude - minY) / (maxY - minY)) * mapSizeY;
+    //print('x: ' + x.toString() + 'y: ' + y.toString());
+    return getCenteredViewMatrix(x, y);
+  }
+
   /// Returns transformation matrix to move view to the center with x,y coordinates
   /// x and y parameters are positive values from the top left corner
   Matrix4 getCenteredViewMatrix(double x, double y) {

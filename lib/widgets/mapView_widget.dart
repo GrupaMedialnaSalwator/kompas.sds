@@ -6,6 +6,8 @@ import 'package:gra_terenowa/statics/colors.dart';
 import 'package:gra_terenowa/statics/constants.dart';
 import 'package:gra_terenowa/widgets/mapCardHero_widget.dart';
 import 'package:gra_terenowa/widgets/mapPoint_widget.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:gra_terenowa/services/gpsService.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:line_icons/line_icons.dart';
 
@@ -35,14 +37,41 @@ class MapView extends StatelessWidget {
             color: AppColors.accentRed,
           ),
           backgroundColor: AppColors.primaryWhite,
-          onPressed: () {
-            controller.setView(controller.getCenteredViewMatrix(
-                680, 400)); // TODO: GPS values for current real map position
+          onPressed: () async {
+            var position = await determineGPSPosition().catchError((onError) {
+              print(onError);
+            });
+            print(
+              'Szukam sygnału GPS... longitude: ' +
+                  position.longitude.toString() +
+                  ', latitude: ' +
+                  position.latitude.toString(),
+            );
+
+            // center and animate the map view on the item icon
+            var start = controller.value;
+            var end = controller.getCenteredViewMatrixGPS(
+              position.longitude,
+              position.latitude,
+              mapDataController.getMapGPSMinX(),
+              mapDataController.getMapGPSMinY(),
+              mapDataController.getMapGPSMaxX(),
+              mapDataController.getMapGPSMaxY(),
+              mapDataController.getMapGPSMapSizeX(),
+              mapDataController.getMapGPSMapSizeY(),
+            );
+            mapDataController.setupMapAnimation(controller);
+            mapDataController.navigateFromToPoint(start: start, end: end);
+            mapDataController.setCurrentMapIconIndex(0);
+
             ScaffoldMessenger.of(context).removeCurrentSnackBar();
             ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
+              SnackBar(
                 content: Text(
-                  "Szukam sygnału GPS...",
+                  'Jesteś tutaj... longitude: ' +
+                      position.longitude.toString() +
+                      ', latitude: ' +
+                      position.latitude.toString(),
                   style: TextStyle(color: AppColors.primaryWhite),
                 ),
                 backgroundColor: AppColors.primaryNormal,
