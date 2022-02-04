@@ -24,12 +24,12 @@ class _HomePageState extends State<HomePage> {
   int tripScore = 0;
   int answerScore = 0;
 
+  _HomePageState() {
+    AchievementOperations().readTripScore().then((val) => setState(() {
+          tripScore = val;
+        }));
+  }
 
-
-
-
-
-  
   Future<void> navigateCoordinates() async {
     await MapLauncher.showMarker(
       mapType: MapType.google,
@@ -40,8 +40,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   @override
-  Widget build(BuildContext context) 
-  {
+  Widget build(BuildContext context) {
     // Controllers used throughout the app
     // ignore: unused_local_variable
     final TripDataController _tripDataController =
@@ -185,7 +184,7 @@ class _HomePageState extends State<HomePage> {
                   physics: BouncingScrollPhysics(),
                   child: Column(
                     children: [
-                      Text('Score = '),
+                      Text('Score = $tripScore'),
                       // AchievementTracker(
                       //     tripScore: tripScore), //,answerScore: answerScore),
                       SizedBox(
