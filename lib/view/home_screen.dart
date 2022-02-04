@@ -1,6 +1,5 @@
 import 'package:gra_terenowa/controller/tripState_controller.dart';
 import 'package:gra_terenowa/widgets/achievementTracker_widget.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -39,8 +38,7 @@ class _HomePageState extends State<HomePage> {
     // ignore: unused_local_variable
     final TripStateController _tripStateController =
         Get.put(TripStateController());
-    AchievementOperations().readTripScore();
-    //tripScore = await AchievementOperations().readAnswerScore();
+
     return DefaultTabController(
       initialIndex: 0,
       length: 3,
