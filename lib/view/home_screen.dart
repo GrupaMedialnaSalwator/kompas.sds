@@ -1,4 +1,6 @@
 import 'package:gra_terenowa/controller/tripState_controller.dart';
+import 'package:gra_terenowa/widgets/achievementTracker_widget.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -9,12 +11,37 @@ import 'package:gra_terenowa/view/selectTrip_screen.dart';
 import 'package:gra_terenowa/widgets/selectTrip_widget.dart';
 import 'package:gra_terenowa/widgets/cardHero_widget.dart';
 import 'package:gra_terenowa/widgets/tabOutlineIndicator.dart';
+import 'package:map_launcher/map_launcher.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int tripScore = 0;
+  int answerScore = 0;
+
+
+
+
+
+
+  
+  Future<void> navigateCoordinates() async {
+    await MapLauncher.showMarker(
+      mapType: MapType.google,
+      coords: Coords(51.339036023319544, 16.820975113189657),
+      title: "Kościół w Bagnie",
+      description: "Nawiguję do kościoła w Bagnie",
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) 
+  {
     // Controllers used throughout the app
     // ignore: unused_local_variable
     final TripDataController _tripDataController =
@@ -22,7 +49,8 @@ class HomePage extends StatelessWidget {
     // ignore: unused_local_variable
     final TripStateController _tripStateController =
         Get.put(TripStateController());
-
+    AchievementOperations().readTripScore();
+    //tripScore = await AchievementOperations().readAnswerScore();
     return DefaultTabController(
       initialIndex: 0,
       length: 3,
@@ -151,7 +179,121 @@ class HomePage extends StatelessWidget {
               ),
             ),
             Center(child: Text("This tab shows a Map View")),
-            Center(child: Text("This tab shows a Help View")),
+            Container(
+              margin: EdgeInsets.all(Constants.insideMargin),
+              child: SingleChildScrollView(
+                  physics: BouncingScrollPhysics(),
+                  child: Column(
+                    children: [
+                      Text('Score = '),
+                      // AchievementTracker(
+                      //     tripScore: tripScore), //,answerScore: answerScore),
+                      SizedBox(
+                        height: 25,
+                      ),
+                      Container(
+                          margin: EdgeInsets.all(Constants.insideMargin),
+                          child: Text(
+                            "Pytania i odpowiedzi",
+                            style: Theme.of(context).textTheme.headline3,
+                          )),
+                      ExpansionTile(
+                          title: Text("Gdzie znajdę najbliższą Mszę Świętą?",
+                              style: TextStyle(
+                                  color: AppColors.primaryNormal,
+                                  fontWeight: FontWeight.bold)),
+                          children: [
+                            Align(
+                              alignment: Alignment.centerLeft,
+                              child: Container(
+                                  margin: EdgeInsets.only(
+                                      left: Constants.insideMargin),
+                                  child: Column(
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Flexible(
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  "Kościół Wniebowzięcia NMP na ul. Ziołowej 36 w Bagnie.",
+                                                  softWrap: true,
+                                                  maxLines: 2,
+                                                ),
+                                                SizedBox(height: 10),
+                                                Text("Godziny Mszy Świętych:"),
+                                                Text(
+                                                  "Pn-Pt: 18:00",
+                                                ),
+                                                Text(
+                                                  "Sob: 8:00, 18:00",
+                                                ),
+                                                Text(
+                                                  "Ndz: 8:30, 11:30, 17:00, 17:30",
+                                                ),
+                                                //TODO MK: refactor Achievement tracker, put it in the rigth place
+                                                //TODO MK: commit and create a pull request
+                                                SizedBox(height: 10),
+                                              ],
+                                            ),
+                                          ),
+                                          Image.asset(
+                                              "assets/images/icons/kosciol_bagno_circular.png",
+                                              scale: 15,
+                                              fit: BoxFit.fitWidth),
+                                          SizedBox(height: 10),
+                                        ],
+                                      ),
+                                      TextButton.icon(
+                                          onPressed: () {
+                                            navigateCoordinates();
+                                            print("button:you pressed me!");
+                                          },
+                                          icon: Icon(Icons.navigation),
+                                          label: Text('Nawiguj',
+                                              style: TextStyle(
+                                                color: AppColors.primaryNormal,
+                                              )))
+                                    ],
+                                  )),
+                            )
+                          ]),
+                      ExpansionTile(
+                          title: Text(
+                              "Ilu zakonników mieszka na terenie Klasztoru w Bagnie?",
+                              style: TextStyle(
+                                  color: AppColors.primaryNormal,
+                                  fontWeight: FontWeight.bold)),
+                          children: [
+                            Container(
+                                margin: EdgeInsets.only(
+                                    left: Constants.insideMargin),
+                                child: Text(
+                                  "Na terenie Klasztoru w Bagnie mieszka 28 zakonników.",
+                                  textAlign: TextAlign.left,
+                                )),
+                            SizedBox(height: 10),
+                          ]),
+                      ExpansionTile(
+                          title: Text(
+                              "Co mieści się w budynku z napisem \"ToTu\"?",
+                              style: TextStyle(
+                                  color: AppColors.primaryNormal,
+                                  fontWeight: FontWeight.bold)),
+                          children: [
+                            Container(
+                              margin:
+                                  EdgeInsets.only(left: Constants.insideMargin),
+                              child: Text(
+                                  "W tym budynku znajduje się Ruch Młodzieży Salwatoriańskiej."),
+                            ),
+                            SizedBox(height: 10),
+                          ]),
+                    ],
+                  )),
+            ),
           ],
         ),
       ),
