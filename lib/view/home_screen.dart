@@ -21,15 +21,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int tripScore = 0;
-  int answerScore = 0;
-
-  _HomePageState() {
-    AchievementOperations().readTripScore().then((val) => setState(() {
-          tripScore = val;
-        }));
-  }
-
   Future<void> navigateCoordinates() async {
     await MapLauncher.showMarker(
       mapType: MapType.google,
@@ -184,9 +175,7 @@ class _HomePageState extends State<HomePage> {
                   physics: BouncingScrollPhysics(),
                   child: Column(
                     children: [
-                      Text('Score = $tripScore'),
-                      // AchievementTracker(
-                      //     tripScore: tripScore), //,answerScore: answerScore),
+                      AchievementTracker(),
                       SizedBox(
                         height: 25,
                       ),
@@ -232,8 +221,6 @@ class _HomePageState extends State<HomePage> {
                                                 Text(
                                                   "Ndz: 8:30, 11:30, 17:00, 17:30",
                                                 ),
-                                                //TODO MK: refactor Achievement tracker, put it in the rigth place
-                                                //TODO MK: commit and create a pull request
                                                 SizedBox(height: 10),
                                               ],
                                             ),
@@ -248,7 +235,6 @@ class _HomePageState extends State<HomePage> {
                                       TextButton.icon(
                                           onPressed: () {
                                             navigateCoordinates();
-                                            print("button:you pressed me!");
                                           },
                                           icon: Icon(Icons.navigation),
                                           label: Text('Nawiguj',
