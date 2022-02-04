@@ -4,6 +4,7 @@ import 'package:gra_terenowa/controller/mapData_controller.dart';
 import 'package:gra_terenowa/controller/mapTransfer_controller.dart';
 import 'package:gra_terenowa/statics/colors.dart';
 import 'package:gra_terenowa/statics/constants.dart';
+import 'package:gra_terenowa/widgets/gpsPoint_widget.dart';
 import 'package:gra_terenowa/widgets/mapCardHero_widget.dart';
 import 'package:gra_terenowa/widgets/mapPoint_widget.dart';
 import 'package:geolocator/geolocator.dart';
@@ -38,6 +39,7 @@ class MapView extends StatelessWidget {
           ),
           backgroundColor: AppColors.primaryWhite,
           onPressed: () async {
+            // TODO: use streams for faster gps access
             var position = await determineGPSPosition().catchError((onError) {
               print(onError);
             });
@@ -97,6 +99,12 @@ class MapView extends StatelessWidget {
                       mapItemIndex: index,
                       mapDataController: mapDataController,
                       scrollController: _scrollController,
+                    ),
+                  ) +
+                  List<Widget>.generate(
+                    1,
+                    (int index) => GPSPoint(
+                      mapDataController: mapDataController,
                     ),
                   ),
             ),
