@@ -225,7 +225,7 @@ class _HomePageState extends State<HomePage> {
                                           ),
                                           Image.asset(
                                               "assets/images/icons/kosciol_bagno_circular.png",
-                                              scale: 15,
+                                              scale: 3.5,
                                               fit: BoxFit.fitWidth),
                                           SizedBox(height: 10),
                                         ],
