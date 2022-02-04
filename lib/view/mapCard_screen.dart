@@ -20,14 +20,13 @@ class MapCardPage extends StatelessWidget {
       extendBodyBehindAppBar: true,
       backgroundColor: AppColors.primaryWhite,
       appBar: AppBar(
-        backgroundColor:
-            AppColors.primaryWhite.withOpacity(Constants.opacity25),
-        foregroundColor: AppColors.primaryWhite,
+        backgroundColor: AppColors.primaryWhite.withOpacity(Constants.opacity0),
+        foregroundColor: AppColors.primaryDark,
         elevation: 0,
-        title: Text(
-          _mapDataController.getMapItem(index: mapItemIndex).title,
-          style: TextStyle(color: AppColors.primaryWhite),
-        ),
+        // title: Text(
+        //   _mapDataController.getMapItem(index: mapItemIndex).title,
+        //   style: TextStyle(color: AppColors.primaryWhite),
+        // ),
         // actions: <Widget>[
         //   IconButton(
         //     icon: const Icon(Icons.account_circle_rounded),

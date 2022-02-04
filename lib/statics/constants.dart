@@ -41,6 +41,9 @@ class Constants {
   /// mapCardWidth = 300,0
   static const double mapCardWidth = 300.0;
 
+  /// opacity0 = 0.0
+  static const double opacity0 = 0.0;
+
   /// opacity25 = 0.25
   static const double opacity25 = 0.25;
 
