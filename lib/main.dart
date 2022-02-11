@@ -1,4 +1,3 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gra_terenowa/extras/routes.dart';
@@ -8,17 +7,19 @@ import 'package:gra_terenowa/view/trip_screen.dart';
 
 import 'extras/colors.dart';
 import 'view/selectTrip_screen.dart';
-import 'services/firebase_options.dart';
+/* TODO: turn firebase back on once needed import 'services/firebase_options.dart';
 import 'services/firebase_helper.dart'; //TODO: remove this test-purposes import in the future
+import 'package:firebase_core/firebase_core.dart';*/
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 void main() async {
   await Hive.initFlutter();
   WidgetsFlutterBinding.ensureInitialized();
+  /* TODO: turn firebase back on once needed 
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
-  );
+  );*/
   runApp(MyApp());
 }
 
