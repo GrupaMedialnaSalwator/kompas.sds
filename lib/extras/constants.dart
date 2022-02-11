@@ -1,3 +1,5 @@
+import 'package:map_launcher/map_launcher.dart';
+
 class Constants {
   /// cardWidthRatio = 2 / 3 relative to the screen width
   static const double cardWidthRatio = 2 / 3;
@@ -38,4 +40,6 @@ class Constants {
 
   /// opacity75 = 0.75
   static const double opacity75 = 0.75;
+
+  static Coords churchCoords = Coords(51.339036023319544, 16.820975113189657);
 }

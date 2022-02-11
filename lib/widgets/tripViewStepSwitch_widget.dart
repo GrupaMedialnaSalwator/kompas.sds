@@ -6,7 +6,10 @@ import 'package:gra_terenowa/extras/colors.dart';
 import 'package:gra_terenowa/extras/routes.dart';
 import 'package:gra_terenowa/extras/constants.dart';
 import 'package:gra_terenowa/model/database.dart';
+import 'package:gra_terenowa/widgets/achievementTracker_widget.dart';
 import 'package:gra_terenowa/widgets/tripStepSelectBox_widget.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 /// Displays trip content based on step type
 class TripViewStepSwitch extends StatelessWidget {
@@ -79,6 +82,13 @@ class TripViewStepSwitch extends StatelessWidget {
           ),
         );
       case StepType.answer:
+        if (_correctAnswer())
+          AchievementOperations().incrementAnswerScore(tripDataSelect);
+        //AchievementScore.addAnswerScore; //TODO: mk where should achievementScore (an instance of AchievementScore class) be instantiated?
+        //TODO: mk how can I keep score even if the app is closed?
+        //TODO: introduce achievements class where score for correct answers and finished trips is keps
+        //TODO: initialize with 0, add methods for adding score and add logic for not counting score and finished trips twice
+        //TODO remove mk
         return Expanded(
           child: ListView(
             padding: EdgeInsets.all(Constants.insideMargin),
@@ -94,10 +104,7 @@ class TripViewStepSwitch extends StatelessWidget {
                       ?.copyWith(color: AppColors.primaryDark),
                 ),
               ),
-              if (tripStateController.getCurrentAnswer() ==
-                  tripDataController
-                      .getPrevStepItem(tripDataSelect: tripDataSelect)
-                      .correctSelection)
+              if (_correctAnswer())
                 Container(
                   alignment: Alignment.topLeft,
                   margin: EdgeInsets.all(Constants.insideMargin),
@@ -125,6 +132,7 @@ class TripViewStepSwitch extends StatelessWidget {
           ),
         );
       case StepType.end:
+        AchievementOperations().incrementTripScore(tripDataSelect);
         return Expanded(
           child: ListView(
             padding: EdgeInsets.all(Constants.insideMargin),
@@ -186,6 +194,13 @@ class TripViewStepSwitch extends StatelessWidget {
         assert(false, 'TripViewStepSwitch must have a valid switch type');
         return Container();
     }
+  }
+
+  bool _correctAnswer() {
+    return (tripStateController.getCurrentAnswer() ==
+        tripDataController
+            .getPrevStepItem(tripDataSelect: tripDataSelect)
+            .correctSelection);
   }
 }
 
