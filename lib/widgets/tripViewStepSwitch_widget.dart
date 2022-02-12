@@ -199,7 +199,10 @@ class TripViewStepSwitch extends StatelessWidget {
   bool _correctAnswer() {
     return (tripStateController.getCurrentAnswer() ==
         tripDataController
-            .getPrevStepItem(tripDataSelect: tripDataSelect)
+            .getStepItem(
+                tripDataSelect: TripDataSelect(
+                    tripIndex: 0,
+                    stepIndex: tripStateController.getCurrentStep()))
             .correctSelection);
   }
 }

@@ -22,15 +22,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  Future<void> navigateCoordinates() async {
-    await MapLauncher.showMarker(
-      mapType: MapType.google,
-      coords: Constants.churchCoords,
-      title: "Kościół w Bagnie",
-      description: "Nawiguję do kościoła w Bagnie",
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     // Controllers used throughout the app

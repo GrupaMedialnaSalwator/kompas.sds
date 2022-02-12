@@ -2,11 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:gra_terenowa/statics/colors.dart';
 import 'package:gra_terenowa/statics/constants.dart';
 import 'package:gra_terenowa/widgets/achievementTracker_widget.dart';
+import 'package:map_launcher/map_launcher.dart';
 
 class InfoView extends StatelessWidget {
   const InfoView({
     Key? key,
   }) : super(key: key);
+  Future<void> navigateCoordinates() async {
+    await MapLauncher.showMarker(
+      mapType: MapType.google,
+      coords: Constants.churchCoords,
+      title: "Kościół w Bagnie",
+      description: "Nawiguję do kościoła w Bagnie",
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +27,7 @@ class InfoView extends StatelessWidget {
           physics: BouncingScrollPhysics(),
           child: Column(
             children: [
+              Padding(padding: EdgeInsets.symmetric(vertical: 36)),
               AchievementTracker(),
               SizedBox(
                 height: 25,
