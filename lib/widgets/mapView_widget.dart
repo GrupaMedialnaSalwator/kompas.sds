@@ -100,12 +100,13 @@ class MapView extends StatelessWidget {
                       mapDataController: mapDataController,
                       scrollController: _scrollController,
                     ),
-                  ) +
-                  List<Widget>.generate(
-                    1,
-                    (int index) => GPSPoint(
-                      mapDataController: mapDataController,
-                    ),
+                    // TODO: add this segment to display icon for present gps position
+                    // ) +
+                    // List<Widget>.generate(
+                    //   1,
+                    //   (int index) => GPSPoint(
+                    //     mapDataController: mapDataController,
+                    //   ),
                   ),
             ),
             onInteractionStart: (ScaleStartDetails scaleStartDetails) {
