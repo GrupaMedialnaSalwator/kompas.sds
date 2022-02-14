@@ -348,9 +348,290 @@ List<TripItem> generateTripItems() {
           nextStep: 21,
         ),
         StepItem(
+          type: StepType.info,
+          title: "Biegniemy do groty",
+          description:
+              'Jeśli się obrócisz w stronę parku, to napewno zobaczysz dużą górę kamieni. To jest grota z figurą Matki Bożej. Biegniemy do Niej?',
+          imageAsset: "assets/images/trip01/trip01_16.jpg",
+          nextStep: 22,
+        ),
+        StepItem(
+          type: StepType.info,
+          title: "Znajdź napis na kamieniu",
+          description:
+              'Jest to wyjątkowa grota na wzór tej, w której Matka Boża objawiła się małej Bernadce w Lourdes we Francji. Poleciła jej wtedy, aby modliła się na różańcu. Dlatego zakonnicy od wielu lat modlą się tutaj różaniec oraz przychodzą na nabożeństwa majowe.\nJeśli chcesz wiedzieć jak długo stoi tutaj ta grota, to spróbuj odnaleźć datę wypisaną na jednym z kamieni.',
+          imageAsset: "assets/images/trip01/trip01_17.jpg",
+          previousStep: 21,
+          nextStep: 23,
+        ),
+        StepItem(
+          type: StepType.select,
+          selection: [
+            SelectionItem(text: "1953", stepLink: 24),
+            SelectionItem(text: "1918", stepLink: 24),
+            SelectionItem(text: "1932", stepLink: 24),
+            SelectionItem(text: "1939", stepLink: 24),
+          ],
+          correctSelection: 2,
+          imageAsset: "assets/images/trip01/trip01_17.jpg",
+          previousStep: 22,
+        ),
+        StepItem(
+          type: StepType.answer,
+          title: "Rok budowy groty",
+          correctSelection: 2,
+          correctAnswer:
+              'Masz rację. Już w 1932 roku Salwatorianie niemieccy wybudowali tutaj tę grotę i modlili się w jej cieniu. Jeśli jesteś zmęczony możesz usiąść sobie na ławce, popatrzeć trochę na figurę Matki Bożej i odmówić znaną ci modlitwę.\nNie myśl jednak, że to koniec. Czeka nas jeszcze wiele ciekawych miejsc.',
+          incorrectAnswer:
+              'Niestety pojawił się gdzieś błąd. Poprawna odpowiedź to rok 1932, kiedy Salwatorianie niemieccy wybudowali tutaj tę grotę i modlili się w jej cieniu. Jeśli jesteś zmęczony możesz usiąść sobie na ławce, popatrzeć trochę na figurę Matki Bożej i odmówić znaną ci modlitwę.\nNie myśl jednak, że to koniec. Czeka nas jeszcze wiele ciekawych miejsc.',
+          imageAsset: "assets/images/trip01/trip01_18.jpg",
+          nextStep: 25,
+        ),
+        StepItem(
+          type: StepType.info,
+          title: "Idziemy w stronę zamku",
+          description:
+              'Popatrz po raz ostatni na figurę Matki Bożej i obróć się. Czy widzisz już duży zamek za krzewem rododendronu? Tam znajdziesz kolejną ciekawostkę.',
+          imageAsset: "assets/images/trip01/trip01_19.jpg",
+          nextStep: 26,
+        ),
+        StepItem(
+          type: StepType.info,
+          title: "Co to za postacie?",
+          description:
+              'Kiedy patrzysz na taki ładny zamek może się dziwisz, że mieszkają w nim zakonnicy. Jak to się stało? Historia tego zamku jest długa i bardzo ciekawa, ale opowiem ci ją innym razem.\nTeraz popatrz na dwie białe figury. Jedna trzyma w ręku klucze, a druga miecz. Są to Apostołowie. Czy rozpoznajesz już jak się nazywają? Napisz tutaj pierwsze litery ich imion.',
+          imageAsset: "assets/images/trip01/trip01_20.jpg",
+          previousStep: 25,
+          nextStep: 27,
+        ),
+        StepItem(
+          type: StepType.select,
+          selection: [
+            SelectionItem(text: "PA", stepLink: 28),
+            SelectionItem(text: "PJ", stepLink: 28),
+            SelectionItem(text: "PT", stepLink: 28),
+            SelectionItem(text: "PP", stepLink: 28),
+          ],
+          correctSelection: 3,
+          imageAsset: "assets/images/trip01/trip01_20.jpg",
+          previousStep: 26,
+        ),
+        StepItem(
+          type: StepType.answer,
+          title: "Apostołowie Piotr i Paweł",
+          correctSelection: 3,
+          correctAnswer:
+              'Zgadza się! Są to święty Piotr z kluczami i święty Paweł z mieczem. Przypominają nam, że każdy z nas jest powołany do bycia apostołem Pana Jezusa.\nA teraz w tył zwrot. Czeka nas długa droga w sam środek parku.',
+          incorrectAnswer:
+              'Niestety nie! Są to święty Piotr z kluczami i święty Paweł z mieczem. Przypominają nam, że każdy z nas jest powołany do bycia apostołem Pana Jezusa.\nA teraz w tył zwrot. Czeka nas długa droga w sam środek parku.',
+          imageAsset: "assets/images/trip01/trip01_21.jpg",
+          nextStep: 29,
+        ),
+        StepItem(
+          type: StepType.info,
+          title: "Wchodzimy do diaspory",
+          description:
+              'Wróć teraz do groty i przejdź obok niej mijając ją po prawej stronie. Czy widzisz w oddali małą drewnianą kapliczkę? Nazywa się diaspora. Tam właśnie idziemy!',
+          imageAsset: "assets/images/trip01/trip01_22.jpg",
+          nextStep: 30,
+        ),
+        StepItem(
+          type: StepType.info,
+          title: "Ciekawe co jest w środku?",
+          description:
+              'Możesz wejść do środka. Jest tam zazwyczaj dosyć ciemno, więc zapal światło. Włącznik znajduje się po prawej stronie. Myślę, że teraz z łatwością zobaczysz w centrum figurę Matki Bożej z Dzieciątkiem.\nCo Matka Boża trzyma w ręku razem z Dzieciątkiem?',
+          imageAsset: "assets/images/trip01/trip01_23.jpg",
+          previousStep: 29,
+          nextStep: 31,
+        ),
+        StepItem(
+          type: StepType.select,
+          selection: [
+            SelectionItem(text: "Różaniec", stepLink: 32),
+            SelectionItem(text: "Krzyż", stepLink: 32),
+            SelectionItem(text: "Kwiaty", stepLink: 32),
+            SelectionItem(text: "Chustkę", stepLink: 32),
+          ],
+          correctSelection: 0,
+          imageAsset: "assets/images/trip01/trip01_23.jpg",
+          previousStep: 30,
+        ),
+        StepItem(
+          type: StepType.answer,
+          title: "Różaniec",
+          correctSelection: 0,
+          correctAnswer:
+              'Oczywiście! Matka Boża i Dzieciątko razem trzymają w ręku różaniec. Była to ulubiona modlitwa błogosławionego Franciszka Jordana, którego spotkaliśmy na początku naszej podróży. Gdziekolwiek szedł, zawsze w kieszeni przesuwał paciorki różańca.\nA czy ty potrafisz modlić się na różańcu?',
+          incorrectAnswer:
+              'Jesteś pewien? Matka Boża i Dzieciątko razem trzymają w ręku różaniec. Była to ulubiona modlitwa błogosławionego Franciszka Jordana, którego spotkaliśmy na początku naszej podróży. Gdziekolwiek szedł, zawsze w kieszeni przesuwał paciorki różańca.\nA czy ty potrafisz modlić się na różańcu?',
+          imageAsset: "assets/images/trip01/trip01_24.jpg",
+          nextStep: 33,
+        ),
+        StepItem(
+          type: StepType.info,
+          title: "Chcemy zobaczyć obelisk",
+          description:
+              'Po wyjściu z diaspory idź ścieżką na prawo aż zobaczysz w oddali ciekawy obelisk. Jest on na końcu parku. Doszedłeś już tam?',
+          imageAsset: "assets/images/trip01/trip01_25.jpg",
+          nextStep: 34,
+        ),
+        StepItem(
+          type: StepType.info,
+          title: "Co tam jest napisane?",
+          description:
+              'Ten obelisk postawili tutaj salwatorianie niemieccy jeszcze przed wojną. Przypomina on najważniejsze zasady każdego salwatorianina, czyli śluby zakonne. Są wypisane w języku łacińskim na czterech stronach obelisku. Jaka jest pełna nazwa ślubu na literę "C"?',
+          imageAsset: "assets/images/trip01/trip01_26.jpg",
+          previousStep: 33,
+          nextStep: 35,
+        ),
+        StepItem(
+          type: StepType.select,
+          selection: [
+            SelectionItem(text: "Crux", stepLink: 36),
+            SelectionItem(text: "Caritas", stepLink: 36),
+            SelectionItem(text: "Castitas", stepLink: 36),
+            SelectionItem(text: "Coelus", stepLink: 36),
+          ],
+          correctSelection: 2,
+          imageAsset: "assets/images/trip01/trip01_26.jpg",
+          previousStep: 34,
+        ),
+        StepItem(
+          type: StepType.answer,
+          title: "Czystość",
+          correctSelection: 2,
+          correctAnswer:
+              'Tak jest - CASTITAS. To oznacza w języku łacińskim ślub bezżennej czystości. Nie chodzi tu oczywiście o częste mycie rąk, ale o oddanie całego siebie Panu Bogu. Dlatego właśnie zakonnicy nie zakładają rodzin, aby całkowicie poświęcić się Bogu i służyć wszystkim.\nDalej już nie pójdziemy. Musimy tu zawrócić. Jesteś gotowy?',
+          incorrectAnswer:
+              'Gdzieś pojawił się błąd! Poprawna nazwa to - CASTITAS. To oznacza w języku łacińskim ślub bezżennej czystości. Nie chodzi tu oczywiście o częste mycie rąk, ale o oddanie całego siebie Panu Bogu. Dlatego właśnie zakonnicy nie zakładają rodzin, aby całkowicie poświęcić się Bogu i służyć wszystkim.\nDalej już nie pójdziemy. Musimy tu zawrócić. Jesteś gotowy?',
+          imageAsset: "assets/images/trip01/trip01_27.jpg",
+          nextStep: 37,
+        ),
+        StepItem(
+          type: StepType.info,
+          title: "Szukamy niezwykłego drzewa",
+          description:
+              'Pewno jesteś już zmęczony, ale jeszcze trochę wytrzymaj. Stojąc tyłem do obelisku powolutku idź w lewą stronę wzdłuż płotu. Przejdziesz przez mały mostek, aż dotrzesz do końca ścieżki. Po lewej stronie będzie duży ceglany dom - to jest nowicjat. Tam mieszkają kandydaci do życia zakonnego.\nTy jednak skręć w prawo, a po kilkunastu krokach zobaczysz po prawej stronie niezwykłe drzewo.',
+          imageAsset: "assets/images/trip01/trip01_28.jpg",
+          nextStep: 38,
+        ),
+        StepItem(
+          type: StepType.info,
+          title: "Literka na czerwonym tle",
+          description:
+              'I co? Jak ci się podoba?\nMożesz sobie odpocząć w cieniu tego starego drzewa i wyobrazić stare dzieje zakonne. Kiedy będziesz gotowy, poszukaj pewnej literki na czerwonym tle. Jest niedaleko.\nJaka to literka?',
+          imageAsset: "assets/images/trip01/trip01_29.jpg",
+          previousStep: 37,
+          nextStep: 39,
+        ),
+        StepItem(
+          type: StepType.select,
+          selection: [
+            SelectionItem(text: "H", stepLink: 40),
+            SelectionItem(text: "G", stepLink: 40),
+            SelectionItem(text: "T", stepLink: 40),
+            SelectionItem(text: "S", stepLink: 40),
+          ],
+          correctSelection: 0,
+          imageAsset: "assets/images/trip01/trip01_29.jpg",
+          previousStep: 38,
+        ),
+        StepItem(
+          type: StepType.answer,
+          title: "Hydrant",
+          correctSelection: 0,
+          correctAnswer:
+              'Bardzo dobrze! Ta literka oznacza Hydrant, czyli miejsce podłączenia do wody. W razie pożaru strażacy będą mogli tam podpiąć swój sprzęt i ugasić ogień. Miejmy nadzieję, że nigdy nie będą musieli tego robić.\nTo co? Jesteś gotowy do dalszej drogi?',
+          incorrectAnswer:
+              'Oj, niedobrze! Ta literka to "H" i oznacza Hydrant, czyli miejsce podłączenia do wody. W razie pożaru strażacy będą mogli tam podpiąć swój sprzęt i ugasić ogień. Miejmy nadzieję, że nigdy nie będą musieli tego robić.\nTo co? Jesteś gotowy do dalszej drogi?',
+          imageAsset: "assets/images/trip01/trip01_30.jpg",
+          nextStep: 41,
+        ),
+        StepItem(
+          type: StepType.info,
+          title: "Idziemy w stronę stawu",
+          description:
+              'Jeśli jeszcze jesteś przy hydrancie i patrzysz w stronę zamku, to idź w lewą stronę. Dojdziesz do stawu, a jeśli będziesz miał szczęście, to zobaczysz kaczki, czerwone karpie, albo nawet czaplę.',
+          imageAsset: "assets/images/trip01/trip01_31.jpg",
+          nextStep: 42,
+        ),
+        StepItem(
+          type: StepType.info,
+          title: "Ile lat ma seminarium?",
+          description:
+              'Teraz idź w stronę dziedzińca zamkowego przechodząc pod zabytkowym łukiem. W środku dziedzińca zobaczysz fontannę, a jeszcze dalej wejście do klasztoru, czyli furtę klasztorną. Jest to miejsce, gdzie zakonnik pełni dyżur i przyjmuje gości. Tam też możesz skorzystać z toalety.\nA teraz zadanie! Obok drewnianych drzwi jest mosiężna jubileuszowa tablica, na której napisany jest rok powstania seminarium. Jaki to rok?',
+          imageAsset: "assets/images/trip01/trip01_32.jpg",
+          previousStep: 41,
+          nextStep: 43,
+        ),
+        StepItem(
+          type: StepType.select,
+          selection: [
+            SelectionItem(text: "1918", stepLink: 44),
+            SelectionItem(text: "1953", stepLink: 44),
+            SelectionItem(text: "1932", stepLink: 44),
+            SelectionItem(text: "1939", stepLink: 44),
+          ],
+          correctSelection: 1,
+          imageAsset: "assets/images/trip01/trip01_32.jpg",
+          previousStep: 42,
+        ),
+        StepItem(
+          type: StepType.answer,
+          title: "Rok założenia seminarium",
+          correctSelection: 1,
+          correctAnswer:
+              'Wspaniale! W roku 1953 powstało w tym zamku Wyższe Seminarium Duchowne Salwatorianów. Jest to taka szkoła, w której młodzi klerycy uczą się, aby w przyszłości zostać księżmi. Być może miałeś okazję spotkać jakiegoś kleryka w czarnym habicie podczas naszej podróży po parku.\nNo to pomału będziemy kończyć. Pozostało nam jeszcze tylko jedno miejsce. Jesteś gotowy?',
+          incorrectAnswer:
+              'Nie do końca! Chodzi o rok 1953, w którym powstało w tym zamku Wyższe Seminarium Duchowne Salwatorianów. Jest to taka szkoła, w której młodzi klerycy uczą się, aby w przyszłości zostać księżmi. Być może miałeś okazję spotkać jakiegoś kleryka w czarnym habicie podczas naszej podróży po parku.\nNo to pomału będziemy kończyć. Pozostało nam jeszcze tylko jedno miejsce. Jesteś gotowy?',
+          imageAsset: "assets/images/trip01/trip01_33.jpg",
+          nextStep: 45,
+        ),
+        StepItem(
+          type: StepType.info,
+          title: "Wracamy na parking",
+          description:
+              'Jeśli idziesz spod furty po schodach na dół, kieruj się na prawo. Tam właśnie jest parking, skąd rozpoczęliśmy naszą wędrówkę.\nNie myśl jednak, że to już koniec. Pozostało nam przecież ostatnie zadanie.',
+          imageAsset: "assets/images/trip01/trip01_34.jpg",
+          nextStep: 46,
+        ),
+        StepItem(
+          type: StepType.info,
+          title: "Jaki skrót mają Salwatorianie?",
+          description:
+              'Idąc w stronę parkingu będziesz przechodził przez zieloną bramę, która zawsze jest otwarta. Na tej bramie znajduje się skrót Salwatorianów. Są to trzy białe literki. Widzisz już je?',
+          imageAsset: "assets/images/trip01/trip01_35.jpg",
+          previousStep: 45,
+          nextStep: 47,
+        ),
+        StepItem(
+          type: StepType.select,
+          selection: [
+            SelectionItem(text: "SSD", stepLink: 48),
+            SelectionItem(text: "SDB", stepLink: 48),
+            SelectionItem(text: "SDS", stepLink: 48),
+            SelectionItem(text: "SJ", stepLink: 48),
+          ],
+          correctSelection: 2,
+          imageAsset: "assets/images/trip01/trip01_35.jpg",
+          previousStep: 46,
+        ),
+        StepItem(
+          type: StepType.answer,
+          title: "Salwatorianie",
+          correctSelection: 2,
+          correctAnswer:
+              'Gratuluję! SDS to skrót łacińskiej nazwy "Societas Divini Salvatoris", czyli po polsku "Towarzystwo Boskiego Zbawiciela" - Salwatorianie.\nW ten sposób zakończyłeś pomyślnie ostatnie zadanie i naszą podróż. Jestem z ciebie dumny.',
+          incorrectAnswer:
+              'No prawie! Chodziło o SDS - skrót łacińskiej nazwy "Societas Divini Salvatoris", czyli po polsku "Towarzystwo Boskiego Zbawiciela" - Salwatorianie.\nW ten sposób zakończyłeś pomyślnie ostatnie zadanie i naszą podróż. Jestem z ciebie dumny.',
+          imageAsset: "assets/images/trip01/trip01_36.jpg",
+          nextStep: 49,
+        ),
+        StepItem(
           type: StepType.end,
-          title: "Do zobaczenia",
-          description: "Dziękujemy za wspólną podróż i zapraszamy znowu!",
+          title: "Gratuluję Odkrywco!",
+          description:
+              'Spisałeś się na medal i ukończyłeś pierwszą podróż po naszym klasztorze. Znasz już park i okolice zamku, ale wiele tajemnic jeszcze przed tobą.\n\nJeśli znowu do nas przyjedziesz, to zapraszam do kolejnej podróży.\n\nDo zobaczenia!',
           imageAsset: "assets/images/trip_01.png",
           previousStep: -1,
           nextStep: -1,
