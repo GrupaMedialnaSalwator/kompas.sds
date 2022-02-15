@@ -62,7 +62,7 @@ class MapDataController extends GetxController
     if (_currentMapIconIndex.value == -1) {
       return AppColors.primaryNormal;
     } else if (_currentMapIconIndex.value == index) {
-      return AppColors.accentRed;
+      return AppColors.accentSelect;
     } else {
       return AppColors.primaryNormal;
     }

@@ -279,7 +279,7 @@ List<TripItem> generateTripItems() {
           type: StepType.info,
           title: "Kto to powiedział?",
           description:
-              'W labiryncie łatwo się zgubić. Poszukaj drogowskazu ze zdjęcia, a obok niego będzie nabliczka z napisem: "Gdy człowiek nie wie, co zrobić, sumienie mówi mu tylko jedno: szukaj!" Pod tym napisem znajdują się imiona i nazwisko autora. Podaj jego inicjały.',
+              'W labiryncie łatwo się zgubić. Poszukaj drogowskazu ze zdjęcia, a obok niego będzie tabliczka z napisem: "Gdy człowiek nie wie, co zrobić, sumienie mówi mu tylko jedno: szukaj!" Pod tym napisem znajdują się imiona i nazwisko autora. Podaj jego inicjały.',
           imageAsset: "assets/images/trip01/trip01_11.jpg",
           previousStep: 13,
           nextStep: 15,
