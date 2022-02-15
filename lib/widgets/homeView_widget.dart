@@ -46,7 +46,7 @@ class HomeView extends StatelessWidget {
             height: Get.height * Constants.cardHeightRatio,
             child: ListView.separated(
               padding: EdgeInsets.all(20),
-              itemCount: 3,
+              itemCount: 3, // TODO: generate number of trips programatically
               separatorBuilder: (BuildContext context, int index) =>
                   VerticalDivider(width: 20, color: AppColors.primaryWhite),
               itemBuilder: (BuildContext context, int index) {

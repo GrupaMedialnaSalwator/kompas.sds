@@ -640,39 +640,6 @@ List<TripItem> generateTripItems() {
     ),
     TripItem(
       uid: "02", // TODO: must fix
-      title: "W Labiryncie",
-      subtitle: "dla młodzieży",
-      time: "45",
-      age: "12+",
-      distance: "0,7",
-      rating: "4,5",
-      description:
-          "Wejdź do klasztornego labiryntu i odkrywaj mądrości starożytnych filozofów.",
-      imageAsset: "assets/images/trip_02.png",
-      enabled: true,
-      stepList: <StepItem>[
-        StepItem(
-          title: "Step 1",
-          nextStep: 1,
-        ),
-        StepItem(
-          title: "Step 2",
-          previousStep: 0,
-          nextStep: 2,
-        ),
-        StepItem(
-          title: "Step 3",
-          previousStep: 1,
-          nextStep: 3,
-        ),
-        StepItem(
-          title: "Step 4",
-          previousStep: 2,
-        ),
-      ],
-    ),
-    TripItem(
-      uid: "03", // TODO: must fix
       stepList: <StepItem>[
         StepItem(
           imageAsset: "assets/images/trip_03.png",
@@ -767,6 +734,39 @@ List<TripItem> generateTripItems() {
           "Towarzysz Panu Jezusowi na drodze krzyżowej w ciszy klasztornego parku.",
       imageAsset: "assets/images/trip_03.png",
       enabled: true,
+    ),
+    TripItem(
+      uid: "03", // TODO: must fix
+      title: "W Labiryncie",
+      subtitle: "dla młodzieży",
+      time: "45",
+      age: "12+",
+      distance: "0,7",
+      rating: "4,5",
+      description:
+          "Wejdź do klasztornego labiryntu i odkrywaj mądrości starożytnych filozofów.",
+      imageAsset: "assets/images/trip_02.png",
+      enabled: false,
+      stepList: <StepItem>[
+        StepItem(
+          title: "Step 1",
+          nextStep: 1,
+        ),
+        StepItem(
+          title: "Step 2",
+          previousStep: 0,
+          nextStep: 2,
+        ),
+        StepItem(
+          title: "Step 3",
+          previousStep: 1,
+          nextStep: 3,
+        ),
+        StepItem(
+          title: "Step 4",
+          previousStep: 2,
+        ),
+      ],
     ),
   ];
 }
