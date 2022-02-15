@@ -2,11 +2,11 @@
 ///
 
 import 'package:get/get.dart';
-import 'package:gra_terenowa/model/database.dart';
+import 'package:gra_terenowa/model/tripDatabase.dart';
 
 class TripDataController extends GetxController {
   /// Holds data for all available trips
-  final _tripData = generateTripItems();
+  final List<TripItem> _tripData = generateTripItems();
 
   TripItem getTripItem({required int index}) {
     return _tripData[index];
@@ -19,13 +19,6 @@ class TripDataController extends GetxController {
   StepItem getStepItem({required TripDataSelect tripDataSelect}) {
     return _tripData[tripDataSelect.tripIndex]
         .stepList[tripDataSelect.stepIndex];
-  }
-
-  StepItem getPrevStepItem({required TripDataSelect tripDataSelect}) {
-    assert(tripDataSelect.stepIndex - 1 >= 0,
-        'previous stepIndex must be valid: greater than 0');
-    return _tripData[tripDataSelect.tripIndex]
-        .stepList[tripDataSelect.stepIndex - 1];
   }
 
   int getNextStepIndex({required TripDataSelect tripDataSelect}) {

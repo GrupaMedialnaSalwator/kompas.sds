@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gra_terenowa/controller/tripData_controller.dart';
 import 'package:gra_terenowa/controller/tripState_controller.dart';
-import 'package:gra_terenowa/extras/colors.dart';
-import 'package:gra_terenowa/extras/routes.dart';
-import 'package:gra_terenowa/extras/constants.dart';
-import 'package:gra_terenowa/model/database.dart';
+import 'package:gra_terenowa/statics/colors.dart';
+import 'package:gra_terenowa/statics/routes.dart';
+import 'package:gra_terenowa/statics/constants.dart';
 import 'package:gra_terenowa/widgets/achievementTracker_widget.dart';
+import 'package:gra_terenowa/model/tripDatabase.dart';
 import 'package:gra_terenowa/widgets/tripStepSelectBox_widget.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -199,7 +199,10 @@ class TripViewStepSwitch extends StatelessWidget {
   bool _correctAnswer() {
     return (tripStateController.getCurrentAnswer() ==
         tripDataController
-            .getPrevStepItem(tripDataSelect: tripDataSelect)
+            .getStepItem(
+                tripDataSelect: TripDataSelect(
+                    tripIndex: 0,
+                    stepIndex: tripStateController.getCurrentStep()))
             .correctSelection);
   }
 }
@@ -219,4 +222,22 @@ Axis getAxisLayout() {
     return Axis.vertical;
   else
     return Axis.horizontal;
+}
+
+String getAnswerText(
+    {required TripStateController tripStateController,
+    required TripDataController tripDataController,
+    required TripDataSelect tripDataSelect}) {
+  if (tripStateController.getCurrentAnswer() ==
+      tripDataController
+          .getStepItem(tripDataSelect: tripDataSelect)
+          .correctSelection) {
+    return tripDataController
+        .getStepItem(tripDataSelect: tripDataSelect)
+        .correctAnswer;
+  } else {
+    return tripDataController
+        .getStepItem(tripDataSelect: tripDataSelect)
+        .incorrectAnswer;
+  }
 }

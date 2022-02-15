@@ -35,6 +35,15 @@ class Constants {
   /// TODO: run tests to check if this assumption holds for all trip images
   static const double defaultImageRatio = 2 / 3;
 
+  /// mapCardHeight = 130,0
+  static const double mapCardHeight = 130.0;
+
+  /// mapCardWidth = 300,0
+  static const double mapCardWidth = 300.0;
+
+  /// opacity0 = 0.0
+  static const double opacity0 = 0.0;
+
   /// opacity25 = 0.25
   static const double opacity25 = 0.25;
 
@@ -42,4 +51,10 @@ class Constants {
   static const double opacity75 = 0.75;
 
   static Coords churchCoords = Coords(51.339036023319544, 16.820975113189657);
+
+  /// maxMapSizeX = 1499.0
+  static const double maxMapSizeX = 1600.0; // TODO: check for this - testing
+
+  /// maxMapSizeY = 1014.0
+  static const double maxMapSizeY = 1600.0; // TODO: check for this - testing
 }

@@ -1,7 +1,7 @@
 import 'package:expansion_tile_card/expansion_tile_card.dart';
 import 'package:flutter/material.dart';
 import 'package:gra_terenowa/controller/tripData_controller.dart';
-import 'package:gra_terenowa/extras/colors.dart';
+import 'package:gra_terenowa/statics/colors.dart';
 import 'package:hive/hive.dart';
 
 class AchievementTracker extends StatefulWidget {

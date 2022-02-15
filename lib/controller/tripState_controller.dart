@@ -7,6 +7,7 @@ class TripStateController extends GetxController {
   /// Manages the current trip and step index
   int _currentTrip = -1;
   RxInt _currentStep = 0.obs;
+  RxInt _currentPoints = 0.obs;
 
   /// holds value of currently selected answer
   int _currentAnswer =
@@ -15,6 +16,15 @@ class TripStateController extends GetxController {
   void resetState() {
     _currentTrip = -1;
     _currentStep.value = 0;
+    _currentPoints.value = 0;
+  }
+
+  int getCurrentPoints() {
+    return _currentPoints.value;
+  }
+
+  void incrementCurrentPoints() {
+    _currentPoints.value++;
   }
 
   int getCurrentTrip() {

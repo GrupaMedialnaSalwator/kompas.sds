@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:gra_terenowa/extras/routes.dart';
-import 'package:gra_terenowa/extras/text_styles.dart';
+import 'package:gra_terenowa/statics/routes.dart';
+import 'package:gra_terenowa/statics/text_styles.dart';
 import 'package:gra_terenowa/view/home_screen.dart';
+import 'package:gra_terenowa/view/mapCard_screen.dart';
 import 'package:gra_terenowa/view/trip_screen.dart';
 
-import 'extras/colors.dart';
+import 'statics/colors.dart';
 import 'view/selectTrip_screen.dart';
 /* TODO: turn firebase back on once needed import 'services/firebase_options.dart';
 import 'services/firebase_helper.dart'; //TODO: remove this test-purposes import in the future
@@ -24,13 +25,11 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'GraTerenowa',
       theme: ThemeData.light().copyWith(
-        // This is the theme of my application.
         primaryColor: AppColors.primaryNormal,
         backgroundColor: AppColors.primaryWhite,
         textTheme: const TextTheme(
@@ -64,6 +63,8 @@ class MyApp extends StatelessWidget {
             name: AppRoutes.selectTrip,
             page: () => SelectTripPage(tripIndex: 0)),
         GetPage(name: AppRoutes.trip, page: () => TripPage(tripIndex: 0)),
+        GetPage(
+            name: AppRoutes.mapCard, page: () => MapCardPage(mapItemIndex: 0)),
       ],
     );
   }

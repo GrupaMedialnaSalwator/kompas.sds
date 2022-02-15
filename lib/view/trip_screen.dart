@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gra_terenowa/controller/tripData_controller.dart';
 import 'package:gra_terenowa/controller/tripState_controller.dart';
-import 'package:gra_terenowa/extras/colors.dart';
-import 'package:gra_terenowa/extras/routes.dart';
-import 'package:gra_terenowa/extras/constants.dart';
+import 'package:gra_terenowa/statics/colors.dart';
+import 'package:gra_terenowa/statics/routes.dart';
+import 'package:gra_terenowa/statics/constants.dart';
 import 'package:gra_terenowa/widgets/tripViewStep_widget.dart';
+import 'package:line_icons/line_icons.dart';
 
 class TripPage extends StatelessWidget {
   const TripPage({
@@ -22,17 +23,32 @@ class TripPage extends StatelessWidget {
         Get.put(TripStateController());
 
     return Scaffold(
+      extendBodyBehindAppBar: true,
       backgroundColor: AppColors.primaryWhite,
       appBar: AppBar(
+        elevation: 1,
         backgroundColor:
             AppColors.primaryNormal.withOpacity(Constants.opacity25),
         foregroundColor: AppColors.primaryWhite,
         automaticallyImplyLeading: false,
-        title: Text(
-          _tripDataController.getTripItem(index: tripIndex).title,
-          style: TextStyle(color: AppColors.primaryWhite),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              _tripDataController.getTripItem(index: tripIndex).title,
+              style: TextStyle(color: AppColors.primaryWhite),
+            ),
+            Row(children: [
+              const Icon(LineIcons.trophy),
+              Obx(
+                () => Text(
+                  ' ' + _tripStateController.getCurrentPoints().toString(),
+                  style: TextStyle(color: AppColors.primaryWhite),
+                ),
+              ),
+            ]),
+          ],
         ),
-        elevation: 1,
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.close),
@@ -45,7 +61,6 @@ class TripPage extends StatelessWidget {
           )
         ],
       ),
-      extendBodyBehindAppBar: true,
       body: Obx(
         () => TripViewStep(
           tripStateController: _tripStateController,

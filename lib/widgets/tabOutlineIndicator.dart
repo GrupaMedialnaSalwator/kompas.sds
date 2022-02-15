@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gra_terenowa/extras/colors.dart';
-import 'package:gra_terenowa/extras/constants.dart';
+import 'package:gra_terenowa/statics/colors.dart';
+import 'package:gra_terenowa/statics/constants.dart';
 
 class TabOutlineIndicator extends Decoration {
   const TabOutlineIndicator({
