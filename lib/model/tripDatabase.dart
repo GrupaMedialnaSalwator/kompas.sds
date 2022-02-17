@@ -87,7 +87,7 @@ class StepItem {
     this.type = StepType.info,
     this.imageAsset = Constants.defaultImage, // TODO: create default image
     this.title = "Title",
-    this.caption = "caption",
+    this.caption = "",
     this.description = "Description",
     this.selection = const [],
     this.correctSelection =
