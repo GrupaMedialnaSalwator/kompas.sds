@@ -33,6 +33,18 @@ class TripViewStepSwitch extends StatelessWidget {
           child: ListView(
             padding: EdgeInsets.all(Constants.insideMargin),
             children: [
+               Container(
+                alignment: Alignment.topCenter,
+                margin: EdgeInsets.symmetric(horizontal: Constants.insideMargin),
+                child: Text(
+                  tripDataController
+                      .getStepItem(tripDataSelect: tripDataSelect)
+                      .caption,
+                  style: Get.context!.textTheme.bodyText2
+                      ?.copyWith(color: AppColors.secondaryNormal),
+                      textAlign: TextAlign.center
+                ),
+              ),
               Container(
                 alignment: Alignment.topLeft,
                 margin: EdgeInsets.all(Constants.insideMargin),
