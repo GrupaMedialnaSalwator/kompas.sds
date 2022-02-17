@@ -779,7 +779,7 @@ List<TripItem> generateTripItems() {
           type: StepType.end,
           title: "Zakończyłeś drogę krzyżową.",
           description:
-              'Do nabożeństwa drogi krzyżowej przywiązana jest łaska odpustu zupełnego. Jeśli jesteś w stanie łaski uświęcającej i pomodlisz się w intencjach wyznaczonych przez ojca świetego. Czy jest ktoś, komu chicałbyś ten dar ofiarować?',
+              'Do nabożeństwa drogi krzyżowej przywiązana jest łaska odpustu zupełnego, jeśli jesteś w stanie łaski uświęcającej i pomodlisz się w intencjach wyznaczonych przez ojca świetego. Czy jest ktoś, komu chicałbyś ten dar ofiarować?',
           imageAsset: "assets/images/trip_02.png",
           previousStep: -1,
           nextStep: -1,
