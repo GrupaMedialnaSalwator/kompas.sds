@@ -53,6 +53,7 @@ flutter:
   assets:
     - assets/images/
     - assets/images/trip01/
+    - assets/images/trip02/
     - assets/images/icons/
     - assets/images/map01/
 
