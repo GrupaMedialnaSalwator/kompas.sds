@@ -41,7 +41,7 @@ class TripViewStepSwitch extends StatelessWidget {
                       .getStepItem(tripDataSelect: tripDataSelect)
                       .caption,
                   style: Get.context!.textTheme.bodyText2
-                      ?.copyWith(color: AppColors.primaryNormal),
+                      ?.copyWith(color: AppColors.secondaryNormal),
                       textAlign: TextAlign.center
                 ),
               ),
