@@ -735,7 +735,7 @@ List<TripItem> generateTripItems() {
           caption: "Buk pospolity w odmianie purpurowej (fagus silvatica purpurea)\nKrwistoczerwone liście symbolizują krew Chrystusa.",
           title: "Stacja XI\nJezus do Krzyża przybity",
           description:
-              """„Ludzie potrzebują naszych rąk, by im służyły. Naszych nóg, by ich odwiedzały. Naszych ust, by życzliwie do nich mówiły. Naszych serc, by kochały. Kwiat rozwija się, gdy świeci słońce, a człowiek rozwija się, gdy kocha” (bł. Matka Teresa z Kalkuty).\n\nByś mi, Synu, nisko wisiał, wżdybyś ze mnie pomoc miał;\ngłowę bym Twoją podparła, krew zsiadłą z lica otarła.\nAle Cię nie mogę dosiąc, Tobie, Synu, nic dopomóc.""",
+              """„Ludzie potrzebują naszych rąk, by im służyły. Naszych nóg, by ich odwiedzały. Naszych ust, by życzliwie do nich mówiły. Naszych serc, by kochały. Kwiat rozwija się, gdy świeci słońce, a człowiek rozwija się, gdy kocha” (św. Matka Teresa z Kalkuty).\n\nByś mi, Synu, nisko wisiał, wżdybyś ze mnie pomoc miał;\ngłowę bym Twoją podparła, krew zsiadłą z lica otarła.\nAle Cię nie mogę dosiąc, Tobie, Synu, nic dopomóc.""",
           previousStep: 9,
           nextStep: 11,
         ),
@@ -762,7 +762,7 @@ List<TripItem> generateTripItems() {
           caption: "Dąb szypułkowy (quercus robur)\nDrzewo to niebawem rozrośnie się potężnie jak dzieło Chrystusa. U Żydów panował zwyczaj chowania zmarłych pod dębami.",
           title: "Stacja XIV\nJezus złożony do grobu",
           description:
-              """„Śmierć nie oddziela nas od siebie, ponieważ wszyscy zdążamy tą samą drogą i odnajdziemy się w tym samym miejscu. Nie będziemy nigdy rozłączeni, ponieważ żyjemy dla Chrystusa i teraz jesteśmy złączeni z Chrystusem, idąc ku Niemu. Wszyscy razem będziemy kiedyś z Chrystusem” (św. Szymon z Tesalonik).\n\nMatki, co synaczki macie, ajako się w nich wy kochacie,\nkiedy wam z nich jeden umrze, ciężki ból ma serce wasze;\ncóż ja, com miała jednego, już nie mogę mieć inszego.""",
+              """„Śmierć nie oddziela nas od siebie, ponieważ wszyscy zdążamy tą samą drogą i odnajdziemy się w tym samym miejscu. Nie będziemy nigdy rozłączeni, ponieważ żyjemy dla Chrystusa i teraz jesteśmy złączeni z Chrystusem, idąc ku Niemu. Wszyscy razem będziemy kiedyś z Chrystusem” (św. Szymon z Tesalonik).\n\nMatki, co synaczki macie, a jako się w nich wy kochacie,\nkiedy wam z nich jeden umrze, ciężki ból ma serce wasze;\ncóż ja, com miała jednego, już nie mogę mieć inszego.""",
           previousStep: 12,
           nextStep: 14,
         ),
@@ -777,9 +777,9 @@ List<TripItem> generateTripItems() {
         ),
         StepItem(
           type: StepType.end,
-          title: "Zakończyłeś drogę krzyżową.",
+          title: "Łaska odpustu",
           description:
-              'Do nabożeństwa drogi krzyżowej przywiązana jest łaska odpustu zupełnego, jeśli jesteś w stanie łaski uświęcającej i pomodlisz się w intencjach wyznaczonych przez ojca świetego. Czy jest ktoś, komu chicałbyś ten dar ofiarować?',
+              'Do nabożeństwa drogi krzyżowej przywiązana jest łaska odpustu zupełnego pod zwykłymi warunkami. Odpust można uzyskać dla siebie lub dla jednej osoby zmarłej. "Ukrzyżowany Jezus jest wielkim «odpustem» ofiarowanym przez Ojca ludzkości jako przebaczenie win i zaproszenie do synowskiego życia w Duchu Świętym" (św. Jan Paweł II)',
           imageAsset: "assets/images/trip_02.png",
           previousStep: -1,
           nextStep: -1,

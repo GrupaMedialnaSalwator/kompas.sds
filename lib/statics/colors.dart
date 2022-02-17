@@ -6,6 +6,8 @@ class AppColors extends Color {
   /// Cutty Sark
   static const primaryNormal = Color(0xff57766e);
 
+  static const secondaryNormal = Color(0xFF766257);
+
   static const primaryDark = Color(0xff18211f);
 
   static const primaryLight = Color(0xff96cbbd);
