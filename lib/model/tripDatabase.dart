@@ -645,14 +645,14 @@ List<TripItem> generateTripItems() {
           imageAsset: "assets/images/trip02/trip02_01.jpg",
           title: "Stacja I\nJezus na śmierć skazany",
           description:
-              """„Jakaż to istota otoczona tak wielkim poważaniem otrzyma istnienie? Jest nią człowiek, wielka i wspaniała postać żyjąca, cenniejsza w oczach Bożych niż całe stworzenie. Jest nią człowiek, dla niego istnieje niebo i ziemia, morze i całe stworzenie. Do jego zbawienia Bóg przywiązał taką wagę, że dla niego nie oszczędził nawet swego jedynego Syna. Bóg nie przestał czynić wszystkiego, by doprowadzić człowieka do siebie i posadzić go po swojej prawicy” (św. Jan Chryzostom).\n\nKrzyżu święty, nade wszystko, drzewo przenajszlachetniejsze!\nW żadnym lesie takie nie jest, jedno, na którym sam Bóg jest.\nSłodkie drzewo, słodkie gwoździe, rozkoszny owoc nosiło.""",
+              """„Jakaż to istota otoczona tak wielkim poważaniem otrzyma istnienie? Jest nią człowiek, wielka i wspaniała postać żyjąca, cenniejsza w oczach Bożych niż całe stworzenie. Jest nią człowiek, dla niego istnieje niebo i ziemia, morze i całe stworzenie. Do jego zbawienia Bóg przywiązał taką wagę, że dla niego nie oszczędził nawet swego jedynego Syna. Bóg nie przestał czynić wszystkiego, by doprowadzić człowieka do siebie i posadzić go po swojej prawicy” (św. Jan Chryzostom).\n\nKrzyżu święty, nade wszystko, drzewo przenajszlachetniejsze!\n\sW żadnym lesie takie nie jest, jedno, na którym sam Bóg jest.\nSłodkie drzewo, słodkie gwoździe, rozkoszny owoc nosiło.""",
           nextStep: 1,
         ),
         StepItem(
           imageAsset: "assets/images/trip02/trip02_02.jpg",
           title: "Stacja II\nJezus bierze Krzyż na swoje ramiona",
           description:
-              """„Krzyż według oceny powierzchownej może wydawać się czymś straszliwym. Gdy jednak wnikamy w jego treść, zrozumiemy, że powinniśmy gorąco go pragnąć. W doczesnym widzeniu rysuje się on przed nami jako drzewo śmierci, natomiast według oceny wiekuistej Chrystusa Pana, który na nim zawisł, jaśnieje nam jako drzewo życia. Narzędzie śmierci stało się dla nas źródłem życia. Krzyż jest drzewem łaski zapewniającej życie” (św. Bonawentura).\n\nSkłoń gałązki, drzewo święte, ulżyj członkom tak rozpiętym.\nOdmień teraz oną srogość, którąś miało z urodzenia.\nSpuść lekuchno i cichuchno ciało Króla niebieskiego.""",
+              """„Krzyż według oceny powierzchownej może wydawać się czymś straszliwym. Gdy jednak wnikamy w jego treść, zrozumiemy, że powinniśmy gorąco go pragnąć. W doczesnym widzeniu rysuje się on przed nami jako drzewo śmierci, natomiast według oceny wiekuistej Chrystusa Pana, który na nim zawisł, jaśnieje nam jako drzewo życia. Narzędzie śmierci stało się dla nas źródłem życia. Krzyż jest drzewem łaski zapewniającej życie” (św. Bonawentura).\n\nSkłoń gałązki, drzewo święte, ulżyj członkom tak rozpiętym.\n\tOdmień teraz oną srogość, którąś miało z urodzenia.\nSpuść lekuchno i cichuchno ciało Króla niebieskiego.""",
           previousStep: 0,
           nextStep: 2,
         ),
@@ -758,6 +758,16 @@ List<TripItem> generateTripItems() {
           description:
               """„Potrzebujemy małych i większych nadziei, które dzień po dniu podtrzymują nas w drodze. Jednak bez wielkiej nadziei, która musi przewyższać pozostałe, są one niewystarczające. Tą wielką nadzieją może być jedynie Bóg, który ogarnia wszechświat i który może nam zaproponować i dać to, czego sami nie możemy osiągnąć. Bóg jest fundamentem nadziei, nie jakikolwiek bóg, ale ten Bóg, który ma ludzkie oblicze i umiłował nas aż do końca: każdą jednostkę i ludzkość w całości” (papież Benedykt XVI).\n\nO, niestetyż, miły Panie, toć nie małe rozłączenie;\nprzedtem było miłowanie, a teraz ciężkie wzdychanie.\nCzemuż, Boże Ojcze, nie dbasz, o Synaczka pieczy nie masz?""",
           previousStep: 13,
+          nextStep: 15,
+        ),
+        StepItem(
+          type: StepType.end,
+          title: "Zakończyłeś drogę krzyżową.",
+          description:
+              'Do nabożeństwa drogi krzyżowej przywiązana jest łaska odpustu zupełnego. Jeśli jesteś w stanie łaski uświęcającej i pomodlisz się w intencjach wyznaczonych przez ojca świetego. Czy jest ktoś, komu chicałbyś ten dar ofiarować?',
+          imageAsset: "assets/images/trip_02.png",
+          previousStep: -1,
+          nextStep: -1,
         ),
       ],
       title: "Droga Krzyżowa",
@@ -768,7 +778,7 @@ List<TripItem> generateTripItems() {
       rating: "4,7",
       description:
           "Towarzysz Panu Jezusowi na drodze krzyżowej w ciszy klasztornego parku.",
-      imageAsset: "assets/images/trip_03.png",
+      imageAsset: "assets/images/trip_02.png",
       enabled: true,
     ),
     TripItem(
@@ -781,7 +791,7 @@ List<TripItem> generateTripItems() {
       rating: "4,5",
       description:
           "Wejdź do klasztornego labiryntu i odkrywaj mądrości starożytnych filozofów.",
-      imageAsset: "assets/images/trip_02.png",
+      imageAsset: "assets/images/trip_03.png",
       enabled: false,
       stepList: <StepItem>[
         StepItem(
