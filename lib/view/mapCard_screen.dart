@@ -1,4 +1,7 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:gra_terenowa/controller/mapData_controller.dart';
 import 'package:gra_terenowa/statics/colors.dart';
@@ -20,39 +23,50 @@ class MapCardPage extends StatelessWidget {
       extendBodyBehindAppBar: true,
       backgroundColor: AppColors.primaryWhite,
       appBar: AppBar(
+        systemOverlayStyle: SystemUiOverlayStyle(
+          // Status bar color
+          statusBarColor: AppColors.primaryNormal,
+          // Status bar brightness (optional)
+          statusBarIconBrightness: Brightness.light, // For Android (dark icons)
+          statusBarBrightness: Brightness.dark, // For iOS (dark icons)
+        ),
         backgroundColor: AppColors.primaryWhite.withOpacity(Constants.opacity0),
-        foregroundColor: AppColors.primaryDark,
+        foregroundColor: AppColors.primaryWhite,
         elevation: 0,
-        // title: Text(
-        //   _mapDataController.getMapItem(index: mapItemIndex).title,
-        //   style: TextStyle(color: AppColors.primaryWhite),
-        // ),
-        // actions: <Widget>[
-        //   IconButton(
-        //     icon: const Icon(Icons.account_circle_rounded),
-        //     color: AppColors.primaryNormal,
-        //     tooltip: 'Show Snackbar',
-        //     onPressed: () {
-        //       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-        //         content: Text(
-        //           "Login to your account",
-        //           style: TextStyle(color: AppColors.primaryWhite),
-        //         ),
-        //         backgroundColor: AppColors.primaryNormal,
-        //       ));
-        //     },
-        //   )
-        // ],
       ),
       body: Column(
         children: [
-          Hero(
-            tag: 'mapHero' + mapItemIndex.toString(),
-            child: Image.asset(
-              _mapDataController.getMapItem(index: mapItemIndex).imageAsset,
-              fit: BoxFit.fill,
-            ),
+          // Padding to avoid status bar
+          SizedBox(
+            height: MediaQueryData.fromWindow(window).padding.top,
           ),
+          Stack(
+            alignment: AlignmentDirectional.topCenter,
+            children: [
+              Hero(
+                tag: 'mapHero' + mapItemIndex.toString(),
+                child: Image.asset(
+                  _mapDataController.getMapItem(index: mapItemIndex).imageAsset,
+                  fit: BoxFit.fill,
+                ),
+              ),
+              // Draw a decoration with rounded corners at the bottom of image
+              Positioned(
+                bottom: 0,
+                child: Container(
+                    width: Get.width,
+                    height: Constants.borderRadius,
+                    decoration: BoxDecoration(
+                        color: AppColors.primaryWhite,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(Constants.borderRadius),
+                          topRight: Radius.circular(Constants.borderRadius),
+                        )),
+                    child: SizedBox.shrink()),
+              ),
+            ],
+          ),
+
           Container(
             margin: EdgeInsets.symmetric(vertical: Constants.insideMargin),
             child: Text(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:gra_terenowa/controller/tripData_controller.dart';
 import 'package:gra_terenowa/controller/tripState_controller.dart';
@@ -26,7 +27,14 @@ class TripPage extends StatelessWidget {
       extendBodyBehindAppBar: true,
       backgroundColor: AppColors.primaryWhite,
       appBar: AppBar(
-        elevation: 1,
+        systemOverlayStyle: SystemUiOverlayStyle(
+          // Status bar color
+          statusBarColor: AppColors.primaryNormal,
+          // Status bar brightness (optional)
+          statusBarIconBrightness: Brightness.light, // For Android (dark icons)
+          statusBarBrightness: Brightness.dark, // For iOS (dark icons)
+        ),
+        elevation: 0, // no shadow
         backgroundColor:
             AppColors.primaryNormal.withOpacity(Constants.opacity25),
         foregroundColor: AppColors.primaryWhite,

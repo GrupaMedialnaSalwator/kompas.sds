@@ -1,3 +1,4 @@
+import 'package:flutter/services.dart';
 import 'package:gra_terenowa/controller/mapData_controller.dart';
 import 'package:gra_terenowa/controller/tripState_controller.dart';
 import 'package:gra_terenowa/widgets/achievementTracker_widget.dart';
@@ -41,6 +42,14 @@ class _HomePageState extends State<HomePage> {
         extendBodyBehindAppBar: true,
         backgroundColor: AppColors.primaryWhite,
         appBar: AppBar(
+          systemOverlayStyle: SystemUiOverlayStyle(
+            // Status bar color
+            statusBarColor: AppColors.primaryNormal,
+            // Status bar brightness (optional)
+            statusBarIconBrightness:
+                Brightness.light, // For Android (dark icons)
+            statusBarBrightness: Brightness.dark, // For iOS (dark icons)
+          ),
           backgroundColor:
               AppColors.primaryWhite.withOpacity(Constants.opacity25),
           foregroundColor: AppColors.primaryWhite,

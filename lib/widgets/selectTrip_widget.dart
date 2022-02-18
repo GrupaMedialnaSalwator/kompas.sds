@@ -19,13 +19,11 @@ class SelectTrip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final TripDataController _tripDataController = Get.find();
-    return SafeArea(
-      child: Container(
-        // bottomsheet starts 60% lower because it is without an image at the top
-        height: Get.height * Constants.tripBottomSheetRatio +
-            Constants.borderRadius,
-        child: _cardStack(_tripDataController, tripIndex, 0),
-      ),
+    return Container(
+      // bottomsheet starts 60% lower because it is without an image at the top
+      height:
+          Get.height * Constants.tripBottomSheetRatio + Constants.borderRadius,
+      child: _cardStack(_tripDataController, tripIndex, 0),
     );
   }
 }
