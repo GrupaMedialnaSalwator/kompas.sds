@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:gra_terenowa/controller/tripData_controller.dart';
 import 'package:gra_terenowa/controller/tripState_controller.dart';
 import 'package:gra_terenowa/statics/colors.dart';
-import 'package:gra_terenowa/statics/routes.dart';
 import 'package:gra_terenowa/statics/constants.dart';
 import 'package:gra_terenowa/widgets/achievementTracker_widget.dart';
 import 'package:gra_terenowa/model/tripDatabase.dart';
@@ -170,34 +169,6 @@ class TripViewStepSwitch extends StatelessWidget {
                       .description,
                   style: Get.context!.textTheme.bodyText1
                       ?.copyWith(color: AppColors.primaryDark),
-                ),
-              ),
-              Container(
-                alignment: Alignment.bottomCenter,
-                child: Padding(
-                  padding: const EdgeInsets.all(Constants.bottomMargin),
-                  child: TextButton(
-                    child: Text(
-                      "Koniec",
-                      style: Get.context!.textTheme.headline3
-                          ?.copyWith(color: AppColors.primaryWhite),
-                    ),
-                    style: ButtonStyle(
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                          borderRadius:
-                              BorderRadius.circular(Constants.borderRadius),
-                        ),
-                      ),
-                      backgroundColor: MaterialStateProperty.all<Color>(
-                        AppColors.primaryNormal,
-                      ),
-                    ),
-                    onPressed: () {
-                      tripStateController.resetState();
-                      Get.until((route) => Get.currentRoute == AppRoutes.home);
-                    },
-                  ),
                 ),
               ),
             ],

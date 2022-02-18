@@ -643,7 +643,8 @@ List<TripItem> generateTripItems() {
       stepList: <StepItem>[
         StepItem(
           imageAsset: "assets/images/trip02/trip02_01.jpg",
-          caption:"Rajska jabłoń (malus pumila)\nSymbol grzechu pierworodnego. Jezus przyszedł dla odkupienia wszystkich naszych grzechów.",
+          caption:
+              "Rajska jabłoń (malus pumila)\nSymbol grzechu pierworodnego. Jezus przyszedł dla odkupienia wszystkich naszych grzechów.",
           title: "Stacja I\nJezus na śmierć skazany",
           description:
               """„Jakaż to istota otoczona tak wielkim poważaniem otrzyma istnienie? Jest nią człowiek, wielka i wspaniała postać żyjąca, cenniejsza w oczach Bożych niż całe stworzenie. Jest nią człowiek, dla niego istnieje niebo i ziemia, morze i całe stworzenie. Do jego zbawienia Bóg przywiązał taką wagę, że dla niego nie oszczędził nawet swego jedynego Syna. Bóg nie przestał czynić wszystkiego, by doprowadzić człowieka do siebie i posadzić go po swojej prawicy” (św. Jan Chryzostom).\n\nKrzyżu święty, nade wszystko, drzewo przenajszlachetniejsze!\nW żadnym lesie takie nie jest, jedno, na którym sam Bóg jest.\nSłodkie drzewo, słodkie gwoździe, rozkoszny owoc nosiło.""",
@@ -651,7 +652,8 @@ List<TripItem> generateTripItems() {
         ),
         StepItem(
           imageAsset: "assets/images/trip02/trip02_02.jpg",
-          caption:"Sosna limba (pinus cembra)\nTo drzewo skazane jest na samotne zmaganie się z przeciwnościami losu, z wichrami i śnieżycami. Jezus został odrzucony przez swój naród. Analizy drzewa krzyża wykazały, że Jezusowy krzyż wykonany został właśnie z sosny.",
+          caption:
+              "Sosna limba (pinus cembra)\nTo drzewo skazane jest na samotne zmaganie się z przeciwnościami losu, z wichrami i śnieżycami. Jezus został odrzucony przez swój naród. Analizy drzewa krzyża wykazały, że Jezusowy krzyż wykonany został właśnie z sosny.",
           title: "Stacja II\nJezus bierze Krzyż na swoje ramiona",
           description:
               """„Krzyż według oceny powierzchownej może wydawać się czymś straszliwym. Gdy jednak wnikamy w jego treść, zrozumiemy, że powinniśmy gorąco go pragnąć. W doczesnym widzeniu rysuje się on przed nami jako drzewo śmierci, natomiast według oceny wiekuistej Chrystusa Pana, który na nim zawisł, jaśnieje nam jako drzewo życia. Narzędzie śmierci stało się dla nas źródłem życia. Krzyż jest drzewem łaski zapewniającej życie” (św. Bonawentura).\n\nSkłoń gałązki, drzewo święte, ulżyj członkom tak rozpiętym.\nOdmień teraz oną srogość, którąś miało z urodzenia.\nSpuść lekuchno i cichuchno ciało Króla niebieskiego.""",
@@ -660,7 +662,8 @@ List<TripItem> generateTripItems() {
         ),
         StepItem(
           imageAsset: "assets/images/trip02/trip02_03.jpg",
-          caption: "Głóg dwuszyjkowy (crategus laevigata)\nTen ciernisty krzew symbolizuje cierpienie, ból i krew, zaś głóg - nadzieję.",
+          caption:
+              "Głóg dwuszyjkowy (crategus laevigata)\nTen ciernisty krzew symbolizuje cierpienie, ból i krew, zaś głóg - nadzieję.",
           title: "Stacja III\nJezus upada pod Krzyżem",
           description:
               """„Lepiej utracić honor, wszystkie dobra i życie, niż obrazić Boga choćby lekkim grzechem, bo grzech jest złem nieskończenie większym” (św. Maksymilian Maria Kolbe).\n\nTyś samo było dostojne, nosić światowe Zbawienie.\nPrzez cię przewóz jest naprawion, światu, który był zagubion;\nktóry święta Krew polała, co z Baranka wypłynęła.""",
@@ -669,7 +672,8 @@ List<TripItem> generateTripItems() {
         ),
         StepItem(
           imageAsset: "assets/images/trip02/trip02_04.jpg",
-          caption: "Lipa drobnolistna (tilla cordata)\nWedług pobożnych legend lipa stała się schronieniem Świętej Rodziny podczas ucieczki do Egiptu.",
+          caption:
+              "Lipa drobnolistna (tilla cordata)\nWedług pobożnych legend lipa stała się schronieniem Świętej Rodziny podczas ucieczki do Egiptu.",
           title: "Stacja IV\nJezus spotyka swoją matkę",
           description:
               """„Stając się Matką Jezusa, prawdziwego Boga i prawdziwego człowieka, Maryja stała się również naszą Matką. Jezus w swoim wielkim miłosierdziu zechciał nazwać nas swoimi braćmi i takim imieniem ustanawia nas wszystkich adoptowanych dziećmi Maryi” (św. Jan Bosko).\n\nW jasełkach leżąc, gdy płakał, już tam był wszystko oglądał,\niż tak haniebnie umrzeć miał, gdy wszystek świat odkupić chciał;\nw on czas między zwierzętami, a teraz między łotrami.""",
@@ -678,7 +682,8 @@ List<TripItem> generateTripItems() {
         ),
         StepItem(
           imageAsset: "assets/images/trip02/trip02_05.jpg",
-          caption: "Bluszcz pospolity (hedera felix)\nBluszcz na podporze symbolizuje pomoc i wsparcie okazywane bliźnim.",
+          caption:
+              "Bluszcz pospolity (hedera felix)\nBluszcz na podporze symbolizuje pomoc i wsparcie okazywane bliźnim.",
           title: "Stacja V\nSzymon Cyrenejczyk pomaga nieść Krzyż Jezusowi",
           description:
               """„Nie doszliśmy jeszcze do Boga, ale mamy z sobą naszego bliźniego. Weźmij więc na siebie tego, który ci towarzyszy w drodze, abyś doszedł do Tego, z którym pragniesz przebywać” (św. Augustyn).\n\nNiesłychana to jest dobroć, za kogo na krzyżu umrzeć.\nKtóż to może dzisiaj zdziałać, za kogo swoją duszę dać?\nSam to Pan Jezus wykonał, bo nas wiernie umiłował.""",
@@ -687,7 +692,8 @@ List<TripItem> generateTripItems() {
         ),
         StepItem(
           imageAsset: "assets/images/trip02/trip02_06.jpg",
-          caption: "Jaśmin (jasminum)\nRoślina oblepiona wiosną białymi kwiatami, a później kulkami owoców, na całe miesiące uosabia swym kolorem i zapachem prostą dobroć. Kwiaty jaśminu symbolizują białą chustę.",
+          caption:
+              "Jaśmin (jasminum)\nRoślina oblepiona wiosną białymi kwiatami, a później kulkami owoców, na całe miesiące uosabia swym kolorem i zapachem prostą dobroć. Kwiaty jaśminu symbolizują białą chustę.",
           title: "Stacja VI\nWeronika ociera twarz Chrystusowi",
           description:
               """„Powinno się być dobrym jak chleb. Powinno się być dobrym jak chleb, który dla wszystkich leży na stole, z którego każdy może dla siebie kęs odkroić, nakarmić się, jeśli jest głodny” (św. Brat Albert).\n\nNędzne by to serce było, co by dziś nie zapłakało,\nwidząc Stworzyciela swego na krzyżu zawieszonego,\nna słońcu upieczonego, Baranka wielkanocnego.""",
@@ -696,7 +702,8 @@ List<TripItem> generateTripItems() {
         ),
         StepItem(
           imageAsset: "assets/images/trip02/trip02_07.jpg",
-          caption: "Ognik szkarłatny, odmiana czerwonoowocowa (pyracantha coccinea)\nCięty na wysokość 1,5 m; grona czerwonych kulek - owoce tego ciernistego krzewu przypominają o krwawej ofierze Jezusa,o Jego cierpieniu i bólu.",
+          caption:
+              "Ognik szkarłatny, odmiana czerwonoowocowa (pyracantha coccinea)\nCięty na wysokość 1,5 m; grona czerwonych kulek - owoce tego ciernistego krzewu przypominają o krwawej ofierze Jezusa,o Jego cierpieniu i bólu.",
           title: "Stacja VII\nJezus upada po raz drugi",
           description:
               """„Wydaje mi się, że w głębi mojego serca Bóg umieścił wiele łaski współczucia dla cierpień innych, a szczególnie dla ludzi ubogich i potrzebujących. Współczucie rodzi w mym sercu pragnienie przyjścia im z pomocą” (św. Ojciec Pio).\n\nMaryja, matka patrzyła na członki, co powijała;\npowijając całowała, z tego wielką radość miała.\nTeraz je widzi sczerniałe, żyły, stawy w Nim porwane.""",
@@ -705,7 +712,8 @@ List<TripItem> generateTripItems() {
         ),
         StepItem(
           imageAsset: "assets/images/trip02/trip02_08.jpg",
-          caption: "Trzy brzozy brodawkowate (betula pendula)\nBrzoza, gdy trzeba, jest drzewem radosnym, ale też potrafi delikatnie zwieszać gałązki ku ziemi. Brzoza symbolizuje kobiecość. Jej zwisające gałązki, obłamane wiosną - płaczą (wydzielają kroplami sok).",
+          caption:
+              "Trzy brzozy brodawkowate (betula pendula)\nBrzoza, gdy trzeba, jest drzewem radosnym, ale też potrafi delikatnie zwieszać gałązki ku ziemi. Brzoza symbolizuje kobiecość. Jej zwisające gałązki, obłamane wiosną - płaczą (wydzielają kroplami sok).",
           title: "Stacja VIII\nJezus pociesza płaczące niewiasty",
           description:
               """„Kobieta, jak uczy doświadczenie, jest nade wszystko sercem wspólnoty rodzinnej. Ona daje życie - i ona też pierwsza wychowuje. Oczywiście wspomagana przez męża i dzieląc z nim systematycznie cały zakres powinności rodzicielskich i wychowawczych. Jednakże wiadomo, że organizm ludzki przestaje żyć, gdy zabraknie pracy serca. Analogia jest dość przejrzysta” (św. Jan Paweł II).\n\nNie był taki, ani będzie żadnemu smutek na świecie,\njaki czysta Panna miała wonczas, kiedy narzekała:\nNędzna ja sierota dzisiaj, do kogóż ja się skłonić mam?""",
@@ -714,7 +722,8 @@ List<TripItem> generateTripItems() {
         ),
         StepItem(
           imageAsset: "assets/images/trip02/trip02_09.jpg",
-          caption: "Głóg ostrogłowy (crategus crus galli)\nProwadzony jako drzewko. Znów krwawe jagody, znów kolce korony cierniowej. Cierpienie, ból.",
+          caption:
+              "Głóg ostrogłowy (crategus crus galli)\nProwadzony jako drzewko. Znów krwawe jagody, znów kolce korony cierniowej. Cierpienie, ból.",
           title: "Stacja IX\nJezus upada po raz trzeci",
           description:
               """„Każdy dobry chrześcijanin winien być bardziej skory do ocalenia wypowiedzi bliźniego niż do jej potępienia. A jeśli nie może jej ocalić, niech spyta go, jak on ją rozumie, a jeśli on rozumie ją źle, niech go poprawi z miłością. A jeśli to nie wystarcza, niech szuka wszelkich środków stosownych do tego, aby on, dobrze ją rozumiejąc, mógł się ocalić” (św. Ignacy Loyola).\n\nJednegom Synaczka miała, com Go z nieba być poznała,\ni tegom już postradała, jenom sama się została.\nCiężki ból cierpi me serce, od żalu mi się rozpaść chce.""",
@@ -723,7 +732,8 @@ List<TripItem> generateTripItems() {
         ),
         StepItem(
           imageAsset: "assets/images/trip02/trip02_10.jpg",
-          caption: "Czerwona pnąca róża (rosa)\nKrew, kolce. Róża jest symbolem czystości; czerwona symbolizuje miłość i uwielbienie, a pnącze - chęć ukrycia nagości.",
+          caption:
+              "Czerwona pnąca róża (rosa)\nKrew, kolce. Róża jest symbolem czystości; czerwona symbolizuje miłość i uwielbienie, a pnącze - chęć ukrycia nagości.",
           title: "Stacja X\nJezus z szat obnażony",
           description:
               """„Nie powinniśmy oceniać ubogich według ich odzienia lub wyglądu ani według przymiotów ducha, które wydają się posiadać, skoro najczęściej są ludźmi niewykształconymi i prostymi. Gdy jednak popatrzycie na nich w świetle wiary, wtedy ujrzycie, że zastępują oni Syna Bożego, który zechciał być ubogim. W czasie swej męki nie miał prawie wyglądu człowieka. Poganom wydawał się szalonym, dla Żydów był kamieniem obrazy” (św. Wincenty a Paulo).\n\nW radościm Go porodziła, smutku żadnego nie miała.\nA teraz wszystkie boleści dręczą mnie dziś bez litości;\nobymże Ja to mogła mieć, żebym mogła teraz umrzeć.""",
@@ -732,7 +742,8 @@ List<TripItem> generateTripItems() {
         ),
         StepItem(
           imageAsset: "assets/images/trip02/trip02_11.jpg",
-          caption: "Buk pospolity w odmianie purpurowej (fagus silvatica purpurea)\nKrwistoczerwone liście symbolizują krew Chrystusa.",
+          caption:
+              "Buk pospolity w odmianie purpurowej (fagus silvatica purpurea)\nKrwistoczerwone liście symbolizują krew Chrystusa.",
           title: "Stacja XI\nJezus do Krzyża przybity",
           description:
               """„Ludzie potrzebują naszych rąk, by im służyły. Naszych nóg, by ich odwiedzały. Naszych ust, by życzliwie do nich mówiły. Naszych serc, by kochały. Kwiat rozwija się, gdy świeci słońce, a człowiek rozwija się, gdy kocha” (św. Matka Teresa z Kalkuty).\n\nByś mi, Synu, nisko wisiał, wżdybyś ze mnie pomoc miał;\ngłowę bym Twoją podparła, krew zsiadłą z lica otarła.\nAle Cię nie mogę dosiąc, Tobie, Synu, nic dopomóc.""",
@@ -741,7 +752,8 @@ List<TripItem> generateTripItems() {
         ),
         StepItem(
           imageAsset: "assets/images/trip02/trip02_12.jpg",
-          caption: "Bez czarny (sambucus nigra)\nForma drzewiasta. Kwitnie niewinnie, biało, ale jego owoce mają wygląd skrzepniętej krwi. Czarny bez symbolizuje śmierć.",
+          caption:
+              "Bez czarny (sambucus nigra)\nForma drzewiasta. Kwitnie niewinnie, biało, ale jego owoce mają wygląd skrzepniętej krwi. Czarny bez symbolizuje śmierć.",
           title: "Stacja XII\nJezus umiera na Krzyżu",
           description:
               """„Tobie chwała, Chryste! Tobie, który krzyż uczyniłeś mostem ponad śmiercią, aby po nim dusze mogły przejść z krainy śmierci do krainy życia” (św. Ireneusz).\n\nAnielskie się słowa mienią, Symeonowe się pełnią;\nAnioł rzekł: Pełnaś miłości, a jam dziś pełna gorzkości.\nSymeon mi to powiedział, iż me serce miecz przebóść miał.""",
@@ -750,7 +762,8 @@ List<TripItem> generateTripItems() {
         ),
         StepItem(
           imageAsset: "assets/images/trip02/trip02_13.jpg",
-          caption: "Jasion wyniosły, odmiana zwisająca\n(faximus excelsior pendulae) U Hebrajczyków sok z jesionu służył do przemywania ran.",
+          caption:
+              "Jasion wyniosły, odmiana zwisająca\n(faximus excelsior pendulae) U Hebrajczyków sok z jesionu służył do przemywania ran.",
           title: "Stacja XIII\nJezus z Krzyża zdjęty",
           description:
               """„O Święta Matko, miecz naprawdę przeniknął Twoją duszę. Jedynie przenikając duszę Matki, mógł dosięgnąć ciała Syna. Umarłemu Jezusowi, któremu nie mogła już zaszkodzić niemiłosierna włócznia, otworzyła bok, Tobie zaś przeszyła serce. Jego duszy już tam nie było, a Twoja nie mogła się stamtąd oderwać. Straszny ból przeszył Twoją duszę, toteż zupełnie słusznie nazywamy Cię więcej niż Męczennicą, ponieważ ból współcierpienia przewyższa udrękę ciała” (św. Bernard).\n\nNi ja ojca, matki, brata, ni żadnego przyjaciela;\nskądże pocieszenie mam mieć? Wolałabym stokroć umrzeć,\nniż widzieć żołnierza złego, co przebił bok Syna mego.""",
@@ -759,7 +772,8 @@ List<TripItem> generateTripItems() {
         ),
         StepItem(
           imageAsset: "assets/images/trip02/trip02_14.jpg",
-          caption: "Dąb szypułkowy (quercus robur)\nDrzewo to niebawem rozrośnie się potężnie jak dzieło Chrystusa. U Żydów panował zwyczaj chowania zmarłych pod dębami.",
+          caption:
+              "Dąb szypułkowy (quercus robur)\nDrzewo to niebawem rozrośnie się potężnie jak dzieło Chrystusa. U Żydów panował zwyczaj chowania zmarłych pod dębami.",
           title: "Stacja XIV\nJezus złożony do grobu",
           description:
               """„Śmierć nie oddziela nas od siebie, ponieważ wszyscy zdążamy tą samą drogą i odnajdziemy się w tym samym miejscu. Nie będziemy nigdy rozłączeni, ponieważ żyjemy dla Chrystusa i teraz jesteśmy złączeni z Chrystusem, idąc ku Niemu. Wszyscy razem będziemy kiedyś z Chrystusem” (św. Szymon z Tesalonik).\n\nMatki, co synaczki macie, a jako się w nich wy kochacie,\nkiedy wam z nich jeden umrze, ciężki ból ma serce wasze;\ncóż ja, com miała jednego, już nie mogę mieć inszego.""",
@@ -768,7 +782,8 @@ List<TripItem> generateTripItems() {
         ),
         StepItem(
           imageAsset: "assets/images/trip02/trip02_15.jpg",
-          caption: "Drobne sadzonki ostrokrzewu (ilex)\nOstrokrzew symbolizuje ojcostwo, a jako roślina wiecznie zielona -nieśmiertelność.",
+          caption:
+              "Drobne sadzonki ostrokrzewu (ilex)\nOstrokrzew symbolizuje ojcostwo, a jako roślina wiecznie zielona -nieśmiertelność.",
           title: "Stacja XV\nZmartwychwstanie Jezusa",
           description:
               """„Potrzebujemy małych i większych nadziei, które dzień po dniu podtrzymują nas w drodze. Jednak bez wielkiej nadziei, która musi przewyższać pozostałe, są one niewystarczające. Tą wielką nadzieją może być jedynie Bóg, który ogarnia wszechświat i który może nam zaproponować i dać to, czego sami nie możemy osiągnąć. Bóg jest fundamentem nadziei, nie jakikolwiek bóg, ale ten Bóg, który ma ludzkie oblicze i umiłował nas aż do końca: każdą jednostkę i ludzkość w całości” (papież Benedykt XVI).\n\nO, niestetyż, miły Panie, toć nie małe rozłączenie;\nprzedtem było miłowanie, a teraz ciężkie wzdychanie.\nCzemuż, Boże Ojcze, nie dbasz, o Synaczka pieczy nie masz?""",
@@ -779,7 +794,7 @@ List<TripItem> generateTripItems() {
           type: StepType.end,
           title: "Łaska odpustu",
           description:
-              'Do nabożeństwa drogi krzyżowej przywiązana jest łaska odpustu zupełnego pod zwykłymi warunkami. Odpust można uzyskać dla siebie lub dla jednej osoby zmarłej. "Ukrzyżowany Jezus jest wielkim «odpustem» ofiarowanym przez Ojca ludzkości jako przebaczenie win i zaproszenie do synowskiego życia w Duchu Świętym" (św. Jan Paweł II)',
+              'Do nabożeństwa drogi krzyżowej przywiązana jest łaska odpustu zupełnego pod zwykłymi warunkami. Odpust można uzyskać dla siebie lub dla jednej osoby zmarłej.\n\n"Ukrzyżowany Jezus jest wielkim «odpustem» ofiarowanym przez Ojca ludzkości jako przebaczenie win i zaproszenie do synowskiego życia w Duchu Świętym" (św. Jan Paweł II)',
           imageAsset: "assets/images/trip_02.png",
           previousStep: -1,
           nextStep: -1,
