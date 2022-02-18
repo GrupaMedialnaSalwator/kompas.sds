@@ -31,6 +31,7 @@ class TripItem {
     this.description = "Description",
     this.stepList = const [],
     this.enabled = true,
+    this.countPoints = true,
   });
 
   String uid;
@@ -44,6 +45,7 @@ class TripItem {
   String description;
   List<StepItem> stepList;
   bool enabled;
+  bool countPoints;
 
   /// timeStr = "czas"
   static const String timeStr = "czas";
@@ -138,6 +140,7 @@ List<TripItem> generateTripItems() {
           "Poznaj tajemnice klasztornego parku poprzez wyszukiwanie ciekawych miejsc i rozwiązywanie zadań.",
       imageAsset: "assets/images/trip_01.png",
       enabled: true,
+      countPoints: true,
       stepList: <StepItem>[
         StepItem(
           type: StepType.info,
@@ -810,6 +813,7 @@ List<TripItem> generateTripItems() {
           "Towarzysz Panu Jezusowi na drodze krzyżowej w ciszy klasztornego parku.",
       imageAsset: "assets/images/trip_02.png",
       enabled: true,
+      countPoints: false,
     ),
     TripItem(
       uid: "03", // TODO: must fix
@@ -823,6 +827,7 @@ List<TripItem> generateTripItems() {
           "Wejdź do klasztornego labiryntu i odkrywaj mądrości starożytnych filozofów.",
       imageAsset: "assets/images/trip_03.png",
       enabled: false,
+      countPoints: true,
       stepList: <StepItem>[
         StepItem(
           title: "Step 1",
