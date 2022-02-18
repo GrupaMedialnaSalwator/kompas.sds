@@ -31,19 +31,20 @@ class TripViewStepSwitch extends StatelessWidget {
       case StepType.info:
         return Expanded(
           child: ListView(
-            padding: EdgeInsets.all(Constants.insideMargin),
+            padding: EdgeInsets.fromLTRB(Constants.insideMargin, 0,
+                Constants.insideMargin, Constants.insideMargin),
             children: [
-               Container(
+              Container(
                 alignment: Alignment.topCenter,
-                margin: EdgeInsets.symmetric(horizontal: Constants.insideMargin),
+                margin:
+                    EdgeInsets.symmetric(horizontal: Constants.insideMargin),
                 child: Text(
-                  tripDataController
-                      .getStepItem(tripDataSelect: tripDataSelect)
-                      .caption,
-                  style: Get.context!.textTheme.bodyText2
-                      ?.copyWith(color: AppColors.secondaryNormal),
-                      textAlign: TextAlign.center
-                ),
+                    tripDataController
+                        .getStepItem(tripDataSelect: tripDataSelect)
+                        .caption,
+                    style: Get.context!.textTheme.bodyText2
+                        ?.copyWith(color: AppColors.secondaryNormal),
+                    textAlign: TextAlign.center),
               ),
               Container(
                 alignment: Alignment.topLeft,
