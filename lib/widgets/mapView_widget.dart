@@ -4,11 +4,12 @@ import 'package:gra_terenowa/controller/mapData_controller.dart';
 import 'package:gra_terenowa/controller/mapTransfer_controller.dart';
 import 'package:gra_terenowa/statics/colors.dart';
 import 'package:gra_terenowa/statics/constants.dart';
-import 'package:gra_terenowa/widgets/gpsPoint_widget.dart';
+// TODO: GPS
+//import 'package:gra_terenowa/widgets/gpsPoint_widget.dart';
+//import 'package:geolocator/geolocator.dart';
+//import 'package:gra_terenowa/services/gpsService.dart';
 import 'package:gra_terenowa/widgets/mapCardHero_widget.dart';
 import 'package:gra_terenowa/widgets/mapPoint_widget.dart';
-import 'package:geolocator/geolocator.dart';
-import 'package:gra_terenowa/services/gpsService.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:line_icons/line_icons.dart';
 
@@ -29,60 +30,61 @@ class MapView extends StatelessWidget {
       floatingActionButton: Padding(
         padding: const EdgeInsets.fromLTRB(
             0, 0, 0, Constants.mapCardHeight - Constants.buttonMargin),
-        child: FloatingActionButton(
-          elevation: 8,
-          //isExtended: true,
-          child: Icon(
-            Icons.location_on,
-            size: 36,
-            color: AppColors.accentRed,
-          ),
-          backgroundColor: AppColors.primaryWhite,
-          onPressed: () async {
-            // TODO: use streams for faster gps access
-            var position = await determineGPSPosition().catchError((onError) {
-              print(onError);
-            });
-            print(
-              'Szukam sygnału GPS... longitude: ' +
-                  position.longitude.toString() +
-                  ', latitude: ' +
-                  position.latitude.toString(),
-            );
+        // TODO: GPS (position floating button)
+        // child: FloatingActionButton(
+        //   elevation: 8,
+        //   //isExtended: true,
+        //   child: Icon(
+        //     Icons.location_on,
+        //     size: 36,
+        //     color: AppColors.accentRed,
+        //   ),
+        //   backgroundColor: AppColors.primaryWhite,
+        //   onPressed: () async {
+        //     // TODO: GPS (use streams for faster gps access)
+        //     var position = await determineGPSPosition().catchError((onError) {
+        //       print(onError);
+        //     });
+        //     print(
+        //       'Szukam sygnału GPS... longitude: ' +
+        //           position.longitude.toString() +
+        //           ', latitude: ' +
+        //           position.latitude.toString(),
+        //     );
 
-            // center and animate the map view on the item icon
-            var start = controller.value;
-            var end = controller.getCenteredViewMatrixGPS(
-              position.longitude,
-              position.latitude,
-              mapDataController.getMapGPSMinX(),
-              mapDataController.getMapGPSMinY(),
-              mapDataController.getMapGPSMaxX(),
-              mapDataController.getMapGPSMaxY(),
-              mapDataController.getMapGPSMapSizeX(),
-              mapDataController.getMapGPSMapSizeY(),
-            );
-            mapDataController.setupMapAnimation(controller);
-            mapDataController.navigateFromToPoint(start: start, end: end);
-            mapDataController.setCurrentMapIconIndex(0);
+        //     // center and animate the map view on the item icon
+        //     var start = controller.value;
+        //     var end = controller.getCenteredViewMatrixGPS(
+        //       position.longitude,
+        //       position.latitude,
+        //       mapDataController.getMapGPSMinX(),
+        //       mapDataController.getMapGPSMinY(),
+        //       mapDataController.getMapGPSMaxX(),
+        //       mapDataController.getMapGPSMaxY(),
+        //       mapDataController.getMapGPSMapSizeX(),
+        //       mapDataController.getMapGPSMapSizeY(),
+        //     );
+        //     mapDataController.setupMapAnimation(controller);
+        //     mapDataController.navigateFromToPoint(start: start, end: end);
+        //     mapDataController.setCurrentMapIconIndex(0);
 
-            ScaffoldMessenger.of(context).removeCurrentSnackBar();
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                content: Text(
-                  'Jesteś tutaj... longitude: ' +
-                      position.longitude.toString() +
-                      ', latitude: ' +
-                      position.latitude.toString(),
-                  style: TextStyle(color: AppColors.primaryWhite),
-                ),
-                backgroundColor: AppColors.primaryNormal,
-                behavior: SnackBarBehavior.fixed,
-                duration: Duration(seconds: 3),
-              ),
-            );
-          },
-        ),
+        //     ScaffoldMessenger.of(context).removeCurrentSnackBar();
+        //     ScaffoldMessenger.of(context).showSnackBar(
+        //       SnackBar(
+        //         content: Text(
+        //           'Jesteś tutaj... longitude: ' +
+        //               position.longitude.toString() +
+        //               ', latitude: ' +
+        //               position.latitude.toString(),
+        //           style: TextStyle(color: AppColors.primaryWhite),
+        //         ),
+        //         backgroundColor: AppColors.primaryNormal,
+        //         behavior: SnackBarBehavior.fixed,
+        //         duration: Duration(seconds: 3),
+        //       ),
+        //     );
+        //   },
+        // ),
       ),
       body: Stack(
         children: [
