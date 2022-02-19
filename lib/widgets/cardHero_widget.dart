@@ -94,11 +94,15 @@ class CardHero extends StatelessWidget {
                     _tripDataController.getTripItem(index: tripIndex).title,
                     style: Get.context!.textTheme.headline3
                         ?.copyWith(color: AppColors.primaryWhite),
+                    overflow: TextOverflow.fade,
+                    softWrap: false,
                   ),
                   subtitle: Text(
                     _tripDataController.getTripItem(index: tripIndex).subtitle,
                     style: Get.context!.textTheme.headline4
                         ?.copyWith(color: AppColors.primaryWhite),
+                    overflow: TextOverflow.fade,
+                    softWrap: false,
                   ),
                 ),
               ),

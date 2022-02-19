@@ -59,6 +59,8 @@ class MapCardHero extends StatelessWidget {
                                 .title,
                             style: Get.context!.textTheme.headline5
                                 ?.copyWith(color: AppColors.primaryDark),
+                            overflow: TextOverflow.fade,
+                            softWrap: false,
                           ),
                         ),
                         Container(
@@ -71,6 +73,8 @@ class MapCardHero extends StatelessWidget {
                                 .subtitle,
                             style: Get.context!.textTheme.bodyText2
                                 ?.copyWith(color: AppColors.primaryNormal),
+                            overflow: TextOverflow.fade,
+                            softWrap: false,
                           ),
                         ),
                         Spacer(),

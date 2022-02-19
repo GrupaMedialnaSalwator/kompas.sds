@@ -81,27 +81,41 @@ class MapCardPage extends StatelessWidget {
               ),
             ],
           ),
-
-          Container(
-            margin: EdgeInsets.symmetric(vertical: Constants.insideMargin),
-            child: Text(
-              _mapDataController.getMapItem(index: mapItemIndex).title,
-              style: Get.context!.textTheme.headline3
-                  ?.copyWith(color: AppColors.primaryDark),
-            ),
-          ),
-          Text(
-            _mapDataController.getMapItem(index: mapItemIndex).subtitle,
-            style: Get.context!.textTheme.headline6
-                ?.copyWith(color: AppColors.primaryDark),
-          ),
-          Padding(padding: EdgeInsets.all(Constants.insideMargin)),
-          Container(
-            margin: EdgeInsets.all(Constants.insideMargin),
-            child: Text(
-              _mapDataController.getMapItem(index: mapItemIndex).description,
-              style: Get.context!.textTheme.bodyText1
-                  ?.copyWith(color: AppColors.primaryDark),
+          Expanded(
+            child: ListView(
+              padding: EdgeInsets.fromLTRB(Constants.insideMargin, 0,
+                  Constants.insideMargin, Constants.cardMargin),
+              children: [
+                Center(
+                  child: Container(
+                    margin:
+                        EdgeInsets.symmetric(vertical: Constants.cardMargin),
+                    child: Text(
+                      _mapDataController.getMapItem(index: mapItemIndex).title,
+                      style: Get.context!.textTheme.headline3
+                          ?.copyWith(color: AppColors.primaryDark),
+                    ),
+                  ),
+                ),
+                Center(
+                  child: Text(
+                    _mapDataController.getMapItem(index: mapItemIndex).subtitle,
+                    style: Get.context!.textTheme.headline6
+                        ?.copyWith(color: AppColors.primaryDark),
+                  ),
+                ),
+                Padding(padding: EdgeInsets.all(Constants.cardMargin)),
+                Container(
+                  margin: EdgeInsets.all(Constants.insideMargin),
+                  child: Text(
+                    _mapDataController
+                        .getMapItem(index: mapItemIndex)
+                        .description,
+                    style: Get.context!.textTheme.bodyText1
+                        ?.copyWith(color: AppColors.primaryDark),
+                  ),
+                ),
+              ],
             ),
           ),
         ],
