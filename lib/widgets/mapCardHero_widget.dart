@@ -82,13 +82,9 @@ class MapCardHero extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Row(
-                              children: List<Icon>.generate(
-                                  5,
-                                  (index) => Icon(
-                                        Icons.star,
-                                        size: 24,
-                                        color: AppColors.primaryNormal,
-                                      )),
+                              children: generateStars(_mapDataController
+                                  .getMapItem(index: mapItemIndex)
+                                  .rating),
                             ),
                             IconButton(
                                 onPressed: () => {
@@ -119,5 +115,34 @@ class MapCardHero extends StatelessWidget {
             borderRadius: BorderRadius.circular(Constants.borderRadius),
           ),
         ));
+  }
+
+  List<Icon> generateStars(double rating) {
+    return List<Icon>.generate(5, (index) {
+      // full stars
+      if (rating >= (index + 1)) {
+        return Icon(
+          Icons.star,
+          size: 24,
+          color: AppColors.primaryNormal,
+        );
+      }
+      // half-stars
+      else if ((rating - index) > 0) {
+        return Icon(
+          Icons.star_half,
+          size: 24,
+          color: AppColors.primaryNormal,
+        );
+      }
+      // empty stars
+      else {
+        return Icon(
+          Icons.star_border,
+          size: 24,
+          color: AppColors.primaryNormal,
+        );
+      }
+    });
   }
 }
