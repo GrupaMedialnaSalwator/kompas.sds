@@ -32,7 +32,20 @@ class CardHero extends StatelessWidget {
         onTap: () {
           if (_tripDataController.getTripItem(index: tripIndex).enabled) {
             onTap();
-          } else {}
+          } else {
+            ScaffoldMessenger.of(context).removeCurrentSnackBar();
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(
+                  'Ta przygoda jest na razie niedostępna...',
+                  style: TextStyle(color: AppColors.primaryWhite),
+                ),
+                backgroundColor: AppColors.primaryNormal,
+                behavior: SnackBarBehavior.fixed,
+                duration: Duration(seconds: 3),
+              ),
+            );
+          }
         },
         child: CardHeroDisplay(
           enabled: _tripDataController.getTripItem(index: tripIndex).enabled,
