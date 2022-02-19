@@ -7,8 +7,6 @@ import 'package:gra_terenowa/statics/constants.dart';
 import 'package:gra_terenowa/widgets/achievementTracker_widget.dart';
 import 'package:gra_terenowa/model/tripDatabase.dart';
 import 'package:gra_terenowa/widgets/tripStepSelectBox_widget.dart';
-import 'package:hive/hive.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 
 /// Displays trip content based on step type
 class TripViewStepSwitch extends StatelessWidget {
@@ -30,6 +28,9 @@ class TripViewStepSwitch extends StatelessWidget {
       case StepType.info:
         return Expanded(
           child: ListView(
+            // start with scroll position on top (key and controller)
+            key: Key(tripStateController.getCurrentStep().toString()),
+            controller: ScrollController(keepScrollOffset: false),
             padding: EdgeInsets.fromLTRB(Constants.insideMargin, 0,
                 Constants.insideMargin, Constants.insideMargin),
             children: [
@@ -103,6 +104,9 @@ class TripViewStepSwitch extends StatelessWidget {
         //TODO remove mk
         return Expanded(
           child: ListView(
+            // start with scroll position on top (key and controller)
+            key: Key(tripStateController.getCurrentStep().toString()),
+            controller: ScrollController(keepScrollOffset: false),
             padding: EdgeInsets.all(Constants.insideMargin),
             children: [
               Container(
@@ -147,6 +151,9 @@ class TripViewStepSwitch extends StatelessWidget {
         AchievementOperations().incrementTripScore(tripDataSelect);
         return Expanded(
           child: ListView(
+            // start with scroll position on top (key and controller)
+            key: Key(tripStateController.getCurrentStep().toString()),
+            controller: ScrollController(keepScrollOffset: false),
             padding: EdgeInsets.all(Constants.insideMargin),
             children: [
               Container(
