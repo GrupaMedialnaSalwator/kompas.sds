@@ -1,4 +1,4 @@
-# Gra Terenowa
+# kompas.sds
 ![zamek_jesien_mobile](https://user-images.githubusercontent.com/42238956/139399262-2e2ca06c-35b7-4ffe-9dd7-8fa3d9fef1b2.jpg)
 
 Outdoor game for families written in Flutter.

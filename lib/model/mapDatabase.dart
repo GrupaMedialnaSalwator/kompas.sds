@@ -1,8 +1,8 @@
 /// This class will handle data loading from FireBase
 
 import 'package:flutter/material.dart';
-import 'package:gra_terenowa/statics/colors.dart';
-import 'package:gra_terenowa/statics/constants.dart';
+import 'package:kompas/statics/colors.dart';
+import 'package:kompas/statics/constants.dart';
 
 enum MapItemType {
   building_large,

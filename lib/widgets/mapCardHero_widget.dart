@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:gra_terenowa/controller/mapData_controller.dart';
-import 'package:gra_terenowa/statics/colors.dart';
-import 'package:gra_terenowa/statics/constants.dart';
-import 'package:gra_terenowa/view/mapCard_screen.dart';
+import 'package:kompas/controller/mapData_controller.dart';
+import 'package:kompas/statics/colors.dart';
+import 'package:kompas/statics/constants.dart';
+import 'package:kompas/view/mapCard_screen.dart';
 
 class MapCardHero extends StatelessWidget {
   const MapCardHero({Key? key, required this.onTap, required this.mapItemIndex})

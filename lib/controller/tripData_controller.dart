@@ -2,7 +2,7 @@
 ///
 
 import 'package:get/get.dart';
-import 'package:gra_terenowa/model/tripDatabase.dart';
+import 'package:kompas/model/tripDatabase.dart';
 
 class TripDataController extends GetxController {
   /// Holds data for all available trips

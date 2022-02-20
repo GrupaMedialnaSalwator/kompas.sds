@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:gra_terenowa/statics/constants.dart';
+import 'package:kompas/statics/constants.dart';
 
 class MapTransformController extends TransformationController {
   MapTransformController() {

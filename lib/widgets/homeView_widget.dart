@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:gra_terenowa/statics/colors.dart';
-import 'package:gra_terenowa/statics/constants.dart';
-import 'package:gra_terenowa/view/selectTrip_screen.dart';
-import 'package:gra_terenowa/widgets/selectTrip_widget.dart';
+import 'package:kompas/statics/colors.dart';
+import 'package:kompas/statics/constants.dart';
+import 'package:kompas/view/selectTrip_screen.dart';
+import 'package:kompas/widgets/selectTrip_widget.dart';
 
 import 'cardHero_widget.dart';
 

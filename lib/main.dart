@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:gra_terenowa/statics/routes.dart';
-import 'package:gra_terenowa/statics/text_styles.dart';
-import 'package:gra_terenowa/view/home_screen.dart';
-import 'package:gra_terenowa/view/mapCard_screen.dart';
-import 'package:gra_terenowa/view/trip_screen.dart';
+import 'package:kompas/statics/routes.dart';
+import 'package:kompas/statics/text_styles.dart';
+import 'package:kompas/view/home_screen.dart';
+import 'package:kompas/view/mapCard_screen.dart';
+import 'package:kompas/view/trip_screen.dart';
 
 import 'statics/colors.dart';
 import 'view/selectTrip_screen.dart';
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'GraTerenowa',
+      title: 'kompas.sds',
       theme: ThemeData.light().copyWith(
         primaryColor: AppColors.primaryNormal,
         backgroundColor: AppColors.primaryWhite,

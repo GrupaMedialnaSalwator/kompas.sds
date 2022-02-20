@@ -1,4 +1,4 @@
-name: gra_terenowa
+name: kompas
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -32,6 +32,7 @@ dependencies:
   get:
   line_icons: ^2.0.1
   cupertino_icons: ^1.0.2
+  change_app_package_name: ^1.0.0
   #TODO: GPS
   #geolocator: ^8.1.0
 

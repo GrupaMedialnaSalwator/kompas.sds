@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:gra_terenowa/controller/tripData_controller.dart';
-import 'package:gra_terenowa/statics/constants.dart';
+import 'package:kompas/controller/tripData_controller.dart';
+import 'package:kompas/statics/constants.dart';
 
 class SelectTripPage extends StatelessWidget {
   const SelectTripPage({

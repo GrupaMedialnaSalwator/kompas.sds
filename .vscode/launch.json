@@ -5,18 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "GraTerenowa (Release)",
+            "name": "Kompas (Release)",
             "type": "dart",
             "request": "launch",
             "flutterMode": "release",
         },
         {
-            "name": "GraTerenowa",
+            "name": "Kompas",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "GraTerenowa (profile mode)",
+            "name": "Kompas (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
