@@ -59,7 +59,7 @@ Stack _cardStack(
                       padding: const EdgeInsets.all(Constants.cardMargin),
                       child: Center(
                         child: Icon(
-                          CupertinoIcons.chevron_compact_down,
+                          Icons.maximize_rounded,
                           color: AppColors.primaryWhite,
                         ),
                       ),

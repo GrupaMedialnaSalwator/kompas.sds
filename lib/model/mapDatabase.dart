@@ -142,7 +142,7 @@ MapData generateMapData() {
         title: 'Obelisk',
         subtitle: 'Trzy filary zakonników',
         description:
-            'Na tym miejscu znajduje się popiersie dwóch ważnych osób dla zgromadzenia salwatorianów: bł. Franciszka Jordana - założyciela oraz ks. Bonawenturę Lüthena - prawą rękę założyciela oraz jego najbliższego współpracownika i przyjaciela. Znajdują się tu także łacińskie nazwy ślubów zakonnych, które składają zakonnicy na całym świecie, a więc ślub czystości (castitas), ubóstwa (paupertas) i posłuszeństwa (oboedientia). Salwatorianie te trzy śluby wiążą także z zaangażowaniem się w konkretny apostolat. Apostolstwo jest dla nas czymś niesłychanie ważnym - głoszenie Ewangelii wszystkimi możliwymi sposobami.',
+            'Na tym miejscu znajduje się popiersie dwóch ważnych osób dla zgromadzenia salwatorianów: bł. Franciszka Jordana - naszego założyciela oraz ks. Bonawentury Lüthena - jego najbliższego współpracownika i przyjaciela. Znajdują się tu także łacińskie nazwy ślubów, które składają zakonnicy na całym świecie, a więc ślub czystości (castitas), ubóstwa (paupertas) i posłuszeństwa (oboedientia). To tych trzech ślubów Salwatorianie dodają także zaangażowanie w konkretny apostolat. Apostolstwo jest dla nas czymś niesłychanie ważnym - głoszenie Ewangelii wszystkimi możliwymi sposobami.',
         rating: 4.0,
         enabled: true,
       ),
@@ -168,7 +168,7 @@ MapData generateMapData() {
         title: 'Pomnik',
         subtitle: 'Bł. Franciszek Jordan',
         description:
-            'Nasz założyciel to błogosławiony Franciszek Maria od Krzyża Jordan. Od niego zaczęło się to wielkie salwatoriańskie dzieło trwające już ponad sto lat. Był to skromny kapłan, pochodzący z ubogiej rodziny, który na wskutek prześladowań w Niemczech musiał się udać do Rzymu, gdzie uczył się języków, do których miał ogromny talent. Tam też zrodził się pomysł założenia zgromadzenia, które miałoby głosić Jezusa Chrystusa wszystkim, wszędzie i wszystkimi możliwymi sposobami. Tak powstali salwatorianie, którzy do teraz starają się realizować testament swojego duchowego ojca.',
+            'Nasz założyciel to błogosławiony Franciszek Maria od Krzyża Jordan. Od niego zaczęło się to wielkie salwatoriańskie dzieło trwające już ponad sto lat. Był to skromny kapłan, pochodzący z ubogiej rodziny, który na skutek prześladowań w Niemczech musiał się udać do Rzymu, gdzie uczył się języków, do których miał ogromny talent. Tam też zrodził się pomysł założenia zgromadzenia, które miałoby głosić Jezusa Chrystusa wszystkim, wszędzie i wszystkimi możliwymi sposobami. Tak powstali salwatorianie, którzy do teraz starają się realizować testament swojego duchowego ojca.',
         rating: 5.0,
         enabled: true,
       ),
@@ -194,7 +194,7 @@ MapData generateMapData() {
         title: 'Buk płaczący',
         subtitle: 'Miejsce piknikowe',
         description:
-            'Ten buk to jedno z najbardziej malowniczych i charakterystycznych drzew w naszym parku. Latem daje upragniony cień, wiosną jest idealnym miejscem na piknik, zimą ozdabia parkową scenerię, jedynie jesienią przeszkadza, zrzucając mnóstwo liści na alejkę prowadzącą do nowicjatu. Według legendy system korzeniowy tego drzewa prowadzi aż do pobliskiego stawu, stąd drzewo ma odpowiednią ilość wody do wzrostu. Zachęcamy do odpocznienia chwilę pod naszym dobrym, starym bukiem dla dorosłych, a dla dzieciaków buk może być niezwykle ciekawą atrakcją do wspinania się na jego gałęzie.',
+            'Ten buk to jedno z najbardziej malowniczych i charakterystycznych drzew w naszym parku. Latem daje upragniony cień, wiosną jest idealnym miejscem na piknik, zimą ozdabia parkową scenerię, jedynie jesienią przeszkadza, zrzucając mnóstwo liści na alejkę prowadzącą do nowicjatu. Według legendy system korzeniowy tego drzewa prowadzi aż do pobliskiego stawu, stąd drzewo ma odpowiednią ilość wody do wzrostu. Zachęcamy do odpoczynku pod naszym dobrym, starym bukiem.',
         rating: 5.0,
         enabled: true,
       ),
