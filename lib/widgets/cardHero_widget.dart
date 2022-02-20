@@ -32,7 +32,20 @@ class CardHero extends StatelessWidget {
         onTap: () {
           if (_tripDataController.getTripItem(index: tripIndex).enabled) {
             onTap();
-          } else {}
+          } else {
+            ScaffoldMessenger.of(context).removeCurrentSnackBar();
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(
+                  'Ta przygoda jest na razie niedostępna...',
+                  style: TextStyle(color: AppColors.primaryWhite),
+                ),
+                backgroundColor: AppColors.primaryNormal,
+                behavior: SnackBarBehavior.fixed,
+                duration: Duration(seconds: 3),
+              ),
+            );
+          }
         },
         child: CardHeroDisplay(
           enabled: _tripDataController.getTripItem(index: tripIndex).enabled,
@@ -94,11 +107,15 @@ class CardHero extends StatelessWidget {
                     _tripDataController.getTripItem(index: tripIndex).title,
                     style: Get.context!.textTheme.headline3
                         ?.copyWith(color: AppColors.primaryWhite),
+                    overflow: TextOverflow.fade,
+                    softWrap: false,
                   ),
                   subtitle: Text(
                     _tripDataController.getTripItem(index: tripIndex).subtitle,
                     style: Get.context!.textTheme.headline4
                         ?.copyWith(color: AppColors.primaryWhite),
+                    overflow: TextOverflow.fade,
+                    softWrap: false,
                   ),
                 ),
               ),

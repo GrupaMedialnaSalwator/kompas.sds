@@ -25,24 +25,10 @@ class CardHeroDisplay extends StatelessWidget {
                 Stack(alignment: AlignmentDirectional.bottomStart, children: [
               child,
               Positioned(
-                child: IconButton(
-                  icon: const Icon(Icons.lock_outline_rounded),
-                  iconSize: 64,
+                child: Icon(
+                  Icons.lock_clock_outlined,
+                  size: 64,
                   color: AppColors.primaryWhite,
-                  onPressed: () {
-                    ScaffoldMessenger.of(context).removeCurrentSnackBar();
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Text(
-                          'Ta przygoda jest na razie zablokowana',
-                          style: TextStyle(color: AppColors.primaryWhite),
-                        ),
-                        backgroundColor: AppColors.primaryNormal,
-                        behavior: SnackBarBehavior.fixed,
-                        duration: Duration(seconds: 3),
-                      ),
-                    );
-                  },
                 ),
                 top: Constants.cardMargin,
                 left: Constants.cardMargin,

@@ -3,13 +3,10 @@ import 'package:get/get.dart';
 import 'package:gra_terenowa/controller/tripData_controller.dart';
 import 'package:gra_terenowa/controller/tripState_controller.dart';
 import 'package:gra_terenowa/statics/colors.dart';
-import 'package:gra_terenowa/statics/routes.dart';
 import 'package:gra_terenowa/statics/constants.dart';
 import 'package:gra_terenowa/widgets/achievementTracker_widget.dart';
 import 'package:gra_terenowa/model/tripDatabase.dart';
 import 'package:gra_terenowa/widgets/tripStepSelectBox_widget.dart';
-import 'package:hive/hive.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 
 /// Displays trip content based on step type
 class TripViewStepSwitch extends StatelessWidget {
@@ -31,19 +28,23 @@ class TripViewStepSwitch extends StatelessWidget {
       case StepType.info:
         return Expanded(
           child: ListView(
-            padding: EdgeInsets.all(Constants.insideMargin),
+            // start with scroll position on top (key and controller)
+            key: Key(tripStateController.getCurrentStep().toString()),
+            controller: ScrollController(keepScrollOffset: false),
+            padding: EdgeInsets.fromLTRB(Constants.insideMargin, 0,
+                Constants.insideMargin, Constants.insideMargin),
             children: [
-               Container(
+              Container(
                 alignment: Alignment.topCenter,
-                margin: EdgeInsets.symmetric(horizontal: Constants.insideMargin),
+                margin:
+                    EdgeInsets.symmetric(horizontal: Constants.insideMargin),
                 child: Text(
-                  tripDataController
-                      .getStepItem(tripDataSelect: tripDataSelect)
-                      .caption,
-                  style: Get.context!.textTheme.bodyText2
-                      ?.copyWith(color: AppColors.secondaryNormal),
-                      textAlign: TextAlign.center
-                ),
+                    tripDataController
+                        .getStepItem(tripDataSelect: tripDataSelect)
+                        .caption,
+                    style: Get.context!.textTheme.bodyText2
+                        ?.copyWith(color: AppColors.secondaryNormal),
+                    textAlign: TextAlign.center),
               ),
               Container(
                 alignment: Alignment.topLeft,
@@ -103,6 +104,9 @@ class TripViewStepSwitch extends StatelessWidget {
         //TODO remove mk
         return Expanded(
           child: ListView(
+            // start with scroll position on top (key and controller)
+            key: Key(tripStateController.getCurrentStep().toString()),
+            controller: ScrollController(keepScrollOffset: false),
             padding: EdgeInsets.all(Constants.insideMargin),
             children: [
               Container(
@@ -147,6 +151,9 @@ class TripViewStepSwitch extends StatelessWidget {
         AchievementOperations().incrementTripScore(tripDataSelect);
         return Expanded(
           child: ListView(
+            // start with scroll position on top (key and controller)
+            key: Key(tripStateController.getCurrentStep().toString()),
+            controller: ScrollController(keepScrollOffset: false),
             padding: EdgeInsets.all(Constants.insideMargin),
             children: [
               Container(
@@ -169,34 +176,6 @@ class TripViewStepSwitch extends StatelessWidget {
                       .description,
                   style: Get.context!.textTheme.bodyText1
                       ?.copyWith(color: AppColors.primaryDark),
-                ),
-              ),
-              Container(
-                alignment: Alignment.bottomCenter,
-                child: Padding(
-                  padding: const EdgeInsets.all(Constants.bottomMargin),
-                  child: TextButton(
-                    child: Text(
-                      "Koniec",
-                      style: Get.context!.textTheme.headline3
-                          ?.copyWith(color: AppColors.primaryWhite),
-                    ),
-                    style: ButtonStyle(
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                          borderRadius:
-                              BorderRadius.circular(Constants.borderRadius),
-                        ),
-                      ),
-                      backgroundColor: MaterialStateProperty.all<Color>(
-                        AppColors.primaryNormal,
-                      ),
-                    ),
-                    onPressed: () {
-                      tripStateController.resetState();
-                      Get.until((route) => Get.currentRoute == AppRoutes.home);
-                    },
-                  ),
                 ),
               ),
             ],

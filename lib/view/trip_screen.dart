@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:gra_terenowa/controller/tripData_controller.dart';
 import 'package:gra_terenowa/controller/tripState_controller.dart';
@@ -26,38 +27,74 @@ class TripPage extends StatelessWidget {
       extendBodyBehindAppBar: true,
       backgroundColor: AppColors.primaryWhite,
       appBar: AppBar(
-        elevation: 1,
-        backgroundColor:
-            AppColors.primaryNormal.withOpacity(Constants.opacity25),
+        systemOverlayStyle: SystemUiOverlayStyle(
+          // Status bar color
+          statusBarColor: AppColors.primaryNormal,
+          // Status bar brightness (optional)
+          statusBarIconBrightness: Brightness.light, // For Android (dark icons)
+          statusBarBrightness: Brightness.dark, // For iOS (dark icons)
+        ),
+        elevation: 0, // no shadow
+        backgroundColor: AppColors.transparent,
         foregroundColor: AppColors.primaryWhite,
         automaticallyImplyLeading: false,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              _tripDataController.getTripItem(index: tripIndex).title,
-              style: TextStyle(color: AppColors.primaryWhite),
-            ),
-            Row(children: [
-              const Icon(LineIcons.trophy),
-              Obx(
-                () => Text(
-                  ' ' + _tripStateController.getCurrentPoints().toString(),
-                  style: TextStyle(color: AppColors.primaryWhite),
-                ),
-              ),
-            ]),
+            _tripDataController.getTripItem(index: tripIndex).countPoints
+                ? Container(
+                    padding: EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                      color: AppColors.primaryNormal
+                          .withOpacity(Constants.opacity75),
+                      shape: BoxShape.rectangle,
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(Constants.borderRadius),
+                      ),
+                    ),
+                    child: Center(
+                      child: Row(
+                        children: [
+                          const Icon(LineIcons.trophy),
+                          Obx(
+                            () => Text(
+                              ' ' +
+                                  _tripStateController
+                                      .getCurrentPoints()
+                                      .toString(),
+                              style: TextStyle(color: AppColors.primaryWhite),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  )
+                : // Placeholder
+                SizedBox(width: Constants.minMargin),
           ],
         ),
+
         actions: <Widget>[
-          IconButton(
-            icon: const Icon(Icons.close),
-            color: AppColors.primaryWhite,
-            onPressed: () {
-              _tripStateController
-                  .resetState(); // redundant, since controller will be destroyed
-              Get.until((route) => Get.currentRoute == AppRoutes.home);
-            },
+          Container(
+            decoration: BoxDecoration(
+              color: AppColors.primaryNormal.withOpacity(Constants.opacity75),
+              shape: BoxShape.circle,
+            ),
+            child: Center(
+              child: IconButton(
+                icon: const Icon(Icons.close),
+                color: AppColors.primaryWhite,
+                onPressed: () {
+                  _tripStateController
+                      .resetState(); // redundant, since controller will be destroyed
+                  Get.until((route) => Get.currentRoute == AppRoutes.home);
+                },
+              ),
+            ),
+          ),
+          // Space from the right side
+          SizedBox(
+            width: Constants.minMargin,
           )
         ],
       ),
