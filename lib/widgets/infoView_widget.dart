@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:kompas/statics/colors.dart';
 import 'package:kompas/statics/constants.dart';
 import 'package:kompas/widgets/achievementTracker_widget.dart';
-import 'package:map_launcher/map_launcher.dart';
 
 class InfoView extends StatelessWidget {
   const InfoView({

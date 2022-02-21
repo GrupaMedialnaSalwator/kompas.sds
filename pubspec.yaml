@@ -26,7 +26,6 @@ dependencies:
   hive: ^2.0.5
   hive_flutter: ^1.1.0
   expansion_tile_card: ^2.0.0
-  map_launcher: ^2.2.0 
   flutter:
     sdk: flutter
   get:
