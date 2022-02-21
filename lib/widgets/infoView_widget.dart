@@ -8,14 +8,6 @@ class InfoView extends StatelessWidget {
   const InfoView({
     Key? key,
   }) : super(key: key);
-  Future<void> navigateCoordinates() async {
-    await MapLauncher.showMarker(
-      mapType: MapType.google,
-      coords: Constants.churchCoords,
-      title: "Kościół w Bagnie",
-      description: "Nawiguję do kościoła w Bagnie",
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -84,15 +76,6 @@ class InfoView extends StatelessWidget {
                                   SizedBox(height: 10),
                                 ],
                               ),
-                              TextButton.icon(
-                                  onPressed: () {
-                                    navigateCoordinates();
-                                  },
-                                  icon: Icon(Icons.navigation),
-                                  label: Text('Nawiguj',
-                                      style: TextStyle(
-                                        color: AppColors.primaryNormal,
-                                      )))
                             ],
                           )),
                     )
