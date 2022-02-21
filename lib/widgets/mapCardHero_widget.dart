@@ -39,6 +39,8 @@ class MapCardHero extends StatelessWidget {
                               .getMapItem(index: mapItemIndex)
                               .imageAsset,
                           fit: BoxFit.cover,
+                          gaplessPlayback:
+                              true, // prevents flicker on switching images
                         ),
                       ),
                     )),
