@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:gra_terenowa/controller/mapData_controller.dart';
-import 'package:gra_terenowa/controller/mapTransfer_controller.dart';
-import 'package:gra_terenowa/model/mapDatabase.dart';
-import 'package:gra_terenowa/statics/colors.dart';
-import 'package:gra_terenowa/statics/constants.dart';
+import 'package:kompas/controller/mapData_controller.dart';
+import 'package:kompas/controller/mapTransfer_controller.dart';
+import 'package:kompas/model/mapDatabase.dart';
+import 'package:kompas/statics/colors.dart';
+import 'package:kompas/statics/constants.dart';
 
 class MapPoint extends StatelessWidget {
   MapPoint({

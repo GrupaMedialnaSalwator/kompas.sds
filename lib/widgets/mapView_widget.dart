@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:gra_terenowa/controller/mapData_controller.dart';
-import 'package:gra_terenowa/controller/mapTransfer_controller.dart';
-import 'package:gra_terenowa/statics/colors.dart';
-import 'package:gra_terenowa/statics/constants.dart';
+import 'package:kompas/controller/mapData_controller.dart';
+import 'package:kompas/controller/mapTransfer_controller.dart';
+import 'package:kompas/statics/colors.dart';
+import 'package:kompas/statics/constants.dart';
 // TODO: GPS
-//import 'package:gra_terenowa/widgets/gpsPoint_widget.dart';
+//import 'package:kompas/widgets/gpsPoint_widget.dart';
 //import 'package:geolocator/geolocator.dart';
-//import 'package:gra_terenowa/services/gpsService.dart';
-import 'package:gra_terenowa/widgets/mapCardHero_widget.dart';
-import 'package:gra_terenowa/widgets/mapPoint_widget.dart';
+//import 'package:kompas/services/gpsService.dart';
+import 'package:kompas/widgets/mapCardHero_widget.dart';
+import 'package:kompas/widgets/mapPoint_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:line_icons/line_icons.dart';
 

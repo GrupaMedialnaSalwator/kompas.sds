@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:gra_terenowa/controller/tripData_controller.dart';
-import 'package:gra_terenowa/statics/colors.dart';
-import 'package:gra_terenowa/statics/constants.dart';
-import 'package:gra_terenowa/widgets/cardHeroDisplay_widget.dart';
+import 'package:kompas/controller/tripData_controller.dart';
+import 'package:kompas/statics/colors.dart';
+import 'package:kompas/statics/constants.dart';
+import 'package:kompas/widgets/cardHeroDisplay_widget.dart';
 
 class CardHero extends StatelessWidget {
   const CardHero(

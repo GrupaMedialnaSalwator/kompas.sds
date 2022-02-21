@@ -1,6 +1,6 @@
 /// This class will handle data loading from FireBase
 
-import 'package:gra_terenowa/statics/constants.dart';
+import 'package:kompas/statics/constants.dart';
 
 enum TripPropertyType {
   time,

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:gra_terenowa/controller/tripData_controller.dart';
-import 'package:gra_terenowa/controller/tripState_controller.dart';
-import 'package:gra_terenowa/statics/colors.dart';
-import 'package:gra_terenowa/statics/constants.dart';
-import 'package:gra_terenowa/widgets/achievementTracker_widget.dart';
-import 'package:gra_terenowa/model/tripDatabase.dart';
-import 'package:gra_terenowa/widgets/tripStepSelectBox_widget.dart';
+import 'package:kompas/controller/tripData_controller.dart';
+import 'package:kompas/controller/tripState_controller.dart';
+import 'package:kompas/statics/colors.dart';
+import 'package:kompas/statics/constants.dart';
+import 'package:kompas/widgets/achievementTracker_widget.dart';
+import 'package:kompas/model/tripDatabase.dart';
+import 'package:kompas/widgets/tripStepSelectBox_widget.dart';
 
 /// Displays trip content based on step type
 class TripViewStepSwitch extends StatelessWidget {

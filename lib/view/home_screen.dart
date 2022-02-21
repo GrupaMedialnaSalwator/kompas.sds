@@ -1,18 +1,18 @@
 import 'package:flutter/services.dart';
-import 'package:gra_terenowa/controller/mapData_controller.dart';
-import 'package:gra_terenowa/controller/tripState_controller.dart';
-import 'package:gra_terenowa/widgets/achievementTracker_widget.dart';
-import 'package:gra_terenowa/statics/constants.dart';
-import 'package:gra_terenowa/statics/keepAliveWrapper.dart';
-import 'package:gra_terenowa/widgets/homeView_widget.dart';
-import 'package:gra_terenowa/widgets/infoView_widget.dart';
-import 'package:gra_terenowa/widgets/mapView_widget.dart';
+import 'package:kompas/controller/mapData_controller.dart';
+import 'package:kompas/controller/tripState_controller.dart';
+import 'package:kompas/widgets/achievementTracker_widget.dart';
+import 'package:kompas/statics/constants.dart';
+import 'package:kompas/statics/keepAliveWrapper.dart';
+import 'package:kompas/widgets/homeView_widget.dart';
+import 'package:kompas/widgets/infoView_widget.dart';
+import 'package:kompas/widgets/mapView_widget.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:gra_terenowa/controller/tripData_controller.dart';
-import 'package:gra_terenowa/statics/colors.dart';
-import 'package:gra_terenowa/widgets/tabOutlineIndicator.dart';
+import 'package:kompas/controller/tripData_controller.dart';
+import 'package:kompas/statics/colors.dart';
+import 'package:kompas/widgets/tabOutlineIndicator.dart';
 import 'package:map_launcher/map_launcher.dart';
 
 class HomePage extends StatefulWidget {
