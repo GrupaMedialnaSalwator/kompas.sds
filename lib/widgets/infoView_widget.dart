@@ -112,6 +112,19 @@ class InfoView extends StatelessWidget {
                     SizedBox(height: 10),
                   ]),
               ExpansionTile(
+                  title: Text("Czy można zwiedzić wnętrze klasztoru?",
+                      style: TextStyle(
+                          color: AppColors.primaryNormal,
+                          fontWeight: FontWeight.bold)),
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(left: Constants.insideMargin),
+                      child: Text(
+                          "Tak, zapraszamy do zwiedzania wnętrza naszego obiektu w każdą niedzielę o godz. 14.00, 15.00 i 16.00. Wystarczy poprosić o oprowadzanie furtiana, którego można znaleźć w środku przy głównym wejściu."),
+                    ),
+                    SizedBox(height: 10),
+                  ]),
+              ExpansionTile(
                   title: Text("Co mieści się w budynku z napisem \"ToTu\"?",
                       style: TextStyle(
                           color: AppColors.primaryNormal,
@@ -120,7 +133,34 @@ class InfoView extends StatelessWidget {
                     Container(
                       margin: EdgeInsets.only(left: Constants.insideMargin),
                       child: Text(
-                          "W tym budynku znajduje się Ruch Młodzieży Salwatoriańskiej."),
+                          "Dom ToTu to centrum rozwoju duchowego i kulturowego oraz ośrodek dla młodzieży prowadzony pod patronatem Ruchu Młodzieży Salwatoriańskiej i Salwatoriańskiego Ośrodka Powołań.\n\nOdwiedź stronę internetową\nhttps://totu.sds.pl/."),
+                    ),
+                    SizedBox(height: 10),
+                  ]),
+              ExpansionTile(
+                  title: Text(
+                      "Czy w tym miejscu są dostępne noclegi i gastronomia?",
+                      style: TextStyle(
+                          color: AppColors.primaryNormal,
+                          fontWeight: FontWeight.bold)),
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(left: Constants.insideMargin),
+                      child: Text(
+                          "Ze względu na charakter miejsca zasadniczo nie udostępniamy miejsc noclegowych. Nie prowadzimy także usług gastronomicznych.\n\nDziękujemy za zrozumienie."),
+                    ),
+                    SizedBox(height: 10),
+                  ]),
+              ExpansionTile(
+                  title: Text("Kim są twórcy aplikacji?",
+                      style: TextStyle(
+                          color: AppColors.primaryNormal,
+                          fontWeight: FontWeight.bold)),
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(left: Constants.insideMargin),
+                      child: Text(
+                          "Jesteśmy klerykami WSD Salwatorianów w Bagnie, którzy są zaangażowani w Grupę Medialną Salwator (GMS). Zainteresowanie nowymi technologiami chcemy wykorzystać do ewangelizacji, naśladując zapał apostolski naszego założyciela, bł. Franciszka Marii od Krzyża Jordana."),
                     ),
                     SizedBox(height: 10),
                   ]),
