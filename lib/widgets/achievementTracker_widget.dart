@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:kompas/controller/tripData_controller.dart';
 import 'package:kompas/statics/colors.dart';
 import 'package:hive/hive.dart';
+import 'package:kompas/statics/constants.dart';
 
 class AchievementTracker extends StatefulWidget {
   const AchievementTracker({
@@ -27,50 +28,138 @@ class _AchievementTrackerState extends State<AchievementTracker> {
   }
   @override
   Widget build(BuildContext context) {
-    return ExpansionTileCard(
-      baseColor: AppColors.primaryWhite,
-      expandedColor: AppColors.primaryWhite,
-      leading: Image.asset("assets/images/icons/winner_cup.png", scale: 5),
-      title: Text("Osiągnięcia",
-          style: TextStyle(
-              color: AppColors.primaryNormal, fontWeight: FontWeight.bold)),
-      subtitle: Text(
-          "Sprawdź ile zdobyłeś punktów za dobre odpowiedzi w przygodach.",
-          style: TextStyle(color: AppColors.primaryDark)),
-      children: <Widget>[
-        Divider(
-          thickness: 1.0,
-          height: 1.0,
-        ),
-        Align(
-          alignment: Alignment.centerLeft,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 16.0,
-              vertical: 8.0,
-            ),
-            child: Column(
+    return ExpansionTile(
+        title: Text("Osiągnięcia",
+            style: TextStyle(
+                color: AppColors.primaryDark, fontWeight: FontWeight.bold)),
+        subtitle: Text(
+            "Sprawdź ile zdobyłeś punktów za dobre odpowiedzi w przygodach."),
+        leading: Image.asset("assets/images/icons/winner_cup.png", scale: 5),
+        children: [
+          Container(
+            margin: EdgeInsets.all(Constants.insideMargin),
+            child: Row(
               children: [
                 Align(
-                  alignment: Alignment.center,
+                  alignment: Alignment.topLeft,
                   child: Text(
-                    "Punkty za dobre odpowiedzi: $answerScore",
+                    "Punkty za dobre odpowiedzi:",
                     style: Theme.of(context).textTheme.headline5,
                   ),
                 ),
+                Spacer(),
                 Align(
-                  alignment: Alignment.center,
+                  alignment: Alignment.topRight,
                   child: Text(
-                    "Punkty za ukończone przygody: $tripScore",
+                    "$answerScore",
                     style: Theme.of(context).textTheme.headline5,
                   ),
                 ),
               ],
             ),
           ),
-        ),
-      ],
-    );
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: Constants.insideMargin),
+            child: Row(
+              children: [
+                Text(
+                  "Punkty za ukończone przygody:",
+                  style: Theme.of(context).textTheme.headline5,
+                ),
+                Spacer(),
+                Text(
+                  "$tripScore",
+                  style: Theme.of(context).textTheme.headline5,
+                ),
+              ],
+            ),
+          ),
+        ]);
+
+    // ExpansionTileCard(
+    //   baseColor: AppColors.primaryWhite,
+    //   expandedColor: AppColors.primaryWhite,
+    //   leading: Image.asset("assets/images/icons/winner_cup.png", scale: 5),
+    //   title: Text("Osiągnięcia",
+    //       style: TextStyle(
+    //           color: AppColors.primaryNormal, fontWeight: FontWeight.bold)),
+    //   subtitle: Text(
+    //       "Sprawdź ile zdobyłeś punktów za dobre odpowiedzi w przygodach.",
+    //       style: TextStyle(color: AppColors.primaryDark)),
+    //   children: <Widget>[
+    //     Divider(
+    //       thickness: 1.0,
+    //       height: 1.0,
+    //     ),
+    //     Align(
+    //       alignment: Alignment.centerLeft,
+    //       child: Padding(
+    //         padding: const EdgeInsets.symmetric(
+    //           horizontal: 16.0,
+    //           vertical: 8.0,
+    //         ),
+
+    //         child: Column(
+    //           children: [
+    //             Row(
+    //               children: [
+    //                 Align(
+    //                   alignment: Alignment.topLeft,
+    //                   child: Text(
+    //                     "Punkty za dobre odpowiedzi:",
+    //                     style: Theme.of(context).textTheme.headline5,
+    //                   ),
+    //                 ),
+    //                 Spacer(),
+    //                 Align(
+    //                   alignment: Alignment.topRight,
+    //                   child: Text(
+    //                     "$answerScore",
+    //                     style: Theme.of(context).textTheme.headline5,
+    //                   ),
+    //                 ),
+    //               ],
+    //             ),
+    //             Row(
+    //               children: [
+    //                 Align(
+    //                   alignment: Alignment.topLeft,
+    //                   child: Text(
+    //                     "Punkty za ukończone przygody:",
+    //                     style: Theme.of(context).textTheme.headline5,
+    //                   ),
+    //                 ),
+    //                 Spacer(),
+    //                 Align(
+    //                   alignment: Alignment.topRight,
+    //                   child: Text(
+    //                     "$tripScore",
+    //                     style: Theme.of(context).textTheme.headline5,
+    //                   ),
+    //                 ),
+    //               ],
+    //             ),
+
+    //             // Align(
+    //             //   alignment: Alignment.center,
+    //             //   child: Text(
+    //             //     "Punkty za dobre odpowiedzi: $answerScore",
+    //             //     style: Theme.of(context).textTheme.headline5,
+    //             //   ),
+    //             // ),
+    //             // Align(
+    //             //   alignment: Alignment.center,
+    //             //   child: Text(
+    //             //     "Punkty za ukończone przygody: $tripScore",
+    //             //     style: Theme.of(context).textTheme.headline5,
+    //             //   ),
+    //             // ),
+    //           ],
+    //         ),
+    //       ),
+    //     ),
+    //   ],
+    // );
   }
 }
 

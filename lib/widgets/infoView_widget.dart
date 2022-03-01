@@ -41,7 +41,7 @@ class InfoView extends StatelessWidget {
               ExpansionTile(
                   title: Text("Gdzie znajdę najbliższą Mszę Świętą?",
                       style: TextStyle(
-                          color: AppColors.primaryNormal,
+                          color: AppColors.primaryDark,
                           fontWeight: FontWeight.bold)),
                   children: [
                     Align(
@@ -91,7 +91,7 @@ class InfoView extends StatelessWidget {
                                   icon: Icon(Icons.navigation),
                                   label: Text('Nawiguj',
                                       style: TextStyle(
-                                        color: AppColors.primaryNormal,
+                                        color: AppColors.primaryDark,
                                       )))
                             ],
                           )),
@@ -101,7 +101,7 @@ class InfoView extends StatelessWidget {
                   title: Text(
                       "Ilu zakonników mieszka na terenie Klasztoru w Bagnie?",
                       style: TextStyle(
-                          color: AppColors.primaryNormal,
+                          color: AppColors.primaryDark,
                           fontWeight: FontWeight.bold)),
                   children: [
                     Container(
@@ -114,7 +114,7 @@ class InfoView extends StatelessWidget {
               ExpansionTile(
                   title: Text("Czy można zwiedzić wnętrze klasztoru?",
                       style: TextStyle(
-                          color: AppColors.primaryNormal,
+                          color: AppColors.primaryDark,
                           fontWeight: FontWeight.bold)),
                   children: [
                     Container(
@@ -127,7 +127,7 @@ class InfoView extends StatelessWidget {
               ExpansionTile(
                   title: Text("Co mieści się w budynku z napisem \"ToTu\"?",
                       style: TextStyle(
-                          color: AppColors.primaryNormal,
+                          color: AppColors.primaryDark,
                           fontWeight: FontWeight.bold)),
                   children: [
                     Container(
@@ -141,7 +141,7 @@ class InfoView extends StatelessWidget {
                   title: Text(
                       "Czy w tym miejscu są dostępne noclegi i gastronomia?",
                       style: TextStyle(
-                          color: AppColors.primaryNormal,
+                          color: AppColors.primaryDark,
                           fontWeight: FontWeight.bold)),
                   children: [
                     Container(
@@ -154,13 +154,13 @@ class InfoView extends StatelessWidget {
               ExpansionTile(
                   title: Text("Kim są twórcy aplikacji?",
                       style: TextStyle(
-                          color: AppColors.primaryNormal,
+                          color: AppColors.primaryDark,
                           fontWeight: FontWeight.bold)),
                   children: [
                     Container(
                       margin: EdgeInsets.only(left: Constants.insideMargin),
                       child: Text(
-                          "Jesteśmy klerykami WSD Salwatorianów w Bagnie, którzy są zaangażowani w Grupę Medialną Salwator (GMS). Zainteresowanie nowymi technologiami chcemy wykorzystać do ewangelizacji, naśladując zapał apostolski naszego założyciela, bł. Franciszka Marii od Krzyża Jordana."),
+                          "Jesteśmy klerykami serminarium Salwatorianów w Bagnie, którzy są zaangażowani w Grupę Medialną Salwator (GMS). Zainteresowanie nowymi technologiami, chcemy je wykorzystać do ewangelizacji, naśladując zapał apostolski naszego założyciela, bł. Franciszka Marii od Krzyża Jordana."),
                     ),
                     SizedBox(height: 10),
                   ]),
