@@ -1,9 +1,11 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:kompas/statics/colors.dart';
 import 'package:kompas/statics/constants.dart';
 import 'package:kompas/widgets/achievementTracker_widget.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:map_launcher/map_launcher.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class InfoView extends StatelessWidget {
   const InfoView({
@@ -67,21 +69,39 @@ class InfoView extends StatelessWidget {
                                           maxLines: 2,
                                         ),
                                         SizedBox(height: 10),
-                                        //TODO: reformat the hours so they are aligned symmetrically
-                                        //TODO: use a link for RMS
-                                        //TODO: insert a GMS ppl photo
-                                        //TODO: count no. of locals
-                                        //TODO: change leading and subtitle color on expansion
                                         Text("Godziny Mszy Świętych:"),
-                                        Text(
-                                          "Pn-Pt: 18:00",
+
+                                        Row(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text("Pn-Pt:"),
+                                                Text("Sob:"),
+                                                Text("Ndz:")
+                                              ],
+                                            ),
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text("18:00"),
+                                                Text("8:00, 18:00"),
+                                                Text("8:30, 11:30, 17:30")
+                                              ],
+                                            )
+                                          ],
                                         ),
-                                        Text(
-                                          "Sob: 8:00, 18:00",
-                                        ),
-                                        Text(
-                                          "Ndz: 8:30, 11:30, 17:30",
-                                        ),
+
+                                        SizedBox(height: 10),
+                                        //TODO: reformat the hours so they are aligned symmetrically
+                                        //TODO: insert a GMS ppl photo
+                                        //TODO: change leading and subtitle color on expansion
+                                        // MAYBE TODO: add a graphics box for the QA section
+
                                         SizedBox(height: 10),
                                       ],
                                     ),
@@ -104,7 +124,24 @@ class InfoView extends StatelessWidget {
                           color: AppColors.primaryDark,
                           fontWeight: FontWeight.bold)),
                   subtitle: Text("Ilu ich tutaj mieszka?"),
-                  children: []),
+                  children: [
+                    Container(
+                      margin: EdgeInsets.symmetric(
+                          horizontal: Constants.insideMargin),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                              "Na terenie klasztoru w Bagnie obecnie mieszka:\n"),
+                          Text("7 księży"),
+                          Text("14 kleryków"),
+                          Text("2 siostry zakonne"),
+                          Text("5 braci zakonnych"),
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                  ]),
               ExpansionTile(
                   leading: Icon(LineIcons.binoculars),
                   title: Text("Zwiedzanie klasztoru",
@@ -112,7 +149,15 @@ class InfoView extends StatelessWidget {
                           color: AppColors.primaryDark,
                           fontWeight: FontWeight.bold)),
                   subtitle: Text("Kiedy i jak?"),
-                  children: []),
+                  children: [
+                    Container(
+                        margin: EdgeInsets.symmetric(
+                            horizontal: Constants.insideMargin),
+                        child: Text(
+                          "Zapraszamy do zwiedzania wnętrza naszego obiektu w każdą niedzielę o godz. 14.00, 15.00 i 16.00. Wystarczy poprosić o oprowadzanie furtiana, którego można znaleźć w środku przy głównym wejściu.",
+                        )),
+                    SizedBox(height: 10),
+                  ]),
               ExpansionTile(
                   leading: Icon(LineIcons.hotel),
                   title: Text("Budynek ToTu",
@@ -120,7 +165,32 @@ class InfoView extends StatelessWidget {
                           color: AppColors.primaryDark,
                           fontWeight: FontWeight.bold)),
                   subtitle: Text("Co to jest?"),
-                  children: []),
+                  children: [
+                    Container(
+                      margin: EdgeInsets.symmetric(
+                          horizontal: Constants.insideMargin),
+                      child: RichText(
+                        text: TextSpan(
+                          children: [
+                            TextSpan(
+                              text:
+                                  'Dom ToTu to centrum rozwoju duchowego i kulturowego oraz ośrodek dla młodzieży prowadzony pod patronatem Ruchu Młodzieży Salwatoriańskiej i Salwatoriańskiego Ośrodka Powołań.\n\nOdwiedź stronę internetową\n',
+                              style: Theme.of(context).textTheme.bodyText2,
+                            ),
+                            TextSpan(
+                              text: 'www.totu.sds.pl',
+                              style: Theme.of(context).textTheme.bodyText2,
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () {
+                                  launch('https://totu.sds.pl/');
+                                },
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                  ]),
               ExpansionTile(
                   leading: Icon(LineIcons.utensils),
                   title: Text("Gastronomia i noclegi",
@@ -132,7 +202,8 @@ class InfoView extends StatelessWidget {
                     Container(
                       margin: EdgeInsets.only(left: Constants.insideMargin),
                       child: Text(
-                          "Ze względu na charakter miejsca zasadniczo nie udostępniamy miejsc noclegowych. Nie prowadzimy także usług gastronomicznych.\n\nDziękujemy za zrozumienie."),
+                        "Ze względu na charakter miejsca zasadniczo nie udostępniamy miejsc noclegowych. Nie prowadzimy także usług gastronomicznych.\n\nDziękujemy za zrozumienie.",
+                      ),
                     ),
                     SizedBox(height: 10),
                   ]),
@@ -148,7 +219,8 @@ class InfoView extends StatelessWidget {
                       margin: EdgeInsets.symmetric(
                           horizontal: Constants.insideMargin),
                       child: Text(
-                          "Jesteśmy klerykami serminarium Salwatorianów w Bagnie, którzy są zaangażowani w Grupę Medialną Salwator. Zainteresowanie nowymi technologiami chcemy wykorzystać do ewangelizacji, naśladując zapał apostolski naszego założyciela, bł. Franciszka Marii od Krzyża Jordana."),
+                        "Jesteśmy klerykami serminarium Salwatorianów w Bagnie, którzy są zaangażowani w Grupę Medialną Salwator. Zainteresowanie nowymi technologiami chcemy wykorzystać do ewangelizacji, naśladując zapał apostolski naszego założyciela, bł. Franciszka Marii od Krzyża Jordana.",
+                      ),
                     ),
                     SizedBox(height: 10),
                   ]),
