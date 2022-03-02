@@ -63,6 +63,8 @@ class CardHero extends StatelessWidget {
                             .getTripItem(index: tripIndex)
                             .imageAsset,
                         fit: BoxFit.cover,
+                        gaplessPlayback:
+                            true, // prevents flicker on switching images
                       ),
                     ),
                   )),

@@ -38,6 +38,7 @@ class TripViewStep extends StatelessWidget {
                   .getStepItem(tripDataSelect: tripDataSelect)
                   .imageAsset,
               fit: BoxFit.fill,
+              gaplessPlayback: true, // prevents flicker on switching images
             ),
             // Draw a decoration with rounded corners at the bottom of image
             Positioned(

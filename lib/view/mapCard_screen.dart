@@ -63,6 +63,7 @@ class MapCardPage extends StatelessWidget {
                 child: Image.asset(
                   _mapDataController.getMapItem(index: mapItemIndex).imageAsset,
                   fit: BoxFit.fill,
+                  gaplessPlayback: true, // prevents flicker on switching images
                 ),
               ),
               // Draw a decoration with rounded corners at the bottom of image
