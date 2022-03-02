@@ -225,6 +225,7 @@ class InfoView extends StatelessWidget {
                           horizontal: Constants.insideMargin),
                       child: Text(
                         "Jesteśmy klerykami serminarium Salwatorianów w Bagnie, którzy są zaangażowani w Grupę Medialną Salwator. Zainteresowanie nowymi technologiami chcemy wykorzystać do ewangelizacji, naśladując zapał apostolski naszego założyciela, bł. Franciszka Marii od Krzyża Jordana.",
+                        //TODO: insert GMS group photo here
                       ),
                     ),
                     SizedBox(height: 10),
