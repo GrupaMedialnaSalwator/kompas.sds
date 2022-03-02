@@ -4,21 +4,12 @@ import 'package:kompas/statics/colors.dart';
 import 'package:kompas/statics/constants.dart';
 import 'package:kompas/widgets/achievementTracker_widget.dart';
 import 'package:line_icons/line_icons.dart';
-import 'package:map_launcher/map_launcher.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class InfoView extends StatelessWidget {
   const InfoView({
     Key? key,
   }) : super(key: key);
-  Future<void> navigateCoordinates() async {
-    await MapLauncher.showMarker(
-      mapType: MapType.google,
-      coords: Constants.churchCoords,
-      title: "Kościół w Bagnie",
-      description: "Nawiguję do kościoła w Bagnie",
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
