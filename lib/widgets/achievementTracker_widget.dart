@@ -28,8 +28,8 @@ class _AchievementTrackerState extends State<AchievementTracker> {
   @override
   Widget build(BuildContext context) {
     return ExpansionTile(
-      iconColor: AppColors.primaryNormal,
-                  textColor: AppColors.primaryNormal,
+      iconColor: AppColors.accentSelect,
+                  textColor: AppColors.accentSelect,
         title: Text("Osiągnięcia",
             style: TextStyle(
                 color: AppColors.primaryDark, fontWeight: FontWeight.bold)),

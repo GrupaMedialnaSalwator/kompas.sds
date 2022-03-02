@@ -41,8 +41,9 @@ class InfoView extends StatelessWidget {
                     "Pytania i odpowiedzi",
                     style: Theme.of(context).textTheme.headline3,
                   )),
-              ExpansionTile(iconColor: AppColors.primaryNormal,
-                  textColor: AppColors.primaryNormal,
+              ExpansionTile(
+                  iconColor: AppColors.accentSelect,
+                  textColor: AppColors.accentSelect,
                   leading: Icon(LineIcons.cross),
                   title: Text("Najbliższa msza święta",
                       style: TextStyle(
@@ -71,7 +72,6 @@ class InfoView extends StatelessWidget {
                                         ),
                                         SizedBox(height: 10),
                                         Text("Godziny Mszy Świętych:"),
-
                                         Row(
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
@@ -96,12 +96,7 @@ class InfoView extends StatelessWidget {
                                             )
                                           ],
                                         ),
-
                                         SizedBox(height: 10),
-                                        //TODO: insert a GMS ppl photo
-                                        //TODO: change leading and subtitle color on expansion
-                                        // MAYBE TODO: add a graphics box for the QA section
-
                                         SizedBox(height: 10),
                                       ],
                                     ),
@@ -117,15 +112,15 @@ class InfoView extends StatelessWidget {
                           )),
                     )
                   ]),
-              ExpansionTile(iconColor: AppColors.primaryNormal,
-                  textColor: AppColors.primaryNormal,
+              ExpansionTile(
+                  iconColor: AppColors.accentSelect,
+                  textColor: AppColors.accentSelect,
                   leading: Icon(LineIcons.users),
                   title: Text("Zakonnicy w klasztorze",
                       style: TextStyle(
                           color: AppColors.primaryDark,
                           fontWeight: FontWeight.bold)),
-                  subtitle: Text(
-                      "Ilu ich tutaj mieszka?"), // to set the color constant on expand,style: TextStyle(color: AppColors.primaryDark)),
+                  subtitle: Text("Ilu ich tutaj mieszka?"),
                   children: [
                     Container(
                       margin: EdgeInsets.symmetric(
@@ -144,8 +139,9 @@ class InfoView extends StatelessWidget {
                     ),
                     SizedBox(height: 10),
                   ]),
-              ExpansionTile(iconColor: AppColors.primaryNormal,
-                  textColor: AppColors.primaryNormal,
+              ExpansionTile(
+                  iconColor: AppColors.accentSelect,
+                  textColor: AppColors.accentSelect,
                   leading: Icon(LineIcons.binoculars),
                   title: Text("Zwiedzanie klasztoru",
                       style: TextStyle(
@@ -161,8 +157,9 @@ class InfoView extends StatelessWidget {
                         )),
                     SizedBox(height: 10),
                   ]),
-              ExpansionTile(iconColor: AppColors.primaryNormal,
-                  textColor: AppColors.primaryNormal,
+              ExpansionTile(
+                  iconColor: AppColors.accentSelect,
+                  textColor: AppColors.accentSelect,
                   leading: Icon(LineIcons.hotel),
                   title: Text("Budynek ToTu",
                       style: TextStyle(
@@ -195,8 +192,9 @@ class InfoView extends StatelessWidget {
                     ),
                     SizedBox(height: 10),
                   ]),
-              ExpansionTile(iconColor: AppColors.primaryNormal,
-                  textColor: AppColors.primaryNormal,
+              ExpansionTile(
+                  iconColor: AppColors.accentSelect,
+                  textColor: AppColors.accentSelect,
                   leading: Icon(LineIcons.utensils),
                   title: Text("Gastronomia i noclegi",
                       style: TextStyle(
@@ -212,8 +210,9 @@ class InfoView extends StatelessWidget {
                     ),
                     SizedBox(height: 10),
                   ]),
-              ExpansionTile(iconColor: AppColors.primaryNormal,
-                  textColor: AppColors.primaryNormal,
+              ExpansionTile(
+                  iconColor: AppColors.accentSelect,
+                  textColor: AppColors.accentSelect,
                   leading: Icon(LineIcons.mobilePhone),
                   title: Text("Twórcy aplikacji",
                       style: TextStyle(
