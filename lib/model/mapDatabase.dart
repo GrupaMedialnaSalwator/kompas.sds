@@ -111,7 +111,7 @@ class MapItem {
         return LineIcons.prayingHands;
       case MapItemType.pin:
       default:
-        return Icons.location_on;
+        return LineIcons.mapMarker;
     }
   }
 }
