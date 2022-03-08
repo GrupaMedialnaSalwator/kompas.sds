@@ -3,15 +3,23 @@
 import 'package:flutter/material.dart';
 import 'package:kompas/statics/colors.dart';
 import 'package:kompas/statics/constants.dart';
+import 'package:line_icons/line_icons.dart';
 
 enum MapItemType {
+  block,
   building_large,
   building_small,
+  chapel,
+  church,
   house,
-  tree,
-  plant,
   info,
+  labyrinth,
+  monument,
+  philosophy,
   pin,
+  plant,
+  tree,
+  worship
 }
 
 class MapData {
@@ -75,21 +83,35 @@ class MapItem {
 
   static IconData getTypeIcon(MapItemType type) {
     switch (type) {
+      case MapItemType.block:
+        return LineIcons.hotel;
       case MapItemType.building_large:
-        return Icons.location_city_rounded;
+        return LineIcons.city;
       case MapItemType.building_small:
-        return Icons.home_work_rounded;
+        return LineIcons.home;
+      case MapItemType.chapel:
+        return LineIcons.church;
+      case MapItemType.church:
+        return LineIcons.cross;
       case MapItemType.house:
-        return Icons.home_rounded;
-      case MapItemType.tree:
-        return Icons.park_rounded;
-      case MapItemType.plant:
-        return Icons.grass_rounded;
+        return LineIcons.home;
       case MapItemType.info:
-        return Icons.local_library_rounded;
+        return LineIcons.info;
+      case MapItemType.labyrinth:
+        return LineIcons.mapSigns;
+      case MapItemType.monument:
+        return LineIcons.monument;
+      case MapItemType.philosophy:
+        return LineIcons.school;
+      case MapItemType.plant:
+        return LineIcons.carrot;
+      case MapItemType.tree:
+        return LineIcons.tree;
+      case MapItemType.worship:
+        return LineIcons.prayingHands;
       case MapItemType.pin:
       default:
-        return Icons.location_on;
+        return LineIcons.mapMarker;
     }
   }
 }
@@ -125,7 +147,7 @@ MapData generateMapData() {
         locationY: 1190,
         uid: '02', // TODO: implement proper UID
         imageAsset: "assets/images/map01/mapItem_02.png",
-        type: MapItemType.house,
+        type: MapItemType.chapel,
         title: 'Diaspora',
         subtitle: 'Kapliczka w parku',
         description:
@@ -138,7 +160,7 @@ MapData generateMapData() {
         locationY: 1320,
         uid: '03', // TODO: implement proper UID
         imageAsset: "assets/images/map01/mapItem_03.png",
-        type: MapItemType.house,
+        type: MapItemType.monument,
         title: 'Obelisk',
         subtitle: 'Trzy filary zakonników',
         description:
@@ -151,7 +173,7 @@ MapData generateMapData() {
         locationY: 960,
         uid: '04', // TODO: implement proper UID
         imageAsset: "assets/images/map01/mapItem_04.png",
-        type: MapItemType.house,
+        type: MapItemType.worship,
         title: 'Grota Matki Bożej',
         subtitle: 'Miejsce modlitwy',
         description:
@@ -164,7 +186,7 @@ MapData generateMapData() {
         locationY: 750,
         uid: '05', // TODO: implement proper UID
         imageAsset: "assets/images/map01/mapItem_05.png",
-        type: MapItemType.house,
+        type: MapItemType.monument,
         title: 'Pomnik',
         subtitle: 'Bł. Franciszek Jordan',
         description:
@@ -177,7 +199,7 @@ MapData generateMapData() {
         locationY: 810,
         uid: '06', // TODO: implement proper UID
         imageAsset: "assets/images/map01/mapItem_06.png",
-        type: MapItemType.house,
+        type: MapItemType.philosophy,
         title: 'Altanka filozofów',
         subtitle: 'Miejsce filozofowania',
         description:
@@ -216,7 +238,7 @@ MapData generateMapData() {
         locationY: 600,
         uid: '09', // TODO: implement proper UID
         imageAsset: "assets/images/map01/mapItem_09.png",
-        type: MapItemType.building_small,
+        type: MapItemType.block,
         title: 'Dom "ToTu"',
         subtitle: 'Centrum dla młodzieży',
         description:
@@ -242,7 +264,7 @@ MapData generateMapData() {
         locationY: 820,
         uid: '11', // TODO: implement proper UID
         imageAsset: "assets/images/map01/mapItem_11.png",
-        type: MapItemType.info,
+        type: MapItemType.labyrinth,
         title: 'Labirynt filozofów',
         subtitle: 'Miejsce do rozmyślań',
         description:
@@ -255,7 +277,7 @@ MapData generateMapData() {
         locationY: 205,
         uid: '11', // TODO: implement proper UID
         imageAsset: "assets/images/map01/mapItem_12.png",
-        type: MapItemType.building_large,
+        type: MapItemType.church,
         title: 'Kościół parafialny',
         subtitle: 'pw. Wniebowzięcia NMP',
         description:
