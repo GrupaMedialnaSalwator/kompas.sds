@@ -6,6 +6,8 @@ import 'package:kompas/widgets/achievementTracker_widget.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import 'kompasBodyText_widget.dart';
+
 class InfoView extends StatelessWidget {
   const InfoView({
     Key? key,
@@ -40,7 +42,7 @@ class InfoView extends StatelessWidget {
                       style: TextStyle(
                           color: AppColors.primaryDark,
                           fontWeight: FontWeight.bold)),
-                  subtitle: Text("Gdzie i w jakich godzinach?"),
+                  subtitle: KompasBodyTextWidget(text: "Gdzie i w jakich godzinach?"),
                   children: [
                     Align(
                       alignment: Alignment.centerLeft,
@@ -71,7 +73,7 @@ class InfoView extends StatelessWidget {
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
                                               children: [
-                                                Text("Pn-Pt:"),
+                                                KompasBodyTextWidget(text: "Pn-Pt:"),
                                                 Text("Sob:"),
                                                 Text("Ndz:")
                                               ],
