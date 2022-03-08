@@ -61,7 +61,7 @@ class InfoView extends StatelessWidget {
                                           softWrap: true,
                                           maxLines: 2,
                                         ),
-                                        SizedBox(height: 10),
+                                        SizedBox(height: Constants.cardMargin),
                                         Text("Godziny Mszy Świętych:"),
                                         Row(
                                           crossAxisAlignment:
@@ -87,8 +87,8 @@ class InfoView extends StatelessWidget {
                                             )
                                           ],
                                         ),
-                                        SizedBox(height: 10),
-                                        SizedBox(height: 10),
+                                        SizedBox(height: Constants.cardMargin),
+                                        SizedBox(height: Constants.cardMargin),
                                       ],
                                     ),
                                   ),
@@ -96,7 +96,7 @@ class InfoView extends StatelessWidget {
                                       "assets/images/icons/kosciol_bagno_circular.png",
                                       scale: 3.5,
                                       fit: BoxFit.fitWidth),
-                                  SizedBox(height: 10),
+                                  SizedBox(height: Constants.cardMargin),
                                 ],
                               ),
                             ],
@@ -128,7 +128,7 @@ class InfoView extends StatelessWidget {
                         ],
                       ),
                     ),
-                    SizedBox(height: 10),
+                    SizedBox(height: Constants.cardMargin),
                   ]),
               ExpansionTile(
                   iconColor: AppColors.accentSelect,
@@ -146,7 +146,7 @@ class InfoView extends StatelessWidget {
                         child: Text(
                           "Zapraszamy do zwiedzania wnętrza naszego obiektu w każdą niedzielę o godz. 14.00, 15.00 i 16.00. Wystarczy poprosić o oprowadzanie furtiana, którego można znaleźć w środku przy głównym wejściu.",
                         )),
-                    SizedBox(height: 10),
+                    SizedBox(height: Constants.cardMargin),
                   ]),
               ExpansionTile(
                   iconColor: AppColors.accentSelect,
@@ -181,7 +181,7 @@ class InfoView extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(height: 10),
+                    SizedBox(height: Constants.cardMargin),
                   ]),
               ExpansionTile(
                   iconColor: AppColors.accentSelect,
@@ -199,7 +199,7 @@ class InfoView extends StatelessWidget {
                         "Ze względu na charakter miejsca zasadniczo nie udostępniamy miejsc noclegowych. Nie prowadzimy także usług gastronomicznych.\n\nDziękujemy za zrozumienie.",
                       ),
                     ),
-                    SizedBox(height: 10),
+                    SizedBox(height: Constants.cardMargin),
                   ]),
               ExpansionTile(
                   iconColor: AppColors.accentSelect,
@@ -219,7 +219,7 @@ class InfoView extends StatelessWidget {
                         //TODO: insert GMS group photo here
                       ),
                     ),
-                    SizedBox(height: 10),
+                    SizedBox(height: Constants.cardMargin),
                   ]),
             ],
           )),

@@ -31,10 +31,10 @@ class _AchievementTrackerState extends State<AchievementTracker> {
       iconColor: AppColors.accentSelect,
                   textColor: AppColors.accentSelect,
         title: Text("Osiągnięcia",
-            style: TextStyle(
-                color: AppColors.primaryDark, fontWeight: FontWeight.bold)),
+            style: Theme.of(context).textTheme.headline4),
         subtitle: Text(
-            "Sprawdź ile zdobyłeś punktów za dobre odpowiedzi w przygodach."),
+            "Sprawdź ile zdobyłeś punktów za dobre odpowiedzi w przygodach.",
+            style: Theme.of(context).textTheme.bodyText2),
         leading: Image.asset("assets/images/icons/winner_cup.png", scale: 5),
         children: [
           Container(
@@ -75,6 +75,7 @@ class _AchievementTrackerState extends State<AchievementTracker> {
               ],
             ),
           ),
+          SizedBox(height: Constants.cardMargin),
         ]);
   }
 }
