@@ -3,7 +3,7 @@ import 'package:kompas/controller/tripData_controller.dart';
 import 'package:kompas/statics/colors.dart';
 import 'package:hive/hive.dart';
 import 'package:kompas/statics/constants.dart';
-import 'package:kompas/statics/kompasText.dart';
+import 'package:kompas/statics/text_styles.dart';
 
 class AchievementTracker extends StatefulWidget {
   const AchievementTracker({
