@@ -31,11 +31,13 @@ class _AchievementTrackerState extends State<AchievementTracker> {
     return ExpansionTile(
         iconColor: AppColors.accentSelect,
         textColor: AppColors.accentSelect,
-        title: KompasTitleText(
+        title: KompasText(style: AppTextStyles.headerH4,
           text: "Osiągnięcia",
         ),
-        subtitle: KompasBodyText(text:
-            "Sprawdź ile zdobyłeś punktów za dobre odpowiedzi w przygodach."),
+        subtitle: KompasText(
+            style: AppTextStyles.paragraphSubtext,
+            text:
+                "Sprawdź ile zdobyłeś punktów za dobre odpowiedzi w przygodach."),
         leading: Image.asset("assets/images/icons/winner_cup.png", scale: 5),
         children: [
           Container(
@@ -44,14 +46,14 @@ class _AchievementTrackerState extends State<AchievementTracker> {
               children: [
                 Align(
                   alignment: Alignment.topLeft,
-                  child: KompasTitleText(
+                  child: KompasText(style: AppTextStyles.headerH4,
                     text: "Punkty za dobre odpowiedzi:",
                   ),
                 ),
                 Spacer(),
                 Align(
                   alignment: Alignment.topRight,
-                  child: KompasTitleText(
+                  child: KompasText(style: AppTextStyles.headerH4,
                     text: "$answerScore",
                   ),
                 ),
@@ -62,11 +64,11 @@ class _AchievementTrackerState extends State<AchievementTracker> {
             margin: EdgeInsets.symmetric(horizontal: Constants.insideMargin),
             child: Row(
               children: [
-                KompasTitleText(
+                KompasText(style: AppTextStyles.headerH4,
                   text: "Punkty za ukończone przygody:",
                 ),
                 Spacer(),
-                KompasTitleText(
+                KompasText(style: AppTextStyles.headerH4,
                   text: "$tripScore",
                 ),
               ],

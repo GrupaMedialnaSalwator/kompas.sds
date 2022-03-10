@@ -98,35 +98,21 @@ class AppTextStyles {
   AppTextStyles._();
 }
 
-class KompasBodyText extends StatelessWidget {
-  const KompasBodyText({
+class KompasText extends StatelessWidget {
+  const KompasText({
     Key? key,
     required this.text,
+    required this.style,
   }) : super(key: key);
 
   final String text;
+  final TextStyle style;
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
       softWrap: true,
-      style: Theme.of(context).textTheme.bodyText2,
-    );
-  }
-}
-
-class KompasTitleText extends StatelessWidget {
-  const KompasTitleText({
-    Key? key,
-    required this.text,
-  }) : super(key: key);
-
-  final String text;
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      text,
-      style: Theme.of(context).textTheme.headline5,
+      style: style,
     );
   }
 }

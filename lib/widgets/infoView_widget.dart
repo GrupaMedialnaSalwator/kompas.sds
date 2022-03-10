@@ -37,7 +37,7 @@ class InfoView extends StatelessWidget {
                   iconColor: AppColors.accentSelect,
                   textColor: AppColors.accentSelect,
                   leading: Icon(LineIcons.cross),
-                  title: KompasTitleText(
+                  title: KompasText(style: AppTextStyles.headerH4,
                     text: "Najbliższa msza święta",
                   ),
                   subtitle: Text("Gdzie i w jakich godzinach?"),
@@ -56,12 +56,15 @@ class InfoView extends StatelessWidget {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        KompasBodyText(
+                                        KompasText(
+                                          style: AppTextStyles.paragraphSubtext,
                                           text:
                                               "Kościół Wniebowzięcia NMP na ul. Ziołowej 36 w Bagnie.",
                                         ),
                                         SizedBox(height: Constants.cardMargin),
-                                        KompasBodyText(
+                                        KompasText(
+                                            style:
+                                                AppTextStyles.paragraphSubtext,
                                             text: "Godziny Mszy Świętych:"),
                                         Row(
                                           crossAxisAlignment:
@@ -71,19 +74,35 @@ class InfoView extends StatelessWidget {
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
                                               children: [
-                                                KompasBodyText(text: "Pn-Pt:"),
-                                                KompasBodyText(text: "Sob:"),
-                                                KompasBodyText(text: "Ndz:")
+                                                KompasText(
+                                                    style: AppTextStyles
+                                                        .paragraphSubtext,
+                                                    text: "Pn-Pt:"),
+                                                KompasText(
+                                                    style: AppTextStyles
+                                                        .paragraphSubtext,
+                                                    text: "Sob:"),
+                                                KompasText(
+                                                    style: AppTextStyles
+                                                        .paragraphSubtext,
+                                                    text: "Ndz:")
                                               ],
                                             ),
                                             Column(
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
                                               children: [
-                                                KompasBodyText(text: "18:00"),
-                                                KompasBodyText(
+                                                KompasText(
+                                                    style: AppTextStyles
+                                                        .paragraphSubtext,
+                                                    text: "18:00"),
+                                                KompasText(
+                                                    style: AppTextStyles
+                                                        .paragraphSubtext,
                                                     text: "8:00, 18:00"),
-                                                KompasBodyText(
+                                                KompasText(
+                                                    style: AppTextStyles
+                                                        .paragraphSubtext,
                                                     text: "8:30, 11:30, 17:30")
                                               ],
                                             )
@@ -109,7 +128,7 @@ class InfoView extends StatelessWidget {
                   iconColor: AppColors.accentSelect,
                   textColor: AppColors.accentSelect,
                   leading: Icon(LineIcons.users),
-                  title: KompasTitleText(
+                  title: KompasText(style: AppTextStyles.headerH4,
                     text: "Zakonnicy w klasztorze",
                   ),
                   subtitle: Text("Ilu ich tutaj mieszka?"),
@@ -120,13 +139,22 @@ class InfoView extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          KompasBodyText(
+                          KompasText(
+                              style: AppTextStyles.paragraphSubtext,
                               text:
                                   "Na terenie klasztoru w Bagnie obecnie mieszka:\n"),
-                          KompasBodyText(text: "7 księży"),
-                          KompasBodyText(text: "14 kleryków"),
-                          KompasBodyText(text: "2 siostry zakonne"),
-                          KompasBodyText(text: "5 braci zakonnych"),
+                          KompasText(
+                              style: AppTextStyles.paragraphSubtext,
+                              text: "7 księży"),
+                          KompasText(
+                              style: AppTextStyles.paragraphSubtext,
+                              text: "14 kleryków"),
+                          KompasText(
+                              style: AppTextStyles.paragraphSubtext,
+                              text: "2 siostry zakonne"),
+                          KompasText(
+                              style: AppTextStyles.paragraphSubtext,
+                              text: "5 braci zakonnych"),
                         ],
                       ),
                     ),
@@ -136,7 +164,7 @@ class InfoView extends StatelessWidget {
                   iconColor: AppColors.accentSelect,
                   textColor: AppColors.accentSelect,
                   leading: Icon(LineIcons.binoculars),
-                  title: KompasTitleText(
+                  title: KompasText(style: AppTextStyles.headerH4,
                     text: "Zwiedzanie klasztoru",
                   ),
                   subtitle: Text("Kiedy i jak?"),
@@ -144,7 +172,8 @@ class InfoView extends StatelessWidget {
                     Container(
                         margin: EdgeInsets.symmetric(
                             horizontal: Constants.insideMargin),
-                        child: KompasBodyText(
+                        child: KompasText(
+                          style: AppTextStyles.paragraphSubtext,
                           text:
                               "Zapraszamy do zwiedzania wnętrza naszego obiektu w każdą niedzielę o godz. 14.00, 15.00 i 16.00. Wystarczy poprosić o oprowadzanie furtiana, którego można znaleźć w środku przy głównym wejściu.",
                         )),
@@ -154,7 +183,7 @@ class InfoView extends StatelessWidget {
                   iconColor: AppColors.accentSelect,
                   textColor: AppColors.accentSelect,
                   leading: Icon(LineIcons.hotel),
-                  title: KompasTitleText(
+                  title: KompasText(style: AppTextStyles.headerH4,
                     text: "Budynek ToTu",
                   ),
                   subtitle: Text("Co to jest?"),
@@ -190,14 +219,15 @@ class InfoView extends StatelessWidget {
                   iconColor: AppColors.accentSelect,
                   textColor: AppColors.accentSelect,
                   leading: Icon(LineIcons.utensils),
-                  title: KompasTitleText(
+                  title: KompasText(style: AppTextStyles.headerH4,
                     text: "Gastronomia i noclegi",
                   ),
                   subtitle: Text("Czy są tutaj oferowane?"),
                   children: [
                     Container(
                       margin: EdgeInsets.only(left: Constants.insideMargin),
-                      child: KompasBodyText(
+                      child: KompasText(
+                        style: AppTextStyles.paragraphSubtext,
                         text:
                             "Ze względu na charakter miejsca zasadniczo nie udostępniamy miejsc noclegowych. Nie prowadzimy także usług gastronomicznych.\n\nDziękujemy za zrozumienie.",
                       ),
@@ -208,7 +238,7 @@ class InfoView extends StatelessWidget {
                   iconColor: AppColors.accentSelect,
                   textColor: AppColors.accentSelect,
                   leading: Icon(LineIcons.mobilePhone),
-                  title: KompasTitleText(
+                  title: KompasText(style: AppTextStyles.headerH4,
                     text: "Twórcy aplikacji",
                   ),
                   subtitle: Text("Kim jesteśmy?"),
@@ -216,7 +246,8 @@ class InfoView extends StatelessWidget {
                     Container(
                       margin: EdgeInsets.symmetric(
                           horizontal: Constants.insideMargin),
-                      child: KompasBodyText(
+                      child: KompasText(
+                        style: AppTextStyles.paragraphSubtext,
                         text:
                             "Jesteśmy klerykami serminarium Salwatorianów w Bagnie, którzy są zaangażowani w Grupę Medialną Salwator. Zainteresowanie nowymi technologiami chcemy wykorzystać do ewangelizacji, naśladując zapał apostolski naszego założyciela, bł. Franciszka Marii od Krzyża Jordana.",
                         //TODO: insert GMS group photo here
