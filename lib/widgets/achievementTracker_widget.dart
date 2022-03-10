@@ -3,6 +3,7 @@ import 'package:kompas/controller/tripData_controller.dart';
 import 'package:kompas/statics/colors.dart';
 import 'package:hive/hive.dart';
 import 'package:kompas/statics/constants.dart';
+import 'package:kompas/statics/kompasText.dart';
 
 class AchievementTracker extends StatefulWidget {
   const AchievementTracker({
@@ -28,13 +29,13 @@ class _AchievementTrackerState extends State<AchievementTracker> {
   @override
   Widget build(BuildContext context) {
     return ExpansionTile(
-      iconColor: AppColors.accentSelect,
-                  textColor: AppColors.accentSelect,
-        title: Text("Osiągnięcia",
-            style: Theme.of(context).textTheme.headline4),
+        iconColor: AppColors.accentSelect,
+        textColor: AppColors.accentSelect,
+        title: KompasTitleText(
+          text: "Osiągnięcia",
+        ),
         subtitle: Text(
-            "Sprawdź ile zdobyłeś punktów za dobre odpowiedzi w przygodach.",
-            style: Theme.of(context).textTheme.bodyText2),
+            "Sprawdź ile zdobyłeś punktów za dobre odpowiedzi w przygodach."),
         leading: Image.asset("assets/images/icons/winner_cup.png", scale: 5),
         children: [
           Container(
@@ -43,17 +44,15 @@ class _AchievementTrackerState extends State<AchievementTracker> {
               children: [
                 Align(
                   alignment: Alignment.topLeft,
-                  child: Text(
-                    "Punkty za dobre odpowiedzi:",
-                    style: Theme.of(context).textTheme.headline5,
+                  child: KompasTitleText(
+                    text: "Punkty za dobre odpowiedzi:",
                   ),
                 ),
                 Spacer(),
                 Align(
                   alignment: Alignment.topRight,
-                  child: Text(
-                    "$answerScore",
-                    style: Theme.of(context).textTheme.headline5,
+                  child: KompasTitleText(
+                    text: "$answerScore",
                   ),
                 ),
               ],
@@ -63,14 +62,12 @@ class _AchievementTrackerState extends State<AchievementTracker> {
             margin: EdgeInsets.symmetric(horizontal: Constants.insideMargin),
             child: Row(
               children: [
-                Text(
-                  "Punkty za ukończone przygody:",
-                  style: Theme.of(context).textTheme.headline5,
+                KompasTitleText(
+                  text: "Punkty za ukończone przygody:",
                 ),
                 Spacer(),
-                Text(
-                  "$tripScore",
-                  style: Theme.of(context).textTheme.headline5,
+                KompasTitleText(
+                  text: "$tripScore",
                 ),
               ],
             ),

@@ -6,7 +6,7 @@ import 'package:kompas/widgets/achievementTracker_widget.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'kompasBodyText_widget.dart';
+import '../statics/kompasText.dart';
 
 class InfoView extends StatelessWidget {
   const InfoView({
@@ -38,11 +38,10 @@ class InfoView extends StatelessWidget {
                   iconColor: AppColors.accentSelect,
                   textColor: AppColors.accentSelect,
                   leading: Icon(LineIcons.cross),
-                  title: Text("Najbliższa msza święta",
-                      style: TextStyle(
-                          color: AppColors.primaryDark,
-                          fontWeight: FontWeight.bold)),
-                  subtitle: KompasBodyTextWidget(text: "Gdzie i w jakich godzinach?"),
+                  title: KompasTitleText(
+                    text: "Najbliższa msza święta",
+                  ),
+                  subtitle: Text("Gdzie i w jakich godzinach?"),
                   children: [
                     Align(
                       alignment: Alignment.centerLeft,
@@ -58,13 +57,13 @@ class InfoView extends StatelessWidget {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        Text(
-                                          "Kościół Wniebowzięcia NMP na ul. Ziołowej 36 w Bagnie.",
-                                          softWrap: true,
-                                          maxLines: 2,
+                                        KompasBodyText(
+                                          text:
+                                              "Kościół Wniebowzięcia NMP na ul. Ziołowej 36 w Bagnie.",
                                         ),
                                         SizedBox(height: Constants.cardMargin),
-                                        Text("Godziny Mszy Świętych:"),
+                                        KompasBodyText(
+                                            text: "Godziny Mszy Świętych:"),
                                         Row(
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
@@ -73,18 +72,20 @@ class InfoView extends StatelessWidget {
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
                                               children: [
-                                                KompasBodyTextWidget(text: "Pn-Pt:"),
-                                                Text("Sob:"),
-                                                Text("Ndz:")
+                                                KompasBodyText(text: "Pn-Pt:"),
+                                                KompasBodyText(text: "Sob:"),
+                                                KompasBodyText(text: "Ndz:")
                                               ],
                                             ),
                                             Column(
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
                                               children: [
-                                                Text("18:00"),
-                                                Text("8:00, 18:00"),
-                                                Text("8:30, 11:30, 17:30")
+                                                KompasBodyText(text: "18:00"),
+                                                KompasBodyText(
+                                                    text: "8:00, 18:00"),
+                                                KompasBodyText(
+                                                    text: "8:30, 11:30, 17:30")
                                               ],
                                             )
                                           ],
@@ -109,10 +110,9 @@ class InfoView extends StatelessWidget {
                   iconColor: AppColors.accentSelect,
                   textColor: AppColors.accentSelect,
                   leading: Icon(LineIcons.users),
-                  title: Text("Zakonnicy w klasztorze",
-                      style: TextStyle(
-                          color: AppColors.primaryDark,
-                          fontWeight: FontWeight.bold)),
+                  title: KompasTitleText(
+                    text: "Zakonnicy w klasztorze",
+                  ),
                   subtitle: Text("Ilu ich tutaj mieszka?"),
                   children: [
                     Container(
@@ -121,12 +121,13 @@ class InfoView extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                              "Na terenie klasztoru w Bagnie obecnie mieszka:\n"),
-                          Text("7 księży"),
-                          Text("14 kleryków"),
-                          Text("2 siostry zakonne"),
-                          Text("5 braci zakonnych"),
+                          KompasBodyText(
+                              text:
+                                  "Na terenie klasztoru w Bagnie obecnie mieszka:\n"),
+                          KompasBodyText(text: "7 księży"),
+                          KompasBodyText(text: "14 kleryków"),
+                          KompasBodyText(text: "2 siostry zakonne"),
+                          KompasBodyText(text: "5 braci zakonnych"),
                         ],
                       ),
                     ),
@@ -136,17 +137,17 @@ class InfoView extends StatelessWidget {
                   iconColor: AppColors.accentSelect,
                   textColor: AppColors.accentSelect,
                   leading: Icon(LineIcons.binoculars),
-                  title: Text("Zwiedzanie klasztoru",
-                      style: TextStyle(
-                          color: AppColors.primaryDark,
-                          fontWeight: FontWeight.bold)),
+                  title: KompasTitleText(
+                    text: "Zwiedzanie klasztoru",
+                  ),
                   subtitle: Text("Kiedy i jak?"),
                   children: [
                     Container(
                         margin: EdgeInsets.symmetric(
                             horizontal: Constants.insideMargin),
-                        child: Text(
-                          "Zapraszamy do zwiedzania wnętrza naszego obiektu w każdą niedzielę o godz. 14.00, 15.00 i 16.00. Wystarczy poprosić o oprowadzanie furtiana, którego można znaleźć w środku przy głównym wejściu.",
+                        child: KompasBodyText(
+                          text:
+                              "Zapraszamy do zwiedzania wnętrza naszego obiektu w każdą niedzielę o godz. 14.00, 15.00 i 16.00. Wystarczy poprosić o oprowadzanie furtiana, którego można znaleźć w środku przy głównym wejściu.",
                         )),
                     SizedBox(height: Constants.cardMargin),
                   ]),
@@ -154,10 +155,9 @@ class InfoView extends StatelessWidget {
                   iconColor: AppColors.accentSelect,
                   textColor: AppColors.accentSelect,
                   leading: Icon(LineIcons.hotel),
-                  title: Text("Budynek ToTu",
-                      style: TextStyle(
-                          color: AppColors.primaryDark,
-                          fontWeight: FontWeight.bold)),
+                  title: KompasTitleText(
+                    text: "Budynek ToTu",
+                  ),
                   subtitle: Text("Co to jest?"),
                   children: [
                     Container(
@@ -189,16 +189,16 @@ class InfoView extends StatelessWidget {
                   iconColor: AppColors.accentSelect,
                   textColor: AppColors.accentSelect,
                   leading: Icon(LineIcons.utensils),
-                  title: Text("Gastronomia i noclegi",
-                      style: TextStyle(
-                          color: AppColors.primaryDark,
-                          fontWeight: FontWeight.bold)),
+                  title: KompasTitleText(
+                    text: "Gastronomia i noclegi",
+                  ),
                   subtitle: Text("Czy są tutaj oferowane?"),
                   children: [
                     Container(
                       margin: EdgeInsets.only(left: Constants.insideMargin),
-                      child: Text(
-                        "Ze względu na charakter miejsca zasadniczo nie udostępniamy miejsc noclegowych. Nie prowadzimy także usług gastronomicznych.\n\nDziękujemy za zrozumienie.",
+                      child: KompasBodyText(
+                        text:
+                            "Ze względu na charakter miejsca zasadniczo nie udostępniamy miejsc noclegowych. Nie prowadzimy także usług gastronomicznych.\n\nDziękujemy za zrozumienie.",
                       ),
                     ),
                     SizedBox(height: Constants.cardMargin),
@@ -207,17 +207,17 @@ class InfoView extends StatelessWidget {
                   iconColor: AppColors.accentSelect,
                   textColor: AppColors.accentSelect,
                   leading: Icon(LineIcons.mobilePhone),
-                  title: Text("Twórcy aplikacji",
-                      style: TextStyle(
-                          color: AppColors.primaryDark,
-                          fontWeight: FontWeight.bold)),
+                  title: KompasTitleText(
+                    text: "Twórcy aplikacji",
+                  ),
                   subtitle: Text("Kim jesteśmy?"),
                   children: [
                     Container(
                       margin: EdgeInsets.symmetric(
                           horizontal: Constants.insideMargin),
-                      child: Text(
-                        "Jesteśmy klerykami serminarium Salwatorianów w Bagnie, którzy są zaangażowani w Grupę Medialną Salwator. Zainteresowanie nowymi technologiami chcemy wykorzystać do ewangelizacji, naśladując zapał apostolski naszego założyciela, bł. Franciszka Marii od Krzyża Jordana.",
+                      child: KompasBodyText(
+                        text:
+                            "Jesteśmy klerykami serminarium Salwatorianów w Bagnie, którzy są zaangażowani w Grupę Medialną Salwator. Zainteresowanie nowymi technologiami chcemy wykorzystać do ewangelizacji, naśladując zapał apostolski naszego założyciela, bł. Franciszka Marii od Krzyża Jordana.",
                         //TODO: insert GMS group photo here
                       ),
                     ),
