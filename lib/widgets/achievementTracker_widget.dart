@@ -3,6 +3,7 @@ import 'package:kompas/controller/tripData_controller.dart';
 import 'package:kompas/statics/colors.dart';
 import 'package:hive/hive.dart';
 import 'package:kompas/statics/constants.dart';
+import 'package:kompas/statics/kompasTextWrapper.dart';
 import 'package:kompas/statics/text_styles.dart';
 
 class AchievementTracker extends StatefulWidget {
@@ -31,7 +32,7 @@ class _AchievementTrackerState extends State<AchievementTracker> {
     return ExpansionTile(
         iconColor: AppColors.accentSelect,
         textColor: AppColors.accentSelect,
-        title: KompasText(style: AppTextStyles.headerH4,
+        title: KompasText(style: AppTextStyles.headerH5,
           text: "Osiągnięcia",
         ),
         subtitle: KompasText(
@@ -46,14 +47,14 @@ class _AchievementTrackerState extends State<AchievementTracker> {
               children: [
                 Align(
                   alignment: Alignment.topLeft,
-                  child: KompasText(style: AppTextStyles.headerH4,
+                  child: KompasText(style: AppTextStyles.headerH5,
                     text: "Punkty za dobre odpowiedzi:",
                   ),
                 ),
                 Spacer(),
                 Align(
                   alignment: Alignment.topRight,
-                  child: KompasText(style: AppTextStyles.headerH4,
+                  child: KompasText(style: AppTextStyles.headerH5,
                     text: "$answerScore",
                   ),
                 ),
@@ -64,11 +65,11 @@ class _AchievementTrackerState extends State<AchievementTracker> {
             margin: EdgeInsets.symmetric(horizontal: Constants.insideMargin),
             child: Row(
               children: [
-                KompasText(style: AppTextStyles.headerH4,
+                KompasText(style: AppTextStyles.headerH5,
                   text: "Punkty za ukończone przygody:",
                 ),
                 Spacer(),
-                KompasText(style: AppTextStyles.headerH4,
+                KompasText(style: AppTextStyles.headerH5,
                   text: "$tripScore",
                 ),
               ],

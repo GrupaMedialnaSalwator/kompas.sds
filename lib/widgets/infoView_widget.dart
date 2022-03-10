@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:kompas/statics/colors.dart';
 import 'package:kompas/statics/constants.dart';
+import 'package:kompas/statics/kompasTextWrapper.dart';
 import 'package:kompas/statics/text_styles.dart';
 import 'package:kompas/widgets/achievementTracker_widget.dart';
 import 'package:line_icons/line_icons.dart';
@@ -29,15 +30,15 @@ class InfoView extends StatelessWidget {
               ),
               Container(
                   margin: EdgeInsets.all(Constants.insideMargin),
-                  child: Text(
+                  child: KompasText( text:
                     "Pytania i odpowiedzi",
-                    style: Theme.of(context).textTheme.headline3,
+                    style: AppTextStyles.headerH3,
                   )),
               ExpansionTile(
                   iconColor: AppColors.accentSelect,
                   textColor: AppColors.accentSelect,
                   leading: Icon(LineIcons.cross),
-                  title: KompasText(style: AppTextStyles.headerH4,
+                  title: KompasText(style: AppTextStyles.headerH5,
                     text: "Najbliższa msza święta",
                   ),
                   subtitle: Text("Gdzie i w jakich godzinach?"),
@@ -128,7 +129,7 @@ class InfoView extends StatelessWidget {
                   iconColor: AppColors.accentSelect,
                   textColor: AppColors.accentSelect,
                   leading: Icon(LineIcons.users),
-                  title: KompasText(style: AppTextStyles.headerH4,
+                  title: KompasText(style: AppTextStyles.headerH5,
                     text: "Zakonnicy w klasztorze",
                   ),
                   subtitle: Text("Ilu ich tutaj mieszka?"),
@@ -164,7 +165,7 @@ class InfoView extends StatelessWidget {
                   iconColor: AppColors.accentSelect,
                   textColor: AppColors.accentSelect,
                   leading: Icon(LineIcons.binoculars),
-                  title: KompasText(style: AppTextStyles.headerH4,
+                  title: KompasText(style: AppTextStyles.headerH5,
                     text: "Zwiedzanie klasztoru",
                   ),
                   subtitle: Text("Kiedy i jak?"),
@@ -183,7 +184,7 @@ class InfoView extends StatelessWidget {
                   iconColor: AppColors.accentSelect,
                   textColor: AppColors.accentSelect,
                   leading: Icon(LineIcons.hotel),
-                  title: KompasText(style: AppTextStyles.headerH4,
+                  title: KompasText(style: AppTextStyles.headerH5,
                     text: "Budynek ToTu",
                   ),
                   subtitle: Text("Co to jest?"),
@@ -219,7 +220,7 @@ class InfoView extends StatelessWidget {
                   iconColor: AppColors.accentSelect,
                   textColor: AppColors.accentSelect,
                   leading: Icon(LineIcons.utensils),
-                  title: KompasText(style: AppTextStyles.headerH4,
+                  title: KompasText(style: AppTextStyles.headerH5,
                     text: "Gastronomia i noclegi",
                   ),
                   subtitle: Text("Czy są tutaj oferowane?"),
@@ -238,7 +239,7 @@ class InfoView extends StatelessWidget {
                   iconColor: AppColors.accentSelect,
                   textColor: AppColors.accentSelect,
                   leading: Icon(LineIcons.mobilePhone),
-                  title: KompasText(style: AppTextStyles.headerH4,
+                  title: KompasText(style: AppTextStyles.headerH5,
                     text: "Twórcy aplikacji",
                   ),
                   subtitle: Text("Kim jesteśmy?"),
