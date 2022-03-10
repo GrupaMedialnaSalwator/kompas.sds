@@ -173,7 +173,9 @@ class InfoView extends StatelessWidget {
                             ),
                             TextSpan(
                               text: 'www.totu.sds.pl',
-                              style: Theme.of(context).textTheme.bodyText2,
+                              style: TextStyle(
+                                  color: AppColors.primaryNormal,
+                                  decoration: TextDecoration.underline),
                               recognizer: TapGestureRecognizer()
                                 ..onTap = () {
                                   launch('https://totu.sds.pl/');
