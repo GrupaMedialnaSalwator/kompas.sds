@@ -250,7 +250,7 @@ class InfoView extends StatelessWidget {
                       child: KompasText(
                         style: AppTextStyles.paragraphSubtext,
                         text:
-                            "Jesteśmy klerykami serminarium Salwatorianów w Bagnie, którzy są zaangażowani w Grupę Medialną Salwator. Zainteresowanie nowymi technologiami chcemy wykorzystać do ewangelizacji, naśladując zapał apostolski naszego założyciela, bł. Franciszka Marii od Krzyża Jordana.",
+                            "Jesteśmy klerykami seminarium Salwatorianów w Bagnie, którzy są zaangażowani w Grupę Medialną Salwator. Zainteresowanie nowymi technologiami chcemy wykorzystać do ewangelizacji, naśladując zapał apostolski naszego założyciela, bł. Franciszka Marii od Krzyża Jordana.",
                         //TODO: insert GMS group photo here
                       ),
                     ),
