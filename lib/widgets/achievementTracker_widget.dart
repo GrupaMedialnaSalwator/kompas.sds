@@ -34,7 +34,7 @@ class _AchievementTrackerState extends State<AchievementTracker> {
         title: KompasTitleText(
           text: "Osiągnięcia",
         ),
-        subtitle: Text(
+        subtitle: KompasBodyText(text:
             "Sprawdź ile zdobyłeś punktów za dobre odpowiedzi w przygodach."),
         leading: Image.asset("assets/images/icons/winner_cup.png", scale: 5),
         children: [
