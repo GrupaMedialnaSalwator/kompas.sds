@@ -2,7 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:kompas/statics/colors.dart';
 import 'package:kompas/statics/constants.dart';
-import 'package:kompas/statics/kompasTextWrapper.dart';
+import 'package:kompas/statics/kompasText.dart';
 import 'package:kompas/statics/text_styles.dart';
 import 'package:kompas/widgets/achievementTracker_widget.dart';
 import 'package:line_icons/line_icons.dart';
