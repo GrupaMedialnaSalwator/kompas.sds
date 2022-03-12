@@ -1,7 +1,12 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:kompas/statics/colors.dart';
 import 'package:kompas/statics/constants.dart';
+import 'package:kompas/statics/kompasText.dart';
+import 'package:kompas/statics/text_styles.dart';
 import 'package:kompas/widgets/achievementTracker_widget.dart';
+import 'package:line_icons/line_icons.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class InfoView extends StatelessWidget {
   const InfoView({
@@ -25,20 +30,24 @@ class InfoView extends StatelessWidget {
               ),
               Container(
                   margin: EdgeInsets.all(Constants.insideMargin),
-                  child: Text(
+                  child: KompasText( text:
                     "Pytania i odpowiedzi",
-                    style: Theme.of(context).textTheme.headline3,
+                    style: AppTextStyles.headerH3,
                   )),
               ExpansionTile(
-                  title: Text("Gdzie znajdę najbliższą Mszę Świętą?",
-                      style: TextStyle(
-                          color: AppColors.primaryNormal,
-                          fontWeight: FontWeight.bold)),
+                  iconColor: AppColors.accentSelect,
+                  textColor: AppColors.accentSelect,
+                  leading: Icon(LineIcons.cross),
+                  title: KompasText(style: AppTextStyles.headerH5,
+                    text: "Najbliższa msza święta",
+                  ),
+                  subtitle: Text("Gdzie i w jakich godzinach?"),
                   children: [
                     Align(
                       alignment: Alignment.centerLeft,
                       child: Container(
-                          margin: EdgeInsets.only(left: Constants.insideMargin),
+                          margin: EdgeInsets.symmetric(
+                              horizontal: Constants.insideMargin),
                           child: Column(
                             children: [
                               Row(
@@ -48,23 +57,60 @@ class InfoView extends StatelessWidget {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        Text(
-                                          "Kościół Wniebowzięcia NMP na ul. Ziołowej 36 w Bagnie.",
-                                          softWrap: true,
-                                          maxLines: 2,
+                                        KompasText(
+                                          style: AppTextStyles.paragraphSubtext,
+                                          text:
+                                              "Kościół Wniebowzięcia NMP na ul. Ziołowej 36 w Bagnie.",
                                         ),
-                                        SizedBox(height: 10),
-                                        Text("Godziny Mszy Świętych:"),
-                                        Text(
-                                          "Pn-Pt: 18:00",
+                                        SizedBox(height: Constants.cardMargin),
+                                        KompasText(
+                                            style:
+                                                AppTextStyles.paragraphSubtext,
+                                            text: "Godziny Mszy Świętych:"),
+                                        Row(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                KompasText(
+                                                    style: AppTextStyles
+                                                        .paragraphSubtext,
+                                                    text: "Pn-Pt:"),
+                                                KompasText(
+                                                    style: AppTextStyles
+                                                        .paragraphSubtext,
+                                                    text: "Sob:"),
+                                                KompasText(
+                                                    style: AppTextStyles
+                                                        .paragraphSubtext,
+                                                    text: "Ndz:")
+                                              ],
+                                            ),
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                KompasText(
+                                                    style: AppTextStyles
+                                                        .paragraphSubtext,
+                                                    text: "18:00"),
+                                                KompasText(
+                                                    style: AppTextStyles
+                                                        .paragraphSubtext,
+                                                    text: "8:00, 18:00"),
+                                                KompasText(
+                                                    style: AppTextStyles
+                                                        .paragraphSubtext,
+                                                    text: "8:30, 11:30, 17:30")
+                                              ],
+                                            )
+                                          ],
                                         ),
-                                        Text(
-                                          "Sob: 8:00, 18:00",
-                                        ),
-                                        Text(
-                                          "Ndz: 8:30, 11:30, 17:00, 17:30",
-                                        ),
-                                        SizedBox(height: 10),
+                                        SizedBox(height: Constants.cardMargin),
+                                        SizedBox(height: Constants.cardMargin),
                                       ],
                                     ),
                                   ),
@@ -72,7 +118,7 @@ class InfoView extends StatelessWidget {
                                       "assets/images/icons/kosciol_bagno_circular.png",
                                       scale: 3.5,
                                       fit: BoxFit.fitWidth),
-                                  SizedBox(height: 10),
+                                  SizedBox(height: Constants.cardMargin),
                                 ],
                               ),
                             ],
@@ -80,31 +126,135 @@ class InfoView extends StatelessWidget {
                     )
                   ]),
               ExpansionTile(
-                  title: Text(
-                      "Ilu zakonników mieszka na terenie Klasztoru w Bagnie?",
-                      style: TextStyle(
-                          color: AppColors.primaryNormal,
-                          fontWeight: FontWeight.bold)),
+                  iconColor: AppColors.accentSelect,
+                  textColor: AppColors.accentSelect,
+                  leading: Icon(LineIcons.users),
+                  title: KompasText(style: AppTextStyles.headerH5,
+                    text: "Zakonnicy w klasztorze",
+                  ),
+                  subtitle: Text("Ilu ich tutaj mieszka?"),
                   children: [
                     Container(
-                        margin: EdgeInsets.only(left: Constants.insideMargin),
-                        child: Text(
-                          "Na terenie Klasztoru w Bagnie mieszka 28 zakonników.",
-                        )),
-                    SizedBox(height: 10),
+                      margin: EdgeInsets.symmetric(
+                          horizontal: Constants.insideMargin),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          KompasText(
+                              style: AppTextStyles.paragraphSubtext,
+                              text:
+                                  "Na terenie klasztoru w Bagnie obecnie mieszka:\n"),
+                          KompasText(
+                              style: AppTextStyles.paragraphSubtext,
+                              text: "7 księży"),
+                          KompasText(
+                              style: AppTextStyles.paragraphSubtext,
+                              text: "14 kleryków"),
+                          KompasText(
+                              style: AppTextStyles.paragraphSubtext,
+                              text: "2 siostry zakonne"),
+                          KompasText(
+                              style: AppTextStyles.paragraphSubtext,
+                              text: "5 braci zakonnych"),
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: Constants.cardMargin),
                   ]),
               ExpansionTile(
-                  title: Text("Co mieści się w budynku z napisem \"ToTu\"?",
-                      style: TextStyle(
-                          color: AppColors.primaryNormal,
-                          fontWeight: FontWeight.bold)),
+                  iconColor: AppColors.accentSelect,
+                  textColor: AppColors.accentSelect,
+                  leading: Icon(LineIcons.binoculars),
+                  title: KompasText(style: AppTextStyles.headerH5,
+                    text: "Zwiedzanie klasztoru",
+                  ),
+                  subtitle: Text("Kiedy i jak?"),
+                  children: [
+                    Container(
+                        margin: EdgeInsets.symmetric(
+                            horizontal: Constants.insideMargin),
+                        child: KompasText(
+                          style: AppTextStyles.paragraphSubtext,
+                          text:
+                              "Zapraszamy do zwiedzania wnętrza naszego obiektu w każdą niedzielę o godz. 14.00, 15.00 i 16.00. Wystarczy poprosić o oprowadzanie furtiana, którego można znaleźć w środku przy głównym wejściu.",
+                        )),
+                    SizedBox(height: Constants.cardMargin),
+                  ]),
+              ExpansionTile(
+                  iconColor: AppColors.accentSelect,
+                  textColor: AppColors.accentSelect,
+                  leading: Icon(LineIcons.hotel),
+                  title: KompasText(style: AppTextStyles.headerH5,
+                    text: "Budynek ToTu",
+                  ),
+                  subtitle: Text("Co to jest?"),
+                  children: [
+                    Container(
+                      margin: EdgeInsets.symmetric(
+                          horizontal: Constants.insideMargin),
+                      child: RichText(
+                        text: TextSpan(
+                          children: [
+                            TextSpan(
+                              text:
+                                  'Dom ToTu to centrum rozwoju duchowego i kulturowego oraz ośrodek dla młodzieży prowadzony pod patronatem Ruchu Młodzieży Salwatoriańskiej i Salwatoriańskiego Ośrodka Powołań.\n\nOdwiedź stronę internetową\n',
+                              style: Theme.of(context).textTheme.bodyText2,
+                            ),
+                            TextSpan(
+                              text: 'www.totu.sds.pl',
+                              style: TextStyle(
+                                  color: AppColors.primaryNormal,
+                                  decoration: TextDecoration.underline),
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () {
+                                  launch('https://totu.sds.pl/');
+                                },
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: Constants.cardMargin),
+                  ]),
+              ExpansionTile(
+                  iconColor: AppColors.accentSelect,
+                  textColor: AppColors.accentSelect,
+                  leading: Icon(LineIcons.utensils),
+                  title: KompasText(style: AppTextStyles.headerH5,
+                    text: "Gastronomia i noclegi",
+                  ),
+                  subtitle: Text("Czy są tutaj oferowane?"),
                   children: [
                     Container(
                       margin: EdgeInsets.only(left: Constants.insideMargin),
-                      child: Text(
-                          "W tym budynku znajduje się Ruch Młodzieży Salwatoriańskiej."),
+                      child: KompasText(
+                        style: AppTextStyles.paragraphSubtext,
+                        text:
+                            "Ze względu na charakter miejsca zasadniczo nie udostępniamy miejsc noclegowych. Nie prowadzimy także usług gastronomicznych.\n\nDziękujemy za zrozumienie.",
+                      ),
                     ),
-                    SizedBox(height: 10),
+                    SizedBox(height: Constants.cardMargin),
+                  ]),
+              ExpansionTile(
+                  iconColor: AppColors.accentSelect,
+                  textColor: AppColors.accentSelect,
+                  leading: Icon(LineIcons.mobilePhone),
+                  title: KompasText(style: AppTextStyles.headerH5,
+                    text: "Twórcy aplikacji",
+                  ),
+                  subtitle: Text("Kim jesteśmy?"),
+                  children: [
+                    Container(
+                      margin: EdgeInsets.symmetric(
+                          horizontal: Constants.insideMargin),
+                      child: KompasText(
+                        style: AppTextStyles.paragraphSubtext,
+                        text:
+                            "Jesteśmy klerykami seminarium Salwatorianów w Bagnie, którzy są zaangażowani w Grupę Medialną Salwator. Zainteresowanie nowymi technologiami chcemy wykorzystać do ewangelizacji, naśladując zapał apostolski naszego założyciela, bł. Franciszka Marii od Krzyża Jordana.",
+                        //TODO: insert GMS group photo here
+                      ),
+                    ),
+                    SizedBox(height: Constants.cardMargin),
                   ]),
             ],
           )),

@@ -1,8 +1,10 @@
-import 'package:expansion_tile_card/expansion_tile_card.dart';
 import 'package:flutter/material.dart';
 import 'package:kompas/controller/tripData_controller.dart';
 import 'package:kompas/statics/colors.dart';
 import 'package:hive/hive.dart';
+import 'package:kompas/statics/constants.dart';
+import 'package:kompas/statics/kompasText.dart';
+import 'package:kompas/statics/text_styles.dart';
 
 class AchievementTracker extends StatefulWidget {
   const AchievementTracker({
@@ -27,50 +29,59 @@ class _AchievementTrackerState extends State<AchievementTracker> {
   }
   @override
   Widget build(BuildContext context) {
-    return ExpansionTileCard(
-      baseColor: AppColors.primaryWhite,
-      expandedColor: AppColors.primaryWhite,
-      leading: Image.asset("assets/images/icons/winner_cup.png", scale: 5),
-      title: Text("Osiągnięcia",
-          style: TextStyle(
-              color: AppColors.primaryNormal, fontWeight: FontWeight.bold)),
-      subtitle: Text(
-          "Sprawdź ile zdobyłeś punktów za dobre odpowiedzi w przygodach.",
-          style: TextStyle(color: AppColors.primaryDark)),
-      children: <Widget>[
-        Divider(
-          thickness: 1.0,
-          height: 1.0,
+    return ExpansionTile(
+        iconColor: AppColors.accentSelect,
+        textColor: AppColors.accentSelect,
+        title: KompasText(
+          style: AppTextStyles.headerH5,
+          text: "Osiągnięcia",
         ),
-        Align(
-          alignment: Alignment.centerLeft,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 16.0,
-              vertical: 8.0,
-            ),
-            child: Column(
+        subtitle: KompasText(
+            style: AppTextStyles.paragraphSubtext,
+            text:
+                "Sprawdź ile zdobyłeś punktów za dobre odpowiedzi w przygodach."),
+        leading: Image.asset("assets/images/icons/winner_cup.png", scale: 5),
+        children: [
+          Container(
+            margin: EdgeInsets.all(Constants.insideMargin),
+            child: Row(
               children: [
                 Align(
-                  alignment: Alignment.center,
-                  child: Text(
-                    "Punkty za dobre odpowiedzi: $answerScore",
-                    style: Theme.of(context).textTheme.headline5,
+                  alignment: Alignment.topLeft,
+                  child: KompasText(
+                    style: AppTextStyles.headerH5,
+                    text: "Punkty za dobre odpowiedzi:",
                   ),
                 ),
+                Spacer(),
                 Align(
-                  alignment: Alignment.center,
-                  child: Text(
-                    "Punkty za ukończone przygody: $tripScore",
-                    style: Theme.of(context).textTheme.headline5,
+                  alignment: Alignment.topRight,
+                  child: KompasText(
+                    style: AppTextStyles.headerH5,
+                    text: "$answerScore",
                   ),
                 ),
               ],
             ),
           ),
-        ),
-      ],
-    );
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: Constants.insideMargin),
+            child: Row(
+              children: [
+                KompasText(
+                  style: AppTextStyles.headerH5,
+                  text: "Punkty za ukończone przygody:",
+                ),
+                Spacer(),
+                KompasText(
+                  style: AppTextStyles.headerH5,
+                  text: "$tripScore",
+                ),
+              ],
+            ),
+          ),
+          SizedBox(height: Constants.cardMargin),
+        ]);
   }
 }
 
