@@ -32,13 +32,18 @@ class TripViewStepButtons extends StatelessWidget {
         -1);
   }
 
+  bool tripStepEnd() {
+    return (tripDataController.isStepItemEndType(
+        tripDataSelect: tripDataSelect));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         if (noLeftNavButton())
-          Container()
+          InvisibleButton()
         else
           Container(
             decoration: BoxDecoration(
@@ -60,7 +65,7 @@ class TripViewStepButtons extends StatelessWidget {
               ),
             ),
           ),
-        if (noLeftNavButton() && noRightNavButton())
+        if ((noLeftNavButton() && noRightNavButton()) || tripStepEnd())
           // End home button
           Container(
             decoration: BoxDecoration(
@@ -83,7 +88,7 @@ class TripViewStepButtons extends StatelessWidget {
             ),
           ),
         if (noRightNavButton())
-          Container()
+          InvisibleButton()
         else
           Container(
             decoration: BoxDecoration(
@@ -106,6 +111,31 @@ class TripViewStepButtons extends StatelessWidget {
             ),
           ),
       ],
+    );
+  }
+}
+
+// This widget allows for even button graphical distribution
+class InvisibleButton extends StatelessWidget {
+  const InvisibleButton({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Visibility(
+      maintainSize: true,
+      maintainAnimation: true,
+      maintainState: true,
+      visible: false,
+      child: Container(
+        child: IconButton(
+          padding: EdgeInsets.symmetric(horizontal: Constants.buttonMargin),
+          onPressed: () => {},
+          icon: const Icon(
+            CupertinoIcons.chevron_forward,
+            color: AppColors.primaryWhite,
+          ),
+        ),
+      ),
     );
   }
 }

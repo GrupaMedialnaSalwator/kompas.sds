@@ -10,7 +10,7 @@ import 'package:kompas/widgets/tripStepSelectBox_widget.dart';
 
 /// Displays trip content based on step type
 class TripViewStepSwitch extends StatelessWidget {
-  const TripViewStepSwitch({
+  TripViewStepSwitch({
     Key? key,
     required this.tripDataController,
     required this.tripStateController,
@@ -21,54 +21,61 @@ class TripViewStepSwitch extends StatelessWidget {
   final TripStateController tripStateController;
   final TripDataSelect tripDataSelect;
 
+  final ScrollController _scrollController =
+      ScrollController(keepScrollOffset: false);
+
   @override
   Widget build(BuildContext context) {
     switch (
         tripDataController.getStepItem(tripDataSelect: tripDataSelect).type) {
       case StepType.info:
         return Expanded(
-          child: ListView(
-            // start with scroll position on top (key and controller)
-            key: Key(tripStateController.getCurrentStep().toString()),
-            controller: ScrollController(keepScrollOffset: false),
-            padding: EdgeInsets.fromLTRB(Constants.insideMargin, 0,
-                Constants.insideMargin, Constants.insideMargin),
-            children: [
-              Container(
-                alignment: Alignment.topCenter,
-                margin:
-                    EdgeInsets.symmetric(horizontal: Constants.insideMargin),
-                child: Text(
+          child: Scrollbar(
+            isAlwaysShown: true,
+            controller: _scrollController,
+            child: ListView(
+              // start with scroll position on top (key and controller)
+              key: Key(tripStateController.getCurrentStep().toString()),
+              controller: _scrollController,
+              padding: EdgeInsets.fromLTRB(Constants.insideMargin, 0,
+                  Constants.insideMargin, Constants.insideMargin),
+              children: [
+                Container(
+                  alignment: Alignment.topCenter,
+                  margin:
+                      EdgeInsets.symmetric(horizontal: Constants.insideMargin),
+                  child: Text(
+                      tripDataController
+                          .getStepItem(tripDataSelect: tripDataSelect)
+                          .caption,
+                      style: Get.context!.textTheme.bodyText2
+                          ?.copyWith(color: AppColors.secondaryNormal),
+                      textAlign: TextAlign.center),
+                ),
+                Container(
+                  alignment: Alignment.topLeft,
+                  margin: EdgeInsets.all(Constants.insideMargin),
+                  child: Text(
                     tripDataController
                         .getStepItem(tripDataSelect: tripDataSelect)
-                        .caption,
-                    style: Get.context!.textTheme.bodyText2
-                        ?.copyWith(color: AppColors.secondaryNormal),
-                    textAlign: TextAlign.center),
-              ),
-              Container(
-                alignment: Alignment.topLeft,
-                margin: EdgeInsets.all(Constants.insideMargin),
-                child: Text(
-                  tripDataController
-                      .getStepItem(tripDataSelect: tripDataSelect)
-                      .title,
-                  style: Get.context!.textTheme.headline3
-                      ?.copyWith(color: AppColors.primaryDark),
+                        .title,
+                    style: Get.context!.textTheme.headline3
+                        ?.copyWith(color: AppColors.primaryDark),
+                  ),
                 ),
-              ),
-              Container(
-                alignment: Alignment.topLeft,
-                margin: EdgeInsets.all(Constants.insideMargin),
-                child: Text(
-                  tripDataController
-                      .getStepItem(tripDataSelect: tripDataSelect)
-                      .description,
-                  style: Get.context!.textTheme.bodyText1
-                      ?.copyWith(color: AppColors.primaryDark),
+                Container(
+                  alignment: Alignment.topLeft,
+                  margin: EdgeInsets.all(Constants.insideMargin),
+                  child: Text(
+                    tripDataController
+                        .getStepItem(tripDataSelect: tripDataSelect)
+                        .description,
+                    style: Get.context!.textTheme.bodyText1
+                        ?.copyWith(color: AppColors.primaryDark),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         );
       case StepType.select:
@@ -103,82 +110,90 @@ class TripViewStepSwitch extends StatelessWidget {
         //TODO: initialize with 0, add methods for adding score and add logic for not counting score and finished trips twice
         //TODO remove mk
         return Expanded(
-          child: ListView(
-            // start with scroll position on top (key and controller)
-            key: Key(tripStateController.getCurrentStep().toString()),
-            controller: ScrollController(keepScrollOffset: false),
-            padding: EdgeInsets.all(Constants.insideMargin),
-            children: [
-              Container(
-                alignment: Alignment.topLeft,
-                margin: EdgeInsets.all(Constants.insideMargin),
-                child: Text(
-                  tripDataController
-                      .getStepItem(tripDataSelect: tripDataSelect)
-                      .title,
-                  style: Get.context!.textTheme.headline3
-                      ?.copyWith(color: AppColors.primaryDark),
-                ),
-              ),
-              if (_correctAnswer())
+          child: Scrollbar(
+            isAlwaysShown: true,
+            controller: _scrollController,
+            child: ListView(
+              // start with scroll position on top (key and controller)
+              key: Key(tripStateController.getCurrentStep().toString()),
+              controller: _scrollController,
+              padding: EdgeInsets.all(Constants.insideMargin),
+              children: [
                 Container(
                   alignment: Alignment.topLeft,
                   margin: EdgeInsets.all(Constants.insideMargin),
                   child: Text(
                     tripDataController
                         .getStepItem(tripDataSelect: tripDataSelect)
-                        .correctAnswer,
-                    style: Get.context!.textTheme.bodyText1
-                        ?.copyWith(color: AppColors.primaryDark),
-                  ),
-                )
-              else
-                Container(
-                  alignment: Alignment.topLeft,
-                  margin: EdgeInsets.all(Constants.insideMargin),
-                  child: Text(
-                    tripDataController
-                        .getStepItem(tripDataSelect: tripDataSelect)
-                        .incorrectAnswer,
-                    style: Get.context!.textTheme.bodyText1
+                        .title,
+                    style: Get.context!.textTheme.headline3
                         ?.copyWith(color: AppColors.primaryDark),
                   ),
                 ),
-            ],
+                if (_correctAnswer())
+                  Container(
+                    alignment: Alignment.topLeft,
+                    margin: EdgeInsets.all(Constants.insideMargin),
+                    child: Text(
+                      tripDataController
+                          .getStepItem(tripDataSelect: tripDataSelect)
+                          .correctAnswer,
+                      style: Get.context!.textTheme.bodyText1
+                          ?.copyWith(color: AppColors.primaryDark),
+                    ),
+                  )
+                else
+                  Container(
+                    alignment: Alignment.topLeft,
+                    margin: EdgeInsets.all(Constants.insideMargin),
+                    child: Text(
+                      tripDataController
+                          .getStepItem(tripDataSelect: tripDataSelect)
+                          .incorrectAnswer,
+                      style: Get.context!.textTheme.bodyText1
+                          ?.copyWith(color: AppColors.primaryDark),
+                    ),
+                  ),
+              ],
+            ),
           ),
         );
       case StepType.end:
         AchievementOperations().incrementTripScore(tripDataSelect);
         return Expanded(
-          child: ListView(
-            // start with scroll position on top (key and controller)
-            key: Key(tripStateController.getCurrentStep().toString()),
-            controller: ScrollController(keepScrollOffset: false),
-            padding: EdgeInsets.all(Constants.insideMargin),
-            children: [
-              Container(
-                alignment: Alignment.topLeft,
-                margin: EdgeInsets.all(Constants.insideMargin),
-                child: Text(
-                  tripDataController
-                      .getStepItem(tripDataSelect: tripDataSelect)
-                      .title,
-                  style: Get.context!.textTheme.headline3
-                      ?.copyWith(color: AppColors.primaryDark),
+          child: Scrollbar(
+            isAlwaysShown: true,
+            controller: _scrollController,
+            child: ListView(
+              // start with scroll position on top (key and controller)
+              key: Key(tripStateController.getCurrentStep().toString()),
+              controller: _scrollController,
+              padding: EdgeInsets.all(Constants.insideMargin),
+              children: [
+                Container(
+                  alignment: Alignment.topLeft,
+                  margin: EdgeInsets.all(Constants.insideMargin),
+                  child: Text(
+                    tripDataController
+                        .getStepItem(tripDataSelect: tripDataSelect)
+                        .title,
+                    style: Get.context!.textTheme.headline3
+                        ?.copyWith(color: AppColors.primaryDark),
+                  ),
                 ),
-              ),
-              Container(
-                alignment: Alignment.topLeft,
-                margin: EdgeInsets.all(Constants.insideMargin),
-                child: Text(
-                  tripDataController
-                      .getStepItem(tripDataSelect: tripDataSelect)
-                      .description,
-                  style: Get.context!.textTheme.bodyText1
-                      ?.copyWith(color: AppColors.primaryDark),
+                Container(
+                  alignment: Alignment.topLeft,
+                  margin: EdgeInsets.all(Constants.insideMargin),
+                  child: Text(
+                    tripDataController
+                        .getStepItem(tripDataSelect: tripDataSelect)
+                        .description,
+                    style: Get.context!.textTheme.bodyText1
+                        ?.copyWith(color: AppColors.primaryDark),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         );
       default:
