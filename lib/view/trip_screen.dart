@@ -42,30 +42,43 @@ class TripPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             _tripDataController.getTripItem(index: tripIndex).countPoints
-                ? Container(
-                    padding: EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      color: AppColors.primaryNormal
-                          .withOpacity(Constants.opacity75),
-                      shape: BoxShape.rectangle,
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(Constants.borderRadius),
+                ? GestureDetector(
+                    onTap: () {
+                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                        content: Text(
+                          "Liczba zdobytych punktów w przygodzie",
+                          style: TextStyle(color: AppColors.primaryWhite),
+                        ),
+                        behavior: SnackBarBehavior.floating,
+                        margin: EdgeInsets.only(bottom: Constants.snackBarPosition),
+                        backgroundColor: AppColors.primaryNormal,
+                      ));
+                    },
+                    child: Container(
+                      padding: EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        color: AppColors.primaryNormal
+                            .withOpacity(Constants.opacity75),
+                        shape: BoxShape.rectangle,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(Constants.borderRadius),
+                        ),
                       ),
-                    ),
-                    child: Center(
-                      child: Row(
-                        children: [
-                          const Icon(LineIcons.trophy),
-                          Obx(
-                            () => Text(
-                              ' ' +
-                                  _tripStateController
-                                      .getCurrentPoints()
-                                      .toString(),
-                              style: TextStyle(color: AppColors.primaryWhite),
+                      child: Center(
+                        child: Row(
+                          children: [
+                            const Icon(LineIcons.trophy),
+                            Obx(
+                              () => Text(
+                                ' ' +
+                                    _tripStateController
+                                        .getCurrentPoints()
+                                        .toString(),
+                                style: TextStyle(color: AppColors.primaryWhite),
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   )

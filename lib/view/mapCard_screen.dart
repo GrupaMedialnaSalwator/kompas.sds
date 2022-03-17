@@ -22,33 +22,6 @@ class MapCardPage extends StatelessWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
       backgroundColor: AppColors.primaryWhite,
-      appBar: AppBar(
-        systemOverlayStyle: SystemUiOverlayStyle(
-          // Status bar color
-          statusBarColor: AppColors.primaryNormal,
-          // Status bar brightness (optional)
-          statusBarIconBrightness: Brightness.light, // For Android (dark icons)
-          statusBarBrightness: Brightness.dark, // For iOS (dark icons)
-        ),
-        backgroundColor: AppColors.transparent,
-        foregroundColor: AppColors.primaryWhite,
-        elevation: 0, // no shadow
-        automaticallyImplyLeading: false,
-        centerTitle: false,
-        title: Container(
-          decoration: BoxDecoration(
-            color: AppColors.primaryNormal.withOpacity(Constants.opacity75),
-            shape: BoxShape.circle,
-          ),
-          child: IconButton(
-            icon: const Icon(Icons.arrow_back_ios_new_rounded),
-            color: AppColors.primaryWhite,
-            onPressed: () {
-              Get.back();
-            },
-          ),
-        ),
-      ),
       body: Column(
         children: [
           // Padding to avoid status bar
