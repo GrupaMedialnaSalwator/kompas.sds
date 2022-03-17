@@ -3,6 +3,7 @@ import 'package:kompas/controller/mapData_controller.dart';
 import 'package:kompas/controller/tripState_controller.dart';
 import 'package:kompas/statics/constants.dart';
 import 'package:kompas/statics/keepAliveWrapper.dart';
+import 'package:kompas/widgets/drawerWidget.dart';
 import 'package:kompas/widgets/homeView_widget.dart';
 import 'package:kompas/widgets/infoView_widget.dart';
 import 'package:kompas/widgets/mapView_widget.dart';
@@ -37,6 +38,7 @@ class _HomePageState extends State<HomePage> {
       initialIndex: 0,
       length: 3,
       child: Scaffold(
+         drawer: DrawerWidget(),
         extendBodyBehindAppBar: true,
         backgroundColor: AppColors.primaryWhite,
         appBar: AppBar(
@@ -56,6 +58,7 @@ class _HomePageState extends State<HomePage> {
             "Witamy w Bagnie",
             style: TextStyle(color: AppColors.primaryDark),
           ),
+          
           actions: <Widget>[
             IconButton(
               icon: const Icon(Icons.account_circle_rounded),
