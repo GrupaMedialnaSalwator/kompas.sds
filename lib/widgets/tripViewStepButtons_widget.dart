@@ -115,7 +115,7 @@ class TripViewStepButtons extends StatelessWidget {
   }
 }
 
-// Helper
+// This widget allows for even button graphical distribution
 class InvisibleButton extends StatelessWidget {
   const InvisibleButton({Key? key}) : super(key: key);
 
