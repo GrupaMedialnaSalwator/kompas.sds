@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
       initialIndex: 0,
       length: 3,
       child: Scaffold(
-         drawer: DrawerWidget(),
+        drawer: DrawerWidget(),
         extendBodyBehindAppBar: true,
         backgroundColor: AppColors.primaryWhite,
         appBar: AppBar(
@@ -50,6 +50,7 @@ class _HomePageState extends State<HomePage> {
                 Brightness.light, // For Android (dark icons)
             statusBarBrightness: Brightness.dark, // For iOS (dark icons)
           ),
+          iconTheme: IconThemeData(color: AppColors.primaryNormal),
           backgroundColor:
               AppColors.primaryWhite.withOpacity(Constants.opacity25),
           foregroundColor: AppColors.primaryWhite,
@@ -58,26 +59,9 @@ class _HomePageState extends State<HomePage> {
             "Witamy w Bagnie",
             style: TextStyle(color: AppColors.primaryDark),
           ),
-          
-          actions: <Widget>[
-            IconButton(
-              icon: const Icon(Icons.account_circle_rounded),
-              color: AppColors.primaryNormal,
-              tooltip: 'Show Snackbar',
-              onPressed: () {
-                ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                  content: Text(
-                    "Login to your account",
-                    style: TextStyle(color: AppColors.primaryWhite),
-                  ),
-                  backgroundColor: AppColors.primaryNormal,
-                ));
-              },
-            )
-          ],
         ),
         bottomNavigationBar: TabBar(
-          labelColor: Color.fromARGB(255, 238, 241, 241),
+          labelColor: Color.fromRGBO(238, 241, 241, 1),
           unselectedLabelColor: AppColors.primaryNormal,
           indicator: TabOutlineIndicator(),
           tabs: [
