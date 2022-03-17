@@ -10,8 +10,6 @@ import 'package:kompas/statics/constants.dart';
 //import 'package:kompas/services/gpsService.dart';
 import 'package:kompas/widgets/mapCardHero_widget.dart';
 import 'package:kompas/widgets/mapPoint_widget.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:line_icons/line_icons.dart';
 
 class MapView extends StatelessWidget {
   MapView({

@@ -11,7 +11,6 @@ import 'view/selectTrip_screen.dart';
 /* TODO: turn firebase back on once needed import 'services/firebase_options.dart';
 import 'services/firebase_helper.dart'; //TODO: remove this test-purposes import in the future
 import 'package:firebase_core/firebase_core.dart';*/
-import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 void main() async {
