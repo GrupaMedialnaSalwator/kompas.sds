@@ -33,6 +33,10 @@ class MyApp extends StatelessWidget {
         primaryColor: AppColors.primaryNormal,
         backgroundColor: AppColors.primaryWhite,
         highlightColor: AppColors.primaryNormal, //color for scrollbar
+        colorScheme: ColorScheme.fromSwatch(
+          accentColor: AppColors
+              .primaryLight, // color for overscroll glow effect in ListView
+        ),
         textTheme: const TextTheme(
           headline1: AppTextStyles.headerH1,
           headline2: AppTextStyles.headerH2,
