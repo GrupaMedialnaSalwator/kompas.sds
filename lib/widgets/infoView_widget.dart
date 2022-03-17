@@ -18,7 +18,6 @@ class InfoView extends StatelessWidget {
     //super.build(context); // need to call super method.
     //return Center(child: Text("This tab shows Info View"));
     return Container(
-      
       margin: EdgeInsets.all(Constants.insideMargin),
       child: Column(
         children: [
@@ -31,22 +30,25 @@ class InfoView extends StatelessWidget {
                 physics: BouncingScrollPhysics(),
                 child: Column(
                   children: [
-                    Padding(padding: EdgeInsets.symmetric(vertical: Constants.cardMargin)),
+                    Padding(
+                        padding: EdgeInsets.symmetric(
+                            vertical: Constants.cardMargin)),
                     AchievementTracker(),
                     SizedBox(
                       height: 25,
                     ),
                     Container(
                         margin: EdgeInsets.all(Constants.insideMargin),
-                        child: KompasText( text:
-                          "Pytania i odpowiedzi",
+                        child: KompasText(
+                          text: "Pytania i odpowiedzi",
                           style: AppTextStyles.headerH3,
                         )),
                     ExpansionTile(
                         iconColor: AppColors.accentSelect,
                         textColor: AppColors.accentSelect,
                         leading: Icon(LineIcons.cross),
-                        title: KompasText(style: AppTextStyles.headerH5,
+                        title: KompasText(
+                          style: AppTextStyles.headerH5,
                           text: "Najbliższa msza święta",
                         ),
                         subtitle: Text("Gdzie i w jakich godzinach?"),
@@ -66,22 +68,26 @@ class InfoView extends StatelessWidget {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               KompasText(
-                                                style: AppTextStyles.paragraphSubtext,
+                                                style: AppTextStyles
+                                                    .paragraphSubtext,
                                                 text:
                                                     "Kościół Wniebowzięcia NMP na ul. Ziołowej 36 w Bagnie.",
                                               ),
-                                              SizedBox(height: Constants.cardMargin),
+                                              SizedBox(
+                                                  height: Constants.cardMargin),
                                               KompasText(
-                                                  style:
-                                                      AppTextStyles.paragraphSubtext,
-                                                  text: "Godziny Mszy Świętych:"),
+                                                  style: AppTextStyles
+                                                      .paragraphSubtext,
+                                                  text:
+                                                      "Godziny Mszy Świętych:"),
                                               Row(
                                                 crossAxisAlignment:
                                                     CrossAxisAlignment.start,
                                                 children: [
                                                   Column(
                                                     crossAxisAlignment:
-                                                        CrossAxisAlignment.start,
+                                                        CrossAxisAlignment
+                                                            .start,
                                                     children: [
                                                       KompasText(
                                                           style: AppTextStyles
@@ -99,7 +105,8 @@ class InfoView extends StatelessWidget {
                                                   ),
                                                   Column(
                                                     crossAxisAlignment:
-                                                        CrossAxisAlignment.start,
+                                                        CrossAxisAlignment
+                                                            .start,
                                                     children: [
                                                       KompasText(
                                                           style: AppTextStyles
@@ -112,13 +119,16 @@ class InfoView extends StatelessWidget {
                                                       KompasText(
                                                           style: AppTextStyles
                                                               .paragraphSubtext,
-                                                          text: "8:30, 11:30, 17:30")
+                                                          text:
+                                                              "8:30, 11:30, 17:30")
                                                     ],
                                                   )
                                                 ],
                                               ),
-                                              SizedBox(height: Constants.cardMargin),
-                                              SizedBox(height: Constants.cardMargin),
+                                              SizedBox(
+                                                  height: Constants.cardMargin),
+                                              SizedBox(
+                                                  height: Constants.cardMargin),
                                             ],
                                           ),
                                         ),
@@ -137,7 +147,8 @@ class InfoView extends StatelessWidget {
                         iconColor: AppColors.accentSelect,
                         textColor: AppColors.accentSelect,
                         leading: Icon(LineIcons.users),
-                        title: KompasText(style: AppTextStyles.headerH5,
+                        title: KompasText(
+                          style: AppTextStyles.headerH5,
                           text: "Zakonnicy w klasztorze",
                         ),
                         subtitle: Text("Ilu ich tutaj mieszka?"),
@@ -173,7 +184,8 @@ class InfoView extends StatelessWidget {
                         iconColor: AppColors.accentSelect,
                         textColor: AppColors.accentSelect,
                         leading: Icon(LineIcons.binoculars),
-                        title: KompasText(style: AppTextStyles.headerH5,
+                        title: KompasText(
+                          style: AppTextStyles.headerH5,
                           text: "Zwiedzanie klasztoru",
                         ),
                         subtitle: Text("Kiedy i jak?"),
@@ -192,7 +204,8 @@ class InfoView extends StatelessWidget {
                         iconColor: AppColors.accentSelect,
                         textColor: AppColors.accentSelect,
                         leading: Icon(LineIcons.hotel),
-                        title: KompasText(style: AppTextStyles.headerH5,
+                        title: KompasText(
+                          style: AppTextStyles.headerH5,
                           text: "Budynek ToTu",
                         ),
                         subtitle: Text("Co to jest?"),
@@ -206,7 +219,8 @@ class InfoView extends StatelessWidget {
                                   TextSpan(
                                     text:
                                         'Dom ToTu to centrum rozwoju duchowego i kulturowego oraz ośrodek dla młodzieży prowadzony pod patronatem Ruchu Młodzieży Salwatoriańskiej i Salwatoriańskiego Ośrodka Powołań.\n\nOdwiedź stronę internetową\n',
-                                    style: Theme.of(context).textTheme.bodyText2,
+                                    style:
+                                        Theme.of(context).textTheme.bodyText2,
                                   ),
                                   TextSpan(
                                     text: 'www.totu.sds.pl',
@@ -228,13 +242,15 @@ class InfoView extends StatelessWidget {
                         iconColor: AppColors.accentSelect,
                         textColor: AppColors.accentSelect,
                         leading: Icon(LineIcons.utensils),
-                        title: KompasText(style: AppTextStyles.headerH5,
+                        title: KompasText(
+                          style: AppTextStyles.headerH5,
                           text: "Gastronomia i noclegi",
                         ),
                         subtitle: Text("Czy są tutaj oferowane?"),
                         children: [
                           Container(
-                            margin: EdgeInsets.only(left: Constants.insideMargin),
+                            margin:
+                                EdgeInsets.only(left: Constants.insideMargin),
                             child: KompasText(
                               style: AppTextStyles.paragraphSubtext,
                               text:
@@ -247,7 +263,8 @@ class InfoView extends StatelessWidget {
                         iconColor: AppColors.accentSelect,
                         textColor: AppColors.accentSelect,
                         leading: Icon(LineIcons.mobilePhone),
-                        title: KompasText(style: AppTextStyles.headerH5,
+                        title: KompasText(
+                          style: AppTextStyles.headerH5,
                           text: "Twórcy aplikacji",
                         ),
                         subtitle: Text("Kim jesteśmy?"),
