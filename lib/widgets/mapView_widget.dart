@@ -16,7 +16,7 @@ class MapView extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
-  MapDataController mapDataController = Get.find();
+  final MapDataController mapDataController = Get.find();
   final _scrollController = ScrollController();
 
   @override
