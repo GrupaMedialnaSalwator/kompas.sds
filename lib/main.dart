@@ -32,6 +32,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.light().copyWith(
         primaryColor: AppColors.primaryNormal,
         backgroundColor: AppColors.primaryWhite,
+        highlightColor: AppColors.primaryNormal, //color for scrollbar
         textTheme: const TextTheme(
           headline1: AppTextStyles.headerH1,
           headline2: AppTextStyles.headerH2,
