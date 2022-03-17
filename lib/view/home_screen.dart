@@ -77,23 +77,23 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
         bottomNavigationBar: TabBar(
-          labelColor: AppColors.primaryWhite,
+          labelColor: Color.fromARGB(255, 238, 241, 241),
           unselectedLabelColor: AppColors.primaryNormal,
           indicator: TabOutlineIndicator(),
           tabs: [
             Tab(
                 icon: Icon(
-              LineIcons.tripadvisor,
+              LineIcons.walking,
               //CupertinoIcons.compass,
             )),
             Tab(
                 icon: Icon(
-              LineIcons.mapMarked,
+              LineIcons.alternateMapMarked,
               //CupertinoIcons.map,
             )),
             Tab(
                 icon: Icon(
-              LineIcons.firstAid,
+              LineIcons.info,
               //CupertinoIcons.question,
             )),
           ],
