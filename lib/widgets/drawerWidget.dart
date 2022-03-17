@@ -24,11 +24,19 @@ class DrawerWidget extends StatelessWidget {
                       fit: BoxFit.fitWidth),
                   const SizedBox(height: 24),
                   KompasText(
-                      style: AppTextStyles.paragraphText, text: "kompas.sds"),
+                      style: AppTextStyles.headerH3White, text: "kompas.sds"),
                   KompasText(
-                      style: AppTextStyles.paragraphText,
+                      style: AppTextStyles.paragraphTextWhite,
                       text: "wersja: 0.0.1 (alpha)"),
-                      const SizedBox(height: 24),
+                  const SizedBox(height: 24),
+                  Image.asset("assets/images/gms_team.png",
+                      scale: 2, fit: BoxFit.fitWidth),
+                  const SizedBox(height: 24),
+                  KompasText(
+                      style: AppTextStyles.paragraphTextWhite,
+                      text:
+                          "Grupa Medialna Salwator życzy udanego pobytu w Bagnie!"),
+                  const SizedBox(height: 24),
                   Padding(
                     padding: const EdgeInsets.all(Constants.minMargin),
                     child: TextButton(
@@ -45,42 +53,16 @@ class DrawerWidget extends StatelessWidget {
                       },
                     ),
                   ),
-                  buildMenuItem(
-                    text: 'kompas.sds',
-                    icon: Icons.people,
-                  ),
-                  const SizedBox(height: 24),
-                  buildMenuItem(
-                    text: 'People',
-                    icon: Icons.people,
-                    onClicked: () => selectedItem(context, 0),
-                  ),
+
                 ],
               ),
             ),
           ],
         ),
+        
       ),
     );
   }
 
-  Widget buildMenuItem({
-    required String text,
-    required IconData icon,
-    VoidCallback? onClicked,
-  }) {
-    final color = Colors.white;
-    final hoverColor = Colors.white70;
 
-    return ListTile(
-      leading: Icon(icon, color: color),
-      title: Text(text, style: TextStyle(color: color)),
-      hoverColor: hoverColor,
-      onTap: onClicked,
-    );
-  }
-
-  void selectedItem(BuildContext context, int index) {
-    Navigator.of(context).pop();
-  }
 }
