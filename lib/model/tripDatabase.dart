@@ -826,26 +826,171 @@ List<TripItem> generateTripItems() {
       description:
           "Wejdź do klasztornego labiryntu i odkrywaj mądrości starożytnych filozofów.",
       imageAsset: "assets/images/trip_03.png",
-      enabled: false,
-      countPoints: true,
+      enabled: true,
+      countPoints: false,
       stepList: <StepItem>[
         StepItem(
-          title: "Step 1",
+          imageAsset: "assets/images/trip_03.png",
+          title: "Ogród Filozofów",
+          description:
+              'Filozofia - nauka, która przybiera tyle odcieni, ile jest osób ją uprawiających. Zawsze pozostaje jednak tym, na co wskazuje jej grecka nazwa - phileo-sophia, czyli umiłowanie mądrości. Jest ona "przygodą" w poszukiwaniu prawdy, która pociągnęła i zafascynowała wielu ludzi. Nieliczni z nich wspominani są na tych stronicach. Nie jest ona jednak "przygodą" dla wybranych - każdy z nas może stawiać sobie pytania filozoficzne, dociekać tego, co leży u podstaw postrzeganej przez nas rzeczywistości. Przed każdym człowiekiem uczciwie poszukującym prawdy otwiera się droga do poznania siebie, świata i Boga. Ścieżek wiodących przez filozofię jest wiele. Nie zniechęcaj się, Drogi Przyjacielu, ich różnorodnością, ale otwórz się na głos mądrości, przemawiający przez każdą z nich.',
           nextStep: 1,
         ),
         StepItem(
-          title: "Step 2",
+          imageAsset: "assets/images/trip03/trip03_mapa.jpg",
+          title: "Legenda",
+          description:
+              'Ogród założony został na bazie labiryntu z krzewów cisa pospolitego. Zaprojektowano 14 placów, z których każdy poświęcony jest jednemu z filozofów: 1. Sokrates 2. Platon 3. Arystoteles 4. Augustyn z Hippony 5. Tomasz z Akwinu 6. Kartezjusz 7. Immanuel Kant 8. Gottfried Wilhelm Leibniz 9. Georg Wilhelm Friedrich Hegel 10. Søren Kierkegaard 11. Józef Stanisław Tischner 12. Jan Paweł II (Karol Wojtyła) 13. Leszek Kołakowski 14. Tadeusz Styczeń',
           previousStep: 0,
           nextStep: 2,
         ),
         StepItem(
-          title: "Step 3",
+          imageAsset: "assets/images/trip03/trip03_mapa.jpg",
+          caption:
+              '"Poznaj samego siebie, a stanie przed tobą otworem cały świat"\n - Sokrates (469-399 r. p.n.e.)',
+          title: "1. Sokrates",
+          description:
+              'Sokrates zapisał się w historii jako wzór filozofa. Pytał napotykanych ludzi, co wiedzą o sprawiedliwości, pobożności, bądź też odwadze. Uważał, że poznanie istoty tych cnót prowadzi do cnotliwego życia. Niestrudzenie prowokował dyskusje, dlatego został Sokrates fałszywie skazany na śmierć za psucie młodzieży. Zginął, wypijając truciznę - cykutę.\n\nPlacyk wybrukowany białymi kamieniami. Kamień symbolizuje istnienie. Kamień koloru białego to także symbol szczęścia, zwycięstwa.',
           previousStep: 1,
           nextStep: 3,
         ),
         StepItem(
-          title: "Step 4",
+          imageAsset: "assets/images/trip03/trip03_mapa.jpg",
+          caption:
+              '"Myśleć to co prawdziwe, czuć to co piękne i kochać co dobre - w tym cel rozumnego życia"\n - Platon (427-347 r. p.n.e.)',
+          title: "2. Platon",
+          description:
+              'Pochodzący z arystokracji Platon, uczeń Sokratesa, był bardzo płodnym i przenikliwym umysłem. W "Dialogach" spisał swoje poglądy - uważał, że istnieje odrębny "świat idei", w którym idee "człowieka", "dobra", "światła" istnieją w sposób doskonały. Konkretni ludzie, konkretne przykłady dobra itp. są tylko cieniami w porównaniu z pięknem doskonałych idei. Dusza ludzka przypomina sobie te idee, gdyż kiedyś, nie będąc uwięziona w ciele, oglądała je "na własne oczy".\n\nPlacyk wybrukowany zielonymi kamieniami. Zieleń to symbol nadziei, błogostanu, dobroci.',
           previousStep: 2,
+          nextStep: 4,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip03/trip03_mapa.jpg",
+          caption:
+              '"U początku filozofii stoi - zdziwienie"\n - Arystoteles (384-322 r. p.n.e.)',
+          title: "3. Arystoteles",
+          description:
+              'Uczeń Akademii Platona. Przyrodnik i lekarz, nauczyciel Aleksandra Wielkiego. Dokonał podziału nauk na praktyczne i teoretyczne. W poznawaniu świata uznawał za pierwszorzędny czynnik empiryczny - zmysłowy, który jednak musi być poddany rozumowaniu. Wyodrębnił z filozofii logikę, jako "organon" - narzędzie jej służące. Na gruncie tzw. filozofii pierwszej, tj. metafizyki, dowodził m.in. istnienie Boga - Absolutu. Człowieka uważał za jedność duszy i ciała, nie zaś jak jego nauczyciel, za duszę uwięzioną w ciele.\n\nNa placyku znajduje się studnia, a obok niej rośnie grusza wierzbolistna (Pyrus salicifolia Pall.) przypominająca swoim wyglądem bardziej wierzbę niż gruszę. Drzewo pochyla się nad studnią jakby chciało zobaczyć, co kryje się w jej wnętrzu i niejako dziwi się, widząc na dnie studni bryły z zielonego szkła zamiast wody. Z owego "zdziwienia" rodzi owoce - "gruszki na wierzbie".',
+          previousStep: 3,
+          nextStep: 5,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip03/trip03_mapa.jpg",
+          caption:
+              '"Kochaj i rób co chcesz"\n - Augustyn z Hippony (354-430 r.)',
+          title: "4. Augustyn z Hippony",
+          description:
+              'Urodzony w Tagaście w Afryce Północnej, z początku zwolennik herezji manicheizmu, następnie, po nawróceniu, biskup Hippony. W swej filozofii pierwszeństwo przyznawał poznaniu siebie samego oraz Boga. Prawdami, które poznaje się najpewniej są, według niego, prawdy wieczne - podobne do platońskich idei, lecz zawarte w umyśle Boga. Poznanie ich możliwe jest tylko dzięki iluminacji - oświeceniu przez łaskę Bożą. Bóg jest Stwórcą całego świata, dlatego stworzony świat jest dobry. Augustyn powiada - "Bóg nie stworzył zła."\n\nNa placyku uwagę przyciąga rosnący krzew róży. Czerwona róża jest powszechnie uznawana za symbol prawdziwej miłości. Prawdziwa miłość zawsze afirmuje i nigdy nie krzywdzi.',
+          previousStep: 4,
+          nextStep: 6,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip03/trip03_mapa.jpg",
+          caption:
+              '"Człowiek nie jest duszą używającą ciała, lecz kompozycją duszy i ciała"\n - Tomasz z Akwinu (1225-1274 r.)',
+          title: "5. Tomasz z Akwinu",
+          description:
+              'Urodzony we włoskiej rodzinie arystokratycznej, studiował w klasztorze Monte Cassino, zaś w 1243 został dominikaninem, wybitnym pisarzem filozoficznym (Summa contra gentiles) i teologicznym (Summa theologiae). Uważał, że filozofia i teologia nie są sobie przeciwne, lecz mogą się uzupełniać. On dokonał przystosowania myśli Arystotelesa do wymogów średniowiecznej filozofii, wzbogacając tę myśl o zagadnienie "istnienia". Dowodził istnienia Boga na wiele sposobów (słynnych pięć dróg św. Tomasza). Mówił, że istotą Boga jest istnienie.\n\nPlacyk wybrukowany na wzór szachownicy z czarnych i czerwonych kamyków. Szachownicę tę oplata roślina wykonana z białych kamyków symbolizująca ludzką duszę.',
+          previousStep: 5,
+          nextStep: 7,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip03/trip03_mapa.jpg",
+          caption: '"Myślę, więc jestem"\n - Kartezjusz (1596-1650 r.)',
+          title: "6. Kartezjusz",
+          description:
+              'Wychowanek szkół jezuickich, uczony podróżnik i obserwator. Rozpoczął swoisty "przewrót kopernikański" w filozofii. Zawiedziony dotychczasową wiedzą, chciał uzyskać wiedzę jasną i wyraźną - nieuwarunkowaną wcześniejszymi poglądami. W tym celu wybrał drogę metodycznego sceptycyzmu - wątpił we wszystko, szukając takiej prawdy, w którą nie można zwątpić. Odnalazł ją w słynnym "cogito, ergo sum" - myślę, więc jestem. OD tej prawdy wychodząc, starał się skonstruować filozofię nieomylną na wzór matematyki.\n\nNa placyku wybrukowanym granitową kostką usytuowany jest sześcian a na nim kula. Sześcian to symbol symetrii, równowagi, stałości, harmonii. Kula zaś jest symbolem prawidłowości, piękna, doskonałości. Granitowa kostka brukowa, symbolizująca myśli, tworzy kręgi począwszy od punktu "zero", który znajduje się pod figurami geometrycznymi dającymi niejako początek myślenia.',
+          previousStep: 6,
+          nextStep: 8,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip03/trip03_mapa.jpg",
+          caption:
+              '"Niebo gwiaździste nade mną i prawo moralne we mnie. Są to dla mnie dowody, że jest Bóg nade mną i Bóg we mnie"\n - Immanuel Kant (1724-1804 r.)',
+          title: "7. Immanuel Kant",
+          description:
+              'Urodzony w Królewcu (obecnie Kaliningrad), tam przeżył całe swe życie. Dopiero w późniejszym okresie życia wygłosił nową filozofię tzw. krytyczną. Doprowadziła ona do końca "przewrót kopernikański" Kartezjusza. Kant twierdził, że ludzie w poznawaniu świata nie poznają tak naprawdę rzeczy "samych w sobie", ale widzą je tak, jak "każe" je im widzieć ich umysł. W swej etyce Kant wypracował tzw. imperatyw kategoryczny - dostępną dla każdego zasadę postępowania, nakazującą czynić to, co chciałoby się, aby i inni nam czynili.\n\nBruk tego placyku przypomina ciemną galaktykę z jasnymi gwiazdami, które ją rozświetlają. ',
+          previousStep: 7,
+          nextStep: 9,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip03/trip03_mapa.jpg",
+          caption:
+              '"Gdyby ten świat nie był najdoskonalszy z możliwych, Bóg by go nie stworzył"\n - Gottfried Wilhelm Leibniz (1646-1716 r.)',
+          title: "8. Gottfried Wilhelm Leibniz",
+          description:
+              'Powiedziano o nim "ostatni człowiek na świecie, który wiedział wszystko." Wszechstronny umysł, obeznany z polityką Europy, poświęcił się zagadnieniom związanym z Bogiem i światem. Bóg według niego stworzył ten świat i już u jego zarania ustanowił w nim "zaprogramowaną harmonię" - łac. harmonia praestabilita - miała być to odpowiedź na problem istnienia zła. Świat według Leibniza składa się z monad - podstawowego tworzywa rzeczywistości, których wielość i różnorodność odpowiedzialna jest za różnorodność, którą widzimy w świecie.\n\nPlacyk wybrukowany na wzór symetrycznych kręgów rozchodzących się z jednego punktu. Zataczane kręgi ułożone są z różnorodnej kostki brukowej począwszy od tej o najmniejszych wymiarach i najjaśniejszych kolorach do coraz większych i ciemniejszych. Całość sprawia wrażenie przemyślanego i dokładnie zaplanowanego dzieła.',
+          previousStep: 8,
+          nextStep: 10,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip03/trip03_mapa.jpg",
+          caption:
+              '"To co jest wytworzone z formy czystej myśli, a nie mocą autorytetu, tylko to należy do filozofii"\n - Georg Wilhelm Friedrich Hegel (1770-1831 r.)',
+          title: "9. Georg Wilhelm Friedrich Hegel",
+          description:
+              'Filozof ten był myślicielem trudnym w odbiorze - poziom abstrakcji jego myślenia skutecznie aż do dziś uniemożliwia niektórym odbiór jego nauczania. Nie miał on jednak równych sobie w dziedzinie historii dziejów - uważał ją za nieustanny, postępujący na zasadzie ewolucji, rozwój ducha myśli ludzkiej, przejawiającej się w kolejnych etapach. Głównym prawem rozwoju ducha miało być złączenie dwóch różnych skrajności - teza i antyteza, miały razem prowadzić do syntezy - jest to tzw. prawo dialektyki. Rozwinął także problem państwa, jako "boskiej idei istniejącej na ziemi".\n\nPlacyk wybrukowany granitową kostką, pomiędzy którą wkomponowane są bryły szkła symbolizujące formę czystej myśli.',
+          previousStep: 9,
+          nextStep: 11,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip03/trip03_mapa.jpg",
+          caption:
+              '"Człowiek jest syntezą nieskończoności i skończoności, doczesności i wieczności, wolności i konieczności, jednym słowem, syntezą"\n - Søren Kierkegaard (1813-1855 r.)',
+          title: "10. Søren Kierkegaard",
+          description:
+              'Nazwany ojcem egzystencjalizmu, kierunku w filozofii, który skupia się nie na oderwanych od życia spekulacjach, ale właśnie na codziennym doświadczeniu człowieka. Nieobca była mu zaduma nad małością i kruchością człowieka wobec Boga. Rozważał zagadnienia związane z religią, np. analizował biblijny zapis o Abrahamie i Izaaku, zastanawiając się nad kwestią zaufania Bogu. Uznał, że życie ludzkie można podzielić na trzy etapy - estetyczny (poszukiwanie przyjemności), etyczny (poszukiwanie dobra) i religijny (uznanie swojej grzeszności i zwrócenie się do Boga).\n\nPlacyk wybrukowany kamieniami o różnych rozmiarach, kształtach i kolorach. Ukazany został w ten sposób symbol pewnej syntezy.',
+          previousStep: 10,
+          nextStep: 12,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip03/trip03_mapa.jpg",
+          caption:
+              '"Gdy człowiek nie wie, co zrobić, sumienie mówi mu tylko jedno: szukaj"\n - Józef Stanisław Tischner (1931-2000 r.)',
+          title: "11. Józef Stanisław Tischner",
+          description:
+              'Znany polski kapłan, filozof, kapelan Związku Podhalan, kawaler Orderu Orła Białego. W swojej filozofii, którą określił mianem "filozofii dramatu" zawarł szczególną cechę charakterystyczną - chciał patrzeć na człowieka nie poprzez pryzmat założeń stystemu myśli, ale niemalże jako na aktora, grającego na scenie życia swój największy dramat. Stąd też wiele tematów poruszanych przez Tischnera miało związek z życiem codziennym - zastanawiał się nad nowym ładem społecznym. Wskazywał na "dialog" - jako podstawową zasadę spotkania z drugim człowiekiem.\n\nPlacyk swym układem przypomina wybrukowany górski szlak, przy którym rośnie kosodrzewina i znajduje się symboliczny drogowskaz pomagający odszukać drogę zagubionym. ',
+          previousStep: 11,
+          nextStep: 13,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip03/trip03_mapa.jpg",
+          caption:
+              '"Wczoraj do ciebie nie należy. Jutro niepewne... Tylko dziś jest twoje"\n - Jan Paweł II (Karol Wojtyła) (1920-2005 r.)',
+          title: "12. Jan Paweł II (Karol Wojtyła)",
+          description:
+              'Karol Wojtyła jako filozof dał się poznać jako przedstawiciel nurtu zwanego personalizmem. Dodatkowo w jego myśli da się odczytać wpływ myśli św. Tomasza z Akwinu. Personalizm, głoszony przez niego stawia człowieka i jego godność jako osoby za podstawę wszelkiej oceny moralnej. Człowiek najpełniej wyraża się w swoim świadomym i wolnym czynie (stąd tytuł znaczącej książki Wojtyły "Osoba i czyn"). Filozoficzna fascynacja człowiekiem jako posiadającym niezwykłą wartość, wpłynęła także w znacznym stopniu na teologiczne poglądy Karola Wojtyły. Placyk wybrukowany kamieniami w trzech kolorach: czarny - symbolizujący przeszłośc, biały - teraźniejszość, zielony - przyszłość.\n\nNa placyku po stronie zielonego bruku (przyszłości) znajduje się taboret (tron). Jest on stosunkowo wysoki, dlatego stojąc przy nim można poczuć się jak dziecko stojące przy taborecie dla osoby dorosłej. Aby usiąść na nim, trzeb się wspiąć albo podciągnąć. Jest to symboliczne ukazanie, iż do myśli Karola Wojtyły trzeba nam "dorastać", by ją w przyszłości móc w pełni zrozumieć.',
+          previousStep: 12,
+          nextStep: 14,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip03/trip03_mapa.jpg",
+          caption:
+              '"Własną śmiercią można własne życie tylko potwierdzić, ale zaprzeczyć mu nie można, ponieważ nasza śmierć czyni dopiero nasze życie ostatecznie nieodmiennym"\n - Leszek Kołakowski (1927-2009 r.)',
+          title: "13. Leszek Kołakowski",
+          description:
+              'W pierwszym okresie swojej działalności (mniej więcej do 1966 roku) pisał dzieła o charakterze marksistowskim, wspierając tym samym ideologię władz PRL-u. Dopiero później zaczął podejmować tematy związane z szeroko pojętą myślą chrześcijańską i historią filozofii, jednocześnie poddając krytyce ideologię marksistowską. Z tego powodu musiał emigrować z kraju - osiadł w Oksfordzie, gdzie mieszkał aż do śmierci.\n\nNa szaro-czarnym bruku tego placyku znajdują się części połamanych zabytkowych kolumn kamiennych symbolizujących nieuchronność śmierci.',
+          previousStep: 13,
+          nextStep: 15,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip03/trip03_mapa.jpg",
+          caption:
+              '"Miłować prawdę - wszelką i we wszystkim - to dla człowieka być samym sobą i ocalić samego siebie"\n - Tadeusz Styczeń (1931-2010 r.)',
+          title: "14. Tadeusz Styczeń",
+          description:
+              'Salwatorianin, etyk i wieloletni przyjaciel Karola Wojtyły oraz jego następca na katedrze Etyki KUL-u, odznaczony Orderem Odrodzenia Polski. Podejmował zagadnienia związane z ludzkim postępowaniem, które według niego powinno zawsze pozostawać wierne prawdzie rozpoznanej przez człowieka - wyjaśniał ten mechanizm m. in. na przykładzie bohaterki antycznego dramatu - Antygony. Innym z podejmowanych przezeń tematów, było usytuowanie etyki wśród wielu różnych dziedzin wiedzy jako dyscypliny naukowej.\n\nPlacyk wybrukowany małymi otoczkami, pośród których znajduje się solidnie osadzony duży głaz. Głaz ten symbolizuje prawdę, która jest jedna, stała i pewna. Tylko życie w prawdzie sprawia, że człowiek staje się prawdziwie wolny ("Poznacie prawdę, a prawda was wyzwoli" J 8,32).',
+          previousStep: 14,
+          nextStep: 16,
+        ),
+        StepItem(
+          type: StepType.end,
+          title: "Dziękujemy",
+          description:
+              'To już koniec podróży po ogrodzie filozofów, ale przygoda poszukiwania mądrości trwa przez całe życie.\n\nŻyczymy Ci, Drogi Przyjacielu, aby to spotkanie z filozofami z przeszłości zrodziło w Tobie nowe pytania i zapał do szukania na nie odpowiedzi.',
+          imageAsset: "assets/images/trip_03.png",
+          previousStep: -1,
+          nextStep: -1,
         ),
       ],
     ),
