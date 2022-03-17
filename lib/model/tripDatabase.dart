@@ -636,7 +636,7 @@ List<TripItem> generateTripItems() {
           description:
               'Spisałeś się na medal i ukończyłeś pierwszą podróż po naszym klasztorze. Znasz już park i okolice zamku, ale wiele tajemnic jeszcze przed tobą.\n\nJeśli znowu do nas przyjedziesz, to zapraszam do kolejnej podróży.\n\nDo zobaczenia!',
           imageAsset: "assets/images/trip_01.png",
-          previousStep: -1,
+          previousStep: 48,
           nextStep: -1,
         ),
       ],
@@ -799,7 +799,7 @@ List<TripItem> generateTripItems() {
           description:
               'Do nabożeństwa drogi krzyżowej przywiązana jest łaska odpustu zupełnego pod zwykłymi warunkami. Odpust można uzyskać dla siebie lub dla jednej osoby zmarłej.\n\n"Ukrzyżowany Jezus jest wielkim «odpustem» ofiarowanym przez Ojca ludzkości jako przebaczenie win i zaproszenie do synowskiego życia w Duchu Świętym" (św. Jan Paweł II)',
           imageAsset: "assets/images/trip_02.png",
-          previousStep: -1,
+          previousStep: 14,
           nextStep: -1,
         ),
       ],
@@ -989,7 +989,7 @@ List<TripItem> generateTripItems() {
           description:
               'To już koniec podróży po ogrodzie filozofów, ale przygoda poszukiwania mądrości trwa przez całe życie.\n\nŻyczymy Ci, Drogi Przyjacielu, aby to spotkanie z filozofami z przeszłości zrodziło w Tobie nowe pytania i zapał do szukania na nie odpowiedzi.',
           imageAsset: "assets/images/trip_03.png",
-          previousStep: -1,
+          previousStep: 15,
           nextStep: -1,
         ),
       ],

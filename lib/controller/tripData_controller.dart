@@ -21,6 +21,13 @@ class TripDataController extends GetxController {
         .stepList[tripDataSelect.stepIndex];
   }
 
+  bool isStepItemEndType({required TripDataSelect tripDataSelect}) {
+    return (_tripData[tripDataSelect.tripIndex]
+            .stepList[tripDataSelect.stepIndex]
+            .type ==
+        StepType.end);
+  }
+
   int getNextStepIndex({required TripDataSelect tripDataSelect}) {
     return _tripData[tripDataSelect.tripIndex]
         .stepList[tripDataSelect.stepIndex]
