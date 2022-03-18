@@ -29,8 +29,10 @@ class DrawerWidget extends StatelessWidget {
                       style: AppTextStyles.paragraphTextWhite,
                       text: "wersja: 0.0.1 (alpha)"),
                   const SizedBox(height: 24),
-                  Image.asset("assets/images/gms_team.png",
-                      scale: 2, fit: BoxFit.fitWidth),
+                  ClipRRect(
+                    child: Image.asset("assets/images/gms_team.png"),
+                    borderRadius: BorderRadius.all(Radius.circular(20)),
+                  ),
                   const SizedBox(height: 24),
                   KompasText(
                       style: AppTextStyles.paragraphTextWhite,
@@ -53,16 +55,12 @@ class DrawerWidget extends StatelessWidget {
                       },
                     ),
                   ),
-
                 ],
               ),
             ),
           ],
         ),
-        
       ),
     );
   }
-
-
 }
