@@ -68,6 +68,7 @@ class DrawerWidget extends StatelessWidget {
                       ),
                     ),
                   ),
+                  //TODO: once the rating becomes available insert rate button here
                   // Padding(
                   //   padding: const EdgeInsets.all(Constants.minMargin),
                   //   child: TextButton(
