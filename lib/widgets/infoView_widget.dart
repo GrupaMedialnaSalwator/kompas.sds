@@ -272,6 +272,15 @@ class InfoView extends StatelessWidget {
                           Container(
                             margin: EdgeInsets.symmetric(
                                 horizontal: Constants.insideMargin),
+                            child: ClipRRect(
+                              child: Image.asset("assets/images/gms_team_white.png"),
+                              borderRadius: BorderRadius.all(Radius.circular(20)),
+                            ),
+                          ),
+                          SizedBox(height: Constants.cardMargin),
+                          Container(
+                            margin: EdgeInsets.symmetric(
+                                horizontal: Constants.insideMargin),
                             child: KompasText(
                               style: AppTextStyles.paragraphSubtext,
                               text:
@@ -279,6 +288,7 @@ class InfoView extends StatelessWidget {
                               //TODO: insert GMS group photo here
                             ),
                           ),
+                        
                           SizedBox(height: Constants.cardMargin),
                         ]),
                   ],

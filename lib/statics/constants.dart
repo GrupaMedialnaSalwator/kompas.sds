@@ -29,12 +29,19 @@ class Constants {
   /// bottomMargin = 20.0
   static const double buttonMargin = 20.0;
 
+  /// spacerLarge = 60.0
+  static const double spacerLarge = 60.0;
+
   /// defaultImage of size 414x276 DPI=1
   static const String defaultImage = "assets/images/trip_01.png";
 
   /// defaultImageRatio = 2 / 3 relative to sides
   /// TODO: run tests to check if this assumption holds for all trip images
   static const double defaultImageRatio = 2 / 3;
+
+  
+  /// drawerLogoScale = 7.0
+  static const double drawerLogoScale = 7.0;
 
   /// mapCardHeight = 130,0
   static const double mapCardHeight = 130.0;
