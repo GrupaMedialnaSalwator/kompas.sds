@@ -39,7 +39,6 @@ class Constants {
   /// TODO: run tests to check if this assumption holds for all trip images
   static const double defaultImageRatio = 2 / 3;
 
-  
   /// drawerLogoScale = 7.0
   static const double drawerLogoScale = 7.0;
 
@@ -63,4 +62,7 @@ class Constants {
 
   /// maxMapSizeY = 1014.0
   static const double maxMapSizeY = 1600.0; // TODO: check for this - testing
+
+  /// snackBarDuration = 3
+  static const int snackBarDuration = 3;
 }

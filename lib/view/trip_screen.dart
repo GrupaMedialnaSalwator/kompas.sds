@@ -51,6 +51,7 @@ class TripPage extends StatelessWidget {
                           style: TextStyle(color: AppColors.primaryWhite),
                         ),
                         behavior: SnackBarBehavior.floating,
+                        duration: Duration(seconds: Constants.snackBarDuration),
                         margin: EdgeInsets.only(bottom: Constants.snackBarPosition),
                         backgroundColor: AppColors.primaryNormal,
                       ));
