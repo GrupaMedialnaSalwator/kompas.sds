@@ -3,6 +3,7 @@ import 'package:kompas/controller/mapData_controller.dart';
 import 'package:kompas/controller/tripState_controller.dart';
 import 'package:kompas/statics/constants.dart';
 import 'package:kompas/statics/keepAliveWrapper.dart';
+import 'package:kompas/widgets/drawerWidget.dart';
 import 'package:kompas/widgets/homeView_widget.dart';
 import 'package:kompas/widgets/infoView_widget.dart';
 import 'package:kompas/widgets/mapView_widget.dart';
@@ -37,6 +38,7 @@ class _HomePageState extends State<HomePage> {
       initialIndex: 0,
       length: 3,
       child: Scaffold(
+        drawer: DrawerWidget(),
         extendBodyBehindAppBar: true,
         backgroundColor: AppColors.primaryWhite,
         appBar: AppBar(
@@ -48,6 +50,7 @@ class _HomePageState extends State<HomePage> {
                 Brightness.light, // For Android (dark icons)
             statusBarBrightness: Brightness.dark, // For iOS (dark icons)
           ),
+          iconTheme: IconThemeData(color: AppColors.primaryNormal),
           backgroundColor:
               AppColors.primaryWhite.withOpacity(Constants.opacity25),
           foregroundColor: AppColors.primaryWhite,
@@ -56,22 +59,6 @@ class _HomePageState extends State<HomePage> {
             "Witamy w Bagnie",
             style: TextStyle(color: AppColors.primaryDark),
           ),
-          actions: <Widget>[
-            IconButton(
-              icon: const Icon(Icons.account_circle_rounded),
-              color: AppColors.primaryNormal,
-              tooltip: 'Show Snackbar',
-              onPressed: () {
-                ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                  content: Text(
-                    "Login to your account",
-                    style: TextStyle(color: AppColors.primaryWhite),
-                  ),
-                  backgroundColor: AppColors.primaryNormal,
-                ));
-              },
-            )
-          ],
         ),
         bottomNavigationBar: TabBar(
           labelColor: AppColors.primaryWhite,
@@ -80,17 +67,17 @@ class _HomePageState extends State<HomePage> {
           tabs: [
             Tab(
                 icon: Icon(
-              LineIcons.tripadvisor,
+              LineIcons.compass,
               //CupertinoIcons.compass,
             )),
             Tab(
                 icon: Icon(
-              LineIcons.mapMarked,
+              LineIcons.alternateMapMarked,
               //CupertinoIcons.map,
             )),
             Tab(
                 icon: Icon(
-              LineIcons.firstAid,
+              LineIcons.info,
               //CupertinoIcons.question,
             )),
           ],

@@ -42,7 +42,7 @@ class CardHero extends StatelessWidget {
                 ),
                 backgroundColor: AppColors.primaryNormal,
                 behavior: SnackBarBehavior.fixed,
-                duration: Duration(seconds: 3),
+                duration: Duration(seconds: Constants.snackBarDuration),
               ),
             );
           }
