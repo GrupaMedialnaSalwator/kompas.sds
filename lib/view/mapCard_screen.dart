@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:kompas/controller/mapData_controller.dart';
 import 'package:kompas/statics/colors.dart';
