@@ -9,7 +9,7 @@ class Constants {
   static const double tripBottomSheetRatio = 0.6;
 
   /// snackBarPosition = 75
-  static const double snackBarPosition = 75;
+  static const double snackBarPosition = 76;
 
   /// minMargin = 4.0
   static const double minMargin = 4.0;

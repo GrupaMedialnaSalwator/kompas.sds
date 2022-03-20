@@ -274,7 +274,7 @@ class InfoView extends StatelessWidget {
                                 horizontal: Constants.insideMargin),
                             child: ClipRRect(
                               child: Image.asset("assets/images/gms_team_white.png"),
-                              borderRadius: BorderRadius.all(Radius.circular(20)),
+                              borderRadius: BorderRadius.all(Radius.circular(Constants.borderRadius)),
                             ),
                           ),
                           SizedBox(height: Constants.cardMargin),

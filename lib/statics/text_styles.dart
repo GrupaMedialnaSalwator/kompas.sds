@@ -35,16 +35,6 @@ class AppTextStyles {
     color: AppColors.primaryDark,
   );
 
-    static const headerH3White = TextStyle(
-    fontFamily: "Nunito Sans",
-    fontWeight: FontWeight.w700,
-    fontStyle: FontStyle.normal,
-    fontSize: 26,
-    decoration: TextDecoration.none,
-    letterSpacing: 0,
-    color: AppColors.primaryWhite,
-  );
-
   static const headerH4 = TextStyle(
     fontFamily: "Nunito Sans",
     fontWeight: FontWeight.w400,
@@ -73,16 +63,6 @@ class AppTextStyles {
     decoration: TextDecoration.none,
     letterSpacing: 1.08,
     color: AppColors.primaryDark,
-  );
-
-    static const paragraphTextWhite = TextStyle(
-    fontFamily: "Nunito Sans",
-    fontWeight: FontWeight.w400,
-    fontStyle: FontStyle.normal,
-    fontSize: 18,
-    decoration: TextDecoration.none,
-    letterSpacing: 1.08,
-    color: AppColors.primaryWhite,
   );
 
   static const paragraphSubtext = TextStyle(

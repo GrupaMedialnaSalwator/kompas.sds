@@ -61,13 +61,13 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         bottomNavigationBar: TabBar(
-          labelColor: Color.fromRGBO(238, 241, 241, 1),
+          labelColor: AppColors.primaryWhite,
           unselectedLabelColor: AppColors.primaryNormal,
           indicator: TabOutlineIndicator(),
           tabs: [
             Tab(
                 icon: Icon(
-              LineIcons.walking,
+              LineIcons.compass,
               //CupertinoIcons.compass,
             )),
             Tab(

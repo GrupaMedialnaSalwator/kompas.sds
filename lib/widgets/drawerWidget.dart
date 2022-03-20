@@ -8,6 +8,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 class DrawerWidget extends StatelessWidget {
   final padding = EdgeInsets.symmetric(horizontal: Constants.buttonMargin);
+  final int yearToday = DateTime.now().year;
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -26,28 +27,34 @@ class DrawerWidget extends StatelessWidget {
                       fit: BoxFit.fitWidth),
                   const SizedBox(height: Constants.bottomMargin),
                   KompasText(
-                      style: AppTextStyles.headerH3White, text: "kompas.sds"),
+                      style: AppTextStyles.headerH3
+                          .copyWith(color: AppColors.primaryWhite),
+                      text: "kompas.sds"),
                   KompasText(
-                      style: AppTextStyles.paragraphTextWhite,
-                      text: "wersja: 0.0.1 (alpha)"),
+                      style: AppTextStyles.paragraphText
+                          .copyWith(color: AppColors.primaryWhite),
+                      text: "wersja: 0.1.0 (alpha)"),
                   const SizedBox(height: Constants.bottomMargin),
                   ClipRRect(
                     child: Image.asset("assets/images/gms_team_white.png"),
-                    borderRadius: BorderRadius.all(Radius.circular(Constants.borderRadius)),
+                    borderRadius: BorderRadius.all(
+                        Radius.circular(Constants.borderRadius)),
                   ),
                   const SizedBox(height: Constants.bottomMargin),
                   KompasText(
-                      style: AppTextStyles.paragraphTextWhite,
+                      style: AppTextStyles.paragraphText
+                          .copyWith(color: AppColors.primaryWhite),
                       textAlign: TextAlign.center,
                       text:
                           "Grupa Medialna Salwator życzy dobrego pobytu w Bagnie!"),
                   const SizedBox(height: Constants.spacerLarge),
                   KompasText(
-                      style: AppTextStyles.paragraphTextWhite,
+                      style: AppTextStyles.paragraphSubtext
+                          .copyWith(color: AppColors.primaryWhite),
                       textAlign: TextAlign.center,
                       text:
-                          "Wyższe Seminarium Duchowne Salwatorianów w Bagnie"),
-                  const SizedBox(height: Constants.minMargin),
+                          "© $yearToday Wyższe Seminarium Duchowne Salwatorianów w Bagnie"),
+                  const SizedBox(height: Constants.bottomMargin),
                   Container(
                     margin: EdgeInsets.symmetric(
                         horizontal: Constants.insideMargin),

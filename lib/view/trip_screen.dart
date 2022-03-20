@@ -44,6 +44,7 @@ class TripPage extends StatelessWidget {
             _tripDataController.getTripItem(index: tripIndex).countPoints
                 ? GestureDetector(
                     onTap: () {
+                      ScaffoldMessenger.of(context).removeCurrentSnackBar();
                       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                         content: Text(
                           "Liczba zdobytych punktów w przygodzie",
