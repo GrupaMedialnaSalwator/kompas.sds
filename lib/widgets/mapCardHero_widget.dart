@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kompas/controller/mapData_controller.dart';
@@ -81,16 +82,32 @@ class MapCardHero extends StatelessWidget {
                         ),
                         Spacer(),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            Row(
-                              children: generateStars(_mapDataController
-                                  .getMapItem(index: mapItemIndex)
-                                  .rating),
+                            // Row(
+                            //   children: generateStars(_mapDataController
+                            //       .getMapItem(index: mapItemIndex)
+                            //       .rating),
+                            // ),
+                            RichText(
+                              text: TextSpan(
+                                text: 'poczytaj więcej',
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = () {
+                                    Get.to(
+                                      () => MapCardPage(
+                                        mapItemIndex: mapItemIndex,
+                                      ),
+                                    );
+                                  },
+                                style: Get.context!.textTheme.caption?.copyWith(
+                                    color: _mapDataController
+                                        .getIconColor(mapItemIndex)),
+                              ),
                             ),
+
                             IconButton(
                                 onPressed: () => {
-                                      print('info pressed...'),
                                       Get.to(
                                         () => MapCardPage(
                                           mapItemIndex: mapItemIndex,
@@ -100,7 +117,6 @@ class MapCardHero extends StatelessWidget {
                                 icon: Icon(
                                   Icons.info_outline_rounded,
                                   size: 36,
-                                  //color: AppColors.primaryLight,
                                   color: _mapDataController
                                       .getIconColor(mapItemIndex),
                                 )),
@@ -119,32 +135,32 @@ class MapCardHero extends StatelessWidget {
         ));
   }
 
-  List<Icon> generateStars(double rating) {
-    return List<Icon>.generate(5, (index) {
-      // full stars
-      if (rating >= (index + 1)) {
-        return Icon(
-          Icons.star,
-          size: 24,
-          color: AppColors.primaryNormal,
-        );
-      }
-      // half-stars
-      else if ((rating - index) > 0) {
-        return Icon(
-          Icons.star_half,
-          size: 24,
-          color: AppColors.primaryNormal,
-        );
-      }
-      // empty stars
-      else {
-        return Icon(
-          Icons.star_border,
-          size: 24,
-          color: AppColors.primaryNormal,
-        );
-      }
-    });
-  }
+  // List<Icon> generateStars(double rating) {
+  //   return List<Icon>.generate(5, (index) {
+  //     // full stars
+  //     if (rating >= (index + 1)) {
+  //       return Icon(
+  //         Icons.star,
+  //         size: 24,
+  //         color: AppColors.primaryNormal,
+  //       );
+  //     }
+  //     // half-stars
+  //     else if ((rating - index) > 0) {
+  //       return Icon(
+  //         Icons.star_half,
+  //         size: 24,
+  //         color: AppColors.primaryNormal,
+  //       );
+  //     }
+  //     // empty stars
+  //     else {
+  //       return Icon(
+  //         Icons.star_border,
+  //         size: 24,
+  //         color: AppColors.primaryNormal,
+  //       );
+  //     }
+  //   });
+  // }
 }
