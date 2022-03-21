@@ -837,7 +837,7 @@ List<TripItem> generateTripItems() {
           nextStep: 1,
         ),
         StepItem(
-          imageAsset: "assets/images/trip03/trip03_mapa.jpg",
+          imageAsset: "assets/images/trip03/trip03_mapa.png",
           title: "Legenda",
           description:
               'Ogród założony został na bazie labiryntu z krzewów cisa pospolitego. Zaprojektowano 14 placów, z których każdy poświęcony jest jednemu z filozofów: 1. Sokrates 2. Platon 3. Arystoteles 4. Augustyn z Hippony 5. Tomasz z Akwinu 6. Kartezjusz 7. Immanuel Kant 8. Gottfried Wilhelm Leibniz 9. Georg Wilhelm Friedrich Hegel 10. Søren Kierkegaard 11. Józef Stanisław Tischner 12. Jan Paweł II (Karol Wojtyła) 13. Leszek Kołakowski 14. Tadeusz Styczeń',
@@ -845,7 +845,7 @@ List<TripItem> generateTripItems() {
           nextStep: 2,
         ),
         StepItem(
-          imageAsset: "assets/images/trip03/trip03_mapa.jpg",
+          imageAsset: "assets/images/trip03/trip03_mapa.png",
           caption:
               '"Poznaj samego siebie, a stanie przed tobą otworem cały świat"\n - Sokrates (469-399 r. p.n.e.)',
           title: "1. Sokrates",
@@ -855,7 +855,7 @@ List<TripItem> generateTripItems() {
           nextStep: 3,
         ),
         StepItem(
-          imageAsset: "assets/images/trip03/trip03_mapa.jpg",
+          imageAsset: "assets/images/trip03/trip03_mapa.png",
           caption:
               '"Myśleć to co prawdziwe, czuć to co piękne i kochać co dobre - w tym cel rozumnego życia"\n - Platon (427-347 r. p.n.e.)',
           title: "2. Platon",
@@ -865,7 +865,7 @@ List<TripItem> generateTripItems() {
           nextStep: 4,
         ),
         StepItem(
-          imageAsset: "assets/images/trip03/trip03_mapa.jpg",
+          imageAsset: "assets/images/trip03/trip03_mapa.png",
           caption:
               '"U początku filozofii stoi - zdziwienie"\n - Arystoteles (384-322 r. p.n.e.)',
           title: "3. Arystoteles",
@@ -875,7 +875,7 @@ List<TripItem> generateTripItems() {
           nextStep: 5,
         ),
         StepItem(
-          imageAsset: "assets/images/trip03/trip03_mapa.jpg",
+          imageAsset: "assets/images/trip03/trip03_mapa.png",
           caption:
               '"Kochaj i rób co chcesz"\n - Augustyn z Hippony (354-430 r.)',
           title: "4. Augustyn z Hippony",
@@ -885,7 +885,7 @@ List<TripItem> generateTripItems() {
           nextStep: 6,
         ),
         StepItem(
-          imageAsset: "assets/images/trip03/trip03_mapa.jpg",
+          imageAsset: "assets/images/trip03/trip03_mapa.png",
           caption:
               '"Człowiek nie jest duszą używającą ciała, lecz kompozycją duszy i ciała"\n - Tomasz z Akwinu (1225-1274 r.)',
           title: "5. Tomasz z Akwinu",
@@ -895,7 +895,7 @@ List<TripItem> generateTripItems() {
           nextStep: 7,
         ),
         StepItem(
-          imageAsset: "assets/images/trip03/trip03_mapa.jpg",
+          imageAsset: "assets/images/trip03/trip03_mapa.png",
           caption: '"Myślę, więc jestem"\n - Kartezjusz (1596-1650 r.)',
           title: "6. Kartezjusz",
           description:
@@ -904,7 +904,7 @@ List<TripItem> generateTripItems() {
           nextStep: 8,
         ),
         StepItem(
-          imageAsset: "assets/images/trip03/trip03_mapa.jpg",
+          imageAsset: "assets/images/trip03/trip03_mapa.png",
           caption:
               '"Niebo gwiaździste nade mną i prawo moralne we mnie. Są to dla mnie dowody, że jest Bóg nade mną i Bóg we mnie"\n - Immanuel Kant (1724-1804 r.)',
           title: "7. Immanuel Kant",
@@ -914,7 +914,7 @@ List<TripItem> generateTripItems() {
           nextStep: 9,
         ),
         StepItem(
-          imageAsset: "assets/images/trip03/trip03_mapa.jpg",
+          imageAsset: "assets/images/trip03/trip03_mapa.png",
           caption:
               '"Gdyby ten świat nie był najdoskonalszy z możliwych, Bóg by go nie stworzył"\n - Gottfried Wilhelm Leibniz (1646-1716 r.)',
           title: "8. Gottfried Wilhelm Leibniz",
@@ -924,7 +924,7 @@ List<TripItem> generateTripItems() {
           nextStep: 10,
         ),
         StepItem(
-          imageAsset: "assets/images/trip03/trip03_mapa.jpg",
+          imageAsset: "assets/images/trip03/trip03_mapa.png",
           caption:
               '"To co jest wytworzone z formy czystej myśli, a nie mocą autorytetu, tylko to należy do filozofii"\n - Georg Wilhelm Friedrich Hegel (1770-1831 r.)',
           title: "9. Georg Wilhelm Friedrich Hegel",
@@ -934,7 +934,7 @@ List<TripItem> generateTripItems() {
           nextStep: 11,
         ),
         StepItem(
-          imageAsset: "assets/images/trip03/trip03_mapa.jpg",
+          imageAsset: "assets/images/trip03/trip03_mapa.png",
           caption:
               '"Człowiek jest syntezą nieskończoności i skończoności, doczesności i wieczności, wolności i konieczności, jednym słowem, syntezą"\n - Søren Kierkegaard (1813-1855 r.)',
           title: "10. Søren Kierkegaard",
@@ -944,7 +944,7 @@ List<TripItem> generateTripItems() {
           nextStep: 12,
         ),
         StepItem(
-          imageAsset: "assets/images/trip03/trip03_mapa.jpg",
+          imageAsset: "assets/images/trip03/trip03_mapa.png",
           caption:
               '"Gdy człowiek nie wie, co zrobić, sumienie mówi mu tylko jedno: szukaj"\n - Józef Stanisław Tischner (1931-2000 r.)',
           title: "11. Józef Stanisław Tischner",
@@ -954,7 +954,7 @@ List<TripItem> generateTripItems() {
           nextStep: 13,
         ),
         StepItem(
-          imageAsset: "assets/images/trip03/trip03_mapa.jpg",
+          imageAsset: "assets/images/trip03/trip03_mapa.png",
           caption:
               '"Wczoraj do ciebie nie należy. Jutro niepewne... Tylko dziś jest twoje"\n - Jan Paweł II (Karol Wojtyła) (1920-2005 r.)',
           title: "12. Jan Paweł II (Karol Wojtyła)",
@@ -964,7 +964,7 @@ List<TripItem> generateTripItems() {
           nextStep: 14,
         ),
         StepItem(
-          imageAsset: "assets/images/trip03/trip03_mapa.jpg",
+          imageAsset: "assets/images/trip03/trip03_mapa.png",
           caption:
               '"Własną śmiercią można własne życie tylko potwierdzić, ale zaprzeczyć mu nie można, ponieważ nasza śmierć czyni dopiero nasze życie ostatecznie nieodmiennym"\n - Leszek Kołakowski (1927-2009 r.)',
           title: "13. Leszek Kołakowski",
@@ -974,7 +974,7 @@ List<TripItem> generateTripItems() {
           nextStep: 15,
         ),
         StepItem(
-          imageAsset: "assets/images/trip03/trip03_mapa.jpg",
+          imageAsset: "assets/images/trip03/trip03_mapa.png",
           caption:
               '"Miłować prawdę - wszelką i we wszystkim - to dla człowieka być samym sobą i ocalić samego siebie"\n - Tadeusz Styczeń (1931-2010 r.)',
           title: "14. Tadeusz Styczeń",
