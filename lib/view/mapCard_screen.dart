@@ -8,12 +8,14 @@ import 'package:kompas/statics/colors.dart';
 import 'package:kompas/statics/constants.dart';
 
 class MapCardPage extends StatelessWidget {
-  const MapCardPage({
+  MapCardPage({
     Key? key,
     required this.mapItemIndex,
   }) : super(key: key);
 
   final int mapItemIndex;
+  final ScrollController _scrollController =
+      ScrollController(keepScrollOffset: false);
 
   @override
   Widget build(BuildContext context) {
@@ -83,40 +85,49 @@ class MapCardPage extends StatelessWidget {
             ],
           ),
           Expanded(
-            child: ListView(
-              padding: EdgeInsets.fromLTRB(Constants.insideMargin, 0,
-                  Constants.insideMargin, Constants.cardMargin),
-              children: [
-                Center(
-                  child: Container(
-                    margin:
-                        EdgeInsets.symmetric(vertical: Constants.cardMargin),
+            child: Scrollbar(
+              isAlwaysShown: true,
+              controller: _scrollController,
+              child: ListView(
+                controller: _scrollController,
+                padding: EdgeInsets.fromLTRB(Constants.insideMargin, 0,
+                    Constants.insideMargin, Constants.cardMargin),
+                children: [
+                  Center(
+                    child: Container(
+                      margin:
+                          EdgeInsets.symmetric(vertical: Constants.cardMargin),
+                      child: Text(
+                        _mapDataController
+                            .getMapItem(index: mapItemIndex)
+                            .title,
+                        style: Get.context!.textTheme.headline3
+                            ?.copyWith(color: AppColors.primaryDark),
+                      ),
+                    ),
+                  ),
+                  Center(
                     child: Text(
-                      _mapDataController.getMapItem(index: mapItemIndex).title,
-                      style: Get.context!.textTheme.headline3
+                      _mapDataController
+                          .getMapItem(index: mapItemIndex)
+                          .subtitle,
+                      style: Get.context!.textTheme.headline6
                           ?.copyWith(color: AppColors.primaryDark),
                     ),
                   ),
-                ),
-                Center(
-                  child: Text(
-                    _mapDataController.getMapItem(index: mapItemIndex).subtitle,
-                    style: Get.context!.textTheme.headline6
-                        ?.copyWith(color: AppColors.primaryDark),
+                  Padding(padding: EdgeInsets.all(Constants.cardMargin)),
+                  Container(
+                    margin: EdgeInsets.all(Constants.insideMargin),
+                    child: Text(
+                      _mapDataController
+                          .getMapItem(index: mapItemIndex)
+                          .description,
+                      style: Get.context!.textTheme.bodyText1
+                          ?.copyWith(color: AppColors.primaryDark),
+                    ),
                   ),
-                ),
-                Padding(padding: EdgeInsets.all(Constants.cardMargin)),
-                Container(
-                  margin: EdgeInsets.all(Constants.insideMargin),
-                  child: Text(
-                    _mapDataController
-                        .getMapItem(index: mapItemIndex)
-                        .description,
-                    style: Get.context!.textTheme.bodyText1
-                        ?.copyWith(color: AppColors.primaryDark),
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ],

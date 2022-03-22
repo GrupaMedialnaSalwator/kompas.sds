@@ -29,11 +29,14 @@ class MapPoint extends StatelessWidget {
           () => Card(
             elevation: 8,
             child: InkWell(
-              child: Icon(
-                MapItem.getTypeIcon(
-                    mapDataController.getMapItem(index: mapItemIndex).type),
-                size: 36,
-                color: AppColors.primaryWhite,
+              child: Container(
+                padding: EdgeInsets.all(Constants.minMargin),
+                child: Icon(
+                  MapItem.getTypeIcon(
+                      mapDataController.getMapItem(index: mapItemIndex).type),
+                  size: 32,
+                  color: AppColors.primaryWhite,
+                ),
               ),
               onTap: () {
                 print('pressed icon on map...');
