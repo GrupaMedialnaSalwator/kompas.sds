@@ -1,6 +1,6 @@
 {
-    "name": "gra_terenowa",
-    "short_name": "gra_terenowa",
+    "name": "kompas.sds",
+    "short_name": "kompas.sds",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

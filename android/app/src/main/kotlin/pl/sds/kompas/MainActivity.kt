@@ -1,4 +1,4 @@
-package com.example.gra_terenowa
+package pl.sds.kompas
 
 import io.flutter.embedding.android.FlutterActivity
 
