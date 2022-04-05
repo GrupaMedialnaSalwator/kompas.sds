@@ -21,7 +21,7 @@ class DrawerWidget extends StatelessWidget {
             children: [
               Column(
                 children: [
-                  const SizedBox(height: Constants.drawerTopMargin),
+                  const SizedBox(height: Constants.spacerLarge),
                   Image.asset(
                       "assets/images/icons/wsd_logo_white_transparent.png",
                       scale: Constants.drawerLogoScale,
