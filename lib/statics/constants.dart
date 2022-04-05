@@ -29,6 +29,9 @@ class Constants {
   /// bottomMargin = 20.0
   static const double buttonMargin = 20.0;
 
+  /// drawerTopMargin = 32.0
+  static const double drawerTopMargin = 32.0;
+
   /// spacerLarge = 60.0
   static const double spacerLarge = 60.0;
 
