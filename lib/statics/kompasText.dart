@@ -18,7 +18,7 @@ class KompasText extends StatelessWidget {
       style: style,
       textAlign: textAlign,
       overflow: TextOverflow.ellipsis,
-      maxLines: 4,
+      maxLines: 10,
       softWrap: true,
     );
   }
