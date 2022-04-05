@@ -38,7 +38,9 @@ class _HomePageState extends State<HomePage> {
       initialIndex: 0,
       length: 3,
       child: Scaffold(
-        drawer: DrawerWidget(),
+        drawer: SizedBox(
+            width: MediaQuery.of(context).size.width * Constants.drawerWidthPercentage,
+            child: DrawerWidget()),
         extendBodyBehindAppBar: true,
         backgroundColor: AppColors.primaryWhite,
         appBar: AppBar(
