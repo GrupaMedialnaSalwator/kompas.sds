@@ -44,35 +44,42 @@ class _AchievementTrackerState extends State<AchievementTracker> {
         children: [
           Container(
             margin: EdgeInsets.all(Constants.insideMargin),
-            child: Row(
-              children: [
-                Align(
-                  alignment: Alignment.topLeft,
-                  child: KompasText(
-                    style: AppTextStyles.headerH5,
-                    text: "Punkty za dobre odpowiedzi:",
+            child: Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Flexible(
+                    child: Align(
+                      alignment: Alignment.topLeft,
+                      child: KompasText(
+                        style: AppTextStyles.headerH5,
+                        text: "Punkty za dobre odpowiedzi:",
+                      ),
+                    ),
                   ),
-                ),
-                Spacer(),
-                Align(
-                  alignment: Alignment.topRight,
-                  child: KompasText(
-                    style: AppTextStyles.headerH5,
-                    text: "$answerScore",
+                  Align(
+                    alignment: Alignment.topRight,
+                    child: KompasText(
+                      style: AppTextStyles.headerH5,
+                      text: "$answerScore",
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
           Container(
             margin: EdgeInsets.symmetric(horizontal: Constants.insideMargin),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                KompasText(
-                  style: AppTextStyles.headerH5,
-                  text: "Punkty za ukończone przygody:",
+                Flexible(
+                  child: KompasText(
+                    style: AppTextStyles.headerH5,
+                    text: "Punkty za ukończone przygody:",
+                  ),
                 ),
-                Spacer(),
+                //Spacer(),
                 KompasText(
                   style: AppTextStyles.headerH5,
                   text: "$tripScore",

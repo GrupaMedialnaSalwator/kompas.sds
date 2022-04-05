@@ -15,9 +15,11 @@ class KompasText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      softWrap: true,
       style: style,
-      textAlign: textAlign
+      textAlign: textAlign,
+      overflow: TextOverflow.ellipsis,
+      maxLines: 4,
+      softWrap: true,
     );
   }
 }
