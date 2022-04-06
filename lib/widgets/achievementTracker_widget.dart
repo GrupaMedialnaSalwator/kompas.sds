@@ -79,7 +79,6 @@ class _AchievementTrackerState extends State<AchievementTracker> {
                     text: "Punkty za ukończone przygody:",
                   ),
                 ),
-                //Spacer(),
                 KompasText(
                   style: AppTextStyles.headerH5,
                   text: "$tripScore",
