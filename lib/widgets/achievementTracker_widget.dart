@@ -44,28 +44,26 @@ class _AchievementTrackerState extends State<AchievementTracker> {
         children: [
           Container(
             margin: EdgeInsets.all(Constants.insideMargin),
-            child: Expanded(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Flexible(
-                    child: Align(
-                      alignment: Alignment.topLeft,
-                      child: KompasText(
-                        style: AppTextStyles.headerH5,
-                        text: "Punkty za dobre odpowiedzi:",
-                      ),
-                    ),
-                  ),
-                  Align(
-                    alignment: Alignment.topRight,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Flexible(
+                  child: Align(
+                    alignment: Alignment.topLeft,
                     child: KompasText(
                       style: AppTextStyles.headerH5,
-                      text: "$answerScore",
+                      text: "Punkty za dobre odpowiedzi:",
                     ),
                   ),
-                ],
-              ),
+                ),
+                Align(
+                  alignment: Alignment.topRight,
+                  child: KompasText(
+                    style: AppTextStyles.headerH5,
+                    text: "$answerScore",
+                  ),
+                ),
+              ],
             ),
           ),
           Container(
