@@ -656,7 +656,7 @@ List<TripItem> generateTripItems() {
       countPoints: false,
       stepList: <StepItem>[
         StepItem(
-          imageAsset: "assets/images/trip_02.png",
+          imageAsset: "assets/images/trip02/trip02_mapka.jpg",
           title: "Początek drogi ...",
           description:
               'Ta wyjątkowa droga krzyżowa ma swój początek w centralnej części naszego parku, po lewej stronie groty Matki Bożej. Jeśli jesteś u nas po raz pierwszy, warto skorzystać z mapki, która jest częścią tej aplikacji.\n\nPójście drogą krzyżową razem z Panem Jezusem wymaga ciszy i skupienia. Drogi Przyjacielu, niech piękno i spokój naszego parku pomogą Ci w wyjątkowy sposób przeżyć każdą stację tej drogi krzyżowej.',
