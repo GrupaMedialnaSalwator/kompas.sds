@@ -131,7 +131,7 @@ List<TripItem> generateTripItems() {
     TripItem(
       uid: "01", // TODO: must fix
       title: "W Parku",
-      subtitle: "dla najmłodszych",
+      subtitle: "dla całej rodziny",
       time: "30",
       age: "6+",
       distance: "1,6",
@@ -644,7 +644,7 @@ List<TripItem> generateTripItems() {
     TripItem(
       uid: "02", // TODO: must fix
       title: "Droga Krzyżowa",
-      subtitle: "dla dorosłych",
+      subtitle: "dla wszystkich",
       time: "60",
       age: "18+",
       distance: "1,7",

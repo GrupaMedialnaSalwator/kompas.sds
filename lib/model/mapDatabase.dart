@@ -11,6 +11,7 @@ enum MapItemType {
   building_small,
   chapel,
   church,
+  cross,
   house,
   info,
   labyrinth,
@@ -92,6 +93,8 @@ class MapItem {
       case MapItemType.chapel:
         return LineIcons.church;
       case MapItemType.church:
+        return LineIcons.church;
+      case MapItemType.cross:
         return LineIcons.cross;
       case MapItemType.house:
         return LineIcons.home;
@@ -182,9 +185,22 @@ MapData generateMapData() {
         enabled: true,
       ),
       MapItem(
+        locationX: 940,
+        locationY: 990,
+        uid: '05', // TODO: implement proper UID
+        imageAsset: "assets/images/trip02/trip02_mapka.jpg",
+        type: MapItemType.cross,
+        title: 'Droga Krzyżowa',
+        subtitle: '15 stacji',
+        description:
+            'Stacje kalwarii w naszym parku zostały poświęcone 18 marca 2011 r. przez ówczesnego prowincjała ks. Piotra Filasa SDS. Każda z nich zawiera głaz z naznaczonym krzyżem oraz towarzyszące symboliczne drzewko lub krzew, których nazwy i właściwości wspomagają medytację przy poszczególnych stacjach.\n\nZałożyciel Salwatorianów, błogosławiony Franciszek Maria od Krzyża Jordan często powtarzał, że wielkie rzeczy dojrzewają w cieniu krzyża.\n\nZapraszamy do odprawienia tej wyjątkowej drogi krzyżowej posługując się rozważaniami zawartymi w niniejszej aplikacji.',
+        rating: 5.0,
+        enabled: true,
+      ),
+      MapItem(
         locationX: 990,
         locationY: 750,
-        uid: '05', // TODO: implement proper UID
+        uid: '06', // TODO: implement proper UID
         imageAsset: "assets/images/map01/mapItem_05.png",
         type: MapItemType.monument,
         title: 'Pomnik',
@@ -197,7 +213,7 @@ MapData generateMapData() {
       MapItem(
         locationX: 995,
         locationY: 810,
-        uid: '06', // TODO: implement proper UID
+        uid: '07', // TODO: implement proper UID
         imageAsset: "assets/images/map01/mapItem_06.png",
         type: MapItemType.philosophy,
         title: 'Altanka filozofów',
@@ -210,7 +226,7 @@ MapData generateMapData() {
       MapItem(
         locationX: 570,
         locationY: 780,
-        uid: '07', // TODO: implement proper UID
+        uid: '08', // TODO: implement proper UID
         imageAsset: "assets/images/map01/mapItem_07.png",
         type: MapItemType.tree,
         title: 'Buk płaczący',
@@ -223,7 +239,7 @@ MapData generateMapData() {
       MapItem(
         locationX: 420,
         locationY: 800,
-        uid: '08', // TODO: implement proper UID
+        uid: '09', // TODO: implement proper UID
         imageAsset: "assets/images/map01/mapItem_08.png",
         type: MapItemType.building_small,
         title: 'Nowicjat',
@@ -236,7 +252,7 @@ MapData generateMapData() {
       MapItem(
         locationX: 340,
         locationY: 600,
-        uid: '09', // TODO: implement proper UID
+        uid: '10', // TODO: implement proper UID
         imageAsset: "assets/images/map01/mapItem_09.png",
         type: MapItemType.block,
         title: 'Dom "ToTu"',
@@ -249,7 +265,7 @@ MapData generateMapData() {
       MapItem(
         locationX: 1130,
         locationY: 990,
-        uid: '10', // TODO: implement proper UID
+        uid: '11', // TODO: implement proper UID
         imageAsset: "assets/images/map01/mapItem_10.png",
         type: MapItemType.plant,
         title: 'Ogród zakonny',
@@ -262,7 +278,7 @@ MapData generateMapData() {
       MapItem(
         locationX: 1080,
         locationY: 820,
-        uid: '11', // TODO: implement proper UID
+        uid: '12', // TODO: implement proper UID
         imageAsset: "assets/images/map01/mapItem_11.png",
         type: MapItemType.labyrinth,
         title: 'Labirynt filozofów',
@@ -275,7 +291,7 @@ MapData generateMapData() {
       MapItem(
         locationX: 1290,
         locationY: 205,
-        uid: '11', // TODO: implement proper UID
+        uid: '13', // TODO: implement proper UID
         imageAsset: "assets/images/map01/mapItem_12.png",
         type: MapItemType.church,
         title: 'Kościół parafialny',
