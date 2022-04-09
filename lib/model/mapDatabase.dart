@@ -16,6 +16,7 @@ enum MapItemType {
   info,
   labyrinth,
   monument,
+  parking,
   philosophy,
   pin,
   plant,
@@ -65,6 +66,7 @@ class MapItem {
     this.rating = 5.0,
     this.description = "Description",
     this.color = AppColors.primaryNormal,
+    this.tripIndexLink = -1,
     this.enabled = true,
   });
 
@@ -80,6 +82,7 @@ class MapItem {
   double rating;
   String description;
   Color color;
+  int tripIndexLink;
   bool enabled;
 
   static IconData getTypeIcon(MapItemType type) {
@@ -104,6 +107,8 @@ class MapItem {
         return LineIcons.mapSigns;
       case MapItemType.monument:
         return LineIcons.monument;
+      case MapItemType.parking:
+        return LineIcons.parking;
       case MapItemType.philosophy:
         return LineIcons.school;
       case MapItemType.plant:
@@ -195,12 +200,27 @@ MapData generateMapData() {
         description:
             'Stacje kalwarii w naszym parku zostały poświęcone 18 marca 2011 r. przez ówczesnego prowincjała ks. Piotra Filasa SDS. Każda z nich zawiera głaz z naznaczonym krzyżem oraz towarzyszące symboliczne drzewko lub krzew, których nazwy i właściwości wspomagają medytację przy poszczególnych stacjach.\n\nZałożyciel Salwatorianów, błogosławiony Franciszek Maria od Krzyża Jordan często powtarzał, że wielkie rzeczy dojrzewają w cieniu krzyża.\n\nZapraszamy do odprawienia tej wyjątkowej drogi krzyżowej posługując się rozważaniami zawartymi w niniejszej aplikacji.',
         rating: 5.0,
+        tripIndexLink: 1,
+        enabled: true,
+      ),
+      MapItem(
+        locationX: 1030,
+        locationY: 650,
+        uid: '06', // TODO: implement proper UID
+        imageAsset: "assets/images/trip01/trip01_01.jpg",
+        type: MapItemType.parking,
+        title: 'Parking',
+        subtitle: 'Serdecznie witamy',
+        description:
+            'Bardzo się cieszymy, że nas odwiedzasz i zapraszamy do zwiedzania naszego kompleksu klasztornego w Wyższym Seminarium Duchownym Salwatorianów w Bagnie.\n\nPrzygotowaliśmy dla Ciebie przewodnik w postaci niniejszej aplikacji, który zawiera kilka ciekawych podróży po naszym klasztornym terenie.\n\nJeśli jesteś gotowy od razu rozpocząć z miejsca parkinkowego, to zapraszamy do gry terenowej dla całej rodziny!',
+        rating: 5.0,
+        tripIndexLink: 0,
         enabled: true,
       ),
       MapItem(
         locationX: 990,
         locationY: 750,
-        uid: '06', // TODO: implement proper UID
+        uid: '07', // TODO: implement proper UID
         imageAsset: "assets/images/map01/mapItem_05.png",
         type: MapItemType.monument,
         title: 'Pomnik',
@@ -213,7 +233,7 @@ MapData generateMapData() {
       MapItem(
         locationX: 995,
         locationY: 810,
-        uid: '07', // TODO: implement proper UID
+        uid: '08', // TODO: implement proper UID
         imageAsset: "assets/images/map01/mapItem_06.png",
         type: MapItemType.philosophy,
         title: 'Altanka filozofów',
@@ -226,7 +246,7 @@ MapData generateMapData() {
       MapItem(
         locationX: 570,
         locationY: 780,
-        uid: '08', // TODO: implement proper UID
+        uid: '09', // TODO: implement proper UID
         imageAsset: "assets/images/map01/mapItem_07.png",
         type: MapItemType.tree,
         title: 'Buk płaczący',
@@ -239,7 +259,7 @@ MapData generateMapData() {
       MapItem(
         locationX: 420,
         locationY: 800,
-        uid: '09', // TODO: implement proper UID
+        uid: '10', // TODO: implement proper UID
         imageAsset: "assets/images/map01/mapItem_08.png",
         type: MapItemType.building_small,
         title: 'Nowicjat',
@@ -252,7 +272,7 @@ MapData generateMapData() {
       MapItem(
         locationX: 340,
         locationY: 600,
-        uid: '10', // TODO: implement proper UID
+        uid: '11', // TODO: implement proper UID
         imageAsset: "assets/images/map01/mapItem_09.png",
         type: MapItemType.block,
         title: 'Dom "ToTu"',
@@ -265,7 +285,7 @@ MapData generateMapData() {
       MapItem(
         locationX: 1130,
         locationY: 990,
-        uid: '11', // TODO: implement proper UID
+        uid: '12', // TODO: implement proper UID
         imageAsset: "assets/images/map01/mapItem_10.png",
         type: MapItemType.plant,
         title: 'Ogród zakonny',
@@ -278,7 +298,7 @@ MapData generateMapData() {
       MapItem(
         locationX: 1080,
         locationY: 820,
-        uid: '12', // TODO: implement proper UID
+        uid: '13', // TODO: implement proper UID
         imageAsset: "assets/images/map01/mapItem_11.png",
         type: MapItemType.labyrinth,
         title: 'Labirynt filozofów',
@@ -286,12 +306,13 @@ MapData generateMapData() {
         description:
             'Labirynt, który tutaj się znajduje kryje w sobie 14 cytatów słynnych myślicieli - filozofów, żyjących na przestrzeni wielu lat: od Sokratesa po Jana Pawła II. Każdy myśliciel jest opisany w książce znajdującej się przy wejściu, a także w naszej aplikacji w zakładce pod tytułem: „W labiryncie”. Warto zatrzymać się nad tymi myślami, porozmyślać nad nimi, choć trzeba być niezwykle ostrożnym - w gąszczu rozważań filozoficznych niejeden już się zgubił - stąd też warto zaopatrzyć się w plan naszego labiryntu, aby nie przeoczyć żadnego ciekawego filozofa.',
         rating: 5.0,
+        tripIndexLink: 2,
         enabled: true,
       ),
       MapItem(
         locationX: 1290,
         locationY: 205,
-        uid: '13', // TODO: implement proper UID
+        uid: '14', // TODO: implement proper UID
         imageAsset: "assets/images/map01/mapItem_12.png",
         type: MapItemType.church,
         title: 'Kościół parafialny',

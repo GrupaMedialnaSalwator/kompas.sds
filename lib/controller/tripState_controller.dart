@@ -10,8 +10,8 @@ class TripStateController extends GetxController {
   RxInt _currentPoints = 0.obs;
 
   /// holds value of currently selected answer
-  int _currentAnswer =
-      -1; // TODO: this is invalid - make a static const and check for it later
+  int _currentAnswer = -1; // TODO: this is invalid - make a static const and check for it later
+  bool _skipIntro = false;
 
   void resetState() {
     _currentTrip = -1;
@@ -38,6 +38,17 @@ class TripStateController extends GetxController {
 
   int getCurrentStep() {
     return _currentStep.value;
+  }
+
+  void setSkipIntro(bool value) {
+    if (value) {
+      _currentStep.value = 1;
+    }
+    _skipIntro = value;
+  }
+
+  bool getSkipIntro() {
+    return _skipIntro;
   }
 
   void gotoStepView(int step) {
