@@ -45,15 +45,17 @@ class _AchievementTrackerState extends State<AchievementTracker> {
           Container(
             margin: EdgeInsets.all(Constants.insideMargin),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Align(
-                  alignment: Alignment.topLeft,
-                  child: KompasText(
-                    style: AppTextStyles.headerH5,
-                    text: "Punkty za dobre odpowiedzi:",
+                Flexible(
+                  child: Align(
+                    alignment: Alignment.topLeft,
+                    child: KompasText(
+                      style: AppTextStyles.headerH5,
+                      text: "Punkty za dobre odpowiedzi:",
+                    ),
                   ),
                 ),
-                Spacer(),
                 Align(
                   alignment: Alignment.topRight,
                   child: KompasText(
@@ -67,12 +69,14 @@ class _AchievementTrackerState extends State<AchievementTracker> {
           Container(
             margin: EdgeInsets.symmetric(horizontal: Constants.insideMargin),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                KompasText(
-                  style: AppTextStyles.headerH5,
-                  text: "Punkty za ukończone przygody:",
+                Flexible(
+                  child: KompasText(
+                    style: AppTextStyles.headerH5,
+                    text: "Punkty za ukończone przygody:",
+                  ),
                 ),
-                Spacer(),
                 KompasText(
                   style: AppTextStyles.headerH5,
                   text: "$tripScore",

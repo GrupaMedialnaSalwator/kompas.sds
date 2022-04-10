@@ -39,8 +39,11 @@ class Constants {
   /// TODO: run tests to check if this assumption holds for all trip images
   static const double defaultImageRatio = 2 / 3;
 
-  /// drawerLogoScale = 7.0
-  static const double drawerLogoScale = 7.0;
+  /// drawerLogoScale = 9.0
+  static const double drawerLogoScale = 9.0;
+
+  /// drawerWidthPercentage = 0.75
+  static const double drawerWidthPercentage = 0.75;
 
   /// mapCardHeight = 130,0
   static const double mapCardHeight = 130.0;
