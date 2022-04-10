@@ -212,7 +212,7 @@ MapData generateMapData() {
         title: 'Parking',
         subtitle: 'Serdecznie witamy',
         description:
-            'Bardzo się cieszymy, że nas odwiedzasz i zapraszamy do zwiedzania naszego kompleksu klasztornego w Wyższym Seminarium Duchownym Salwatorianów w Bagnie.\n\nPrzygotowaliśmy dla Ciebie przewodnik w postaci niniejszej aplikacji, który zawiera kilka ciekawych podróży po naszym klasztornym terenie.\n\nJeśli jesteś gotowy rozpocząć z tego miejsca parkinkowego, to zapraszamy do gry terenowej dla całej rodziny!',
+            'Bardzo się cieszymy, że nas odwiedzasz i zapraszamy do zwiedzania naszego kompleksu klasztornego w Wyższym Seminarium Duchownym Salwatorianów w Bagnie.\n\nPrzygotowaliśmy dla Ciebie przewodnik w postaci niniejszej aplikacji, który zawiera kilka ciekawych podróży po naszym klasztornym terenie.\n\nJeśli jesteś gotowy rozpocząć z tego miejsca parkingowego, to zapraszamy do gry terenowej dla całej rodziny!',
         rating: 5.0,
         tripIndexLink: 0,
         enabled: true,
