@@ -26,11 +26,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     // Controllers used throughout the app
     // ignore: unused_local_variable
-    final TripDataController _tripDataController =
-        Get.put(TripDataController());
+    final TripDataController _tripDataController = Get.put(TripDataController());
     // ignore: unused_local_variable
-    final TripStateController _tripStateController =
-        Get.put(TripStateController());
+    final TripStateController _tripStateController = Get.put(TripStateController());
     // ignore: unused_local_variable
     final MapDataController _mapDataController = Get.put(MapDataController());
 
@@ -38,9 +36,8 @@ class _HomePageState extends State<HomePage> {
       initialIndex: 0,
       length: 3,
       child: Scaffold(
-        drawer: SizedBox(
-            width: MediaQuery.of(context).size.width * Constants.drawerWidthPercentage,
-            child: DrawerWidget()),
+        drawer:
+            SizedBox(width: MediaQuery.of(context).size.width * Constants.drawerWidthPercentage, child: DrawerWidget()),
         extendBodyBehindAppBar: true,
         backgroundColor: AppColors.primaryWhite,
         appBar: AppBar(
@@ -48,13 +45,11 @@ class _HomePageState extends State<HomePage> {
             // Status bar color
             statusBarColor: AppColors.primaryNormal,
             // Status bar brightness (optional)
-            statusBarIconBrightness:
-                Brightness.light, // For Android (dark icons)
+            statusBarIconBrightness: Brightness.light, // For Android (dark icons)
             statusBarBrightness: Brightness.dark, // For iOS (dark icons)
           ),
           iconTheme: IconThemeData(color: AppColors.primaryNormal),
-          backgroundColor:
-              AppColors.primaryWhite.withOpacity(Constants.opacity25),
+          backgroundColor: AppColors.primaryWhite.withOpacity(Constants.opacity25),
           foregroundColor: AppColors.primaryWhite,
           elevation: 0,
           title: Text(
@@ -84,13 +79,23 @@ class _HomePageState extends State<HomePage> {
             )),
           ],
         ),
-        body: TabBarView(
-          physics: NeverScrollableScrollPhysics(),
-          children: [
-            KeepAliveWrapper(child: HomeView()),
-            KeepAliveWrapper(child: MapView()),
-            KeepAliveWrapper(child: InfoView()),
-          ],
+        body: Container(
+          margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/images/background_compass.jpg"),
+              //colorFilter: ColorFilter.mode(Colors.white.withOpacity(1.0), BlendMode.modulate),
+              fit: BoxFit.cover,
+            ),
+          ),
+          child: TabBarView(
+            physics: NeverScrollableScrollPhysics(),
+            children: [
+              KeepAliveWrapper(child: HomeView()),
+              KeepAliveWrapper(child: MapView()),
+              KeepAliveWrapper(child: InfoView()),
+            ],
+          ),
         ),
       ),
     );
