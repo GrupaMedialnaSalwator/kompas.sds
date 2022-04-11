@@ -4,7 +4,6 @@ import 'package:kompas/statics/colors.dart';
 import 'package:kompas/statics/constants.dart';
 import 'package:kompas/statics/kompasText.dart';
 import 'package:kompas/statics/text_styles.dart';
-import 'package:launch_review/launch_review.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class DrawerWidget extends StatelessWidget {
@@ -29,7 +28,7 @@ class DrawerWidget extends StatelessWidget {
                   KompasText(style: AppTextStyles.headerH3.copyWith(color: AppColors.primaryWhite), text: "kompas.sds"),
                   KompasText(
                       style: AppTextStyles.paragraphText.copyWith(color: AppColors.primaryWhite),
-                      text: "wersja: 0.1.0 (alpha)"),
+                      text: "wersja: 0.1.1 (alpha)"),
                   const SizedBox(height: Constants.bottomMargin),
                 ],
               ),
