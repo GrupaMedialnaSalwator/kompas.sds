@@ -10,18 +10,20 @@ import 'package:kompas/widgets/tripViewStep_widget.dart';
 import 'package:line_icons/line_icons.dart';
 
 class TripPage extends StatelessWidget {
-  const TripPage({
+  TripPage({
     Key? key,
     required this.tripIndex,
+    this.skipIntro = false, // skip the first step and start from the second
   }) : super(key: key);
 
   final int tripIndex;
+  final bool skipIntro;
 
   @override
   Widget build(BuildContext context) {
     final TripDataController _tripDataController = Get.find();
-    final TripStateController _tripStateController =
-        Get.put(TripStateController());
+    final TripStateController _tripStateController = Get.put(TripStateController());
+    _tripStateController.setSkipIntro(skipIntro);
 
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -59,8 +61,7 @@ class TripPage extends StatelessWidget {
                     child: Container(
                       padding: EdgeInsets.all(12),
                       decoration: BoxDecoration(
-                        color: AppColors.primaryNormal
-                            .withOpacity(Constants.opacity75),
+                        color: AppColors.primaryNormal.withOpacity(Constants.opacity75),
                         shape: BoxShape.rectangle,
                         borderRadius: BorderRadius.all(
                           Radius.circular(Constants.borderRadius),
@@ -72,10 +73,7 @@ class TripPage extends StatelessWidget {
                             const Icon(LineIcons.trophy),
                             Obx(
                               () => Text(
-                                ' ' +
-                                    _tripStateController
-                                        .getCurrentPoints()
-                                        .toString(),
+                                ' ' + _tripStateController.getCurrentPoints().toString(),
                                 style: TextStyle(color: AppColors.primaryWhite),
                               ),
                             ),
@@ -100,8 +98,7 @@ class TripPage extends StatelessWidget {
                 icon: const Icon(Icons.close),
                 color: AppColors.primaryWhite,
                 onPressed: () {
-                  _tripStateController
-                      .resetState(); // redundant, since controller will be destroyed
+                  _tripStateController.resetState(); // redundant, since controller will be destroyed
                   Get.until((route) => Get.currentRoute == AppRoutes.home);
                 },
               ),
@@ -117,9 +114,7 @@ class TripPage extends StatelessWidget {
         () => TripViewStep(
           tripStateController: _tripStateController,
           tripDataController: _tripDataController,
-          tripDataSelect: TripDataSelect(
-              tripIndex: tripIndex,
-              stepIndex: _tripStateController.getCurrentStep()),
+          tripDataSelect: TripDataSelect(tripIndex: tripIndex, stepIndex: _tripStateController.getCurrentStep()),
         ),
       ),
     );

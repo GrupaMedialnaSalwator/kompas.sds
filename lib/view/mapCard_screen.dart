@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:kompas/controller/mapData_controller.dart';
 import 'package:kompas/statics/colors.dart';
 import 'package:kompas/statics/constants.dart';
+import 'package:kompas/view/trip_screen.dart';
 
 class MapCardPage extends StatelessWidget {
   MapCardPage({
@@ -14,8 +15,7 @@ class MapCardPage extends StatelessWidget {
   }) : super(key: key);
 
   final int mapItemIndex;
-  final ScrollController _scrollController =
-      ScrollController(keepScrollOffset: false);
+  final ScrollController _scrollController = ScrollController(keepScrollOffset: false);
 
   @override
   Widget build(BuildContext context) {
@@ -90,42 +90,54 @@ class MapCardPage extends StatelessWidget {
               controller: _scrollController,
               child: ListView(
                 controller: _scrollController,
-                padding: EdgeInsets.fromLTRB(Constants.insideMargin, 0,
-                    Constants.insideMargin, Constants.cardMargin),
+                padding: EdgeInsets.fromLTRB(Constants.insideMargin, 0, Constants.insideMargin, Constants.cardMargin),
                 children: [
                   Center(
                     child: Container(
-                      margin:
-                          EdgeInsets.symmetric(vertical: Constants.cardMargin),
+                      margin: EdgeInsets.symmetric(vertical: Constants.cardMargin),
                       child: Text(
-                        _mapDataController
-                            .getMapItem(index: mapItemIndex)
-                            .title,
-                        style: Get.context!.textTheme.headline3
-                            ?.copyWith(color: AppColors.primaryDark),
+                        _mapDataController.getMapItem(index: mapItemIndex).title,
+                        style: Get.context!.textTheme.headline3?.copyWith(color: AppColors.primaryDark),
                       ),
                     ),
                   ),
                   Center(
                     child: Text(
-                      _mapDataController
-                          .getMapItem(index: mapItemIndex)
-                          .subtitle,
-                      style: Get.context!.textTheme.headline6
-                          ?.copyWith(color: AppColors.primaryDark),
+                      _mapDataController.getMapItem(index: mapItemIndex).subtitle,
+                      style: Get.context!.textTheme.headline6?.copyWith(color: AppColors.primaryDark),
                     ),
                   ),
                   Padding(padding: EdgeInsets.all(Constants.cardMargin)),
                   Container(
                     margin: EdgeInsets.all(Constants.insideMargin),
                     child: Text(
-                      _mapDataController
-                          .getMapItem(index: mapItemIndex)
-                          .description,
-                      style: Get.context!.textTheme.bodyText1
-                          ?.copyWith(color: AppColors.primaryDark),
+                      _mapDataController.getMapItem(index: mapItemIndex).description,
+                      style: Get.context!.textTheme.bodyText1?.copyWith(color: AppColors.primaryDark),
                     ),
                   ),
+                  // Add a link button to the appropriate trip if needed
+                  (_mapDataController.getMapItem(index: mapItemIndex).tripIndexLink != -1)
+                      ? Padding(
+                          padding: const EdgeInsets.all(Constants.bottomMargin),
+                          child: TextButton(
+                            child: Text("Zaczynamy"),
+                            style: TextButton.styleFrom(
+                              primary: AppColors.primaryWhite,
+                              backgroundColor: AppColors.primaryNormal,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(Constants.borderRadius),
+                              ),
+                            ),
+                            onPressed: () {
+                              Get.to(() => TripPage(
+                                    tripIndex: _mapDataController.getMapItem(index: mapItemIndex).tripIndexLink,
+                                    skipIntro: true, // skip the first intro step
+                                  ));
+                            },
+                          ),
+                        )
+                      : // Placeholder
+                      SizedBox(width: Constants.minMargin),
                 ],
               ),
             ),
