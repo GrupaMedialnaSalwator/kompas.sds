@@ -80,10 +80,10 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
         body: Container(
-          margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
+          //margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage("assets/images/background_compass.jpg"),
+              image: AssetImage("assets/images/background_compass_v3.jpg"),
               //colorFilter: ColorFilter.mode(Colors.white.withOpacity(1.0), BlendMode.modulate),
               fit: BoxFit.cover,
             ),
