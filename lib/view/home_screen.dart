@@ -21,7 +21,21 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
+  late TabController _tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(vsync: this, length: 3);
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     // Controllers used throughout the app
@@ -32,54 +46,62 @@ class _HomePageState extends State<HomePage> {
     // ignore: unused_local_variable
     final MapDataController _mapDataController = Get.put(MapDataController());
 
-    return DefaultTabController(
-      initialIndex: 0,
-      length: 3,
-      child: Scaffold(
-        drawer:
-            SizedBox(width: MediaQuery.of(context).size.width * Constants.drawerWidthPercentage, child: DrawerWidget()),
-        extendBodyBehindAppBar: true,
-        backgroundColor: AppColors.primaryWhite,
-        appBar: AppBar(
-          systemOverlayStyle: SystemUiOverlayStyle(
-            // Status bar color
-            statusBarColor: AppColors.primaryNormal,
-            // Status bar brightness (optional)
-            statusBarIconBrightness: Brightness.light, // For Android (dark icons)
-            statusBarBrightness: Brightness.dark, // For iOS (dark icons)
-          ),
-          iconTheme: IconThemeData(color: AppColors.primaryNormal),
-          backgroundColor: AppColors.primaryWhite.withOpacity(Constants.opacity25),
-          foregroundColor: AppColors.primaryWhite,
-          elevation: 0,
-          title: Text(
-            "Witamy w Bagnie",
-            style: TextStyle(color: AppColors.primaryDark),
-          ),
+    return Scaffold(
+      drawer:
+          SizedBox(width: MediaQuery.of(context).size.width * Constants.drawerWidthPercentage, child: DrawerWidget()),
+      extendBodyBehindAppBar: true,
+      backgroundColor: AppColors.primaryWhite,
+      appBar: AppBar(
+        systemOverlayStyle: SystemUiOverlayStyle(
+          // Status bar color
+          statusBarColor: AppColors.primaryNormal,
+          // Status bar brightness (optional)
+          statusBarIconBrightness: Brightness.light, // For Android (dark icons)
+          statusBarBrightness: Brightness.dark, // For iOS (dark icons)
         ),
-        bottomNavigationBar: TabBar(
-          labelColor: AppColors.primaryWhite,
-          unselectedLabelColor: AppColors.primaryNormal,
-          indicator: TabOutlineIndicator(),
-          tabs: [
-            Tab(
-                icon: Icon(
-              LineIcons.compass,
-              //CupertinoIcons.compass,
-            )),
-            Tab(
-                icon: Icon(
-              LineIcons.alternateMapMarked,
-              //CupertinoIcons.map,
-            )),
-            Tab(
-                icon: Icon(
-              LineIcons.info,
-              //CupertinoIcons.question,
-            )),
-          ],
+        iconTheme: IconThemeData(color: AppColors.primaryNormal),
+        backgroundColor: AppColors.primaryWhite.withOpacity(Constants.opacity25),
+        foregroundColor: AppColors.primaryWhite,
+        elevation: 0,
+        title: Text(
+          "Witamy w Bagnie",
+          style: TextStyle(color: AppColors.primaryDark),
         ),
-        body: Container(
+      ),
+      bottomNavigationBar: TabBar(
+        controller: _tabController,
+        labelColor: AppColors.primaryWhite,
+        unselectedLabelColor: AppColors.primaryNormal,
+        indicator: TabOutlineIndicator(),
+        tabs: [
+          Tab(
+              icon: Icon(
+            LineIcons.compass,
+            //CupertinoIcons.compass,
+          )),
+          Tab(
+              icon: Icon(
+            LineIcons.alternateMapMarked,
+            //CupertinoIcons.map,
+          )),
+          Tab(
+              icon: Icon(
+            LineIcons.info,
+            //CupertinoIcons.question,
+          )),
+        ],
+      ),
+      body: WillPopScope(
+        // Override back button
+        onWillPop: () async {
+          if (_tabController.index != 0) {
+            _tabController.index = 0;
+            return false;
+          } else {
+            return true;
+          }
+        },
+        child: Container(
           //margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
           decoration: BoxDecoration(
             image: DecorationImage(
@@ -89,6 +111,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           child: TabBarView(
+            controller: _tabController,
             physics: NeverScrollableScrollPhysics(),
             children: [
               KeepAliveWrapper(child: HomeView()),
