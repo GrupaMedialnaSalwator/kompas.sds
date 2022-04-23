@@ -146,7 +146,7 @@ MapData generateMapData() {
         title: 'Zamek',
         subtitle: 'WSD Salwatorianów',
         description:
-            'Właściwie nie jest to zamek, a pałac, ale w nomenklaturze salwatoriańskiej przyjęło się ten piękny budynek nazywać zamkiem. Pałac pochodzi z XVIII wieku i obecnie znajduje się w nim Wyższe Seminarium Salwatorianów w Bagnie oraz klasztor. To w tym budynku mieszkają i studiują klerycy, przygotowując się do przyjęcia święceń kapłańskich. Warto poznać historię tego budynku i zwiedzić jego wnętrze. Zapraszamy w każdą niedzielę o godzinie 14:00, 15:00 i 16:00. Wystarczy wejść do środka i zapytać furtiana o możliwość oprowadzenia, a on na pewno udzieli szczegółowych informacji.',
+            'Właściwie nie jest to zamek, lecz pałac, ale w nomenklaturze salwatoriańskiej przyjęło się ten piękny budynek nazywać zamkiem. Pochodzi on z XVIII wieku i obecnie znajduje się w nim Wyższe Seminarium Salwatorianów oraz klasztor. To w tym budynku mieszkają i studiują klerycy, przygotowując się do przyjęcia święceń kapłańskich.\n\nWarto poznać historię tego budynku i zwiedzić jego wnętrze. Zapraszamy w każdą niedzielę o godzinie 14:00, 15:00 i 16:00. Wystarczy wejść do środka i zapytać furtiana o możliwość oprowadzenia.\n\nZapraszamy!',
         rating: 5.0,
         enabled: true,
       ),
@@ -159,7 +159,7 @@ MapData generateMapData() {
         title: 'Diaspora',
         subtitle: 'Kapliczka w parku',
         description:
-            'Drewniana kapliczka zbudowana przez kleryków, przyjęła nazwę diaspora, co oznacza z greckiego grupę etniczną lub religijną żyjącą w odosobnieniu. Nie wiadomo do końca skąd wzięła się nazwa, ale według niektórych koncepcji kiedyś katolicy żyjący w tej miejscowości byli w mniejszości ze względu na dużą ilość protestantów. Co ciekawe od niedawna w tejże diasporze nowicjusze odprawiają roraty z samego rana. Warto wejść do środka naszej diaspory, przyklęknąć na chwilę i pomodlić się. Gdyby jednak nie przychodziła do głowy żadna intencja to po lewej stronie od wejścia znajdują się chlebki z wygrawerowanymi na nich numerkami - można wylosować sobie numerek i na przygotowanej tablicy sprawdzić sobie za kogo można się w tej diasporze pomodlić.',
+            'Drewniana kapliczka przyjęła nazwę diaspora, co oznacza z greckiego grupę etniczną lub religijną żyjącą w odosobnieniu. Nie wiadomo do końca skąd wzięła się ta nazwa, ale prawdopodobnie kiedyś katolicy żyjący w tej miejscowości byli w mniejszości ze względu na dużą ilość protestantów.\n\nWarto wejść do środka, przyklęknąć na chwilę i pomodlić się. Można również skorzystać z koszyka z intencjami po lewej stronie od wejścia, gdzie znajdują się chlebki z wygrawerowanymi na nich numerkami. Po wyciągnięciu numerka należy sprawdzić intencję do omodlenia na przygotowanej tablicy.',
         rating: 5.0,
         enabled: true,
       ),
@@ -172,7 +172,7 @@ MapData generateMapData() {
         title: 'Obelisk',
         subtitle: 'Trzy filary zakonników',
         description:
-            'Na tym miejscu znajduje się popiersie dwóch ważnych osób dla zgromadzenia salwatorianów: bł. Franciszka Jordana - naszego założyciela oraz ks. Bonawentury Lüthena - jego najbliższego współpracownika i przyjaciela. Znajdują się tu także łacińskie nazwy ślubów, które składają zakonnicy na całym świecie, a więc ślub czystości (castitas), ubóstwa (paupertas) i posłuszeństwa (oboedientia). To tych trzech ślubów Salwatorianie dodają także zaangażowanie w konkretny apostolat. Apostolstwo jest dla nas czymś niesłychanie ważnym - głoszenie Ewangelii wszystkimi możliwymi sposobami.',
+            'W tym miejscu znajduje się popiersie dwóch ważnych osób dla zgromadzenia Salwatorianów: bł. Franciszka Jordana - naszego założyciela oraz ks. Bonawentury Lüthena - jego najbliższego współpracownika i przyjaciela.\n\nZnajdują się tu także łacińskie nazwy ślubów, które składają zakonnicy na całym świecie, a więc ślub czystości (castitas), ubóstwa (paupertas) i posłuszeństwa (oboedientia).\n\nDo tych trzech ślubów Salwatorianie dodają jeszcze zaangażowanie w konkretny apostolat. Apostolstwo jest dla nas bardzo ważne i wyraża się w realizacji charyzmatu głoszenia Ewangelii wszystkim, wszędzie i wszelkimi możliwymi sposobami.',
         rating: 4.0,
         enabled: true,
       ),
@@ -185,7 +185,7 @@ MapData generateMapData() {
         title: 'Grota Matki Bożej',
         subtitle: 'Miejsce modlitwy',
         description:
-            'Grota Matki Bożej powstała na wzór groty z Lourdes. Jest to wyjątkowe miejsce dla wszystkich salwatorianów, ponieważ z całego serca czcimy, podobnie jak nasz założyciel, Najświętszą Marię Pannę. Tutaj odprawiane są nabożeństwa majowe, podczas których śpiewana jest litania loretańska, a potem jeden z kleryków wygłasza egzortę z ambony, która znajduje się po lewej stronie, patrząc na Maryję. Tutaj także modlą się wszyscy członkowie bagiennej wspólnoty w ciągu roku na różańcu, lub w inny sposób, pozdrawiając Maryję. Warto zaczekać do zachodu słońca, kiedy to grota Matki Bożej jest podświetlona - wygląda wtedy niezwykle malowniczo.',
+            'Grota Matki Bożej powstała na wzór groty z Lourdes. Jest to wyjątkowe miejsce dla wszystkich Salwatorianów, ponieważ podobnie jak nasz założyciel z całego serca czcimy Najświętszą Maryję Pannę.\n\nGrota jest miejscem, gdzie członkowie bagieńskiej wspólnoty najcześciej modlą się różańcem. W miesiącu maju odprawiane są tutaj nabożeństwa majowe, podczas których jeden z kleryków wygłasza zwyczajową egzortę wchodząc na ambonę po lewej stronie groty.\n\nWarto zaczekać do zachodu słońca, kiedy to grota Matki Bożej jest podświetlona i przedstawia niezwykle malowniczy widok.',
         rating: 5.0,
         enabled: true,
       ),
@@ -198,7 +198,7 @@ MapData generateMapData() {
         title: 'Droga Krzyżowa',
         subtitle: '15 stacji',
         description:
-            'Stacje kalwarii w naszym parku zostały poświęcone 18 marca 2011 r. przez ówczesnego prowincjała ks. Piotra Filasa SDS. Każda z nich zawiera głaz naznaczony krzyżem oraz towarzyszące symboliczne drzewko lub krzew, których nazwy i właściwości wspomagają medytację.\n\nZałożyciel Salwatorianów, błogosławiony Franciszek Maria od Krzyża Jordan często powtarzał, że wielkie rzeczy dojrzewają w cieniu krzyża.\n\nZapraszamy Cię do towarzyszenia Panu Jezusowi na drodze krzyżowej poprzez nawiedzenie wszystkich stacji i rozważenie ich treści.',
+            'Stacje kalwarii w naszym parku zostały poświęcone 18 marca 2011 r. przez ówczesnego prowincjała ks. Piotra Filasa SDS. Każda z nich zawiera głaz naznaczony krzyżem oraz towarzyszące symboliczne drzewko lub krzew, których nazwy i właściwości wspomagają medytację.\n\nZałożyciel Salwatorianów, błogosławiony Franciszek Maria od Krzyża Jordan często powtarzał, że wielkie rzeczy dojrzewają w cieniu krzyża.\n\nZapraszamy do towarzyszenia Panu Jezusowi na drodze krzyżowej poprzez nawiedzenie wszystkich stacji i modlitewne rozważanie ich treści.',
         rating: 5.0,
         tripIndexLink: 1,
         enabled: true,
@@ -226,7 +226,7 @@ MapData generateMapData() {
         title: 'Pomnik',
         subtitle: 'Bł. Franciszek Jordan',
         description:
-            'Nasz założyciel to błogosławiony Franciszek Maria od Krzyża Jordan. Od niego zaczęło się to wielkie salwatoriańskie dzieło trwające już ponad sto lat. Był to skromny kapłan, pochodzący z ubogiej rodziny, który na skutek prześladowań w Niemczech musiał się udać do Rzymu, gdzie uczył się języków, do których miał ogromny talent. Tam też zrodził się pomysł założenia zgromadzenia, które miałoby głosić Jezusa Chrystusa wszystkim, wszędzie i wszystkimi możliwymi sposobami. Tak powstali salwatorianie, którzy do teraz starają się realizować testament swojego duchowego ojca.',
+            'Nasz założyciel to błogosławiony Franciszek Maria od Krzyża Jordan. Od Niego zaczęło się to wielkie salwatoriańskie dzieło trwające już ponad sto lat.\n\nFranciszek Jordan był skromnym kapłanem, pochodzącym z ubogiej rodziny. Na skutek prześladowań w Niemczech w XIX wieku musiał udać się do Rzymu, gdzie studiował języki, do których miał ogromny talent. Tam też odkrył powołanie do założenia zgromadzenia, które miało głosić Jezusa Chrystusa wszystkim, wszędzie i wszelkimi możliwymi sposobami.\n\nTak powstali Salwatorianie, którzy do dziś starają się realizować testament swojego duchowego ojca.',
         rating: 5.0,
         enabled: true,
       ),
@@ -239,7 +239,7 @@ MapData generateMapData() {
         title: 'Altanka filozofów',
         subtitle: 'Miejsce filozofowania',
         description:
-            'Altanka jest starsza od znajdującego się blisko labiryntu filozofów, ale oba miejsca się ze sobą łączą. Tutaj w razie niepogody można się schronić lub dać odpocząć nogom po zbyt długim zwiedzaniu. Oczywiście jak sama nazwa wskazuje można tutaj także pofilozofować. Inspiracją do podjęcia dyskusji mogą być tabliczki z cytatami filozofów znajdujące się w labiryncie nieopodal. Albo po prostu można tutaj posiedzieć samemu i podumać nad sensem życia...',
+            'Altanka jest starsza od znajdującego się nieopodal labiryntu filozofów, ale oba miejsca się ze sobą łączą. Tutaj w razie niepogody można się schronić lub odpocząć po długim zwiedzaniu. Można tutaj również pofilozofować.\n\nInspiracją do podjęcia ciekawych dyskusji mogą być tabliczki z cytatami filozofów znajdujące się w niedalekim labiryncie.\n\nŻyczymy owocnych rozważań.',
         rating: 5.0,
         enabled: true,
       ),
@@ -250,9 +250,9 @@ MapData generateMapData() {
         imageAsset: "assets/images/map01/mapItem_07.png",
         type: MapItemType.tree,
         title: 'Buk płaczący',
-        subtitle: 'Miejsce piknikowe',
+        subtitle: 'Miejsce odpoczynku',
         description:
-            'Ten buk to jedno z najbardziej malowniczych i charakterystycznych drzew w naszym parku. Latem daje upragniony cień, wiosną jest idealnym miejscem na piknik, zimą ozdabia parkową scenerię, jedynie jesienią przeszkadza, zrzucając mnóstwo liści na alejkę prowadzącą do nowicjatu. Według legendy system korzeniowy tego drzewa prowadzi aż do pobliskiego stawu, stąd drzewo ma odpowiednią ilość wody do wzrostu. Zachęcamy do odpoczynku pod naszym dobrym, starym bukiem.',
+            'Ten buk to jedno z najbardziej malowniczych i charakterystycznych drzew w naszym parku. Latem daje upragniony cień, wiosną jest idealnym miejscem na wypoczynek, zimą ozdabia parkową scenerię, a jesienią zrzuca mnóstwo liści na alejkę prowadzącą do nowicjatu.\n\nWedług legendy system korzeniowy tego drzewa prowadzi aż do pobliskiego stawu, stąd pobiera odpowiednią ilość wody do wzrostu.\n\nZachęcamy do odpoczynku pod tym wyjątkowym, starym bukiem.',
         rating: 5.0,
         enabled: true,
       ),
@@ -265,7 +265,7 @@ MapData generateMapData() {
         title: 'Nowicjat',
         subtitle: 'Dla początkujących',
         description:
-            'To właśnie w tym ceglanym budynku mieści się nowicjat - miejsce, gdzie żyją na co dzień mężczyźni, chcący zostać zakonnikami, salwatorianami. Etap nowicjatu w naszym zakonie trwa cały rok i obejmuje wprowadzenie w życie zakonne, pogłębianie modlitwy, naukę, pracę w naszym klasztornym ogrodzie, ale także budowę wspólnoty - czyli wspólne wypady na piłkę, gry w planszówki, rekreacja przy wspólnej kawie. Aby lepiej przygotować się do życia zakonnego nowicjusze nie korzystają z elektroniki - mogą kontaktować się z rodziną jedynie listownie i telefonicznie w niektóre niedziele. Jest to więc czas próby, ale też i czas wielu Bożych łask. Każdy salwatorianin ze wzruszeniem wspomina swoje nowicjackie chwile, kiedy to stawał u początku nowego życia. Warto pomodlić się za najmłodszych współbraci, rozeznających w tym budynku swoje powołanie.',
+            'To właśnie w tym ceglanym budynku mieści się nowicjat - miejsce, gdzie żyją na co dzień młodzi mężczyźni i przygotowują się do złożenia profesji zakonnej w Towarzystwie Boskiego Zbawiciela.\n\nEtap nowicjatu w naszym zakonie trwa cały rok i obejmuje wprowadzenie w życie zakonne, pogłębianie modlitwy, naukę, pracę w naszym klasztornym ogrodzie, ale także budowanie wspólnoty - czyli wspólne wypady na piłkę, gry w planszówki, rekreacja przy wspólnej kawie.\n\nW celu lepszego przygotowania się do życia zakonnego nowicjusze nie korzystają z elektroniki - mogą kontaktować się z rodziną jedynie listownie i telefonicznie w niektóre niedziele. Jest to więc czas próby, ale także czas wielu Bożych łask. Każdy Salwatorianin ze wzruszeniem wspomina swoje nowicjackie chwile, kiedy to stawał u początku nowego życia.\n\nWarto pomodlić się za najmłodszych współbraci, rozeznających w tym budynku swoje powołanie.',
         rating: 4.0,
         enabled: true,
       ),
@@ -275,10 +275,10 @@ MapData generateMapData() {
         uid: '11', // TODO: implement proper UID
         imageAsset: "assets/images/map01/mapItem_09.png",
         type: MapItemType.block,
-        title: 'Dom "ToTu"',
+        title: 'Dom „ToTu”',
         subtitle: 'Centrum dla młodzieży',
         description:
-            'Kiedyś mieścił się tutaj klerykat - miejsce, gdzie mieszkali wszyscy przygotowujący się do kapłaństwa. Teraz jednak ze względu na małą liczbę powołań dom przejęli księża z apostolatów młodzieżowych - działa tutaj Ruch Młodzieży Salwatoriańskiej i Salwatoriański Ośrodek Powołań, prowadzone są rekolekcje dla młodzieży, różne warsztaty, dni skupienia i wiele, wiele innych. Warto tam kiedyś zajrzeć lub polecić to miejsce innym - zwłaszcza znajomym nastolatkom. Więcej informacji o tym domu znajduje się na stronie: https://totu.sds.pl.',
+            'Kiedyś mieścił się tutaj klerykat - miejsce, gdzie mieszkali wszyscy przygotowujący się do kapłaństwa. Teraz dom przejęli księża z apostolatów młodzieżowych. Działa tutaj Ruch Młodzieży Salwatoriańskiej i Salwatoriański Ośrodek Powołań, prowadzone są rekolekcje dla młodzieży, różne warsztaty, dni skupienia oraz wiele innych inicjatyw. Warto bliżej zainteresować się ofertą tego miejsca i polecić je innym - zwłaszcza znajomym nastolatkom.\n\nWięcej informacji o tym domu znajduje się na stronie: https://totu.sds.pl.',
         rating: 4.5,
         enabled: true,
       ),
@@ -291,7 +291,7 @@ MapData generateMapData() {
         title: 'Ogród zakonny',
         subtitle: 'Miejsce pracy',
         description:
-            'To miejsce, gdzie uprawiane są wszystkie warzywa i owoce, które później znajdują się na stołach salwatoriańskich księży, braci i kleryków. To tutaj bracia zakonni we współpracy z siostrami, nowicjuszami i osobami świeckimi starają się o zdrowe i świeże warzywa dla całej wspólnoty. Znaleźć tutaj można wszystko - od jabłek, przez truskawki, aż po rabarbar. W tygodniu jest możliwość zakupienia sobie jakiegoś warzywa lub też ozdobnego kwiatka dla siebie do domu - jako pamiątki ze zwiedzania. Zakupy można zrobić poza okresem zimowym w godzinach od 9:00 do 16:00.',
+            'W naszym ogrodzie od pokoleń uprawiane są warzywa i owoce, które później znajdują się na stole naszej salwatoriańskiej wspólnoty.\n\nTo tutaj bracia zakonni we współpracy z siostrami, nowicjuszami i osobami świeckimi troszczą się o zdrową i świeżą żywność. Uprawiają prawie wszystko - od jabłek, przez truskawki, aż po rabarbar.\n\nW tygodniu można tutaj kupić warzywa, owoce, lub ozdobny kwiatek do domu jako pamiątkę odwiedziń w Bagnie. Zakupy można zrobić poza okresem zimowym w godzinach od 9:00 do 16:00.',
         rating: 4.5,
         enabled: true,
       ),
@@ -302,9 +302,9 @@ MapData generateMapData() {
         imageAsset: "assets/images/map01/mapItem_11.png",
         type: MapItemType.labyrinth,
         title: 'Labirynt filozofów',
-        subtitle: 'Miejsce do rozmyślań',
+        subtitle: 'Miejsce rozmyślań',
         description:
-            'Labirynt, który tutaj się znajduje kryje w sobie 14 cytatów słynnych myślicieli - filozofów, żyjących na przestrzeni wielu lat: od Sokratesa po Jana Pawła II. Każdy myśliciel jest opisany w książce znajdującej się przy wejściu, a także w naszej aplikacji.\n\nWarto zatrzymać się nad tymi myślami, porozmyślać nad nimi, choć trzeba być niezwykle ostrożnym - w gąszczu rozważań filozoficznych niejeden już się zgubił. Warto więc zaopatrzyć się w plan naszego labiryntu, aby nie przeoczyć żadnego ciekawego filozofa.',
+            'Labirynt, który tutaj się znajduje, kryje w sobie 14 cytatów słynnych myślicieli - filozofów, żyjących na przestrzeni wielu lat: od Sokratesa po Jana Pawła II. Każdy myśliciel jest opisany w książce znajdującej się przy wejściu, a także w naszej aplikacji.\n\nWarto zatrzymać się nad ciekawymi cytatami, porozmyślać nad nimi, choć trzeba być niezwykle ostrożnym - w gąszczu rozważań filozoficznych niejeden już się zgubił.\n\nZachęcamy do wejścia w głąb naszego labiryntu i zmierzenie się z najważniejszymi pytaniami ludzkości.',
         rating: 5.0,
         tripIndexLink: 2,
         enabled: true,
@@ -318,7 +318,7 @@ MapData generateMapData() {
         title: 'Kościół parafialny',
         subtitle: 'pw. Wniebowzięcia NMP',
         description:
-            'Jest to kościół, w którym również posługują księża salwatorianie. Pierwsza wzmianka o kościele w Bagnie pochodzi z 1353 roku. Wiadomo, że w roku 1598 kościół stał się na moment luterański, by w 1654 roku stać się na nowo kościołem katolickim. W 1759 roku kościół spalił się i na jego miejsce wzniesiono nowy. Jednak na początku XX wieku stan techniczny kościoła był bardzo zły, więc postawiono w latach 1906-1907 nowy kościół, który służy do dziś. Obok kościoła znajduje się grobowiec salwatorianów. Więcej informacji o parafii, historii, godzinach mszy świętych znaleźć można na stronie: http://www.bagno.sds.pl.',
+            'Pierwsza wzmianka o kościele w Bagnie pochodzi z 1353 roku. Wiadomo, że w roku 1598 kościół stał się na moment luterański, by w 1654 roku stać się na nowo kościołem katolickim. W 1759 roku kościół spalił się i na jego miejsce wzniesiono nowy. Jednak na początku XX wieku stan techniczny kościoła był bardzo zły, więc postawiono w latach 1906-1907 nowy kościół, który służy do dziś.\n\nObecnie posługują tutaj księża Salwatorianie, a obok kościoła znajduje się salwatoriański grobowiec.\n\nWięcej informacji o parafii, jej historii, oraz godzinach mszy świętych i nabożeństw można znaleźć na stronie: http://www.bagno.sds.pl.',
         rating: 4.0,
         enabled: true,
       ),
