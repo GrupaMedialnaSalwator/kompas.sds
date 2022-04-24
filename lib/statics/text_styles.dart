@@ -55,6 +55,16 @@ class AppTextStyles {
     color: AppColors.primaryDark,
   );
 
+  static const headerH6 = TextStyle(
+    fontFamily: "Nunito Sans",
+    fontWeight: FontWeight.w500,
+    fontStyle: FontStyle.normal,
+    fontSize: 18,
+    decoration: TextDecoration.none,
+    letterSpacing: 0.44999999999999996,
+    color: AppColors.primaryDark,
+  );
+
   static const paragraphText = TextStyle(
     fontFamily: "Nunito Sans",
     fontWeight: FontWeight.w400,
