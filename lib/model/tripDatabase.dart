@@ -160,7 +160,7 @@ List<TripItem> generateTripItems() {
           type: StepType.info,
           title: "Ile jest miejsc?",
           description:
-              'Poszukaj niebieskiego znaku na parkingu i odpowiedz na następujące pytanie:\n\n"Ile miejsc na parkingu jest zarezerwowanych dla osób niepełnosprawnych?"',
+              'Poszukaj niebieskiego znaku na parkingu i odpowiedz na następujące pytanie:\n\n„Ile miejsc na parkingu jest zarezerwowanych dla osób niepełnosprawnych?”',
           imageAsset: "assets/images/trip01/trip01_02.jpg",
           previousStep: 1,
           nextStep: 3,
@@ -221,9 +221,9 @@ List<TripItem> generateTripItems() {
           title: "Błogosławiony Franciszek Jordan",
           correctSelection: 2,
           correctAnswer:
-              'Wspaniale! Pierwsza literka oznacza "Błogosławiony".\n\nOjciec Franciszek Jordan jest założycielem Zgromadzenia Salwatorianów i sióstr Salwatorianek, którzy dzisiaj zamieszkują to miejsce.\n\nZostał beatyfikowany 15 maja 2021 roku.',
+              'Wspaniale! Pierwsza literka oznacza „Błogosławiony”.\n\nOjciec Franciszek Jordan jest założycielem Zgromadzenia Salwatorianów i sióstr Salwatorianek, którzy dzisiaj zamieszkują to miejsce.\n\nZostał beatyfikowany 15 maja 2021 roku.',
           incorrectAnswer:
-              'Niestety! To nie jest prawidłowa odpowiedź. Pierwsza literka to "B" i oznacza "Błogosławiony".\n\nOjciec Franciszek Jordan jest założycielem Zgromadzenia Salwatorianów i sióstr Salwatorianek, którzy dzisiaj zamieszkują to miejsce.\n\nZostał beatyfikowany 15 maja 2021 roku.',
+              'Niestety! To nie jest prawidłowa odpowiedź. Pierwsza literka to „B” i oznacza „Błogosławiony”.\n\nOjciec Franciszek Jordan jest założycielem Zgromadzenia Salwatorianów i sióstr Salwatorianek, którzy dzisiaj zamieszkują to miejsce.\n\nZostał beatyfikowany 15 maja 2021 roku.',
           imageAsset: "assets/images/trip01/trip01_06.jpg",
           nextStep: 9,
         ),
@@ -279,7 +279,7 @@ List<TripItem> generateTripItems() {
           type: StepType.info,
           title: "Kto to powiedział?",
           description:
-              'W labiryncie łatwo się zgubić.\n\nPoszukaj drogowskazu ze zdjęcia, a obok niego będzie tabliczka z napisem: "Gdy człowiek nie wie, co zrobić, sumienie mówi mu tylko jedno: szukaj!"\n\nPod tym napisem znajdują się imiona i nazwisko autora. Podaj jego inicjały.',
+              'W labiryncie łatwo się zgubić.\n\nPoszukaj drogowskazu ze zdjęcia, a obok niego będzie tabliczka z napisem: „Gdy człowiek nie wie, co zrobić, sumienie mówi mu tylko jedno: szukaj!”\n\nPod tym napisem znajdują się imiona i nazwisko autora. Podaj jego inicjały.',
           imageAsset: "assets/images/trip01/trip01_11.jpg",
           previousStep: 13,
           nextStep: 15,
@@ -319,7 +319,7 @@ List<TripItem> generateTripItems() {
           type: StepType.info,
           title: "Co to za drzewo?",
           description:
-              'Salwatorianie bardzo kochają Matkę Bożą i często się do Niej modlą. Pod tą ikoną na drzewie jest napis: "Przechodząc obok, pozdrów Maryję".\n\nCzy potrafisz odgadnąć na jakim drzewie wisi ta ikona? Podpowiedź znajduje się nieopodal na małym zielonym znaczku.',
+              'Salwatorianie bardzo kochają Matkę Bożą i często się do Niej modlą. Pod tą ikoną na drzewie jest napis: „Przechodząc obok, pozdrów Maryję”.\n\nCzy potrafisz odgadnąć na jakim drzewie wisi ta ikona? Podpowiedź znajduje się nieopodal na małym zielonym znaczku.',
           imageAsset: "assets/images/trip01/trip01_14.jpg",
           previousStep: 17,
           nextStep: 19,
@@ -479,7 +479,7 @@ List<TripItem> generateTripItems() {
           type: StepType.info,
           title: "Co jest tutaj napisane?",
           description:
-              'Ten obelisk postawili tutaj Salwatorianie niemieccy jeszcze przed drugą wojną światową.\n\nPrzypomina on najważniejsze zasady każdego Salwatorianina, czyli śluby zakonne. Są wypisane w języku łacińskim na czterech stronach obelisku.\n\nJaka jest pełna nazwa ślubu na literę "C"?',
+              'Ten obelisk postawili tutaj Salwatorianie niemieccy jeszcze przed drugą wojną światową.\n\nPrzypomina on najważniejsze zasady każdego Salwatorianina, czyli śluby zakonne. Są wypisane w języku łacińskim na czterech stronach obelisku.\n\nJaka jest pełna nazwa ślubu na literę „C”?',
           imageAsset: "assets/images/trip01/trip01_26.jpg",
           previousStep: 33,
           nextStep: 35,
@@ -543,7 +543,7 @@ List<TripItem> generateTripItems() {
           correctAnswer:
               'Bardzo dobrze! Ta literka oznacza hydrant, czyli miejsce podłączenia do wody.\n\nW razie pożaru strażacy będą mogli tam podpiąć swój sprzęt i ugasić ogień. Miejmy nadzieję, że nigdy nie będą musieli tego robić.\n\nTo co? Jesteś gotowy do dalszej drogi?',
           incorrectAnswer:
-              'Oj, niedobrze! Ta literka to "H" i oznacza hydrant, czyli miejsce podłączenia do wody.\n\nW razie pożaru strażacy będą mogli tam podpiąć swój sprzęt i ugasić ogień. Miejmy nadzieję, że nigdy nie będą musieli tego robić.\n\nTo co? Jesteś gotowy do dalszej drogi?',
+              'Oj, niedobrze! Ta literka to „H” i oznacza hydrant, czyli miejsce podłączenia do wody.\n\nW razie pożaru strażacy będą mogli tam podpiąć swój sprzęt i ugasić ogień. Miejmy nadzieję, że nigdy nie będą musieli tego robić.\n\nTo co? Jesteś gotowy do dalszej drogi?',
           imageAsset: "assets/images/trip01/trip01_30.jpg",
           nextStep: 41,
         ),
@@ -621,9 +621,9 @@ List<TripItem> generateTripItems() {
           title: "Salwatorianie",
           correctSelection: 2,
           correctAnswer:
-              'Gratuluję! SDS to skrót łacińskiej nazwy "Societas Divini Salvatoris", czyli po polsku "Towarzystwo Boskiego Zbawiciela" - Salwatorianie.\n\nW ten sposób zakończyłeś pomyślnie ostatnie zadanie i naszą podróż. Jestem z Ciebie dumny.',
+              'Gratuluję! SDS to skrót łacińskiej nazwy „Societas Divini Salvatoris”, czyli po polsku „Towarzystwo Boskiego Zbawiciela” - Salwatorianie.\n\nW ten sposób zakończyłeś pomyślnie ostatnie zadanie i naszą podróż. Jestem z Ciebie dumny.',
           incorrectAnswer:
-              'No prawie! Chodziło o SDS - skrót łacińskiej nazwy "Societas Divini Salvatoris", czyli po polsku "Towarzystwo Boskiego Zbawiciela" - Salwatorianie.\n\nW ten sposób zakończyłeś pomyślnie ostatnie zadanie i naszą podróż. Jestem z Ciebie dumny.',
+              'No prawie! Chodziło o SDS - skrót łacińskiej nazwy „Societas Divini Salvatoris”, czyli po polsku „Towarzystwo Boskiego Zbawiciela” - Salwatorianie.\n\nW ten sposób zakończyłeś pomyślnie ostatnie zadanie i naszą podróż. Jestem z Ciebie dumny.',
           imageAsset: "assets/images/trip01/trip01_36.jpg",
           nextStep: 49,
         ),
@@ -631,7 +631,7 @@ List<TripItem> generateTripItems() {
           type: StepType.end,
           title: "Gratuluję Odkrywco!",
           description:
-              'Spisałeś się na medal i ukończyłeś pierwszą podróż po naszym klasztorze. Znasz już park i okolice zamku, ale wiele tajemnic jeszcze przed tobą.\n\nJeśli znowu do nas przyjedziesz, to zapraszam do kolejnej podróży.\n\nDo zobaczenia!',
+              'Spisałeś się na medal i ukończyłeś pierwszą podróż po naszym klasztorze. Znasz już park i okolice zamku, ale wiele tajemnic jeszcze przed Tobą.\n\nJeśli znowu do nas przyjedziesz, to zapraszam do kolejnej podróży.\n\nDo zobaczenia!',
           imageAsset: "assets/images/trip_01.png",
           previousStep: 48,
           nextStep: -1,

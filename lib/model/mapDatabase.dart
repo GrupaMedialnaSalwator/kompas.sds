@@ -172,7 +172,7 @@ MapData generateMapData() {
         title: 'Obelisk',
         subtitle: 'Trzy filary zakonników',
         description:
-            'W tym miejscu znajduje się popiersie dwóch ważnych osób dla zgromadzenia Salwatorianów: bł. Franciszka Jordana - naszego założyciela oraz ks. Bonawentury Lüthena - jego najbliższego współpracownika i przyjaciela.\n\nZnajdują się tu także łacińskie nazwy ślubów, które składają zakonnicy na całym świecie, a więc ślub czystości (castitas), ubóstwa (paupertas) i posłuszeństwa (oboedientia).\n\nDo tych trzech ślubów Salwatorianie dodają jeszcze zaangażowanie w konkretny apostolat. Apostolstwo jest dla nas bardzo ważne i wyraża się w realizacji charyzmatu głoszenia Ewangelii wszystkim, wszędzie i wszelkimi możliwymi sposobami.',
+            'W tym miejscu znajduje się popiersie dwóch ważnych osób dla zgromadzenia Salwatorianów: bł. Franciszka Jordana - naszego założyciela oraz ks. Bonawentury Lüthena - jego najbliższego współpracownika i przyjaciela.\n\nZnajdują się tu także łacińskie nazwy ślubów, które składają zakonnicy na całym świecie, a więc ślub czystości (castitas), ubóstwa (paupertas) i posłuszeństwa (oboedientia).\n\nDo tych trzech ślubów Salwatorianie dodają jeszcze zaangażowanie w konkretne apostolstwo (apostolatus). Jest dla nas bardzo ważne i wyraża się w realizacji charyzmatu głoszenia Ewangelii wszystkim, wszędzie i wszelkimi możliwymi sposobami.',
         rating: 4.0,
         enabled: true,
       ),
