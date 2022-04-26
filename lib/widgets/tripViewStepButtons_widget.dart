@@ -21,20 +21,17 @@ class TripViewStepButtons extends StatelessWidget {
   final TripDataSelect tripDataSelect;
 
   bool noLeftNavButton() {
-    return (tripDataController.getPreviousStepIndex(
-            tripDataSelect: tripDataSelect) ==
-        -1);
+    return (tripDataController.getPreviousStepIndex(tripDataSelect: tripDataSelect) == -1) ||
+        (tripDataController.getPreviousStepIndex(tripDataSelect: tripDataSelect) == 0 &&
+            tripStateController.getSkipIntro());
   }
 
   bool noRightNavButton() {
-    return (tripDataController.getNextStepIndex(
-            tripDataSelect: tripDataSelect) ==
-        -1);
+    return (tripDataController.getNextStepIndex(tripDataSelect: tripDataSelect) == -1);
   }
 
   bool tripStepEnd() {
-    return (tripDataController.isStepItemEndType(
-        tripDataSelect: tripDataSelect));
+    return (tripDataController.isStepItemEndType(tripDataSelect: tripDataSelect));
   }
 
   @override
@@ -56,8 +53,8 @@ class TripViewStepButtons extends StatelessWidget {
             child: IconButton(
               padding: EdgeInsets.symmetric(horizontal: Constants.buttonMargin),
               onPressed: () => {
-                tripStateController.gotoStepView(tripDataController
-                    .getPreviousStepIndex(tripDataSelect: tripDataSelect))
+                tripStateController
+                    .gotoStepView(tripDataController.getPreviousStepIndex(tripDataSelect: tripDataSelect))
               },
               icon: const Icon(
                 CupertinoIcons.chevron_back,
@@ -101,8 +98,7 @@ class TripViewStepButtons extends StatelessWidget {
             child: IconButton(
               padding: EdgeInsets.symmetric(horizontal: Constants.buttonMargin),
               onPressed: () => {
-                tripStateController.gotoStepView(tripDataController
-                    .getNextStepIndex(tripDataSelect: tripDataSelect))
+                tripStateController.gotoStepView(tripDataController.getNextStepIndex(tripDataSelect: tripDataSelect))
               },
               icon: const Icon(
                 CupertinoIcons.chevron_forward,

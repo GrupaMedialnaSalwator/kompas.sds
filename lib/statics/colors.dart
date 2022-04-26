@@ -18,8 +18,8 @@ class AppColors extends Color {
   /// Tint 90%
   static const primaryWhite = Color(0xffeef1f1);
 
-  /// red[600]
-  static const accentRed = Color(0xffe53935);
+  ///
+  static const accentContrast = Color.fromARGB(255, 247, 149, 3);
 
   /// primaryNormal [saturation 90%]
   static const accentSelect = Color(0xFF09c494);

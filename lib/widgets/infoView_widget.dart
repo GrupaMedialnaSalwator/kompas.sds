@@ -273,8 +273,10 @@ class InfoView extends StatelessWidget {
                             margin: EdgeInsets.symmetric(
                                 horizontal: Constants.insideMargin),
                             child: ClipRRect(
-                              child: Image.asset("assets/images/gms_team_white.png"),
-                              borderRadius: BorderRadius.all(Radius.circular(Constants.borderRadius)),
+                              child: Image.asset(
+                                  "assets/images/gms_team_white.png"),
+                              borderRadius: BorderRadius.all(
+                                  Radius.circular(Constants.borderRadius)),
                             ),
                           ),
                           SizedBox(height: Constants.cardMargin),
@@ -285,10 +287,8 @@ class InfoView extends StatelessWidget {
                               style: AppTextStyles.paragraphSubtext,
                               text:
                                   "Jesteśmy klerykami seminarium Salwatorianów w Bagnie, którzy są zaangażowani w Grupę Medialną Salwator. Zainteresowanie nowymi technologiami chcemy wykorzystać do ewangelizacji, naśladując zapał apostolski naszego założyciela, bł. Franciszka Marii od Krzyża Jordana.",
-                              //TODO: insert GMS group photo here
                             ),
                           ),
-                        
                           SizedBox(height: Constants.cardMargin),
                         ]),
                   ],
