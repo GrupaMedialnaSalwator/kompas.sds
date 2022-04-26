@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:kompas/statics/colors.dart';
 import 'package:kompas/model/tripDatabase.dart';
 import 'package:kompas/statics/text_styles.dart';
