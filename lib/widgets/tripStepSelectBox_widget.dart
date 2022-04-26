@@ -4,6 +4,7 @@ import 'package:kompas/controller/tripData_controller.dart';
 import 'package:kompas/controller/tripState_controller.dart';
 import 'package:kompas/statics/colors.dart';
 import 'package:kompas/statics/constants.dart';
+import 'package:kompas/statics/text_styles.dart';
 
 class TripStepSelectBox extends StatelessWidget {
   const TripStepSelectBox({
@@ -29,26 +30,17 @@ class TripStepSelectBox extends StatelessWidget {
         ),
         child: Center(
           child: Text(
-            _tripDataController
-                .getStepItem(tripDataSelect: tripDataSelect)
-                .selection[selectionNum]
-                .text,
-            style: Get.context!.textTheme.headline3
-                ?.copyWith(color: AppColors.primaryDark),
+            _tripDataController.getStepItem(tripDataSelect: tripDataSelect).selection[selectionNum].text,
+            style: AppTextStyles.headerH3.copyWith(color: AppColors.primaryDark),
           ),
         ),
       ),
       onTap: () {
         print("selected answer = " + selectionNum.toString());
         _tripStateController.setCurrentAnswer(selectionNum);
-        _tripStateController.gotoStepView(_tripDataController
-            .getStepItem(tripDataSelect: tripDataSelect)
-            .selection[selectionNum]
-            .stepLink);
-        if (selectionNum ==
-            _tripDataController
-                .getStepItem(tripDataSelect: tripDataSelect)
-                .correctSelection) {
+        _tripStateController.gotoStepView(
+            _tripDataController.getStepItem(tripDataSelect: tripDataSelect).selection[selectionNum].stepLink);
+        if (selectionNum == _tripDataController.getStepItem(tripDataSelect: tripDataSelect).correctSelection) {
           _tripStateController.incrementCurrentPoints();
         }
       },

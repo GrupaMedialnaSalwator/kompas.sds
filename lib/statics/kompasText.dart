@@ -6,11 +6,13 @@ class KompasText extends StatelessWidget {
     required this.text,
     required this.style,
     this.textAlign = TextAlign.left,
+    this.maxLines = 10,
   }) : super(key: key);
 
   final String text;
   final TextStyle style;
   final TextAlign textAlign;
+  final int maxLines;
   @override
   Widget build(BuildContext context) {
     return Text(
@@ -18,7 +20,7 @@ class KompasText extends StatelessWidget {
       style: style,
       textAlign: textAlign,
       overflow: TextOverflow.ellipsis,
-      maxLines: 10,
+      maxLines: maxLines,
       softWrap: true,
     );
   }
