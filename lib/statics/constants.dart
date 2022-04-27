@@ -71,4 +71,10 @@ class Constants {
 
   /// snackBarDuration = 3
   static const int snackBarDuration = 3;
+
+  /// hiveTripScoreName = 'TripScore'
+  static const String hiveTripScoreName = 'TripScore';
+
+  /// hiveAnswerScoreName = 'AnswerScore'
+  static const String hiveAnswerScoreName = 'AnswerScore';
 }

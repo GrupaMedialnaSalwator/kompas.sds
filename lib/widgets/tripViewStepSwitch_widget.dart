@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:kompas/controller/achievementTracker_controller.dart';
 import 'package:kompas/controller/tripData_controller.dart';
 import 'package:kompas/controller/tripState_controller.dart';
 import 'package:kompas/statics/colors.dart';
 import 'package:kompas/statics/constants.dart';
 import 'package:kompas/statics/text_styles.dart';
-import 'package:kompas/widgets/achievementTracker_widget.dart';
 import 'package:kompas/model/tripDatabase.dart';
 import 'package:kompas/widgets/tripStepSelectBox_widget.dart';
 
@@ -26,6 +26,8 @@ class TripViewStepSwitch extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final AchievementTrackerController _achievementTrackerController = Get.find();
+
     switch (tripDataController.getStepItem(tripDataSelect: tripDataSelect).type) {
       case StepType.info:
         return Expanded(
@@ -86,7 +88,9 @@ class TripViewStepSwitch extends StatelessWidget {
           ),
         );
       case StepType.answer:
-        if (_correctAnswer()) AchievementOperations().incrementAnswerScore(tripDataSelect);
+        if (_correctAnswer())
+          _achievementTrackerController.incrementAnswerScore(
+              tripDataController.getTripItem(index: tripDataSelect.tripIndex).uid, tripDataSelect.stepIndex);
         //AchievementScore.addAnswerScore; //TODO: mk where should achievementScore (an instance of AchievementScore class) be instantiated?
         //TODO: mk how can I keep score even if the app is closed?
         //TODO: introduce achievements class where score for correct answers and finished trips is keps
@@ -133,7 +137,8 @@ class TripViewStepSwitch extends StatelessWidget {
           ),
         );
       case StepType.end:
-        AchievementOperations().incrementTripScore(tripDataSelect);
+        _achievementTrackerController
+            .incrementTripScore(tripDataController.getTripItem(index: tripDataSelect.tripIndex).uid);
         return Expanded(
           child: Scrollbar(
             isAlwaysShown: true,
