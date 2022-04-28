@@ -130,9 +130,9 @@ List<TripItem> generateTripItems() {
       uid: "01", // TODO: must fix
       title: "W Parku",
       subtitle: "dla całej rodziny",
-      time: "30",
+      time: "40",
       age: "6+",
-      distance: "1,6",
+      distance: "1,2",
       rating: "4,8",
       description: "Poznaj tajemnice klasztornego parku poprzez wyszukiwanie ciekawych miejsc i rozwiązywanie zadań.",
       imageAsset: "assets/images/trip_01.png",
@@ -239,7 +239,7 @@ List<TripItem> generateTripItems() {
           type: StepType.info,
           title: "Policz słupki",
           description:
-              'To zadanie wymaga, abyś wszedł do altanki.\n\nA teraz popatrz przez szybę na zewnątrz i policz charakterystyczne słupki, które stoją przy alejce.\n\nIle ich jest?',
+              'To zadanie wymaga, abyś wszedł do altanki.\n\nA teraz popatrz przez szybę na zewnątrz i policz charakterystyczne srebrne słupki, które stoją przy alejce.\n\nIle ich jest?',
           imageAsset: "assets/images/trip01/trip01_08.jpg",
           previousStep: 9,
           nextStep: 11,
@@ -471,7 +471,7 @@ List<TripItem> generateTripItems() {
           type: StepType.info,
           title: "Zobaczmy obelisk",
           description:
-              'Po wyjściu z diaspory idź ścieżką na prawo, aż zobaczysz w oddali ciekawy obelisk. Jest on przy narożniku parku.\n\nDoszedłeś już tam?',
+              'Po wyjściu z diaspory idź ścieżką na prawo. Na skrzyżowaniu dróg skręć w prawo i idź dalej, aż zobaczysz w oddali ciekawy obelisk. Jest on przy narożniku parku.\n\nDoszedłeś już tam?',
           imageAsset: "assets/images/trip01/trip01_25.jpg",
           nextStep: 34,
         ),
