@@ -196,9 +196,9 @@ MapData generateMapData() {
         imageAsset: "assets/images/trip02/trip02_mapka.jpg",
         type: MapItemType.cross,
         title: 'Droga Krzyżowa',
-        subtitle: '15 stacji',
+        subtitle: 'Przestrzeń dla duszy',
         description:
-            'Stacje kalwarii w naszym parku zostały poświęcone 18 marca 2011 r. przez ówczesnego prowincjała ks. Piotra Filasa SDS. Każda z nich zawiera głaz naznaczony krzyżem oraz towarzyszące symboliczne drzewko lub krzew, których nazwy i właściwości wspomagają medytację.\n\nZałożyciel Salwatorianów, błogosławiony Franciszek Maria od Krzyża Jordan często powtarzał, że wielkie rzeczy dojrzewają w cieniu krzyża.\n\nZapraszamy do towarzyszenia Panu Jezusowi na drodze krzyżowej poprzez nawiedzenie wszystkich stacji i modlitewne rozważanie ich treści.',
+            'Każda stacja bagieńskiej kalwarii zawiera głaz naznaczony krzyżem oraz towarzyszące symboliczne drzewko lub krzew, których nazwy i właściwości wspomagają medytację.\n\nZałożyciel Salwatorianów, błogosławiony Franciszek Maria od Krzyża Jordan często powtarzał, że wielkie rzeczy dojrzewają w cieniu krzyża.\n\nZapraszamy do towarzyszenia Panu Jezusowi na drodze krzyżowej poprzez nawiedzenie wszystkich stacji i modlitewne rozważanie ich treści.',
         rating: 5.0,
         tripIndexLink: 1,
         enabled: true,
@@ -265,7 +265,7 @@ MapData generateMapData() {
         title: 'Nowicjat',
         subtitle: 'Dla początkujących',
         description:
-            'To właśnie w tym ceglanym budynku mieści się nowicjat - miejsce, gdzie żyją na co dzień młodzi mężczyźni i przygotowują się do złożenia profesji zakonnej w Towarzystwie Boskiego Zbawiciela.\n\nEtap nowicjatu w naszym zakonie trwa cały rok i obejmuje wprowadzenie w życie zakonne, pogłębianie modlitwy, naukę, pracę w naszym klasztornym ogrodzie, ale także budowanie wspólnoty - czyli wspólne wypady na piłkę, gry w planszówki, rekreacja przy wspólnej kawie.\n\nW celu lepszego przygotowania się do życia zakonnego nowicjusze nie korzystają z elektroniki - mogą kontaktować się z rodziną jedynie listownie i telefonicznie w niektóre niedziele. Jest to więc czas próby, ale także czas wielu Bożych łask. Każdy Salwatorianin ze wzruszeniem wspomina swoje nowicjackie chwile, kiedy to stawał u początku nowego życia.\n\nWarto pomodlić się za najmłodszych współbraci, rozeznających w tym budynku swoje powołanie.',
+            'To właśnie w tym ceglanym budynku mieści się nowicjat salwatorianów polskiej prowincji. Na co dzień żyją tu młodzi mężczyźni, którzy przygotowują się do nałożenia habitu i złożenia pierwszej profesji zakonnej (ślubu bezżennej czystości, ubóstwa i posłuszeństwa) w Towarzystwie Boskiego Zbawiciela (Salwatorianie).\n\nEtap nowicjatu w naszym zakonie trwa cały rok (do 8 września). Nowicjusze w tym czasie poznają życie zakonne, pogłębiają modlitwę, uczą się, a także pracują - najczęściej w klasztornym ogrodzie. Oprócz obowiązków jest też miejsce na realizację własnych pasji, czytanie książek oraz budowanie wspólnoty. Robimy to poprzez sport, gry, film, spotkania przy kawie lub wspólnotowe wypady w góry.\n\nW celu lepszego przygotowania się do życia zakonnego nowicjusze nie korzystają swobodnie z Internetu,  mediów (tv, radio), czy telefonów komórkowych. Nie używają też pieniędzy, ani nie odwiedzają rodzinnego domu. Z najbliższymi kontaktują się poprzez tradycyjne listy, a także w wyznaczone niedziele odbierają od nich telefony. Jest to więc rok próby, ale także czas wielu Bożych łask. Każdy Salwatorianin ze wzruszeniem wspomina swoje nowicjackie chwile, kiedy to stawał u początku życia zakonnego.\n\nWokół domu nowicjatu dbamy o ciszę i prywatność – zakonną klauzurę. Gdy spotkasz, któregoś z braci nowicjuszy, śmiało możesz porozmawiać. Oprócz serdecznego uśmiechu prosimy by wesprzeć nas modlitwą o dobre rozeznanie powołania.',
         rating: 4.0,
         enabled: true,
       ),

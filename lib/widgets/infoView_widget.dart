@@ -172,7 +172,7 @@ class InfoView extends StatelessWidget {
                                 children: [
                                   TextSpan(
                                     text:
-                                        'Dom ToTu to centrum rozwoju duchowego i kulturowego oraz ośrodek dla młodzieży prowadzony pod patronatem Ruchu Młodzieży Salwatoriańskiej i Salwatoriańskiego Ośrodka Powołań.\n\nOdwiedź stronę internetową\n',
+                                        'Dom „ToTu” to salwatoriański ośrodek z szeroką ofertą spotkań i zajęć dla młodzieży, który wspiera ją w odkrywaniu celu i sensu życia.\n\nZapraszamy na naszą stronkę:\n',
                                     style: Theme.of(context).textTheme.bodyText2,
                                   ),
                                   TextSpan(
@@ -201,11 +201,26 @@ class InfoView extends StatelessWidget {
                         subtitle: Text("Czy są tutaj oferowane?"),
                         children: [
                           Container(
-                            margin: EdgeInsets.only(left: Constants.insideMargin),
-                            child: KompasText(
-                              style: AppTextStyles.paragraphSubtext,
-                              text:
-                                  "Ze względu na charakter miejsca zasadniczo nie udostępniamy miejsc noclegowych. Nie prowadzimy także usług gastronomicznych.\n\nDziękujemy za zrozumienie.",
+                            margin: EdgeInsets.symmetric(horizontal: Constants.insideMargin),
+                            child: RichText(
+                              text: TextSpan(
+                                children: [
+                                  TextSpan(
+                                    text:
+                                        'Zapraszamy do domu „ToTu”, który może służyć jako baza noclegowa. Oferujemy trzyosobowe pokoje z łazienkami, kaplicę, sale konferencyjne, oraz jadalnię w której istnieje możliwość zamówienia posiłków.\n\nZapraszamy na naszą stronkę:\n',
+                                    style: Theme.of(context).textTheme.bodyText2,
+                                  ),
+                                  TextSpan(
+                                    text: 'www.totu.sds.pl',
+                                    style:
+                                        TextStyle(color: AppColors.primaryNormal, decoration: TextDecoration.underline),
+                                    recognizer: TapGestureRecognizer()
+                                      ..onTap = () {
+                                        launch('https://totu.sds.pl/');
+                                      },
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                           SizedBox(height: Constants.cardMargin),

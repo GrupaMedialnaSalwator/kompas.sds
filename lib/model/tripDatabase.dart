@@ -551,7 +551,7 @@ List<TripItem> generateTripItems() {
           type: StepType.info,
           title: "Idziemy w stronę stawu",
           description:
-              'Jeśli jeszcze jesteś przy hydrancie i patrzysz w stronę zamku, to idź w lewo.\n\nDojdziesz do stawu, a jeśli będziesz miał szczęście, to zobaczysz kaczki, czerwone karpie, albo nawet czaplę.',
+              'Jeśli jeszcze jesteś przy hydrancie i patrzysz w stronę zamku, to idź w lewo.\n\nDojdziesz do stawu, a jeśli będziesz miał szczęście, to zobaczysz kaczki, czerwone karasie, albo nawet czaplę.',
           imageAsset: "assets/images/trip01/trip01_31.jpg",
           nextStep: 42,
         ),
