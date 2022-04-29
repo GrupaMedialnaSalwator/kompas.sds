@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:kompas/controller/tripState_controller.dart';
 import 'package:kompas/statics/colors.dart';
 import 'package:kompas/statics/constants.dart';
 import 'package:kompas/view/selectTrip_screen.dart';
@@ -14,6 +15,8 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final TripStateController _tripStateController = Get.find();
+
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -55,6 +58,7 @@ class HomeView extends StatelessWidget {
                   cardWidth: Get.width * Constants.cardWidthRatio,
                   tripIndex: index,
                   onTap: () {
+                    _tripStateController.resetState();
                     Get.to(() => SelectTripPage(
                           tripIndex: index,
                         ));
