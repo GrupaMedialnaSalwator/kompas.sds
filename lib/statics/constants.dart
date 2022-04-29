@@ -29,6 +29,9 @@ class Constants {
   /// bottomMargin = 20.0
   static const double buttonMargin = 20.0;
 
+  /// endMargin = 32.0
+  static const double endMargin = 32.0;
+
   /// spacerLarge = 60.0
   static const double spacerLarge = 60.0;
 
@@ -68,4 +71,10 @@ class Constants {
 
   /// snackBarDuration = 3
   static const int snackBarDuration = 3;
+
+  /// hiveTripScoreName = 'TripScore'
+  static const String hiveTripScoreName = 'TripScore';
+
+  /// hiveAnswerScoreName = 'AnswerScore'
+  static const String hiveAnswerScoreName = 'AnswerScore';
 }

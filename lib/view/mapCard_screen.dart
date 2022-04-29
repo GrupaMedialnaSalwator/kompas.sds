@@ -6,6 +6,8 @@ import 'package:get/get.dart';
 import 'package:kompas/controller/mapData_controller.dart';
 import 'package:kompas/statics/colors.dart';
 import 'package:kompas/statics/constants.dart';
+import 'package:kompas/statics/kompasText.dart';
+import 'package:kompas/statics/text_styles.dart';
 import 'package:kompas/view/trip_screen.dart';
 
 class MapCardPage extends StatelessWidget {
@@ -97,14 +99,14 @@ class MapCardPage extends StatelessWidget {
                       margin: EdgeInsets.symmetric(vertical: Constants.cardMargin),
                       child: Text(
                         _mapDataController.getMapItem(index: mapItemIndex).title,
-                        style: Get.context!.textTheme.headline3?.copyWith(color: AppColors.primaryDark),
+                        style: AppTextStyles.headerH3.copyWith(color: AppColors.primaryDark),
                       ),
                     ),
                   ),
                   Center(
                     child: Text(
                       _mapDataController.getMapItem(index: mapItemIndex).subtitle,
-                      style: Get.context!.textTheme.headline6?.copyWith(color: AppColors.primaryDark),
+                      style: AppTextStyles.headerH6.copyWith(color: AppColors.primaryDark),
                     ),
                   ),
                   Padding(padding: EdgeInsets.all(Constants.cardMargin)),
@@ -112,16 +114,22 @@ class MapCardPage extends StatelessWidget {
                     margin: EdgeInsets.all(Constants.insideMargin),
                     child: Text(
                       _mapDataController.getMapItem(index: mapItemIndex).description,
-                      style: Get.context!.textTheme.bodyText1?.copyWith(color: AppColors.primaryDark),
+                      style: AppTextStyles.paragraphText.copyWith(color: AppColors.primaryDark),
                     ),
                   ),
                   // Add a link button to the appropriate trip if needed
                   (_mapDataController.getMapItem(index: mapItemIndex).tripIndexLink != -1)
                       ? Padding(
-                          padding: const EdgeInsets.all(Constants.bottomMargin),
-                          child: TextButton(
-                            child: Text("Zaczynamy"),
+                          padding: const EdgeInsets.fromLTRB(Constants.insideMargin, Constants.cardMargin,
+                              Constants.insideMargin, Constants.endMargin),
+                          child: OutlinedButton(
+                            child: KompasText(
+                              text: "Zaczynamy",
+                              style: AppTextStyles.headerH3.copyWith(color: AppColors.primaryWhite),
+                            ),
                             style: TextButton.styleFrom(
+                              padding: EdgeInsets.fromLTRB(Constants.endMargin, Constants.bottomMargin,
+                                  Constants.endMargin, Constants.bottomMargin),
                               primary: AppColors.primaryWhite,
                               backgroundColor: AppColors.primaryNormal,
                               shape: RoundedRectangleBorder(

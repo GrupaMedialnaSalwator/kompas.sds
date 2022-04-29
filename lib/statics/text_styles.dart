@@ -85,6 +85,16 @@ class AppTextStyles {
     color: AppColors.primaryDark,
   );
 
+  static const caption = TextStyle(
+    fontFamily: "Nunito Sans",
+    fontWeight: FontWeight.w300,
+    fontStyle: FontStyle.normal,
+    fontSize: 12,
+    decoration: TextDecoration.none,
+    letterSpacing: 0.8400000000000001,
+    color: AppColors.secondaryNormal,
+  );
+
   static const cardTitle = TextStyle(
     fontFamily: "Nunito Sans",
     fontWeight: FontWeight.w700,

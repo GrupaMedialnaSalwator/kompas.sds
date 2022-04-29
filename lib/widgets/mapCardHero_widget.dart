@@ -4,11 +4,11 @@ import 'package:get/get.dart';
 import 'package:kompas/controller/mapData_controller.dart';
 import 'package:kompas/statics/colors.dart';
 import 'package:kompas/statics/constants.dart';
+import 'package:kompas/statics/text_styles.dart';
 import 'package:kompas/view/mapCard_screen.dart';
 
 class MapCardHero extends StatelessWidget {
-  const MapCardHero({Key? key, required this.onTap, required this.mapItemIndex})
-      : super(key: key);
+  const MapCardHero({Key? key, required this.onTap, required this.mapItemIndex}) : super(key: key);
 
   final VoidCallback onTap;
   final int mapItemIndex;
@@ -36,12 +36,9 @@ class MapCardHero extends StatelessWidget {
                       tag: 'mapHero' + mapItemIndex.toString(),
                       child: Container(
                         child: Image.asset(
-                          _mapDataController
-                              .getMapItem(index: mapItemIndex)
-                              .imageAsset,
+                          _mapDataController.getMapItem(index: mapItemIndex).imageAsset,
                           fit: BoxFit.cover,
-                          gaplessPlayback:
-                              true, // prevents flicker on switching images
+                          gaplessPlayback: true, // prevents flicker on switching images
                         ),
                       ),
                     )),
@@ -57,25 +54,18 @@ class MapCardHero extends StatelessWidget {
                         Container(
                           alignment: Alignment.topLeft,
                           child: Text(
-                            _mapDataController
-                                .getMapItem(index: mapItemIndex)
-                                .title,
-                            style: Get.context!.textTheme.headline5
-                                ?.copyWith(color: AppColors.primaryDark),
+                            _mapDataController.getMapItem(index: mapItemIndex).title,
+                            style: AppTextStyles.headerH5.copyWith(color: AppColors.primaryDark),
                             overflow: TextOverflow.fade,
                             softWrap: false,
                           ),
                         ),
                         Container(
-                          padding: EdgeInsets.symmetric(
-                              vertical: Constants.minMargin),
+                          padding: EdgeInsets.symmetric(vertical: Constants.minMargin),
                           alignment: Alignment.topLeft,
                           child: Text(
-                            _mapDataController
-                                .getMapItem(index: mapItemIndex)
-                                .subtitle,
-                            style: Get.context!.textTheme.bodyText2
-                                ?.copyWith(color: AppColors.primaryNormal),
+                            _mapDataController.getMapItem(index: mapItemIndex).subtitle,
+                            style: AppTextStyles.paragraphSubtext.copyWith(color: AppColors.primaryNormal),
                             overflow: TextOverflow.fade,
                             softWrap: false,
                           ),
@@ -84,11 +74,6 @@ class MapCardHero extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            // Row(
-                            //   children: generateStars(_mapDataController
-                            //       .getMapItem(index: mapItemIndex)
-                            //       .rating),
-                            // ),
                             RichText(
                               text: TextSpan(
                                 text: 'poczytaj więcej',
@@ -100,12 +85,10 @@ class MapCardHero extends StatelessWidget {
                                       ),
                                     );
                                   },
-                                style: Get.context!.textTheme.caption?.copyWith(
-                                    color: _mapDataController
-                                        .getIconColor(mapItemIndex)),
+                                style: AppTextStyles.caption
+                                    .copyWith(color: _mapDataController.getIconColor(mapItemIndex)),
                               ),
                             ),
-
                             IconButton(
                                 onPressed: () => {
                                       Get.to(
@@ -117,8 +100,7 @@ class MapCardHero extends StatelessWidget {
                                 icon: Icon(
                                   Icons.info_outline_rounded,
                                   size: 36,
-                                  color: _mapDataController
-                                      .getIconColor(mapItemIndex),
+                                  color: _mapDataController.getIconColor(mapItemIndex),
                                 )),
                           ],
                         )
@@ -134,33 +116,4 @@ class MapCardHero extends StatelessWidget {
           ),
         ));
   }
-
-  // List<Icon> generateStars(double rating) {
-  //   return List<Icon>.generate(5, (index) {
-  //     // full stars
-  //     if (rating >= (index + 1)) {
-  //       return Icon(
-  //         Icons.star,
-  //         size: 24,
-  //         color: AppColors.primaryNormal,
-  //       );
-  //     }
-  //     // half-stars
-  //     else if ((rating - index) > 0) {
-  //       return Icon(
-  //         Icons.star_half,
-  //         size: 24,
-  //         color: AppColors.primaryNormal,
-  //       );
-  //     }
-  //     // empty stars
-  //     else {
-  //       return Icon(
-  //         Icons.star_border,
-  //         size: 24,
-  //         color: AppColors.primaryNormal,
-  //       );
-  //     }
-  //   });
-  // }
 }

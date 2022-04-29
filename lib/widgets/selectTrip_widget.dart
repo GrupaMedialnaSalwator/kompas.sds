@@ -4,13 +4,13 @@ import 'package:kompas/controller/tripData_controller.dart';
 import 'package:kompas/statics/colors.dart';
 import 'package:kompas/statics/constants.dart';
 import 'package:kompas/model/tripDatabase.dart';
+import 'package:kompas/statics/kompasText.dart';
+import 'package:kompas/statics/text_styles.dart';
 import 'package:kompas/view/trip_screen.dart';
 import 'package:kompas/widgets/tripProperty_widget.dart';
 
 class SelectTrip extends StatelessWidget {
-  const SelectTrip(
-      {Key? key, required this.onTapButton, required this.tripIndex})
-      : super(key: key);
+  const SelectTrip({Key? key, required this.onTapButton, required this.tripIndex}) : super(key: key);
 
   final VoidCallback onTapButton;
   final int tripIndex;
@@ -20,15 +20,13 @@ class SelectTrip extends StatelessWidget {
     final TripDataController _tripDataController = Get.find();
     return Container(
       // bottomsheet starts 60% lower because it is without an image at the top
-      height:
-          Get.height * Constants.tripBottomSheetRatio + Constants.borderRadius,
+      height: Get.height * Constants.tripBottomSheetRatio + Constants.borderRadius,
       child: _cardStack(_tripDataController, tripIndex, 0),
     );
   }
 }
 
-Stack _cardStack(
-    TripDataController tripController, int tripIndex, double topStart) {
+Stack _cardStack(TripDataController tripController, int tripIndex, double topStart) {
   return Stack(
     fit: StackFit.expand,
     alignment: AlignmentDirectional.topCenter,
@@ -37,8 +35,7 @@ Stack _cardStack(
         top: topStart,
         child: Container(
           width: Get.width,
-          height: Get.height * Constants.tripBottomSheetRatio +
-              Constants.borderRadius,
+          height: Get.height * Constants.tripBottomSheetRatio + Constants.borderRadius,
           decoration: BoxDecoration(
             color: AppColors.primaryNormal,
             borderRadius: BorderRadius.vertical(
@@ -47,8 +44,7 @@ Stack _cardStack(
             ),
           ),
           child: Container(
-            margin: EdgeInsets.fromLTRB(
-                Constants.borderRadius, 0, Constants.borderRadius, 0),
+            margin: EdgeInsets.fromLTRB(Constants.borderRadius, 0, Constants.borderRadius, 0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -67,19 +63,17 @@ Stack _cardStack(
                       alignment: Alignment.topLeft,
                       child: Text(
                         tripController.getTripItem(index: tripIndex).title,
-                        style: Get.context!.textTheme.headline3
-                            ?.copyWith(color: AppColors.primaryWhite),
+                        style: AppTextStyles.headerH3.copyWith(color: AppColors.primaryWhite),
+                        maxLines: 1,
                       ),
                     ),
                     Container(
                       alignment: Alignment.topLeft,
                       padding: const EdgeInsets.symmetric(vertical: 16),
-                      child: Text(
-                        tripController
-                            .getTripItem(index: tripIndex)
-                            .description,
-                        style: Get.context!.textTheme.bodyText1
-                            ?.copyWith(color: AppColors.primaryWhite),
+                      child: KompasText(
+                        text: tripController.getTripItem(index: tripIndex).description,
+                        style: AppTextStyles.paragraphText.copyWith(color: AppColors.primaryWhite),
+                        maxLines: 3,
                       ),
                     ),
                   ],
@@ -106,16 +100,13 @@ Stack _cardStack(
                   children: [
                     Center(
                       child: TripProperty(
-                        text: tripController
-                            .getTripItem(index: tripIndex)
-                            .distance,
+                        text: tripController.getTripItem(index: tripIndex).distance,
                         type: TripPropertyType.distance,
                       ),
                     ),
                     Center(
                       child: TripProperty(
-                        text:
-                            tripController.getTripItem(index: tripIndex).rating,
+                        text: tripController.getTripItem(index: tripIndex).rating,
                         type: TripPropertyType.rating,
                       ),
                     )
@@ -123,15 +114,20 @@ Stack _cardStack(
                 ),
                 Padding(
                   padding: const EdgeInsets.all(Constants.bottomMargin),
-                  child: TextButton(
-                    child: Text("Zaczynamy"),
-                    style: ButtonStyle(
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
-                                RoundedRectangleBorder(
-                      borderRadius:
-                          BorderRadius.circular(Constants.borderRadius),
-                    ))),
+                  child: OutlinedButton(
+                    child: KompasText(
+                      text: "Zaczynamy",
+                      style: AppTextStyles.headerH3.copyWith(color: AppColors.primaryNormal),
+                    ),
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.fromLTRB(
+                          Constants.endMargin, Constants.bottomMargin, Constants.endMargin, Constants.bottomMargin),
+                      primary: AppColors.primaryNormal,
+                      backgroundColor: AppColors.primaryWhite,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(Constants.borderRadius),
+                      ),
+                    ),
                     onPressed: () {
                       print("screen width: " + Get.width.toString());
                       Get.to(() => TripPage(

@@ -134,7 +134,7 @@ List<TripItem> generateTripItems() {
       age: "6+",
       distance: "1,2",
       rating: "4,8",
-      description: "Poznaj tajemnice klasztornego parku poprzez wyszukiwanie ciekawych miejsc i rozwiązywanie zadań.",
+      description: "Poznaj tajemnice klasztornego parku odkrywając ciekawe miejsca i rozwiązując zadania.",
       imageAsset: "assets/images/trip_01.png",
       enabled: true,
       countPoints: true,
