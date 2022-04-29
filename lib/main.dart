@@ -33,8 +33,7 @@ class MyApp extends StatelessWidget {
         backgroundColor: AppColors.primaryWhite,
         highlightColor: AppColors.primaryNormal, //color for scrollbar
         colorScheme: ColorScheme.fromSwatch(
-          accentColor: AppColors
-              .primaryLight, // color for overscroll glow effect in ListView
+          accentColor: AppColors.primaryLight, // color for overscroll glow effect in ListView
         ),
         textTheme: const TextTheme(
           headline1: AppTextStyles.headerH1,
@@ -44,6 +43,7 @@ class MyApp extends StatelessWidget {
           headline5: AppTextStyles.headerH5,
           bodyText1: AppTextStyles.paragraphText,
           bodyText2: AppTextStyles.paragraphSubtext,
+          caption: AppTextStyles.caption,
         ),
         textButtonTheme: TextButtonThemeData(
           style: TextButton.styleFrom(
@@ -63,12 +63,9 @@ class MyApp extends StatelessWidget {
       initialRoute: AppRoutes.home,
       getPages: [
         GetPage(name: AppRoutes.home, page: () => HomePage()),
-        GetPage(
-            name: AppRoutes.selectTrip,
-            page: () => SelectTripPage(tripIndex: 0)),
+        GetPage(name: AppRoutes.selectTrip, page: () => SelectTripPage(tripIndex: 0)),
         GetPage(name: AppRoutes.trip, page: () => TripPage(tripIndex: 0)),
-        GetPage(
-            name: AppRoutes.mapCard, page: () => MapCardPage(mapItemIndex: 0)),
+        GetPage(name: AppRoutes.mapCard, page: () => MapCardPage(mapItemIndex: 0)),
       ],
     );
   }

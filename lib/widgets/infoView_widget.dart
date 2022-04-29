@@ -30,9 +30,7 @@ class InfoView extends StatelessWidget {
                 physics: BouncingScrollPhysics(),
                 child: Column(
                   children: [
-                    Padding(
-                        padding: EdgeInsets.symmetric(
-                            vertical: Constants.cardMargin)),
+                    Padding(padding: EdgeInsets.symmetric(vertical: Constants.cardMargin)),
                     AchievementTracker(),
                     SizedBox(
                       height: 25,
@@ -56,86 +54,54 @@ class InfoView extends StatelessWidget {
                           Align(
                             alignment: Alignment.centerLeft,
                             child: Container(
-                                margin: EdgeInsets.symmetric(
-                                    horizontal: Constants.insideMargin),
+                                margin: EdgeInsets.symmetric(horizontal: Constants.insideMargin),
                                 child: Column(
                                   children: [
                                     Row(
                                       children: [
                                         Flexible(
                                           child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
+                                            crossAxisAlignment: CrossAxisAlignment.start,
                                             children: [
                                               KompasText(
-                                                style: AppTextStyles
-                                                    .paragraphSubtext,
-                                                text:
-                                                    "Kościół Wniebowzięcia NMP na ul. Ziołowej 36 w Bagnie.",
+                                                style: AppTextStyles.paragraphSubtext,
+                                                text: "Kościół Wniebowzięcia NMP na ul. Ziołowej 36 w Bagnie.",
                                               ),
-                                              SizedBox(
-                                                  height: Constants.cardMargin),
+                                              SizedBox(height: Constants.cardMargin),
                                               KompasText(
-                                                  style: AppTextStyles
-                                                      .paragraphSubtext,
-                                                  text:
-                                                      "Godziny Mszy Świętych:"),
+                                                  style: AppTextStyles.paragraphSubtext,
+                                                  text: "Godziny Mszy Świętych:"),
                                               Row(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
+                                                crossAxisAlignment: CrossAxisAlignment.start,
                                                 children: [
                                                   Column(
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .start,
+                                                    crossAxisAlignment: CrossAxisAlignment.start,
                                                     children: [
-                                                      KompasText(
-                                                          style: AppTextStyles
-                                                              .paragraphSubtext,
-                                                          text: "Pn-Pt:"),
-                                                      KompasText(
-                                                          style: AppTextStyles
-                                                              .paragraphSubtext,
-                                                          text: "Sob:"),
-                                                      KompasText(
-                                                          style: AppTextStyles
-                                                              .paragraphSubtext,
-                                                          text: "Ndz:")
+                                                      KompasText(style: AppTextStyles.paragraphSubtext, text: "Pn-Pt:"),
+                                                      KompasText(style: AppTextStyles.paragraphSubtext, text: "Sob:"),
+                                                      KompasText(style: AppTextStyles.paragraphSubtext, text: "Ndz:")
                                                     ],
                                                   ),
                                                   Column(
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .start,
+                                                    crossAxisAlignment: CrossAxisAlignment.start,
                                                     children: [
+                                                      KompasText(style: AppTextStyles.paragraphSubtext, text: "18:00"),
                                                       KompasText(
-                                                          style: AppTextStyles
-                                                              .paragraphSubtext,
-                                                          text: "18:00"),
+                                                          style: AppTextStyles.paragraphSubtext, text: "8:00, 18:00"),
                                                       KompasText(
-                                                          style: AppTextStyles
-                                                              .paragraphSubtext,
-                                                          text: "8:00, 18:00"),
-                                                      KompasText(
-                                                          style: AppTextStyles
-                                                              .paragraphSubtext,
-                                                          text:
-                                                              "8:30, 11:30, 17:30")
+                                                          style: AppTextStyles.paragraphSubtext,
+                                                          text: "8:30, 11:30, 17:30")
                                                     ],
                                                   )
                                                 ],
                                               ),
-                                              SizedBox(
-                                                  height: Constants.cardMargin),
-                                              SizedBox(
-                                                  height: Constants.cardMargin),
+                                              SizedBox(height: Constants.cardMargin),
+                                              SizedBox(height: Constants.cardMargin),
                                             ],
                                           ),
                                         ),
-                                        Image.asset(
-                                            "assets/images/icons/kosciol_bagno_circular.png",
-                                            scale: 3.5,
-                                            fit: BoxFit.fitWidth),
+                                        Image.asset("assets/images/icons/kosciol_bagno_circular.png",
+                                            scale: 5.0, fit: BoxFit.fitWidth),
                                         SizedBox(height: Constants.cardMargin),
                                       ],
                                     ),
@@ -154,27 +120,17 @@ class InfoView extends StatelessWidget {
                         subtitle: Text("Ilu ich tutaj mieszka?"),
                         children: [
                           Container(
-                            margin: EdgeInsets.symmetric(
-                                horizontal: Constants.insideMargin),
+                            margin: EdgeInsets.symmetric(horizontal: Constants.insideMargin),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 KompasText(
                                     style: AppTextStyles.paragraphSubtext,
-                                    text:
-                                        "Na terenie klasztoru w Bagnie obecnie mieszka:\n"),
-                                KompasText(
-                                    style: AppTextStyles.paragraphSubtext,
-                                    text: "7 księży"),
-                                KompasText(
-                                    style: AppTextStyles.paragraphSubtext,
-                                    text: "14 kleryków"),
-                                KompasText(
-                                    style: AppTextStyles.paragraphSubtext,
-                                    text: "2 siostry zakonne"),
-                                KompasText(
-                                    style: AppTextStyles.paragraphSubtext,
-                                    text: "5 braci zakonnych"),
+                                    text: "Na terenie klasztoru w Bagnie obecnie mieszka:\n"),
+                                KompasText(style: AppTextStyles.paragraphSubtext, text: "7 księży"),
+                                KompasText(style: AppTextStyles.paragraphSubtext, text: "14 kleryków"),
+                                KompasText(style: AppTextStyles.paragraphSubtext, text: "2 siostry zakonne"),
+                                KompasText(style: AppTextStyles.paragraphSubtext, text: "5 braci zakonnych"),
                               ],
                             ),
                           ),
@@ -191,8 +147,7 @@ class InfoView extends StatelessWidget {
                         subtitle: Text("Kiedy i jak?"),
                         children: [
                           Container(
-                              margin: EdgeInsets.symmetric(
-                                  horizontal: Constants.insideMargin),
+                              margin: EdgeInsets.symmetric(horizontal: Constants.insideMargin),
                               child: KompasText(
                                 style: AppTextStyles.paragraphSubtext,
                                 text:
@@ -211,22 +166,19 @@ class InfoView extends StatelessWidget {
                         subtitle: Text("Co to jest?"),
                         children: [
                           Container(
-                            margin: EdgeInsets.symmetric(
-                                horizontal: Constants.insideMargin),
+                            margin: EdgeInsets.symmetric(horizontal: Constants.insideMargin),
                             child: RichText(
                               text: TextSpan(
                                 children: [
                                   TextSpan(
                                     text:
-                                        'Dom ToTu to centrum rozwoju duchowego i kulturowego oraz ośrodek dla młodzieży prowadzony pod patronatem Ruchu Młodzieży Salwatoriańskiej i Salwatoriańskiego Ośrodka Powołań.\n\nOdwiedź stronę internetową\n',
-                                    style:
-                                        Theme.of(context).textTheme.bodyText2,
+                                        'Dom „ToTu” to salwatoriański ośrodek z szeroką ofertą spotkań i zajęć dla młodzieży, który wspiera ją w odkrywaniu celu i sensu życia.\n\nZapraszamy na naszą stronkę:\n',
+                                    style: Theme.of(context).textTheme.bodyText2,
                                   ),
                                   TextSpan(
                                     text: 'www.totu.sds.pl',
-                                    style: TextStyle(
-                                        color: AppColors.primaryNormal,
-                                        decoration: TextDecoration.underline),
+                                    style:
+                                        TextStyle(color: AppColors.primaryNormal, decoration: TextDecoration.underline),
                                     recognizer: TapGestureRecognizer()
                                       ..onTap = () {
                                         launch('https://totu.sds.pl/');
@@ -249,12 +201,26 @@ class InfoView extends StatelessWidget {
                         subtitle: Text("Czy są tutaj oferowane?"),
                         children: [
                           Container(
-                            margin:
-                                EdgeInsets.only(left: Constants.insideMargin),
-                            child: KompasText(
-                              style: AppTextStyles.paragraphSubtext,
-                              text:
-                                  "Ze względu na charakter miejsca zasadniczo nie udostępniamy miejsc noclegowych. Nie prowadzimy także usług gastronomicznych.\n\nDziękujemy za zrozumienie.",
+                            margin: EdgeInsets.symmetric(horizontal: Constants.insideMargin),
+                            child: RichText(
+                              text: TextSpan(
+                                children: [
+                                  TextSpan(
+                                    text:
+                                        'Zapraszamy do domu „ToTu”, który może służyć jako baza noclegowa. Oferujemy trzyosobowe pokoje z łazienkami, kaplicę, sale konferencyjne, oraz jadalnię w której istnieje możliwość zamówienia posiłków.\n\nZapraszamy na naszą stronkę:\n',
+                                    style: Theme.of(context).textTheme.bodyText2,
+                                  ),
+                                  TextSpan(
+                                    text: 'www.totu.sds.pl',
+                                    style:
+                                        TextStyle(color: AppColors.primaryNormal, decoration: TextDecoration.underline),
+                                    recognizer: TapGestureRecognizer()
+                                      ..onTap = () {
+                                        launch('https://totu.sds.pl/');
+                                      },
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                           SizedBox(height: Constants.cardMargin),
@@ -270,19 +236,15 @@ class InfoView extends StatelessWidget {
                         subtitle: Text("Kim jesteśmy?"),
                         children: [
                           Container(
-                            margin: EdgeInsets.symmetric(
-                                horizontal: Constants.insideMargin),
+                            margin: EdgeInsets.symmetric(horizontal: Constants.insideMargin),
                             child: ClipRRect(
-                              child: Image.asset(
-                                  "assets/images/gms_team_white.png"),
-                              borderRadius: BorderRadius.all(
-                                  Radius.circular(Constants.borderRadius)),
+                              child: Image.asset("assets/images/gms_team_white.png"),
+                              borderRadius: BorderRadius.all(Radius.circular(Constants.borderRadius)),
                             ),
                           ),
                           SizedBox(height: Constants.cardMargin),
                           Container(
-                            margin: EdgeInsets.symmetric(
-                                horizontal: Constants.insideMargin),
+                            margin: EdgeInsets.symmetric(horizontal: Constants.insideMargin),
                             child: KompasText(
                               style: AppTextStyles.paragraphSubtext,
                               text:

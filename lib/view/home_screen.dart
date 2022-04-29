@@ -1,4 +1,5 @@
 import 'package:flutter/services.dart';
+import 'package:kompas/controller/achievementTracker_controller.dart';
 import 'package:kompas/controller/mapData_controller.dart';
 import 'package:kompas/controller/tripState_controller.dart';
 import 'package:kompas/statics/constants.dart';
@@ -45,6 +46,9 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
     final TripStateController _tripStateController = Get.put(TripStateController());
     // ignore: unused_local_variable
     final MapDataController _mapDataController = Get.put(MapDataController());
+    // ignore: unused_local_variable
+    final AchievementTrackerController _achievementTrackerController = Get.put(AchievementTrackerController());
+    _achievementTrackerController.reloadState();
 
     return Scaffold(
       drawer:
