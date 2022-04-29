@@ -278,7 +278,7 @@ MapData generateMapData() {
         title: 'Dom „ToTu”',
         subtitle: 'Centrum dla młodzieży',
         description:
-            'Kiedyś mieścił się tutaj klerykat - miejsce, gdzie mieszkali wszyscy przygotowujący się do kapłaństwa. Teraz dom przejęli księża z apostolatów młodzieżowych. Działa tutaj Ruch Młodzieży Salwatoriańskiej i Salwatoriański Ośrodek Powołań, prowadzone są rekolekcje dla młodzieży, różne warsztaty, dni skupienia oraz wiele innych inicjatyw. Warto bliżej zainteresować się ofertą tego miejsca i polecić je innym - zwłaszcza znajomym nastolatkom.\n\nWięcej informacji o tym domu znajduje się na stronie: https://totu.sds.pl.',
+            'Kiedyś mieścił się tutaj klerykat - miejsce, gdzie mieszkali wszyscy przygotowujący się do kapłaństwa. Teraz dom przejęli księża z apostolatów młodzieżowych. Działa tutaj Ruch Młodzieży Salwatoriańskiej i Salwatoriański Ośrodek Powołań, prowadzone są rekolekcje dla młodzieży, różne warsztaty, dni skupienia oraz wiele innych inicjatyw.\n\nDom „ToTu” może również służyć jako baza noclegowa. Oferujemy trzyosobowe pokoje z łazienkami, kaplicę, sale konferencyjne, oraz jadalnię w której istnieje możliwość zamówienia posiłków.\n\nWarto bliżej zainteresować się ofertą tego miejsca i polecić je innym - zwłaszcza znajomym nastolatkom.\n\nWięcej informacji o tym domu znajduje się na stronie: https://totu.sds.pl.',
         rating: 4.5,
         enabled: true,
       ),
