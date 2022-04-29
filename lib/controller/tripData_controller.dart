@@ -8,6 +8,10 @@ class TripDataController extends GetxController {
   /// Holds data for all available trips
   final List<TripItem> _tripData = generateTripItems();
 
+  int getTripsLength() {
+    return _tripData.length;
+  }
+
   TripItem getTripItem({required int index}) {
     return _tripData[index];
   }
@@ -17,27 +21,19 @@ class TripDataController extends GetxController {
   }
 
   StepItem getStepItem({required TripDataSelect tripDataSelect}) {
-    return _tripData[tripDataSelect.tripIndex]
-        .stepList[tripDataSelect.stepIndex];
+    return _tripData[tripDataSelect.tripIndex].stepList[tripDataSelect.stepIndex];
   }
 
   bool isStepItemEndType({required TripDataSelect tripDataSelect}) {
-    return (_tripData[tripDataSelect.tripIndex]
-            .stepList[tripDataSelect.stepIndex]
-            .type ==
-        StepType.end);
+    return (_tripData[tripDataSelect.tripIndex].stepList[tripDataSelect.stepIndex].type == StepType.end);
   }
 
   int getNextStepIndex({required TripDataSelect tripDataSelect}) {
-    return _tripData[tripDataSelect.tripIndex]
-        .stepList[tripDataSelect.stepIndex]
-        .nextStep;
+    return _tripData[tripDataSelect.tripIndex].stepList[tripDataSelect.stepIndex].nextStep;
   }
 
   int getPreviousStepIndex({required TripDataSelect tripDataSelect}) {
-    return _tripData[tripDataSelect.tripIndex]
-        .stepList[tripDataSelect.stepIndex]
-        .previousStep;
+    return _tripData[tripDataSelect.tripIndex].stepList[tripDataSelect.stepIndex].previousStep;
   }
 }
 

@@ -145,17 +145,7 @@ class DrawerWidget extends StatelessWidget {
                 );
               },
             ),
-            ListTile(
-              iconColor: AppColors.primaryWhite,
-              leading: Icon(Icons.phone_android_rounded),
-              title: Text(
-                "O aplikacji",
-                style: AppTextStyles.headerH6.copyWith(color: AppColors.primaryWhite),
-              ),
-              onTap: () {
-                launch('https://kompas.sds.pl');
-              },
-            ),
+
             ListTile(
               iconColor: AppColors.primaryWhite,
               leading: Icon(Icons.person_outline),
@@ -165,6 +155,18 @@ class DrawerWidget extends StatelessWidget {
               ),
               onTap: () {
                 launch('https://wsd.sds.pl');
+              },
+            ),
+
+            ListTile(
+              iconColor: AppColors.primaryWhite,
+              leading: Icon(Icons.alternate_email_rounded),
+              title: Text(
+                "Kontakt",
+                style: AppTextStyles.headerH6.copyWith(color: AppColors.primaryWhite),
+              ),
+              onTap: () {
+                launch('https://kompas.sds.pl/#kontakt');
               },
             ),
             ListTile(
@@ -180,13 +182,13 @@ class DrawerWidget extends StatelessWidget {
             ),
             ListTile(
               iconColor: AppColors.primaryWhite,
-              leading: Icon(Icons.alternate_email_rounded),
+              leading: Icon(Icons.phone_android_rounded),
               title: Text(
-                "Kontakt",
+                "O aplikacji",
                 style: AppTextStyles.headerH6.copyWith(color: AppColors.primaryWhite),
               ),
               onTap: () {
-                launch('https://kompas.sds.pl/#kontakt');
+                launch('https://kompas.sds.pl');
               },
             ),
             const SizedBox(height: Constants.bottomMargin),
