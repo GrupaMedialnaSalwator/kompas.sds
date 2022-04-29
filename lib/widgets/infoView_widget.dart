@@ -100,10 +100,8 @@ class InfoView extends StatelessWidget {
                                             ],
                                           ),
                                         ),
-                                        // Image.asset(
-                                        //     "assets/images/icons/kosciol_bagno_circular.png",
-                                        //     scale: 3.5,
-                                        //     fit: BoxFit.fitWidth),
+                                        Image.asset("assets/images/icons/kosciol_bagno_circular.png",
+                                            scale: 5.0, fit: BoxFit.fitWidth),
                                         SizedBox(height: Constants.cardMargin),
                                       ],
                                     ),
