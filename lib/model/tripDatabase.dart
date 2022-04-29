@@ -1002,5 +1002,19 @@ List<TripItem> generateTripItems() {
         ),
       ],
     ),
+    TripItem(
+      uid: "04", // TODO: must fix
+      title: "W Zamku",
+      subtitle: "dla wszystkich",
+      time: "50",
+      age: "12+",
+      distance: "0,5",
+      rating: "5,0",
+      description: "Wejdź do naszego zamku i odkryj tajemnice dawnych czasów.",
+      imageAsset: "assets/images/trip_04.png",
+      enabled: false,
+      countPoints: false,
+      stepList: <StepItem>[],
+    ),
   ];
 }

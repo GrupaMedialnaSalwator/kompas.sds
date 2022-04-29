@@ -34,7 +34,7 @@ class CardHero extends StatelessWidget {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 content: Text(
-                  'Ta przygoda jest na razie niedostępna...',
+                  'Ta przygoda będzie dostępna wkrótce ...',
                   style: TextStyle(color: AppColors.primaryWhite),
                 ),
                 backgroundColor: AppColors.primaryNormal,
