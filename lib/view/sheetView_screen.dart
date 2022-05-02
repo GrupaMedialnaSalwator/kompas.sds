@@ -3,13 +3,13 @@ import 'package:get/get.dart';
 import 'package:kompas/controller/tripData_controller.dart';
 import 'package:kompas/statics/constants.dart';
 
-class SelectTripPage extends StatelessWidget {
-  const SelectTripPage({
+class SheetView extends StatelessWidget {
+  const SheetView({
     Key? key,
-    required this.tripIndex,
+    required this.selectedIndex,
   }) : super(key: key);
 
-  final int tripIndex;
+  final int selectedIndex;
 
   @override
   Widget build(BuildContext context) {
@@ -20,10 +20,10 @@ class SelectTripPage extends StatelessWidget {
         height: Get.height * (1 - Constants.tripBottomSheetRatio),
         width: Get.width,
         child: Hero(
-          tag: tripIndex.toString(),
+          tag: selectedIndex.toString(),
           child: Image.asset(
-            _tripDataController.getTripItem(index: tripIndex).imageAsset,
-            fit: BoxFit.cover,
+            _tripDataController.getTripItem(index: selectedIndex).imageAsset,
+            fit: BoxFit.fill,
             gaplessPlayback: true, // prevents flicker on switching images
           ),
         ),
