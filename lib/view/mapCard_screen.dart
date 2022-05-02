@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:kompas/controller/mapData_controller.dart';
+import 'package:kompas/helper/roundedClipPath.dart';
 import 'package:kompas/statics/colors.dart';
 import 'package:kompas/statics/constants.dart';
 import 'package:kompas/statics/kompasText.dart';
@@ -62,27 +63,16 @@ class MapCardPage extends StatelessWidget {
           Stack(
             alignment: AlignmentDirectional.topCenter,
             children: [
-              Hero(
-                tag: 'mapHero' + mapItemIndex.toString(),
-                child: Image.asset(
-                  _mapDataController.getMapItem(index: mapItemIndex).imageAsset,
-                  fit: BoxFit.fill,
-                  gaplessPlayback: true, // prevents flicker on switching images
+              ClipPath(
+                clipper: RoundedClipPath(),
+                child: Hero(
+                  tag: 'mapHero' + mapItemIndex.toString(),
+                  child: Image.asset(
+                    _mapDataController.getMapItem(index: mapItemIndex).imageAsset,
+                    fit: BoxFit.fill,
+                    gaplessPlayback: true, // prevents flicker on switching images
+                  ),
                 ),
-              ),
-              // Draw a decoration with rounded corners at the bottom of image
-              Positioned(
-                bottom: 0,
-                child: Container(
-                    width: Get.width,
-                    height: Constants.borderRadius,
-                    decoration: BoxDecoration(
-                        color: AppColors.primaryWhite,
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(Constants.borderRadius),
-                          topRight: Radius.circular(Constants.borderRadius),
-                        )),
-                    child: SizedBox.shrink()),
               ),
             ],
           ),
