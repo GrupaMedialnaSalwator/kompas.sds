@@ -4,7 +4,7 @@ import 'package:kompas/statics/colors.dart';
 import 'package:kompas/statics/constants.dart';
 import 'package:kompas/statics/kompasText.dart';
 import 'package:kompas/statics/text_styles.dart';
-import 'package:kompas/view/about_screen%20copy.dart';
+import 'package:kompas/view/about_screen.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 
