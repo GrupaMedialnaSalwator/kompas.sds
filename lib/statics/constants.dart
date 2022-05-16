@@ -26,6 +26,9 @@ class Constants {
   /// borderRadius = 20.0
   static const double borderRadius = 20.0;
 
+    /// avatarLogoRadius = 50.0
+  static const double avatarLogoRadius = 50.0;
+
   /// bottomMargin = 20.0
   static const double buttonMargin = 20.0;
 

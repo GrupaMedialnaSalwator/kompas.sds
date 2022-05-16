@@ -75,6 +75,16 @@ class AppTextStyles {
     color: AppColors.primaryDark,
   );
 
+  static const paragraphLinkText = TextStyle(
+    fontFamily: "Nunito Sans",
+    fontWeight: FontWeight.w400,
+    fontStyle: FontStyle.normal,
+    fontSize: 18,
+    decoration: TextDecoration.underline,
+    letterSpacing: 1.08,
+    color: AppColors.primaryNormal,
+  );
+
   static const paragraphSubtext = TextStyle(
     fontFamily: "Nunito Sans",
     fontWeight: FontWeight.w400,

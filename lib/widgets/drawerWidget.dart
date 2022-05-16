@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kompas/statics/colors.dart';
@@ -6,7 +7,6 @@ import 'package:kompas/statics/kompasText.dart';
 import 'package:kompas/statics/text_styles.dart';
 import 'package:kompas/view/about_screen.dart';
 import 'package:url_launcher/url_launcher.dart';
-
 
 class DrawerWidget extends StatelessWidget {
   final padding = EdgeInsets.symmetric(horizontal: Constants.buttonMargin);
@@ -158,7 +158,6 @@ class DrawerWidget extends StatelessWidget {
                 );
               },
             ),
-
             ListTile(
               iconColor: AppColors.primaryWhite,
               leading: Icon(Icons.person_outline),
@@ -171,7 +170,6 @@ class DrawerWidget extends StatelessWidget {
                 launch('https://wsd.sds.pl');
               },
             ),
-
             ListTile(
               iconColor: AppColors.primaryWhite,
               leading: Icon(Icons.alternate_email_rounded),
@@ -253,25 +251,53 @@ class DrawerWidget extends StatelessWidget {
                     .copyWith(color: AppColors.primaryWhite),
               ),
               onTap: () {
-                Get.to(() => FirstPage(title: 
-                'O aplikacji',
-                content: Center(child: Text('adasdas'),),
-                ));
-                // Get.to(() => CustomDialogBox(
-                //   title: "Custom Dialog Demo",
-                //       descriptions:
-                //           "Hii all this is a custom dialog in flutter and  you will be use in your flutter applications",
-                //       text: "Yes",
-
-                //     ));
+                Get.to(() => FirstPage(
+                      title: 'O aplikacji',
+                      content: <Widget>[
+                        CircleAvatar(
+                          child: Image.asset(
+                              'assets/images/icons/wsd_logo_white_transparent.png'),
+                          backgroundColor: AppColors.primaryNormal,
+                          radius: Constants.avatarLogoRadius,
+                        ),
+                        SizedBox(height: Constants.cardMargin),
+                        Text(
+                          "kompas.sds",
+                          style: AppTextStyles.headerH6,
+                          textAlign: TextAlign.center,
+                        ),
+                        Text(
+                          //todo: read the version from json or using package_info_plus library
+                          "wersja aplikacji: 0.2.0",
+                          style: AppTextStyles.paragraphText,
+                          textAlign: TextAlign.center,
+                        ),
+                        Text(
+                            "\n\nkompas.sds to przewodnik po salwatoriańskim klasztorze w Bagnie.\n\nW aplikacji można znaleźć:\n•gry terenowe\n•drogę krzyżową\n•interaktywną mapę\n•pytania i odpowiedzi\n\nAplikacja jest amatorskim projektem Grupy Medialnej Salwator działającej w Wyższym Seminarium Duchownym Salwatorianów w Bagnie, koło Wrocławia.\n\n",
+                            style: AppTextStyles.paragraphText),
+                        RichText(
+                          text: TextSpan(
+                            children: [
+                              TextSpan(
+                                text: 'Więcej informacji na: ',
+                                style: AppTextStyles.paragraphText,
+                              ),
+                              TextSpan(
+                                text: 'www.kompas.sds.pl',
+                                style: AppTextStyles.paragraphLinkText,
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = () {
+                                    launch('https://kompas.sds.pl/');
+                                  },
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ));
               },
             ),
             const SizedBox(height: Constants.bottomMargin),
-            // KompasText(
-            //     style: AppTextStyles.paragraphSubtext.copyWith(color: AppColors.primaryWhite),
-            //     textAlign: TextAlign.center,
-            //     text: "© $yearToday Wyższe Seminarium Duchowne Salwatorianów w Bagnie"),
-            // const SizedBox(height: Constants.bottomMargin),
           ],
         ),
       ),
