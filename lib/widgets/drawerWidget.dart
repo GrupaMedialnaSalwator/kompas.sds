@@ -4,7 +4,9 @@ import 'package:kompas/statics/colors.dart';
 import 'package:kompas/statics/constants.dart';
 import 'package:kompas/statics/kompasText.dart';
 import 'package:kompas/statics/text_styles.dart';
+import 'package:kompas/view/about_screen%20copy.dart';
 import 'package:url_launcher/url_launcher.dart';
+
 
 class DrawerWidget extends StatelessWidget {
   final padding = EdgeInsets.symmetric(horizontal: Constants.buttonMargin);
@@ -246,11 +248,15 @@ class DrawerWidget extends StatelessWidget {
               iconColor: AppColors.primaryWhite,
               leading: Icon(Icons.phone_android_rounded),
               title: Text(
-                "ZZZZ O aplikacji",
+                "O aplikacji",
                 style: AppTextStyles.headerH6
                     .copyWith(color: AppColors.primaryWhite),
               ),
               onTap: () {
+                Get.to(() => FirstPage(title: 
+                'O aplikacji',
+                content: Center(child: Text('adasdas'),),
+                ));
                 // Get.to(() => CustomDialogBox(
                 //   title: "Custom Dialog Demo",
                 //       descriptions:
