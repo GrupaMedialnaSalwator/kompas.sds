@@ -33,7 +33,7 @@ class TripViewStep extends StatelessWidget {
           alignment: AlignmentDirectional.topCenter,
           children: [
             ClipPath(
-              clipper: RoundedClipPath(), // create rounded corners at the bottom of an image
+              clipper: RoundedClipPath.up(), // create rounded corners at the bottom of an image
               child: Image.asset(
                 tripDataController.getStepItem(tripDataSelect: tripDataSelect).imageAsset,
                 fit: BoxFit.fill,
