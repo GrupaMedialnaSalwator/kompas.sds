@@ -167,7 +167,75 @@ class DrawerWidget extends StatelessWidget {
                     .copyWith(color: AppColors.primaryWhite),
               ),
               onTap: () {
-                launch('https://wsd.sds.pl');
+                {
+                  Get.to(() => FirstPage(
+                        title: 'O nas',
+                        content: <Widget>[
+                          Text(
+                            "Salwatorianie",
+                            style: AppTextStyles.headerH3,
+                            textAlign: TextAlign.center,
+                          ),
+                          SizedBox(height: Constants.cardMargin),
+                          Container(
+                            margin: EdgeInsets.symmetric(
+                                horizontal: Constants.insideMargin),
+                            child: ClipRRect(
+                              child: Image.asset(
+                                  "assets/images/jordan.png"),
+                                  //todo: change to a multinational salvatorian faces photo
+                              borderRadius: BorderRadius.all(
+                                  Radius.circular(Constants.borderRadius)),
+                            ),
+                          ),
+                          SizedBox(height: Constants.cardMargin),
+                          Text(
+                              "Salwatorianie tworzą międzynarodową wspólnotą zakonną założoną przez bł. Franciszka Marię od Krzyża Jordana. Żyjemy według rad ewangelicznych: czystości, ubóstwa i posłuszeństwa. W szczególny sposób zobowiązujemy się do apostolstwa.",
+                              style: AppTextStyles.paragraphText),
+                              SizedBox(height: Constants.bottomMargin),
+                          
+                          Text(
+                            "Twórcy aplikacji",
+                            style: AppTextStyles.headerH3,
+                            textAlign: TextAlign.center,
+                          ),
+                          SizedBox(height: Constants.cardMargin),
+                          Container(
+                            margin: EdgeInsets.symmetric(
+                                horizontal: Constants.insideMargin),
+                            child: ClipRRect(
+                              child: Image.asset(
+                                  "assets/images/gms_team_white.png"),
+                              borderRadius: BorderRadius.all(
+                                  Radius.circular(Constants.borderRadius)),
+                            ),
+                          ),
+                          SizedBox(height: Constants.cardMargin),
+                          Text(
+                              "Jesteśmy klerykami seminarium Salwatorianów w Bagnie, którzy są zaangażowani w Grupę Medialną Salwator. Zainteresowanie nowymi technologiami chcemy wykorzystać do ewangelizacji, naśladując zapał apostolski naszego założyciela, aby \"Głosić Ewangelię wszędzie i wszystkim ludziom, wszelkimi sposobami i środkami, do których natchnie nas miłość Chrystusa\".",
+                              style: AppTextStyles.paragraphText),
+                              SizedBox(height: Constants.bottomMargin),
+                          RichText(
+                            text: TextSpan(
+                              children: [
+                                TextSpan(
+                                  text: 'Więcej informacji na: ',
+                                  style: AppTextStyles.paragraphText,
+                                ),
+                                TextSpan(
+                                  text: 'www.wsd.sds.pl',
+                                  style: AppTextStyles.paragraphLinkText,
+                                  recognizer: TapGestureRecognizer()
+                                    ..onTap = () {
+                                      launch('https://wsd.sds.pl/');
+                                    },
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ));
+                }
               },
             ),
             ListTile(
