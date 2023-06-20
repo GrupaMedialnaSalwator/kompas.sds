@@ -5,7 +5,7 @@ import 'package:kompas/controller/mapTransfer_controller.dart';
 import 'package:kompas/model/mapDatabase.dart';
 import 'package:kompas/statics/colors.dart';
 import 'package:kompas/statics/constants.dart';
-import 'package:badges/badges.dart';
+import 'package:badges/badges.dart' as badges;
 
 class MapPoint extends StatelessWidget {
   MapPoint({
@@ -32,7 +32,7 @@ class MapPoint extends StatelessWidget {
             child: InkWell(
               child: Container(
                 padding: EdgeInsets.all(Constants.minMargin),
-                child: Badge(
+                child: badges.Badge(
                   badgeColor: AppColors.accentContrast,
                   showBadge: mapDataController.getMapItem(index: mapItemIndex).tripIndexLink != -1,
                   child: Icon(
