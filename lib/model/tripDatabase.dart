@@ -12,6 +12,7 @@ enum TripPropertyType {
 enum StepType {
   info,
   select,
+  selectList,
   answer,
   end,
 }

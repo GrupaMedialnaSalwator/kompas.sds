@@ -80,12 +80,34 @@ class TripViewStepSwitch extends StatelessWidget {
             mainAxisSpacing: Constants.insideMargin,
             children: List<Widget>.generate(selectionLength, (int index) {
               return TripStepSelectBox(
+                boxView: true,
                 tripDataSelect: tripDataSelect,
                 selectionNum: index,
                 boxColor: AppColors.selectionColorList[index],
               );
             }),
           ),
+        );
+      case StepType.selectList:
+        int selectionLength = tripDataController.getStepItem(tripDataSelect: tripDataSelect).selection.length;
+        return Expanded(
+          child: ListView.separated(
+              separatorBuilder: (context, index) {
+                return SizedBox(height: Constants.minMargin); // Adjust the height as per your requirement
+              },
+              padding: EdgeInsets.all(Constants.insideMargin),
+              scrollDirection: Axis.vertical,
+              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemCount: selectionLength,
+              itemBuilder: (context, index) {
+                return TripStepSelectBox(
+                  boxView: false, // show rows to select
+                  tripDataSelect: tripDataSelect,
+                  selectionNum: index,
+                  boxColor: AppColors.selectionColorList[index],
+                );
+              }),
         );
       case StepType.answer:
         if (_correctAnswer())
