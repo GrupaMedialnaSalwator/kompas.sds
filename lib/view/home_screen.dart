@@ -25,6 +25,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
+  bool shouldRedraw = true; // used to change screen titles on tab change
+
   @override
   void initState() {
     super.initState();
@@ -50,6 +52,37 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
     final AchievementTrackerController _achievementTrackerController = Get.put(AchievementTrackerController());
     _achievementTrackerController.reloadState();
 
+    // Listens to tab change and forces title to redraw
+    _tabController.addListener(() {
+      setState(() {
+        shouldRedraw = true;
+      });
+    });
+
+    //
+    Widget _getTitle(BuildContext context) {
+      // Helper function to return different titles for the three main screen views (issue #65)
+
+      if (shouldRedraw == true) {
+        setState(() {
+          shouldRedraw = false; // reset after redrawing view
+        });
+        switch (_tabController.index) {
+          case 0:
+            return Text('Witamy w Bagnie', style: TextStyle(color: AppColors.primaryDark));
+          case 1:
+            return Text('Mapka klasztoru', style: TextStyle(color: AppColors.primaryDark));
+          case 2:
+            return Text('Informacje', style: TextStyle(color: AppColors.primaryDark));
+          default:
+            break;
+        }
+      }
+      // TODO: handle error
+      print("_getTitle() - should not hit this point!");
+      return Text('Witamy w Bagnie', style: TextStyle(color: AppColors.primaryDark));
+    }
+
     return Scaffold(
       drawer:
           SizedBox(width: MediaQuery.of(context).size.width * Constants.drawerWidthPercentage, child: DrawerWidget()),
@@ -67,10 +100,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
         backgroundColor: AppColors.primaryWhite.withOpacity(Constants.opacity25),
         foregroundColor: AppColors.primaryWhite,
         elevation: 0,
-        title: Text(
-          "Witamy w Bagnie",
-          style: TextStyle(color: AppColors.primaryDark),
-        ),
+        title: _getTitle(context),
       ),
       bottomNavigationBar: TabBar(
         controller: _tabController,
