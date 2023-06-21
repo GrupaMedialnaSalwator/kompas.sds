@@ -30,25 +30,24 @@ class MyApp extends StatelessWidget {
       title: 'kompas.sds',
       theme: ThemeData.light().copyWith(
         primaryColor: AppColors.primaryNormal,
-        backgroundColor: AppColors.primaryWhite,
         highlightColor: AppColors.primaryNormal, //color for scrollbar
         colorScheme: ColorScheme.fromSwatch(
           accentColor: AppColors.primaryLight, // color for overscroll glow effect in ListView
+          backgroundColor: AppColors.primaryWhite,
         ),
         textTheme: const TextTheme(
-          headline1: AppTextStyles.headerH1,
-          headline2: AppTextStyles.headerH2,
-          headline3: AppTextStyles.headerH3,
-          headline4: AppTextStyles.headerH4,
-          headline5: AppTextStyles.headerH5,
-          bodyText1: AppTextStyles.paragraphText,
-          bodyText2: AppTextStyles.paragraphSubtext,
-          caption: AppTextStyles.caption,
+          displayLarge: AppTextStyles.headerH1,
+          displayMedium: AppTextStyles.headerH2,
+          displaySmall: AppTextStyles.headerH3,
+          headlineMedium: AppTextStyles.headerH4,
+          headlineSmall: AppTextStyles.headerH5,
+          bodyLarge: AppTextStyles.paragraphText,
+          bodyMedium: AppTextStyles.paragraphSubtext,
+          bodySmall: AppTextStyles.caption,
         ),
         textButtonTheme: TextButtonThemeData(
           style: TextButton.styleFrom(
-            primary: AppColors.primaryNormal,
-            onSurface: AppColors.primaryGray,
+            foregroundColor: AppColors.primaryNormal, disabledForegroundColor: AppColors.primaryGray.withOpacity(0.38),
             backgroundColor: AppColors.primaryWhite,
             textStyle: AppTextStyles.headerH3,
             padding: EdgeInsets.symmetric(
