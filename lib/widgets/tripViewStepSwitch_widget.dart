@@ -32,7 +32,7 @@ class TripViewStepSwitch extends StatelessWidget {
       case StepType.info:
         return Expanded(
           child: Scrollbar(
-            isAlwaysShown: true,
+            thumbVisibility: true,
             controller: _scrollController,
             child: ListView(
               // start with scroll position on top (key and controller)
@@ -120,7 +120,7 @@ class TripViewStepSwitch extends StatelessWidget {
         //TODO remove mk
         return Expanded(
           child: Scrollbar(
-            isAlwaysShown: true,
+            thumbVisibility: true,
             controller: _scrollController,
             child: ListView(
               // start with scroll position on top (key and controller)
@@ -163,7 +163,7 @@ class TripViewStepSwitch extends StatelessWidget {
             .incrementTripScore(tripDataController.getTripItem(index: tripDataSelect.tripIndex).uid);
         return Expanded(
           child: Scrollbar(
-            isAlwaysShown: true,
+            thumbVisibility: true,
             controller: _scrollController,
             child: ListView(
               // start with scroll position on top (key and controller)

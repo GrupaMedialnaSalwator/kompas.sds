@@ -33,7 +33,7 @@ class MapPoint extends StatelessWidget {
               child: Container(
                 padding: EdgeInsets.all(Constants.minMargin),
                 child: badges.Badge(
-                  badgeColor: AppColors.accentContrast,
+                  badgeStyle: badges.BadgeStyle(badgeColor: AppColors.accentContrast),
                   showBadge: mapDataController.getMapItem(index: mapItemIndex).tripIndexLink != -1,
                   child: Icon(
                     MapItem.getTypeIcon(mapDataController.getMapItem(index: mapItemIndex).type),

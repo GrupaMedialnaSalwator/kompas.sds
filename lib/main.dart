@@ -47,8 +47,7 @@ class MyApp extends StatelessWidget {
         ),
         textButtonTheme: TextButtonThemeData(
           style: TextButton.styleFrom(
-            primary: AppColors.primaryNormal,
-            onSurface: AppColors.primaryGray,
+            foregroundColor: AppColors.primaryNormal, disabledForegroundColor: AppColors.primaryGray.withOpacity(0.38),
             backgroundColor: AppColors.primaryWhite,
             textStyle: AppTextStyles.headerH3,
             padding: EdgeInsets.symmetric(

@@ -79,9 +79,8 @@ class MapCardBottomSheet extends StatelessWidget {
                           style: AppTextStyles.headerH3.copyWith(color: AppColors.primaryWhite),
                         ),
                         style: TextButton.styleFrom(
-                          padding: EdgeInsets.fromLTRB(
+                          foregroundColor: AppColors.primaryWhite, padding: EdgeInsets.fromLTRB(
                               Constants.endMargin, Constants.bottomMargin, Constants.endMargin, Constants.bottomMargin),
-                          primary: AppColors.primaryWhite,
                           backgroundColor: AppColors.primaryNormal,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(Constants.borderRadius),

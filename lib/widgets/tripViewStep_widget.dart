@@ -27,7 +27,7 @@ class TripViewStep extends StatelessWidget {
       children: [
         // Padding to avoid status bar works only on physical devices
         SizedBox(
-          height: MediaQueryData.fromWindow(window).padding.top,
+          height: MediaQueryData.fromView(window).padding.top,
         ),
         Stack(
           alignment: AlignmentDirectional.topCenter,

@@ -15,6 +15,8 @@ class InfoView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Uri _urlTotu = Uri.parse('https://totu.sds.pl');
+
     //super.build(context); // need to call super method.
     //return Center(child: Text("This tab shows Info View"));
     return Container(
@@ -181,7 +183,7 @@ class InfoView extends StatelessWidget {
                                         TextStyle(color: AppColors.primaryNormal, decoration: TextDecoration.underline),
                                     recognizer: TapGestureRecognizer()
                                       ..onTap = () {
-                                        launch('https://totu.sds.pl/');
+                                        launchUrl(_urlTotu);
                                       },
                                   ),
                                 ],
@@ -216,7 +218,7 @@ class InfoView extends StatelessWidget {
                                         TextStyle(color: AppColors.primaryNormal, decoration: TextDecoration.underline),
                                     recognizer: TapGestureRecognizer()
                                       ..onTap = () {
-                                        launch('https://totu.sds.pl/');
+                                        launchUrl(_urlTotu);
                                       },
                                   ),
                                 ],

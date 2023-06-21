@@ -120,9 +120,8 @@ Stack _cardStack(TripDataController tripController, int tripIndex, double topSta
                       style: AppTextStyles.headerH3.copyWith(color: AppColors.primaryNormal),
                     ),
                     style: TextButton.styleFrom(
-                      padding: EdgeInsets.fromLTRB(
+                      foregroundColor: AppColors.primaryNormal, padding: EdgeInsets.fromLTRB(
                           Constants.endMargin, Constants.bottomMargin, Constants.endMargin, Constants.bottomMargin),
-                      primary: AppColors.primaryNormal,
                       backgroundColor: AppColors.primaryWhite,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(Constants.borderRadius),

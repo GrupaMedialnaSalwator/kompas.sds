@@ -11,12 +11,18 @@ class DrawerWidget extends StatelessWidget {
   final int yearToday = DateTime.now().year;
   final ScrollController _scrollController = ScrollController(keepScrollOffset: false);
 
+  final Uri _urlGoogleStore = Uri.parse('https://play.google.com/store/apps/details?id=pl.sds.kompas');
+  final Uri _urlKontakt = Uri.parse('https://kompas.sds.pl/#kontakt');
+  final Uri _urlWSD = Uri.parse('https://wsd.sds.pl');
+  final Uri _urlPrivacy = Uri.parse('https://kompas.sds.pl/polityka-prywatnosci');
+  final Uri _urlKompas = Uri.parse('https://kompas.sds.pl');
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
       backgroundColor: AppColors.primaryNormal,
       child: Scrollbar(
-        isAlwaysShown: true,
+        thumbVisibility: true,
         controller: _scrollController,
         child: ListView(
           controller: _scrollController,
@@ -88,12 +94,11 @@ class DrawerWidget extends StatelessWidget {
                           ],
                         ),
                         style: TextButton.styleFrom(
-                          primary: AppColors.primaryWhite,
+                          foregroundColor: AppColors.primaryWhite,
                           backgroundColor: AppColors.primaryNormal,
                         ),
                         onPressed: () {
-                          launch('https://play.google.com/store/apps/details?id=pl.sds.kompas')
-                              .whenComplete(() => Get.back());
+                          launchUrl(_urlGoogleStore).whenComplete(() => Get.back());
                         },
                       ),
                       const SizedBox(height: Constants.cardMargin),
@@ -111,11 +116,11 @@ class DrawerWidget extends StatelessWidget {
                           ],
                         ),
                         style: TextButton.styleFrom(
-                          primary: AppColors.primaryWhite,
+                          foregroundColor: AppColors.primaryWhite,
                           backgroundColor: AppColors.primaryNormal,
                         ),
                         onPressed: () {
-                          launch('https://kompas.sds.pl/#kontakt').whenComplete(() => Get.back());
+                          launchUrl(_urlKontakt).whenComplete(() => Get.back());
                         },
                       ),
                       const SizedBox(height: Constants.cardMargin),
@@ -133,7 +138,7 @@ class DrawerWidget extends StatelessWidget {
                           ],
                         ),
                         style: TextButton.styleFrom(
-                          primary: AppColors.primaryWhite,
+                          foregroundColor: AppColors.primaryWhite,
                           backgroundColor: AppColors.primaryNormal,
                         ),
                         onPressed: () {
@@ -154,7 +159,7 @@ class DrawerWidget extends StatelessWidget {
                 style: AppTextStyles.headerH6.copyWith(color: AppColors.primaryWhite),
               ),
               onTap: () {
-                launch('https://wsd.sds.pl');
+                launchUrl(_urlWSD);
               },
             ),
 
@@ -166,7 +171,7 @@ class DrawerWidget extends StatelessWidget {
                 style: AppTextStyles.headerH6.copyWith(color: AppColors.primaryWhite),
               ),
               onTap: () {
-                launch('https://kompas.sds.pl/#kontakt');
+                launchUrl(_urlWSD);
               },
             ),
             ListTile(
@@ -177,7 +182,7 @@ class DrawerWidget extends StatelessWidget {
                 style: AppTextStyles.headerH6.copyWith(color: AppColors.primaryWhite),
               ),
               onTap: () {
-                launch('https://kompas.sds.pl/polityka-prywatnosci');
+                launchUrl(_urlPrivacy);
               },
             ),
             ListTile(
@@ -188,7 +193,7 @@ class DrawerWidget extends StatelessWidget {
                 style: AppTextStyles.headerH6.copyWith(color: AppColors.primaryWhite),
               ),
               onTap: () {
-                launch('https://kompas.sds.pl');
+                launchUrl(_urlKompas);
               },
             ),
             const SizedBox(height: Constants.bottomMargin),
