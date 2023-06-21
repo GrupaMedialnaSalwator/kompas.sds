@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kompas/controller/tripData_controller.dart';
@@ -27,7 +25,7 @@ class TripViewStep extends StatelessWidget {
       children: [
         // Padding to avoid status bar works only on physical devices
         SizedBox(
-          height: MediaQueryData.fromView(window).padding.top,
+          height: MediaQueryData.fromView(View.of(context)).padding.top,
         ),
         Stack(
           alignment: AlignmentDirectional.topCenter,
