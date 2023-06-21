@@ -110,7 +110,7 @@ class TripViewStepSwitch extends StatelessWidget {
               }),
         );
       case StepType.answer:
-        if (_correctAnswer())
+        if (_correctAnswer(tripDataSelect))
           _achievementTrackerController.incrementAnswerScore(
               tripDataController.getTripItem(index: tripDataSelect.tripIndex).uid, tripDataSelect.stepIndex);
         //AchievementScore.addAnswerScore; //TODO: mk where should achievementScore (an instance of AchievementScore class) be instantiated?
@@ -136,7 +136,7 @@ class TripViewStepSwitch extends StatelessWidget {
                     style: AppTextStyles.headerH3.copyWith(color: AppColors.primaryDark),
                   ),
                 ),
-                if (_correctAnswer())
+                if (_correctAnswer(tripDataSelect))
                   Container(
                     alignment: Alignment.topLeft,
                     margin: EdgeInsets.all(Constants.insideMargin),
@@ -197,11 +197,9 @@ class TripViewStepSwitch extends StatelessWidget {
     }
   }
 
-  bool _correctAnswer() {
+  bool _correctAnswer(TripDataSelect tripDataSelect) {
     return (tripStateController.getCurrentAnswer() ==
-        tripDataController
-            .getStepItem(tripDataSelect: TripDataSelect(tripIndex: 0, stepIndex: tripStateController.getCurrentStep()))
-            .correctSelection);
+        tripDataController.getStepItem(tripDataSelect: tripDataSelect).correctSelection);
   }
 }
 
