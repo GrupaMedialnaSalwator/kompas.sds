@@ -183,7 +183,7 @@ class InfoView extends StatelessWidget {
                                         TextStyle(color: AppColors.primaryNormal, decoration: TextDecoration.underline),
                                     recognizer: TapGestureRecognizer()
                                       ..onTap = () {
-                                        launchUrl(_urlTotu);
+                                        launchUrl(mode: LaunchMode.externalApplication, _urlTotu);
                                       },
                                   ),
                                 ],
@@ -218,7 +218,7 @@ class InfoView extends StatelessWidget {
                                         TextStyle(color: AppColors.primaryNormal, decoration: TextDecoration.underline),
                                     recognizer: TapGestureRecognizer()
                                       ..onTap = () {
-                                        launchUrl(_urlTotu);
+                                        launchUrl(mode: LaunchMode.externalApplication, _urlTotu);
                                       },
                                   ),
                                 ],

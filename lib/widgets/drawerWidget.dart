@@ -98,7 +98,8 @@ class DrawerWidget extends StatelessWidget {
                           backgroundColor: AppColors.primaryNormal,
                         ),
                         onPressed: () {
-                          launchUrl(_urlGoogleStore).whenComplete(() => Get.back());
+                          launchUrl(mode: LaunchMode.externalApplication, _urlGoogleStore)
+                              .whenComplete(() => Get.back());
                         },
                       ),
                       const SizedBox(height: Constants.cardMargin),
@@ -120,7 +121,7 @@ class DrawerWidget extends StatelessWidget {
                           backgroundColor: AppColors.primaryNormal,
                         ),
                         onPressed: () {
-                          launchUrl(_urlKontakt).whenComplete(() => Get.back());
+                          launchUrl(mode: LaunchMode.externalApplication, _urlKontakt).whenComplete(() => Get.back());
                         },
                       ),
                       const SizedBox(height: Constants.cardMargin),
@@ -159,7 +160,7 @@ class DrawerWidget extends StatelessWidget {
                 style: AppTextStyles.headerH6.copyWith(color: AppColors.primaryWhite),
               ),
               onTap: () {
-                launchUrl(_urlWSD);
+                launchUrl(mode: LaunchMode.externalApplication, _urlWSD);
               },
             ),
 
@@ -171,7 +172,7 @@ class DrawerWidget extends StatelessWidget {
                 style: AppTextStyles.headerH6.copyWith(color: AppColors.primaryWhite),
               ),
               onTap: () {
-                launchUrl(_urlWSD);
+                launchUrl(mode: LaunchMode.externalApplication, _urlWSD);
               },
             ),
             ListTile(
@@ -182,7 +183,7 @@ class DrawerWidget extends StatelessWidget {
                 style: AppTextStyles.headerH6.copyWith(color: AppColors.primaryWhite),
               ),
               onTap: () {
-                launchUrl(_urlPrivacy);
+                launchUrl(mode: LaunchMode.externalApplication, _urlPrivacy);
               },
             ),
             ListTile(
@@ -193,7 +194,7 @@ class DrawerWidget extends StatelessWidget {
                 style: AppTextStyles.headerH6.copyWith(color: AppColors.primaryWhite),
               ),
               onTap: () {
-                launchUrl(_urlKompas);
+                launchUrl(mode: LaunchMode.externalApplication, _urlKompas);
               },
             ),
             const SizedBox(height: Constants.bottomMargin),
