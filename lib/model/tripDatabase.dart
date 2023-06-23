@@ -829,19 +829,19 @@ List<TripItem> generateTripItems() {
       distance: "0,3",
       rating: "4,5",
       description: "Wejdź do klasztornego labiryntu i odkrywaj mądrości starożytnych filozofów.",
-      imageAsset: "assets/images/trip_03.png",
+      imageAsset: "assets/images/trip_03.jpg",
       enabled: true,
       countPoints: true,
       stepList: <StepItem>[
         StepItem(
-          imageAsset: "assets/images/trip_03.png",
+          imageAsset: "assets/images/trip_03.jpg",
           title: "Wejście do labiryntu",
           description:
               'Labirynt to miejsce, do którego łatwo wejść, ale trudniej wyjść. Jeśli jednak jesteś tu po raz pierwszy, możesz mieć trudności z odnalezieniem również wejścia.\n\nWarto więc skorzystać z mapki, która jest częścią tej aplikacji. Pomoże Ci ona znaleźć to miejsce nieopodal altanki filozofów.\n\nZapraszamy do podróży!',
           nextStep: 1,
         ),
         StepItem(
-          imageAsset: "assets/images/trip_03.png",
+          imageAsset: "assets/images/trip_03.jpg",
           title: "Ogród Filozofów",
           description:
               'Filozofia to nauka, która przybiera tyle odcieni, ile jest osób ją uprawiających. Zawsze pozostaje jednak tym, na co wskazuje jej grecka nazwa - phileo-sophia, czyli umiłowanie mądrości.\n\nJest ona „przygodą” w poszukiwaniu prawdy, która pociągnęła i zafascynowała wielu ludzi. Nieliczni z nich wspominani są na tych stronicach.\n\nNie jest ona jednak „przygodą” dla wybranych - każdy z nas może stawiać sobie pytania filozoficzne, dociekać tego, co leży u podstaw postrzeganej przez nas rzeczywistości. Przed każdym człowiekiem uczciwie poszukującym prawdy otwiera się droga do poznania siebie, świata i Boga.\n\nŚcieżek wiodących przez filozofię jest wiele. Nie zniechęcaj się, Drogi Przyjacielu, ich różnorodnością, ale otwórz się na głos mądrości, przemawiający przez każdą z nich.',
@@ -1408,7 +1408,7 @@ List<TripItem> generateTripItems() {
           title: "Dziękujemy",
           description:
               'To już koniec podróży po ogrodzie filozofów, ale przygoda poszukiwania mądrości trwa przez całe życie.\n\nŻyczymy Ci, Drogi Przyjacielu, aby to spotkanie z filozofami z przeszłości zrodziło w Tobie nowe pytania i zapał do szukania na nie odpowiedzi.',
-          imageAsset: "assets/images/trip_03.png",
+          imageAsset: "assets/images/trip_03.jpg",
           nextStep: -1,
         ),
       ],
