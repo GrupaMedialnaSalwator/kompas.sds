@@ -857,7 +857,7 @@ List<TripItem> generateTripItems() {
           nextStep: 3,
         ),
         StepItem(
-          imageAsset: "assets/images/trip03/trip03_mapa.png",
+          imageAsset: "assets/images/trip03/trip03_01.jpg",
           caption: '„Poznaj samego siebie, a stanie przed tobą otworem cały świat”\n - Sokrates (469-399 r. p.n.e.)',
           title: "1. Sokrates",
           description:
@@ -897,7 +897,7 @@ List<TripItem> generateTripItems() {
           nextStep: 7,
         ),
         StepItem(
-          imageAsset: "assets/images/trip03/trip03_mapa.png",
+          imageAsset: "assets/images/trip03/trip03_02.jpg",
           caption:
               '„Myśleć to co prawdziwe, czuć to co piękne i kochać co dobre - w tym cel rozumnego życia”\n - Platon (427-347 r. p.n.e.)',
           title: "2. Platon",
@@ -935,7 +935,7 @@ List<TripItem> generateTripItems() {
           nextStep: 11,
         ),
         StepItem(
-          imageAsset: "assets/images/trip03/trip03_mapa.png",
+          imageAsset: "assets/images/trip03/trip03_03.jpg",
           caption: '„U początku filozofii stoi - zdziwienie”\n - Arystoteles (384-322 r. p.n.e.)',
           title: "3. Arystoteles",
           description:
@@ -972,7 +972,7 @@ List<TripItem> generateTripItems() {
           nextStep: 15,
         ),
         StepItem(
-          imageAsset: "assets/images/trip03/trip03_mapa.png",
+          imageAsset: "assets/images/trip03/trip03_04.jpg",
           caption: '„Kochaj i rób co chcesz”\n - Augustyn z Hippony (354-430 r.)',
           title: "4. Augustyn z Hippony",
           description:
@@ -1010,7 +1010,7 @@ List<TripItem> generateTripItems() {
           nextStep: 19,
         ),
         StepItem(
-          imageAsset: "assets/images/trip03/trip03_mapa.png",
+          imageAsset: "assets/images/trip03/trip03_05.jpg",
           caption:
               '„Człowiek nie jest duszą używającą ciała, lecz kompozycją duszy i ciała”\n - Tomasz z Akwinu (1225-1274 r.)',
           title: "5. Tomasz z Akwinu",
@@ -1051,7 +1051,7 @@ List<TripItem> generateTripItems() {
           nextStep: 23,
         ),
         StepItem(
-          imageAsset: "assets/images/trip03/trip03_mapa.png",
+          imageAsset: "assets/images/trip03/trip03_06.jpg",
           caption: '„Myślę, więc jestem”\n - Kartezjusz (1596-1650 r.)',
           title: "6. Kartezjusz",
           description:
@@ -1088,7 +1088,7 @@ List<TripItem> generateTripItems() {
           nextStep: 27,
         ),
         StepItem(
-          imageAsset: "assets/images/trip03/trip03_mapa.png",
+          imageAsset: "assets/images/trip03/trip03_07.jpg",
           caption:
               '„Niebo gwiaździste nade mną i prawo moralne we mnie. Są to dla mnie dowody, że jest Bóg nade mną i Bóg we mnie”\n - Immanuel Kant (1724-1804 r.)',
           title: "7. Immanuel Kant",
@@ -1127,7 +1127,7 @@ List<TripItem> generateTripItems() {
           nextStep: 31,
         ),
         StepItem(
-          imageAsset: "assets/images/trip03/trip03_mapa.png",
+          imageAsset: "assets/images/trip03/trip03_08.jpg",
           caption:
               '„Gdyby ten świat nie był najdoskonalszy z możliwych, Bóg by go nie stworzył”\n - Gottfried Wilhelm Leibniz (1646-1716 r.)',
           title: "8. Gottfried Wilhelm Leibniz",
@@ -1166,7 +1166,7 @@ List<TripItem> generateTripItems() {
           nextStep: 35,
         ),
         StepItem(
-          imageAsset: "assets/images/trip03/trip03_mapa.png",
+          imageAsset: "assets/images/trip03/trip03_09.jpg",
           caption:
               '„To co jest wytworzone z formy czystej myśli, a nie mocą autorytetu, tylko to należy do filozofii”\n - Georg Wilhelm Friedrich Hegel (1770-1831 r.)',
           title: "9. Georg Wilhelm Friedrich Hegel",
@@ -1206,7 +1206,7 @@ List<TripItem> generateTripItems() {
           nextStep: 39,
         ),
         StepItem(
-          imageAsset: "assets/images/trip03/trip03_mapa.png",
+          imageAsset: "assets/images/trip03/trip03_10.jpg",
           caption:
               '„Człowiek jest syntezą nieskończoności i skończoności, doczesności i wieczności, wolności i konieczności, jednym słowem, syntezą”\n - Søren Kierkegaard (1813-1855 r.)',
           title: "10. Søren Kierkegaard",
@@ -1245,7 +1245,7 @@ List<TripItem> generateTripItems() {
           nextStep: 43,
         ),
         StepItem(
-          imageAsset: "assets/images/trip03/trip03_mapa.png",
+          imageAsset: "assets/images/trip03/trip03_11.jpg",
           caption:
               '„Gdy człowiek nie wie, co zrobić, sumienie mówi mu tylko jedno: szukaj”\n - Józef Stanisław Tischner (1931-2000 r.)',
           title: "11. Józef Stanisław Tischner",
@@ -1285,7 +1285,7 @@ List<TripItem> generateTripItems() {
           nextStep: 47,
         ),
         StepItem(
-          imageAsset: "assets/images/trip03/trip03_mapa.png",
+          imageAsset: "assets/images/trip03/trip03_12.jpg",
           caption:
               '„Wczoraj do ciebie nie należy. Jutro niepewne... Tylko dziś jest twoje”\n - Jan Paweł II (Karol Wojtyła) (1920-2005 r.)',
           title: "12. Jan Paweł II (Karol Wojtyła)",
@@ -1325,7 +1325,7 @@ List<TripItem> generateTripItems() {
           nextStep: 51,
         ),
         StepItem(
-          imageAsset: "assets/images/trip03/trip03_mapa.png",
+          imageAsset: "assets/images/trip03/trip03_13.jpg",
           caption:
               '„Własną śmiercią można własne życie tylko potwierdzić, ale zaprzeczyć mu nie można, ponieważ nasza śmierć czyni dopiero nasze życie ostatecznie nieodmiennym”\n - Leszek Kołakowski (1927-2009 r.)',
           title: "13. Leszek Kołakowski",
@@ -1364,7 +1364,7 @@ List<TripItem> generateTripItems() {
           nextStep: 55,
         ),
         StepItem(
-          imageAsset: "assets/images/trip03/trip03_mapa.png",
+          imageAsset: "assets/images/trip03/trip03_14.jpg",
           caption:
               '„Miłować prawdę - wszelką i we wszystkim - to dla człowieka być samym sobą i ocalić samego siebie”\n - Tadeusz Styczeń (1931-2010 r.)',
           title: "14. Tadeusz Styczeń",
