@@ -64,6 +64,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
       // Helper function to return different titles for the three main screen views (issue #65)
 
       if (shouldRedraw == true) {
+        // triggers redrawing
         setState(() {
           shouldRedraw = false; // reset after redrawing view
         });
@@ -75,11 +76,9 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           case 2:
             return Text('Informacje', style: TextStyle(color: AppColors.primaryDark));
           default:
-            break;
+            assert(false, "_getTitle() error: unexpected screen view");
         }
       }
-      // TODO: handle error
-      print("_getTitle() - should not hit this point!");
       return Text('Witamy w Bagnie', style: TextStyle(color: AppColors.primaryDark));
     }
 

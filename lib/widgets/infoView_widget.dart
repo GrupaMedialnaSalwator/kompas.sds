@@ -129,10 +129,10 @@ class InfoView extends StatelessWidget {
                                 KompasText(
                                     style: AppTextStyles.paragraphSubtext,
                                     text: "Na terenie klasztoru w Bagnie obecnie mieszka:\n"),
-                                KompasText(style: AppTextStyles.paragraphSubtext, text: "7 księży"),
-                                KompasText(style: AppTextStyles.paragraphSubtext, text: "14 kleryków"),
+                                KompasText(style: AppTextStyles.paragraphSubtext, text: "6 księży"),
+                                KompasText(style: AppTextStyles.paragraphSubtext, text: "12 kleryków"),
                                 KompasText(style: AppTextStyles.paragraphSubtext, text: "2 siostry zakonne"),
-                                KompasText(style: AppTextStyles.paragraphSubtext, text: "5 braci zakonnych"),
+                                KompasText(style: AppTextStyles.paragraphSubtext, text: "4 braci zakonnych"),
                               ],
                             ),
                           ),
