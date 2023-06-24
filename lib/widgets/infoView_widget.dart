@@ -15,6 +15,8 @@ class InfoView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Uri _urlTotu = Uri.parse('https://totu.sds.pl');
+
     //super.build(context); // need to call super method.
     //return Center(child: Text("This tab shows Info View"));
     return Container(
@@ -127,10 +129,10 @@ class InfoView extends StatelessWidget {
                                 KompasText(
                                     style: AppTextStyles.paragraphSubtext,
                                     text: "Na terenie klasztoru w Bagnie obecnie mieszka:\n"),
-                                KompasText(style: AppTextStyles.paragraphSubtext, text: "7 księży"),
-                                KompasText(style: AppTextStyles.paragraphSubtext, text: "14 kleryków"),
+                                KompasText(style: AppTextStyles.paragraphSubtext, text: "6 księży"),
+                                KompasText(style: AppTextStyles.paragraphSubtext, text: "12 kleryków"),
                                 KompasText(style: AppTextStyles.paragraphSubtext, text: "2 siostry zakonne"),
-                                KompasText(style: AppTextStyles.paragraphSubtext, text: "5 braci zakonnych"),
+                                KompasText(style: AppTextStyles.paragraphSubtext, text: "4 braci zakonnych"),
                               ],
                             ),
                           ),
@@ -173,7 +175,7 @@ class InfoView extends StatelessWidget {
                                   TextSpan(
                                     text:
                                         'Dom „ToTu” to salwatoriański ośrodek z szeroką ofertą spotkań i zajęć dla młodzieży, który wspiera ją w odkrywaniu celu i sensu życia.\n\nZapraszamy na naszą stronkę:\n',
-                                    style: Theme.of(context).textTheme.bodyText2,
+                                    style: Theme.of(context).textTheme.bodyMedium,
                                   ),
                                   TextSpan(
                                     text: 'www.totu.sds.pl',
@@ -181,7 +183,7 @@ class InfoView extends StatelessWidget {
                                         TextStyle(color: AppColors.primaryNormal, decoration: TextDecoration.underline),
                                     recognizer: TapGestureRecognizer()
                                       ..onTap = () {
-                                        launch('https://totu.sds.pl/');
+                                        launchUrl(mode: LaunchMode.externalApplication, _urlTotu);
                                       },
                                   ),
                                 ],
@@ -208,7 +210,7 @@ class InfoView extends StatelessWidget {
                                   TextSpan(
                                     text:
                                         'Zapraszamy do domu „ToTu”, który może służyć jako baza noclegowa. Oferujemy trzyosobowe pokoje z łazienkami, kaplicę, sale konferencyjne, oraz jadalnię w której istnieje możliwość zamówienia posiłków.\n\nZapraszamy na naszą stronkę:\n',
-                                    style: Theme.of(context).textTheme.bodyText2,
+                                    style: Theme.of(context).textTheme.bodyMedium,
                                   ),
                                   TextSpan(
                                     text: 'www.totu.sds.pl',
@@ -216,7 +218,7 @@ class InfoView extends StatelessWidget {
                                         TextStyle(color: AppColors.primaryNormal, decoration: TextDecoration.underline),
                                     recognizer: TapGestureRecognizer()
                                       ..onTap = () {
-                                        launch('https://totu.sds.pl/');
+                                        launchUrl(mode: LaunchMode.externalApplication, _urlTotu);
                                       },
                                   ),
                                 ],

@@ -6,6 +6,7 @@ import 'package:kompas/statics/colors.dart';
 import 'package:kompas/statics/constants.dart';
 import 'package:kompas/statics/text_styles.dart';
 import 'package:kompas/view/mapCard_screen.dart';
+import 'package:kompas/widgets/mapCardBottomSheet_widget.dart';
 
 class MapCardHero extends StatelessWidget {
   const MapCardHero({Key? key, required this.onTap, required this.mapItemIndex}) : super(key: key);
@@ -84,6 +85,14 @@ class MapCardHero extends StatelessWidget {
                                         mapItemIndex: mapItemIndex,
                                       ),
                                     );
+                                    Get.bottomSheet(
+                                      MapCardBottomSheet(
+                                        selectedIndex: mapItemIndex,
+                                      ),
+                                      isScrollControlled: true,
+                                      barrierColor: AppColors.transparent,
+                                      backgroundColor: AppColors.transparent,
+                                    ).whenComplete(() => Get.back());
                                   },
                                 style: AppTextStyles.caption
                                     .copyWith(color: _mapDataController.getIconColor(mapItemIndex)),
@@ -96,6 +105,14 @@ class MapCardHero extends StatelessWidget {
                                           mapItemIndex: mapItemIndex,
                                         ),
                                       ),
+                                      Get.bottomSheet(
+                                        MapCardBottomSheet(
+                                          selectedIndex: mapItemIndex,
+                                        ),
+                                        isScrollControlled: true,
+                                        barrierColor: AppColors.transparent,
+                                        backgroundColor: AppColors.transparent,
+                                      ).whenComplete(() => Get.back()),
                                     },
                                 icon: Icon(
                                   Icons.info_outline_rounded,

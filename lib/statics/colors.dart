@@ -28,10 +28,10 @@ class AppColors extends Color {
   static const transparent = Color(0x00ffffff);
 
   static const selectionColorList = [
-    selectionBlue,
     selectionViolet,
-    selectionPink,
+    selectionBlue,
     selectionYellow,
+    selectionPink,
   ];
 
   static const selectionBlue = Color(0xff7fd6dd);

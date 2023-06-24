@@ -32,7 +32,7 @@ class TripViewStepSwitch extends StatelessWidget {
       case StepType.info:
         return Expanded(
           child: Scrollbar(
-            isAlwaysShown: true,
+            thumbVisibility: true,
             controller: _scrollController,
             child: ListView(
               // start with scroll position on top (key and controller)
@@ -80,6 +80,7 @@ class TripViewStepSwitch extends StatelessWidget {
             mainAxisSpacing: Constants.insideMargin,
             children: List<Widget>.generate(selectionLength, (int index) {
               return TripStepSelectBox(
+                boxView: true,
                 tripDataSelect: tripDataSelect,
                 selectionNum: index,
                 boxColor: AppColors.selectionColorList[index],
@@ -87,8 +88,29 @@ class TripViewStepSwitch extends StatelessWidget {
             }),
           ),
         );
+      case StepType.selectList:
+        int selectionLength = tripDataController.getStepItem(tripDataSelect: tripDataSelect).selection.length;
+        return Expanded(
+          child: ListView.separated(
+              separatorBuilder: (context, index) {
+                return SizedBox(height: Constants.minMargin); // Adjust the height as per your requirement
+              },
+              padding: EdgeInsets.all(Constants.insideMargin),
+              scrollDirection: Axis.vertical,
+              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemCount: selectionLength,
+              itemBuilder: (context, index) {
+                return TripStepSelectBox(
+                  boxView: false, // show rows to select
+                  tripDataSelect: tripDataSelect,
+                  selectionNum: index,
+                  boxColor: AppColors.selectionColorList[index],
+                );
+              }),
+        );
       case StepType.answer:
-        if (_correctAnswer())
+        if (_correctAnswer(tripDataSelect))
           _achievementTrackerController.incrementAnswerScore(
               tripDataController.getTripItem(index: tripDataSelect.tripIndex).uid, tripDataSelect.stepIndex);
         //AchievementScore.addAnswerScore; //TODO: mk where should achievementScore (an instance of AchievementScore class) be instantiated?
@@ -98,7 +120,7 @@ class TripViewStepSwitch extends StatelessWidget {
         //TODO remove mk
         return Expanded(
           child: Scrollbar(
-            isAlwaysShown: true,
+            thumbVisibility: true,
             controller: _scrollController,
             child: ListView(
               // start with scroll position on top (key and controller)
@@ -114,7 +136,7 @@ class TripViewStepSwitch extends StatelessWidget {
                     style: AppTextStyles.headerH3.copyWith(color: AppColors.primaryDark),
                   ),
                 ),
-                if (_correctAnswer())
+                if (_correctAnswer(tripDataSelect))
                   Container(
                     alignment: Alignment.topLeft,
                     margin: EdgeInsets.all(Constants.insideMargin),
@@ -141,7 +163,7 @@ class TripViewStepSwitch extends StatelessWidget {
             .incrementTripScore(tripDataController.getTripItem(index: tripDataSelect.tripIndex).uid);
         return Expanded(
           child: Scrollbar(
-            isAlwaysShown: true,
+            thumbVisibility: true,
             controller: _scrollController,
             child: ListView(
               // start with scroll position on top (key and controller)
@@ -175,11 +197,9 @@ class TripViewStepSwitch extends StatelessWidget {
     }
   }
 
-  bool _correctAnswer() {
+  bool _correctAnswer(TripDataSelect tripDataSelect) {
     return (tripStateController.getCurrentAnswer() ==
-        tripDataController
-            .getStepItem(tripDataSelect: TripDataSelect(tripIndex: 0, stepIndex: tripStateController.getCurrentStep()))
-            .correctSelection);
+        tripDataController.getStepItem(tripDataSelect: tripDataSelect).correctSelection);
   }
 }
 

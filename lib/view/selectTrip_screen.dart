@@ -23,7 +23,7 @@ class SelectTripPage extends StatelessWidget {
           tag: tripIndex.toString(),
           child: Image.asset(
             _tripDataController.getTripItem(index: tripIndex).imageAsset,
-            fit: BoxFit.fill,
+            fit: BoxFit.cover,
             gaplessPlayback: true, // prevents flicker on switching images
           ),
         ),

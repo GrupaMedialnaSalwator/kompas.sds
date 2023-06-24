@@ -299,7 +299,7 @@ MapData generateMapData() {
         locationX: 1080,
         locationY: 820,
         uid: '13', // TODO: implement proper UID
-        imageAsset: "assets/images/map01/mapItem_11.png",
+        imageAsset: "assets/images/map01/mapItem_11.jpg",
         type: MapItemType.labyrinth,
         title: 'Labirynt filozofów',
         subtitle: 'Miejsce rozmyślań',

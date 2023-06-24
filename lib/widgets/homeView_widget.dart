@@ -28,7 +28,7 @@ class HomeView extends StatelessWidget {
             margin: EdgeInsets.fromLTRB(36, 36, 0, 16),
             child: Text(
               "Zapraszamy",
-              style: Theme.of(context).textTheme.headline1,
+              style: Theme.of(context).textTheme.displayLarge,
             ),
           ),
           Container(
@@ -36,7 +36,7 @@ class HomeView extends StatelessWidget {
             margin: EdgeInsets.fromLTRB(36, 0, 0, 4),
             child: Text(
               "do przygody",
-              style: Theme.of(context).textTheme.headline2,
+              style: Theme.of(context).textTheme.displayMedium,
             ),
           ),
           Container(
@@ -44,7 +44,7 @@ class HomeView extends StatelessWidget {
             margin: EdgeInsets.fromLTRB(36, 0, 0, 18),
             child: Text(
               "w naszym klasztorze",
-              style: Theme.of(context).textTheme.headline2,
+              style: Theme.of(context).textTheme.displayMedium,
             ),
           ),
           Container(

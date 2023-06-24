@@ -12,6 +12,7 @@ enum TripPropertyType {
 enum StepType {
   info,
   select,
+  selectList,
   answer,
   end,
 }
@@ -279,7 +280,7 @@ List<TripItem> generateTripItems() {
           type: StepType.info,
           title: "Kto to powiedział?",
           description:
-              'W labiryncie łatwo się zgubić.\n\nPoszukaj drogowskazu ze zdjęcia, a obok niego będzie tabliczka z napisem: „Gdy człowiek nie wie, co zrobić, sumienie mówi mu tylko jedno: szukaj!”\n\nPod tym napisem znajdują się imiona i nazwisko autora. Podaj jego inicjały.',
+              'W labiryncie łatwo się zgubić.\n\nPoszukaj dużego kanienia obok kosodrzewiny ze zdjęcia, a obok niego będzie tabliczka z napisem: „Gdy człowiek nie wie, co zrobić, sumienie mówi mu tylko jedno: szukaj!”\n\nPod tym napisem znajdują się imiona i nazwisko autora. Podaj jego inicjały.',
           imageAsset: "assets/images/trip01/trip01_11.jpg",
           previousStep: 13,
           nextStep: 15,
@@ -828,19 +829,19 @@ List<TripItem> generateTripItems() {
       distance: "0,3",
       rating: "4,5",
       description: "Wejdź do klasztornego labiryntu i odkrywaj mądrości starożytnych filozofów.",
-      imageAsset: "assets/images/trip_03.png",
+      imageAsset: "assets/images/trip_03.jpg",
       enabled: true,
-      countPoints: false,
+      countPoints: true,
       stepList: <StepItem>[
         StepItem(
-          imageAsset: "assets/images/trip_03.png",
+          imageAsset: "assets/images/trip_03.jpg",
           title: "Wejście do labiryntu",
           description:
               'Labirynt to miejsce, do którego łatwo wejść, ale trudniej wyjść. Jeśli jednak jesteś tu po raz pierwszy, możesz mieć trudności z odnalezieniem również wejścia.\n\nWarto więc skorzystać z mapki, która jest częścią tej aplikacji. Pomoże Ci ona znaleźć to miejsce nieopodal altanki filozofów.\n\nZapraszamy do podróży!',
           nextStep: 1,
         ),
         StepItem(
-          imageAsset: "assets/images/trip_03.png",
+          imageAsset: "assets/images/trip_03.jpg",
           title: "Ogród Filozofów",
           description:
               'Filozofia to nauka, która przybiera tyle odcieni, ile jest osób ją uprawiających. Zawsze pozostaje jednak tym, na co wskazuje jej grecka nazwa - phileo-sophia, czyli umiłowanie mądrości.\n\nJest ona „przygodą” w poszukiwaniu prawdy, która pociągnęła i zafascynowała wielu ludzi. Nieliczni z nich wspominani są na tych stronicach.\n\nNie jest ona jednak „przygodą” dla wybranych - każdy z nas może stawiać sobie pytania filozoficzne, dociekać tego, co leży u podstaw postrzeganej przez nas rzeczywistości. Przed każdym człowiekiem uczciwie poszukującym prawdy otwiera się droga do poznania siebie, świata i Boga.\n\nŚcieżek wiodących przez filozofię jest wiele. Nie zniechęcaj się, Drogi Przyjacielu, ich różnorodnością, ale otwórz się na głos mądrości, przemawiający przez każdą z nich.',
@@ -851,12 +852,12 @@ List<TripItem> generateTripItems() {
           imageAsset: "assets/images/trip03/trip03_mapa.png",
           title: "Legenda",
           description:
-              'Ogród założony został na bazie labiryntu z krzewów cisa pospolitego.\n\nZaprojektowano 14 placów, z których każdy poświęcony jest jednemu z filozofów:\n\n  1. Sokrates\n  2. Platon\n  3. Arystoteles\n  4. Augustyn z Hippony\n  5. Tomasz z Akwinu\n  6. Kartezjusz\n  7. Immanuel Kant\n  8. Gottfried Wilhelm Leibniz\n  9. Georg Wilhelm Friedrich Hegel\n 10. Søren Kierkegaard\n 11. Józef Stanisław Tischner\n 12. Jan Paweł II (Karol Wojtyła)\n 13. Leszek Kołakowski\n 14. Tadeusz Styczeń',
+              'Ogród założony został na bazie labiryntu z krzewów cisa pospolitego.\n\nZaprojektowano 14 placów, z których każdy poświęcony jest jednemu z filozofów.\n\nPoznasz ich wszystkich po drodze.',
           previousStep: 1,
           nextStep: 3,
         ),
         StepItem(
-          imageAsset: "assets/images/trip03/trip03_mapa.png",
+          imageAsset: "assets/images/trip03/trip03_01.jpg",
           caption: '„Poznaj samego siebie, a stanie przed tobą otworem cały świat”\n - Sokrates (469-399 r. p.n.e.)',
           title: "1. Sokrates",
           description:
@@ -865,139 +866,556 @@ List<TripItem> generateTripItems() {
           nextStep: 4,
         ),
         StepItem(
+          type: StepType.info,
+          title: "Pytanie Sokratesa",
+          description:
+              'Jaką grupę krytykowałem z powodu pobierania pieniędzy za nauczanie oraz za relatywizowanie prawdy i moralności?”',
+          imageAsset: "assets/images/trip03/trip03_01a.png",
+          previousStep: 3,
+          nextStep: 5,
+        ),
+        StepItem(
+          type: StepType.selectList,
+          selection: [
+            SelectionItem(text: "Stoików", stepLink: 6),
+            SelectionItem(text: "Sofistów", stepLink: 6),
+            SelectionItem(text: "Hedonistów", stepLink: 6),
+            SelectionItem(text: "Sceptyków", stepLink: 6),
+          ],
+          correctSelection: 1,
+          imageAsset: "assets/images/trip03/trip03_01a.png",
+          previousStep: 4,
+        ),
+        StepItem(
+          type: StepType.answer,
+          title: "Odpowiedź Sokratesa",
+          correctSelection: 1,
+          correctAnswer:
+              "Gratuluję! Rozwiązałeś pierwszą zagadkę.\n\nŻyczę powodzenia na dalszej drodze. Szukaj placu nr 2.",
+          incorrectAnswer:
+              "Niestety! To nie jest prawidłowa odpowiedź.\n\nChodziło o Sofistów.\n\nŻyczę powodzenia na dalszej drodze. Szukaj placu nr 2.",
           imageAsset: "assets/images/trip03/trip03_mapa.png",
+          nextStep: 7,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip03/trip03_02.jpg",
           caption:
               '„Myśleć to co prawdziwe, czuć to co piękne i kochać co dobre - w tym cel rozumnego życia”\n - Platon (427-347 r. p.n.e.)',
           title: "2. Platon",
           description:
               'Pochodzący z arystokracji Platon, uczeń Sokratesa, był bardzo płodnym i przenikliwym umysłem. W „Dialogach” spisał swoje poglądy - uważał, że istnieje odrębny „świat idei”, w którym idee „człowieka”, „dobra”, „światła” istnieją w sposób doskonały. Konkretni ludzie, konkretne przykłady dobra itp. są tylko cieniami w porównaniu z pięknem doskonałych idei. Dusza ludzka przypomina sobie te idee, gdyż kiedyś, nie będąc uwięziona w ciele, oglądała je „na własne oczy”.\n\nPlacyk wybrukowany zielonymi kamieniami. Zieleń to symbol nadziei, błogostanu, dobroci.',
-          previousStep: 3,
-          nextStep: 5,
+          nextStep: 8,
         ),
         StepItem(
+          type: StepType.info,
+          title: "Pytanie Platona",
+          description: 'Czy wiesz jak nazywała się moja szkoła?',
+          imageAsset: "assets/images/trip03/trip03_02a.png",
+          previousStep: 7,
+          nextStep: 9,
+        ),
+        StepItem(
+          type: StepType.selectList,
+          selection: [
+            SelectionItem(text: "Liceum", stepLink: 10),
+            SelectionItem(text: "Gimnazjum", stepLink: 10),
+            SelectionItem(text: "Akademia", stepLink: 10),
+            SelectionItem(text: "Uniwersytet", stepLink: 10),
+          ],
+          correctSelection: 2,
+          imageAsset: "assets/images/trip03/trip03_02a.png",
+          previousStep: 8,
+        ),
+        StepItem(
+          type: StepType.answer,
+          title: "Odpowiedź Platona",
+          correctSelection: 2,
+          correctAnswer: "Wspaniale! Widzę, że znasz się na rzeczy.\n\nRuszaj dalej do placu nr 3.",
+          incorrectAnswer: "Niestety nie. Moja szkoła to Akademia.\n\nRuszaj dalej do placu nr 3.",
           imageAsset: "assets/images/trip03/trip03_mapa.png",
+          nextStep: 11,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip03/trip03_03.jpg",
           caption: '„U początku filozofii stoi - zdziwienie”\n - Arystoteles (384-322 r. p.n.e.)',
           title: "3. Arystoteles",
           description:
               'Uczeń Akademii Platona. Przyrodnik i lekarz, nauczyciel Aleksandra Wielkiego. Dokonał podziału nauk na praktyczne i teoretyczne. W poznawaniu świata uznawał za pierwszorzędny czynnik empiryczny - zmysłowy, który jednak musi być poddany rozumowaniu. Wyodrębnił z filozofii logikę, jako „organon” - narzędzie jej służące. Na gruncie tzw. filozofii pierwszej, tj. metafizyki, dowodził m.in. istnienie Boga - Absolutu. Człowieka uważał za jedność duszy i ciała, nie zaś jak jego nauczyciel, za duszę uwięzioną w ciele.\n\nNa placyku znajduje się studnia, a obok niej rośnie grusza wierzbolistna (Pyrus salicifolia Pall.) przypominająca swoim wyglądem bardziej wierzbę niż gruszę. Drzewo pochyla się nad studnią jakby chciało zobaczyć, co kryje się w jej wnętrzu i niejako dziwi się, widząc na dnie studni bryły z zielonego szkła zamiast wody. Z owego „zdziwienia” rodzi owoce - „gruszki na wierzbie”.',
-          previousStep: 4,
-          nextStep: 6,
+          nextStep: 12,
         ),
         StepItem(
+          type: StepType.info,
+          title: "Pytanie Arystotelesa",
+          description: 'Czy domyślasz się, które określenie nie ma związku z moją myślą filozoficzną?',
+          imageAsset: "assets/images/trip03/trip03_03a.png",
+          previousStep: 11,
+          nextStep: 13,
+        ),
+        StepItem(
+          type: StepType.selectList,
+          selection: [
+            SelectionItem(text: "czysta tablica", stepLink: 14),
+            SelectionItem(text: "złoty środek", stepLink: 14),
+            SelectionItem(text: "materia i forma", stepLink: 14),
+            SelectionItem(text: "myślę, więc jestem", stepLink: 14),
+          ],
+          correctSelection: 3,
+          imageAsset: "assets/images/trip03/trip03_03a.png",
+          previousStep: 12,
+        ),
+        StepItem(
+          type: StepType.answer,
+          title: "Odpowiedź Arystotelesa",
+          correctSelection: 3,
+          correctAnswer:
+              "Całkiem nieźle! Masz zadatki na filozofa.\n\nNie zatrzymuj się jednak. Idź dalej do placu nr 4.",
+          incorrectAnswer:
+              'Prawie dobrze. Obcą ideą było: „myślę, więc jestem”.\n\nNie zatrzymuj się. Idź dalej do placu nr 4.',
           imageAsset: "assets/images/trip03/trip03_mapa.png",
+          nextStep: 15,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip03/trip03_04.jpg",
           caption: '„Kochaj i rób co chcesz”\n - Augustyn z Hippony (354-430 r.)',
           title: "4. Augustyn z Hippony",
           description:
               'Urodzony w Tagaście w Afryce Północnej, z początku zwolennik herezji manicheizmu, następnie, po nawróceniu, biskup Hippony. W swej filozofii pierwszeństwo przyznawał poznaniu siebie samego oraz Boga. Prawdami, które poznaje się najpewniej są, według niego, prawdy wieczne - podobne do platońskich idei, lecz zawarte w umyśle Boga. Poznanie ich możliwe jest tylko dzięki iluminacji - oświeceniu przez łaskę Bożą. Bóg jest Stwórcą całego świata, dlatego stworzony świat jest dobry. Augustyn powiada - „Bóg nie stworzył zła”.\n\nNa placyku uwagę przyciąga rosnący krzew róży. Czerwona róża jest powszechnie uznawana za symbol prawdziwej miłości. Prawdziwa miłość zawsze afirmuje i nigdy nie krzywdzi.',
-          previousStep: 5,
-          nextStep: 7,
+          nextStep: 16,
         ),
         StepItem(
+          type: StepType.info,
+          title: "Pytanie Augustyna",
+          description: 'Jak myślisz, który ze starożytnych filozofów miał na mnie największy wpływ?',
+          imageAsset: "assets/images/trip03/trip03_04a.png",
+          previousStep: 15,
+          nextStep: 17,
+        ),
+        StepItem(
+          type: StepType.selectList,
+          selection: [
+            SelectionItem(text: "Platon", stepLink: 18),
+            SelectionItem(text: "Arystoteles", stepLink: 18),
+            SelectionItem(text: "Pitagoras", stepLink: 18),
+            SelectionItem(text: "Epikur", stepLink: 18),
+          ],
+          correctSelection: 0,
+          imageAsset: "assets/images/trip03/trip03_04a.png",
+          previousStep: 16,
+        ),
+        StepItem(
+          type: StepType.answer,
+          title: "Odpowiedź Augustyna",
+          correctSelection: 0,
+          correctAnswer: "Dobrze! Wybrałeś właściwego filozofa.\n\nCzas na kolejne wyzwanie przy placu nr 5.",
+          incorrectAnswer:
+              'Nie tego miałem na myśli. Największym autorytetem był dla mnie Platon.\n\nCzas na kolejne wyzwanie przy placu nr 5.',
           imageAsset: "assets/images/trip03/trip03_mapa.png",
+          nextStep: 19,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip03/trip03_05.jpg",
           caption:
               '„Człowiek nie jest duszą używającą ciała, lecz kompozycją duszy i ciała”\n - Tomasz z Akwinu (1225-1274 r.)',
           title: "5. Tomasz z Akwinu",
           description:
               'Urodzony we włoskiej rodzinie arystokratycznej, studiował w klasztorze Monte Cassino, zaś w 1243 roku został dominikaninem, wybitnym pisarzem filozoficznym (Summa contra gentiles) i teologicznym (Summa theologiae). Uważał, że filozofia i teologia nie są sobie przeciwne, lecz mogą się uzupełniać. On dokonał przystosowania myśli Arystotelesa do wymogów średniowiecznej filozofii, wzbogacając tę myśl o zagadnienie „istnienia”. Dowodził istnienia Boga na wiele sposobów (słynnych pięć dróg św. Tomasza). Mówił, że istotą Boga jest istnienie.\n\nPlacyk wybrukowany na wzór szachownicy z czarnych i czerwonych kamyków. Szachownicę tę oplata roślina wykonana z białych kamyków symbolizująca ludzką duszę.',
-          previousStep: 6,
-          nextStep: 8,
+          nextStep: 20,
         ),
         StepItem(
+          type: StepType.info,
+          title: "Pytanie Tomasza",
+          description:
+              'Czy wiesz która z moich pięciu dróg poznania Boga odwołuje się do konieczności istnienia przyczyny celowej?',
+          imageAsset: "assets/images/trip03/trip03_05a.png",
+          previousStep: 19,
+          nextStep: 21,
+        ),
+        StepItem(
+          type: StepType.selectList,
+          selection: [
+            SelectionItem(text: "trzecia", stepLink: 22),
+            SelectionItem(text: "pierwsza", stepLink: 22),
+            SelectionItem(text: "czwarta", stepLink: 22),
+            SelectionItem(text: "druga", stepLink: 22),
+          ],
+          correctSelection: 0,
+          imageAsset: "assets/images/trip03/trip03_05a.png",
+          previousStep: 20,
+        ),
+        StepItem(
+          type: StepType.answer,
+          title: "Odpowiedź Tomasza",
+          correctSelection: 0,
+          correctAnswer:
+              "Tak jest! W trzeciej drodze odwołuję się do przyczyny celowej.\n\nZapraszam do dalszej drogi do placu nr 6.",
+          incorrectAnswer:
+              'Niestety. W trzeciej drodze odwołuję się do przyczyny celowej.\n\nZapraszam do dalszej drogi do placu nr 6.',
           imageAsset: "assets/images/trip03/trip03_mapa.png",
+          nextStep: 23,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip03/trip03_06.jpg",
           caption: '„Myślę, więc jestem”\n - Kartezjusz (1596-1650 r.)',
           title: "6. Kartezjusz",
           description:
               'Wychowanek szkół jezuickich, uczony podróżnik i obserwator. Rozpoczął swoisty „przewrót kopernikański” w filozofii. Zawiedziony dotychczasową wiedzą, chciał uzyskać wiedzę jasną i wyraźną - nieuwarunkowaną wcześniejszymi poglądami. W tym celu wybrał drogę metodycznego sceptycyzmu - wątpił we wszystko, szukając takiej prawdy, w którą nie można zwątpić. Odnalazł ją w słynnym „cogito, ergo sum” - myślę, więc jestem. Od tej prawdy wychodząc, starał się skonstruować filozofię nieomylną na wzór matematyki.\n\nNa placyku wybrukowanym granitową kostką usytuowany jest sześcian a na nim kula. Sześcian to symbol symetrii, równowagi, stałości, harmonii. Kula zaś jest symbolem prawidłowości, piękna, doskonałości. Granitowa kostka brukowa, symbolizująca myśli, tworzy kręgi począwszy od punktu „zero”, który znajduje się pod figurami geometrycznymi dającymi niejako początek myślenia.',
-          previousStep: 7,
-          nextStep: 9,
+          nextStep: 24,
         ),
         StepItem(
+          type: StepType.info,
+          title: "Pytanie Kartezjusza",
+          description: 'Powątpiewam o wszystkim, ale w co nigdy nie zwątpię?',
+          imageAsset: "assets/images/trip03/trip03_06a.png",
+          previousStep: 23,
+          nextStep: 25,
+        ),
+        StepItem(
+          type: StepType.selectList,
+          selection: [
+            SelectionItem(text: "w materię", stepLink: 26),
+            SelectionItem(text: "w Boga", stepLink: 26),
+            SelectionItem(text: "w miłość", stepLink: 26),
+            SelectionItem(text: "w myślenie", stepLink: 26),
+          ],
+          correctSelection: 3,
+          imageAsset: "assets/images/trip03/trip03_06a.png",
+          previousStep: 24,
+        ),
+        StepItem(
+          type: StepType.answer,
+          title: "Odpowiedź Kartezjusza",
+          correctSelection: 3,
+          correctAnswer: "Oczywiście! Myślę, więc jestem.\n\nMasz ochotę na więcej? Czeka na Ciebie plac nr 7.",
+          incorrectAnswer: 'Jednak nie. Myślę, więc jestem.\n\nMasz ochotę na więcej? Czeka na Ciebie plac nr 7.',
           imageAsset: "assets/images/trip03/trip03_mapa.png",
+          nextStep: 27,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip03/trip03_07.jpg",
           caption:
               '„Niebo gwiaździste nade mną i prawo moralne we mnie. Są to dla mnie dowody, że jest Bóg nade mną i Bóg we mnie”\n - Immanuel Kant (1724-1804 r.)',
           title: "7. Immanuel Kant",
           description:
-              'Urodzony w Królewcu (obecnie Kaliningrad), tam przeżył całe swe życie. Dopiero w późniejszym okresie życia wygłosił nową filozofię tzw. krytyczną. Doprowadziła ona do końca „przewrót kopernikański” Kartezjusza. Kant twierdził, że ludzie w poznawaniu świata nie poznają tak naprawdę rzeczy „samych w sobie”, ale widzą je tak, jak „każe” je im widzieć ich umysł. W swej etyce Kant wypracował tzw. imperatyw kategoryczny - dostępną dla każdego zasadę postępowania, nakazującą czynić to, co chciałoby się, aby i inni nam czynili.\n\nBruk tego placyku przypomina ciemną galaktykę z jasnymi gwiazdami, które ją rozświetlają. ',
-          previousStep: 8,
-          nextStep: 10,
+              'Urodzony w Królewcu, tam przeżył całe swe życie. Dopiero w późniejszym okresie życia wygłosił nową filozofię tzw. krytyczną. Doprowadziła ona do końca „przewrót kopernikański” Kartezjusza. Kant twierdził, że ludzie w poznawaniu świata nie poznają tak naprawdę rzeczy „samych w sobie”, ale widzą je tak, jak „każe” je im widzieć ich umysł. W swej etyce Kant wypracował tzw. imperatyw kategoryczny - dostępną dla każdego zasadę postępowania, nakazującą czynić to, co chciałoby się, aby i inni nam czynili.\n\nBruk tego placyku przypomina ciemną galaktykę z jasnymi gwiazdami, które ją rozświetlają. ',
+          nextStep: 28,
         ),
         StepItem(
+          type: StepType.info,
+          title: "Pytanie Kanta",
+          description:
+              'Uzupełnij brakujące słowo w moim pierwszym imperatywie kategorycznym: „Postępuj tylko według takiej maksymy, dzięki której zarazem możesz chcieć, żeby stała się powszechnym ...”',
+          imageAsset: "assets/images/trip03/trip03_07a.png",
+          previousStep: 27,
+          nextStep: 29,
+        ),
+        StepItem(
+          type: StepType.selectList,
+          selection: [
+            SelectionItem(text: "prawem", stepLink: 30),
+            SelectionItem(text: "przywilejem", stepLink: 30),
+            SelectionItem(text: "zwyczajem", stepLink: 30),
+            SelectionItem(text: "dogmatem", stepLink: 30),
+          ],
+          correctSelection: 0,
+          imageAsset: "assets/images/trip03/trip03_07a.png",
+          previousStep: 28,
+        ),
+        StepItem(
+          type: StepType.answer,
+          title: "Odpowiedź Kanta",
+          correctSelection: 0,
+          correctAnswer: "Niesamowite! Myślimy podobnie.\n\nNie zatrzymuj się. Szukaj placu nr 8.",
+          incorrectAnswer: 'To było trudne. Chodziło o prawo.\n\nNie zatrzymuj się. Szukaj placu nr 8.',
           imageAsset: "assets/images/trip03/trip03_mapa.png",
+          nextStep: 31,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip03/trip03_08.jpg",
           caption:
               '„Gdyby ten świat nie był najdoskonalszy z możliwych, Bóg by go nie stworzył”\n - Gottfried Wilhelm Leibniz (1646-1716 r.)',
           title: "8. Gottfried Wilhelm Leibniz",
           description:
               'Powiedziano o nim „ostatni człowiek na świecie, który wiedział wszystko”. Wszechstronny umysł, obeznany z polityką Europy, poświęcił się zagadnieniom związanym z Bogiem i światem. Bóg według niego stworzył ten świat i już u jego zarania ustanowił w nim „zaprogramowaną harmonię” - łac. harmonia praestabilita - miała być to odpowiedź na problem istnienia zła. Świat według Leibniza składa się z monad - podstawowego tworzywa rzeczywistości, których wielość i różnorodność odpowiedzialna jest za różnorodność, którą widzimy w świecie.\n\nPlacyk wybrukowany na wzór symetrycznych kręgów rozchodzących się z jednego punktu. Zataczane kręgi ułożone są z różnorodnej kostki brukowej począwszy od tej o najmniejszych wymiarach i najjaśniejszych kolorach do coraz większych i ciemniejszych. Całość sprawia wrażenie przemyślanego i dokładnie zaplanowanego dzieła.',
-          previousStep: 9,
-          nextStep: 11,
+          nextStep: 32,
         ),
         StepItem(
+          type: StepType.info,
+          title: "Pytanie Leibniza",
+          description: 'Co według mnie stanowi najbardziej podstawowy i niepodzielny budulec świata?',
+          imageAsset: "assets/images/trip03/trip03_08a.png",
+          previousStep: 31,
+          nextStep: 33,
+        ),
+        StepItem(
+          type: StepType.selectList,
+          selection: [
+            SelectionItem(text: "atom", stepLink: 34),
+            SelectionItem(text: "monada", stepLink: 34),
+            SelectionItem(text: "idea", stepLink: 34),
+            SelectionItem(text: "logos", stepLink: 34),
+          ],
+          correctSelection: 1,
+          imageAsset: "assets/images/trip03/trip03_08a.png",
+          previousStep: 32,
+        ),
+        StepItem(
+          type: StepType.answer,
+          title: "Odpowiedź Leibniza",
+          correctSelection: 1,
+          correctAnswer: "Niebywałe! Jesteś tak mądry jak ja.\n\nZobacz co jest dalej przy placu nr 9.",
+          incorrectAnswer:
+              'Nie trafiłeś. Chodzi o monadę, ale nie przejmuj się. Mało kto jest tak mądry jak ja.\n\nZobacz co jest dalej przy placu nr 9.',
           imageAsset: "assets/images/trip03/trip03_mapa.png",
+          nextStep: 35,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip03/trip03_09.jpg",
           caption:
               '„To co jest wytworzone z formy czystej myśli, a nie mocą autorytetu, tylko to należy do filozofii”\n - Georg Wilhelm Friedrich Hegel (1770-1831 r.)',
           title: "9. Georg Wilhelm Friedrich Hegel",
           description:
               'Filozof ten był myślicielem trudnym w odbiorze - poziom abstrakcji jego myślenia skutecznie aż do dziś uniemożliwia niektórym odbiór jego nauczania. Nie miał on jednak równych sobie w dziedzinie historii dziejów - uważał ją za nieustanny, postępujący na zasadzie ewolucji, rozwój ducha myśli ludzkiej, przejawiającej się w kolejnych etapach. Głównym prawem rozwoju ducha miało być złączenie dwóch różnych skrajności - teza i antyteza, miały razem prowadzić do syntezy - jest to tzw. prawo dialektyki. Rozwinął także problem państwa, jako „boskiej idei istniejącej na ziemi”.\n\nPlacyk wybrukowany granitową kostką, pomiędzy którą wkomponowane są bryły szkła symbolizujące formę czystej myśli.',
-          previousStep: 10,
-          nextStep: 12,
+          nextStep: 36,
         ),
         StepItem(
+          type: StepType.info,
+          title: "Pytanie Hegla",
+          description:
+              'W mojej teorii dziejów i państwa zastanawiałem się nad relacją pomiędzy jednostką i ogółem. Który według ciebie ma przewagę?',
+          imageAsset: "assets/images/trip03/trip03_09a.png",
+          previousStep: 35,
+          nextStep: 37,
+        ),
+        StepItem(
+          type: StepType.selectList,
+          selection: [
+            SelectionItem(text: "oba są równe", stepLink: 38),
+            SelectionItem(text: "jednostka", stepLink: 38),
+            SelectionItem(text: "ogół", stepLink: 38),
+            SelectionItem(text: "są niezależne", stepLink: 38),
+          ],
+          correctSelection: 2,
+          imageAsset: "assets/images/trip03/trip03_09a.png",
+          previousStep: 36,
+        ),
+        StepItem(
+          type: StepType.answer,
+          title: "Odpowiedź Hegla",
+          correctSelection: 2,
+          correctAnswer:
+              "Wielkie umysły myślą podobnie! Nie chcesz być moim asystentem?\n\nNo cóż, możesz iść dalej do placu nr 10.",
+          incorrectAnswer:
+              'Pozwól, że się nie zgodzę. Według mnie ogół ma przewagę nad jednostką.\n\nMożesz iść dalej do placu nr 10.',
           imageAsset: "assets/images/trip03/trip03_mapa.png",
+          nextStep: 39,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip03/trip03_10.jpg",
           caption:
               '„Człowiek jest syntezą nieskończoności i skończoności, doczesności i wieczności, wolności i konieczności, jednym słowem, syntezą”\n - Søren Kierkegaard (1813-1855 r.)',
           title: "10. Søren Kierkegaard",
           description:
               'Nazwany ojcem egzystencjalizmu, kierunku w filozofii, który skupia się nie na oderwanych od życia spekulacjach, ale właśnie na codziennym doświadczeniu człowieka. Nieobca była mu zaduma nad małością i kruchością człowieka wobec Boga. Rozważał zagadnienia związane z religią, np. analizował biblijny zapis o Abrahamie i Izaaku, zastanawiając się nad kwestią zaufania Bogu. Uznał, że życie ludzkie można podzielić na trzy etapy - estetyczny (poszukiwanie przyjemności), etyczny (poszukiwanie dobra) i religijny (uznanie swojej grzeszności i zwrócenie się do Boga).\n\nPlacyk wybrukowany kamieniami o różnych rozmiarach, kształtach i kolorach. Ukazany został w ten sposób symbol pewnej syntezy.',
-          previousStep: 11,
-          nextStep: 13,
+          nextStep: 40,
         ),
         StepItem(
+          type: StepType.info,
+          title: "Pytanie Kierkegaarda",
+          description: 'Uważają mnie powszechnie za twórcę pewnego nurtu filozoficznego. Wiesz może jakiego?',
+          imageAsset: "assets/images/trip03/trip03_10a.png",
+          previousStep: 39,
+          nextStep: 41,
+        ),
+        StepItem(
+          type: StepType.selectList,
+          selection: [
+            SelectionItem(text: "nihilizm", stepLink: 42),
+            SelectionItem(text: "materializm", stepLink: 42),
+            SelectionItem(text: "spirytualizm", stepLink: 42),
+            SelectionItem(text: "egzystencjalizm", stepLink: 42),
+          ],
+          correctSelection: 3,
+          imageAsset: "assets/images/trip03/trip03_10a.png",
+          previousStep: 40,
+        ),
+        StepItem(
+          type: StepType.answer,
+          title: "Odpowiedź Kierkegaarda",
+          correctSelection: 3,
+          correctAnswer:
+              "Właśnie o to chodzi! Będziesz wspaniałym filozofem.\n\nSzukaj mądrości na następnym placu nr 11.",
+          incorrectAnswer:
+              'No cóż, jesteś tylko kruchym człowiekiem, a ja stworzyłem egzystencjalizm.\n\nSzukaj mądrości na następnym placu nr 11.',
           imageAsset: "assets/images/trip03/trip03_mapa.png",
+          nextStep: 43,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip03/trip03_11.jpg",
           caption:
               '„Gdy człowiek nie wie, co zrobić, sumienie mówi mu tylko jedno: szukaj”\n - Józef Stanisław Tischner (1931-2000 r.)',
           title: "11. Józef Stanisław Tischner",
           description:
-              'Znany polski kapłan, filozof, kapelan Związku Podhalan, kawaler Orderu Orła Białego. W swojej filozofii, którą określił mianem „filozofii dramatu” zawarł szczególną cechę charakterystyczną - chciał patrzeć na człowieka nie poprzez pryzmat założeń systemu myśli, ale niemalże jako na aktora, grającego na scenie życia swój największy dramat. Stąd też wiele tematów poruszanych przez Tischnera miało związek z życiem codziennym - zastanawiał się nad nowym ładem społecznym. Wskazywał na „dialog” - jako podstawową zasadę spotkania z drugim człowiekiem.\n\nPlacyk swym układem przypomina wybrukowany górski szlak, przy którym rośnie kosodrzewina i znajduje się symboliczny drogowskaz pomagający odszukać drogę zagubionym. ',
-          previousStep: 12,
-          nextStep: 14,
+              'Znany polski kapłan, filozof, kapelan Związku Podhalan, kawaler Orderu Orła Białego. W swojej filozofii, którą określił mianem „filozofii dramatu” zawarł szczególną cechę charakterystyczną - chciał patrzeć na człowieka nie poprzez pryzmat założeń systemu myśli, ale niemalże jako na aktora, grającego na scenie życia swój największy dramat. Stąd też wiele tematów poruszanych przez Tischnera miało związek z życiem codziennym - zastanawiał się nad nowym ładem społecznym. Wskazywał na „dialog” - jako podstawową zasadę spotkania z drugim człowiekiem.\n\nPlacyk swym układem przypomina wybrukowany górski szlak, przy którym rośnie kosodrzewina i znajduje się duży kamień pomagający odszukać drogę zagubionym. ',
+          nextStep: 44,
         ),
         StepItem(
+          type: StepType.info,
+          title: "Pytanie Tischnera",
+          description:
+              'W mojej filozofii dramatu rozwinąłem jeden z ważnych nurtów filozoficznych. Mam nadzieję, że wiesz jaki?',
+          imageAsset: "assets/images/trip03/trip03_11a.png",
+          previousStep: 43,
+          nextStep: 45,
+        ),
+        StepItem(
+          type: StepType.selectList,
+          selection: [
+            SelectionItem(text: "fenomenologia", stepLink: 46),
+            SelectionItem(text: "filozofia dialogu", stepLink: 46),
+            SelectionItem(text: "personalizm", stepLink: 46),
+            SelectionItem(text: "filozofia procesu", stepLink: 46),
+          ],
+          correctSelection: 1,
+          imageAsset: "assets/images/trip03/trip03_11a.png",
+          previousStep: 44,
+        ),
+        StepItem(
+          type: StepType.answer,
+          title: "Odpowiedź Tischnera",
+          correctSelection: 1,
+          correctAnswer:
+              "Brawo! Jesteś bystrym myślicielem! Widzę, że ciebie też interesuje dialog.\n\nPolecam więc kolejny plac nr 12.",
+          incorrectAnswer: 'Każdy może się pomylić. Warto jednak szukać i pytać.\n\nPolecam kolejny plac nr 12.',
           imageAsset: "assets/images/trip03/trip03_mapa.png",
+          nextStep: 47,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip03/trip03_12.jpg",
           caption:
               '„Wczoraj do ciebie nie należy. Jutro niepewne... Tylko dziś jest twoje”\n - Jan Paweł II (Karol Wojtyła) (1920-2005 r.)',
           title: "12. Jan Paweł II (Karol Wojtyła)",
           description:
-              'Karol Wojtyła jako filozof dał się poznać jako przedstawiciel nurtu zwanego personalizmem. Dodatkowo w jego myśli da się odczytać wpływ myśli św. Tomasza z Akwinu. Personalizm, głoszony przez niego stawia człowieka i jego godność jako osoby za podstawę wszelkiej oceny moralnej. Człowiek najpełniej wyraża się w swoim świadomym i wolnym czynie (stąd tytuł znaczącej książki Wojtyły „Osoba i czyn”). Filozoficzna fascynacja człowiekiem jako posiadającym niezwykłą wartość, wpłynęła także w znacznym stopniu na teologiczne poglądy Karola Wojtyły.\n\nPlacyk wybrukowany kamieniami w trzech kolorach: czarny - symbolizujący przeszłość, biały - teraźniejszość, zielony - przyszłość. Na placyku po stronie zielonego bruku (przyszłości) znajduje się taboret (tron). Jest on stosunkowo wysoki, dlatego stojąc przy nim można poczuć się jak dziecko stojące przy taborecie dla osoby dorosłej. Aby usiąść na nim, trzeba się wspiąć albo podciągnąć. Jest to symboliczne ukazanie, iż do myśli Karola Wojtyły trzeba nam „dorastać”, by ją w przyszłości móc w pełni zrozumieć.',
-          previousStep: 13,
-          nextStep: 15,
+              'Karol Wojtyła jako filozof dał się poznać jako przedstawiciel nurtu zwanego personalizmem. Dodatkowo w jego myśli da się odczytać wpływ myśli św. Tomasza z Akwinu. Personalizm, głoszony przez niego, stawia człowieka i jego godność jako osoby za podstawę wszelkiej oceny moralnej. Człowiek najpełniej wyraża się w swoim świadomym i wolnym czynie (stąd tytuł znaczącej książki Wojtyły „Osoba i czyn”). Filozoficzna fascynacja człowiekiem jako posiadającym niezwykłą wartość, wpłynęła także w znacznym stopniu na teologiczne poglądy Karola Wojtyły.\n\nPlacyk wybrukowany kamieniami w trzech kolorach: czarny - symbolizujący przeszłość, biały - teraźniejszość, zielony - przyszłość. Na placyku po stronie zielonego bruku (przyszłości) znajduje się taboret (tron). Jest on stosunkowo wysoki, dlatego stojąc przy nim można poczuć się jak dziecko stojące przy taborecie dla osoby dorosłej. Aby usiąść na nim, trzeba się wspiąć albo podciągnąć. Jest to symboliczne ukazanie, iż do myśli Karola Wojtyły trzeba nam „dorastać”, by ją w przyszłości móc w pełni zrozumieć.',
+          nextStep: 48,
         ),
         StepItem(
+          type: StepType.info,
+          title: "Pytanie Wojtyły",
+          description:
+              'Zawsze interesowała mnie etyka. Co według ciebie jest podstawowym kryterium oceny moralnej czynu?',
+          imageAsset: "assets/images/trip03/trip03_12a.png",
+          previousStep: 47,
+          nextStep: 49,
+        ),
+        StepItem(
+          type: StepType.selectList,
+          selection: [
+            SelectionItem(text: "szczęście", stepLink: 50),
+            SelectionItem(text: "nakaz autorytetu", stepLink: 50),
+            SelectionItem(text: "godność osoby", stepLink: 50),
+            SelectionItem(text: "korzyść", stepLink: 50),
+          ],
+          correctSelection: 2,
+          imageAsset: "assets/images/trip03/trip03_12a.png",
+          previousStep: 48,
+        ),
+        StepItem(
+          type: StepType.answer,
+          title: "Odpowiedź Wojtyły",
+          correctSelection: 2,
+          correctAnswer:
+              "Jak też tak myślę! Godność osoby stoi u podstaw etyki.\n\nPowodzenia na dalszej drodze do placu nr 13.",
+          incorrectAnswer:
+              'Wielu by się z tobą zgodziło, ale ja jednak wybieram godność osoby.\n\nPowodzenia na dalszej drodze do placu nr 13.',
           imageAsset: "assets/images/trip03/trip03_mapa.png",
+          nextStep: 51,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip03/trip03_13.jpg",
           caption:
               '„Własną śmiercią można własne życie tylko potwierdzić, ale zaprzeczyć mu nie można, ponieważ nasza śmierć czyni dopiero nasze życie ostatecznie nieodmiennym”\n - Leszek Kołakowski (1927-2009 r.)',
           title: "13. Leszek Kołakowski",
           description:
               'W pierwszym okresie swojej działalności (mniej więcej do 1966 roku) pisał dzieła o charakterze marksistowskim, wspierając tym samym ideologię władz PRL-u. Dopiero później zaczął podejmować tematy związane z szeroko pojętą myślą chrześcijańską i historią filozofii, jednocześnie poddając krytyce ideologię marksistowską. Z tego powodu musiał emigrować z kraju - osiadł w Oksfordzie, gdzie mieszkał aż do śmierci.\n\nNa szaro-czarnym bruku tego placyku znajdują się części połamanych zabytkowych kolumn kamiennych symbolizujących nieuchronność śmierci.',
-          previousStep: 14,
-          nextStep: 16,
+          nextStep: 52,
         ),
         StepItem(
+          type: StepType.info,
+          title: "Pytanie Kołakowskiego",
+          description: 'Jakim nurtem filozoficznym się najbardziej rozczarowałem?',
+          imageAsset: "assets/images/trip03/trip03_13a.png",
+          previousStep: 51,
+          nextStep: 53,
+        ),
+        StepItem(
+          type: StepType.selectList,
+          selection: [
+            SelectionItem(text: "marksizmem", stepLink: 54),
+            SelectionItem(text: "tomizmem", stepLink: 54),
+            SelectionItem(text: "liberalizmem", stepLink: 54),
+            SelectionItem(text: "relatywizmem", stepLink: 54),
+          ],
+          correctSelection: 0,
+          imageAsset: "assets/images/trip03/trip03_13a.png",
+          previousStep: 52,
+        ),
+        StepItem(
+          type: StepType.answer,
+          title: "Odpowiedź Kołakowskiego",
+          correctSelection: 0,
+          correctAnswer:
+              "Rzeczywiście! Stałem się zagorzałym krytykiem marksizmu.\n\nDocierasz pomału do końca. Kieruj się do placu nr 14.",
+          incorrectAnswer:
+              'Nie przejmuj się. Mnie też zdażyło się bardzo pomylić. Chodziło o marksizm.\n\nDocierasz pomału do końca. Kieruj się do placu nr 14.',
           imageAsset: "assets/images/trip03/trip03_mapa.png",
+          nextStep: 55,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip03/trip03_14.jpg",
           caption:
               '„Miłować prawdę - wszelką i we wszystkim - to dla człowieka być samym sobą i ocalić samego siebie”\n - Tadeusz Styczeń (1931-2010 r.)',
           title: "14. Tadeusz Styczeń",
           description:
               'Salwatorianin, etyk i wieloletni przyjaciel Karola Wojtyły oraz jego następca na katedrze Etyki KUL-u, odznaczony Orderem Odrodzenia Polski. Podejmował zagadnienia związane z ludzkim postępowaniem, które według niego powinno zawsze pozostawać wierne prawdzie rozpoznanej przez człowieka - wyjaśniał ten mechanizm m.in. na przykładzie bohaterki antycznego dramatu - Antygony. Innym z podejmowanych przezeń tematów, było usytuowanie etyki wśród wielu różnych dziedzin wiedzy jako dyscypliny naukowej.\n\nPlacyk wybrukowany małymi otoczakami, pośród których znajduje się solidnie osadzony duży głaz. Głaz ten symbolizuje prawdę, która jest jedna, stała i pewna. Tylko życie w prawdzie sprawia, że człowiek staje się prawdziwie wolny („Poznacie prawdę, a prawda was wyzwoli” J 8,32).',
-          previousStep: 15,
-          nextStep: 17,
+          nextStep: 56,
+        ),
+        StepItem(
+          type: StepType.info,
+          title: "Pytanie Stycznia",
+          description: 'Mało osób o tym wie, ale całe życie byłem zakonnikiem? W jakim zgromadzeniu?',
+          imageAsset: "assets/images/trip03/trip03_14a.png",
+          previousStep: 55,
+          nextStep: 57,
+        ),
+        StepItem(
+          type: StepType.selectList,
+          selection: [
+            SelectionItem(text: "Salezjanie", stepLink: 58),
+            SelectionItem(text: "Jezuici", stepLink: 58),
+            SelectionItem(text: "Franciszkanie", stepLink: 58),
+            SelectionItem(text: "Salwatorianie", stepLink: 58),
+          ],
+          correctSelection: 3,
+          imageAsset: "assets/images/trip03/trip03_14a.png",
+          previousStep: 56,
+        ),
+        StepItem(
+          type: StepType.answer,
+          title: "Odpowiedź Stycznia",
+          correctSelection: 3,
+          correctAnswer:
+              "Cieszę się, że zapamiętałeś! Jako salwatorianin przez wiele lat prowadziłem tutaj wykłady dla kleryków.\n\nDo zobaczenia. Dobrze, że jesteś!",
+          incorrectAnswer:
+              'Często się to ludziom myli, ale byłem salwatorianinem i przez wiele lat prowadziłem tutaj wykłady dla kleryków\n\nDo zobaczenia. Dobrze, że jesteś!',
+          imageAsset: "assets/images/trip03/trip03_mapa.png",
+          nextStep: 59,
         ),
         StepItem(
           type: StepType.end,
           title: "Dziękujemy",
           description:
               'To już koniec podróży po ogrodzie filozofów, ale przygoda poszukiwania mądrości trwa przez całe życie.\n\nŻyczymy Ci, Drogi Przyjacielu, aby to spotkanie z filozofami z przeszłości zrodziło w Tobie nowe pytania i zapał do szukania na nie odpowiedzi.',
-          imageAsset: "assets/images/trip_03.png",
-          previousStep: 16,
+          imageAsset: "assets/images/trip_03.jpg",
           nextStep: -1,
         ),
       ],

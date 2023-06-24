@@ -1,11 +1,8 @@
-import 'dart:ui';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:kompas/controller/tripData_controller.dart';
 import 'package:kompas/controller/tripState_controller.dart';
-import 'package:kompas/statics/colors.dart';
+import 'package:kompas/helper/roundedClipPath.dart';
 import 'package:kompas/statics/constants.dart';
 import 'package:kompas/widgets/tripViewStepButtons_widget.dart';
 import 'package:kompas/widgets/tripViewStepSwitch_widget.dart';
@@ -28,31 +25,18 @@ class TripViewStep extends StatelessWidget {
       children: [
         // Padding to avoid status bar works only on physical devices
         SizedBox(
-          height: MediaQueryData.fromWindow(window).padding.top,
+          height: MediaQueryData.fromView(View.of(context)).padding.top,
         ),
         Stack(
           alignment: AlignmentDirectional.topCenter,
           children: [
-            Image.asset(
-              tripDataController
-                  .getStepItem(tripDataSelect: tripDataSelect)
-                  .imageAsset,
-              fit: BoxFit.fill,
-              gaplessPlayback: true, // prevents flicker on switching images
-            ),
-            // Draw a decoration with rounded corners at the bottom of image
-            Positioned(
-              bottom: 0,
-              child: Container(
-                  width: Get.width,
-                  height: Constants.borderRadius,
-                  decoration: BoxDecoration(
-                      color: AppColors.primaryWhite,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(Constants.borderRadius),
-                        topRight: Radius.circular(Constants.borderRadius),
-                      )),
-                  child: SizedBox.shrink()),
+            ClipPath(
+              clipper: RoundedClipPath.up(), // create rounded corners at the bottom of an image
+              child: Image.asset(
+                tripDataController.getStepItem(tripDataSelect: tripDataSelect).imageAsset,
+                fit: BoxFit.fill,
+                gaplessPlayback: true, // prevents flicker on switching images
+              ),
             ),
           ],
         ),
