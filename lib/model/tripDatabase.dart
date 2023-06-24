@@ -280,7 +280,7 @@ List<TripItem> generateTripItems() {
           type: StepType.info,
           title: "Kto to powiedział?",
           description:
-              'W labiryncie łatwo się zgubić.\n\nPoszukaj dużego taboretu ze zdjęcia, a obok niego będzie tabliczka z napisem: „Wczoraj do ciebie nie należy. Jutro niepewne... Tylko dziś jest twoje.”\n\nPod tym napisem znajdują się imiona i nazwisko autora. Podaj jego inicjały.',
+              'W labiryncie łatwo się zgubić.\n\nPoszukaj dużego kanienia obok kosodrzewiny ze zdjęcia, a obok niego będzie tabliczka z napisem: „Gdy człowiek nie wie, co zrobić, sumienie mówi mu tylko jedno: szukaj!”\n\nPod tym napisem znajdują się imiona i nazwisko autora. Podaj jego inicjały.',
           imageAsset: "assets/images/trip01/trip01_11.jpg",
           previousStep: 13,
           nextStep: 15,
@@ -291,7 +291,7 @@ List<TripItem> generateTripItems() {
             SelectionItem(text: "TA", stepLink: 16),
             SelectionItem(text: "TS", stepLink: 16),
             SelectionItem(text: "A", stepLink: 16),
-            SelectionItem(text: "JPII", stepLink: 16),
+            SelectionItem(text: "JST", stepLink: 16),
           ],
           correctSelection: 3,
           imageAsset: "assets/images/trip01/trip01_11.jpg",
@@ -299,12 +299,12 @@ List<TripItem> generateTripItems() {
         ),
         StepItem(
           type: StepType.answer,
-          title: "Jan Paweł II",
+          title: "Józef Stanisław Tischner",
           correctSelection: 3,
           correctAnswer:
-              'Gratuluję! Odkryłeś myśl polskiego papieża i filozofa, którą warto zapamiętać.\n\nCzy jesteś gotowy na kolejne wyzwanie?',
+              'Gratuluję! Odkryłeś myśl sławnego polskiego filozofa, którą warto zapamiętać.\n\nCzy jesteś gotowy na kolejne wyzwanie?',
           incorrectAnswer:
-              'Niestety! To nie jest właściwa odpowiedź. Szukaliśmy myśli polskiego papieża i filozofa - Jana Pawła II, którą warto zapamiętać.\n\nCzy jesteś gotowy na kolejne wyzwanie?',
+              'Niestety! To nie jest właściwa odpowiedź. Szukaliśmy myśli sławnego polskiego filozofa - Józefa Stanisława Tischnera, którą warto zapamiętać.\n\nCzy jesteś gotowy na kolejne wyzwanie?',
           imageAsset: "assets/images/trip01/trip01_12.jpg",
           nextStep: 17,
         ),
