@@ -1424,15 +1424,410 @@ List<TripItem> generateTripItems() {
       uid: "04", // TODO: must fix
       title: "W Zamku",
       subtitle: "dla wszystkich",
-      time: "50",
-      age: "12+",
-      distance: "0,5",
+      time: "30",
+      age: "6+",
+      distance: "0,3",
       rating: "5,0",
-      description: "Wejdź do naszego zamku i odkryj tajemnice dawnych czasów.",
+      description: "Wejdź do naszego zamku i odkryj tajemnice życia zakonnego",
       imageAsset: "assets/images/trip_04.png",
-      enabled: false,
-      countPoints: false,
-      stepList: <StepItem>[],
+      enabled: true,
+      countPoints: true,
+      stepList: <StepItem>[
+        StepItem(
+          imageAsset: "assets/images/trip04/trip04_01.jpg",
+          title: "Zapraszamy do środka",
+          description:
+              'Pałac w Bagnie jest wyjątkowym miejscem. Od wielu lat znajduje się tutaj Wyższe Seminarium Duchowne Salwatorianów. To właśnie tutaj młodzi mężczyźni przygotowują się do życia zakonnego i kapłańskiego.\n\nW tej przygodzi odsłonimy rąbka tajemnicy naszego codziennego życia i pokażemy od środka nasz piękny dom. Jesteś gotowy?',
+          nextStep: 1,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip04/trip04_02.jpg",
+          title: "Furta",
+          description:
+              'U wejścia do zamku znajduje się klasztorna furta. Jest to miejsce, gdzie furtianin załatwia wszystkie ważne sprawy ze światem zewnętrznym.',
+          previousStep: 0,
+          nextStep: 2,
+        ),
+        StepItem(
+          type: StepType.info,
+          title: "Zagadka",
+          description: 'Jak myślisz? Co robi furtianin na co dzień?',
+          imageAsset: "assets/images/trip04/trip04_02.jpg",
+          previousStep: 1,
+          nextStep: 3,
+        ),
+        StepItem(
+          type: StepType.selectList,
+          selection: [
+            SelectionItem(text: "Odbiera telefony", stepLink: 4),
+            SelectionItem(text: "Przyjmuje gości", stepLink: 4),
+            SelectionItem(text: "Sprzedaje bilety", stepLink: 4),
+            SelectionItem(text: "Odbiera pocztę", stepLink: 4),
+          ],
+          correctSelection: 0, // [0,1,3] TODO: implement multiple correct selections
+          imageAsset: "assets/images/trip04/trip04_02.jpg",
+          previousStep: 2,
+        ),
+        StepItem(
+          type: StepType.answer,
+          title: "Odpowiedź",
+          correctSelection: 0, // [0,1,3] TODO: implement multiple correct selections
+          correctAnswer:
+              "Zgadza się! Odwiedzając nasz zamek spotkasz furtianina, który między innymi odbiera telefony, przyjmuje gości i odbiera pocztę.\n\nWłaśnie rozwiązałeś pierwszą zagadkę. Zapraszam do wejścia głębiej.",
+          incorrectAnswer:
+              "Niestety to nie jest poprawna odpowiedź! Nie pobieramy opłat za oprowadzanie, chociaż można złożyć dobrowolną ofiarę.\n\nNie martw się jednak. Zapraszam do wejścia głębiej.",
+          imageAsset: "assets/images/trip04/trip04_02a.jpg", // TODO: implement multiple correct selections
+          nextStep: 5,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip04/trip04_03.jpg",
+          title: "Schody cesarskie",
+          description:
+              'Zaraz za furtą zobaczysz piękne schody cesarskie. Ich historia jest bardzo ciekawa. Możesz ją poznać podczas niedzielnego oprowadzania, gdy odwiedzisz nas osobiście.\n\nSchody cesarskie prowadzą na piętro, które jest zamknięte dla zwiedzających. Postaraj się więc uruchomić swoją wyobraźnię, aby odpowiedzieć na kolejne pytanie.',
+          nextStep: 6,
+        ),
+        StepItem(
+          type: StepType.info,
+          title: "Zagadka",
+          description: 'Jak myślisz, co znajduje się w górnej części zamku?',
+          imageAsset: "assets/images/trip04/trip04_03.jpg",
+          previousStep: 5,
+          nextStep: 7,
+        ),
+        StepItem(
+          type: StepType.selectList,
+          selection: [
+            SelectionItem(text: "Świetlica", stepLink: 8),
+            SelectionItem(text: "Pokoje", stepLink: 8),
+            SelectionItem(text: "Sale wykładowe", stepLink: 8),
+            SelectionItem(text: "Kuchnia", stepLink: 8),
+          ],
+          correctSelection: 1, // [0,1,2]
+          imageAsset: "assets/images/trip04/trip04_03.jpg",
+          previousStep: 6,
+        ),
+        StepItem(
+          type: StepType.answer,
+          title: "Odpowiedź",
+          correctSelection: 1, // [0,1,2]
+          correctAnswer: "Tak jest! Na piętrze znajduje się świetlica, pokoje i sale wykładowe.\n\nRuszamy dalej?",
+          incorrectAnswer:
+              "Niestety nie! Kuchnia zakonna jest na dole. Posługują w niej nasze kochane siostry - Aniela i Daria.\n\nRuszamy dalej?",
+          imageAsset: "assets/images/trip04/trip04_03a.jpg",
+          nextStep: 9,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip04/trip04_04.jpg",
+          title: "Sala wykładowa",
+          description:
+              'Idąc w lewo dojdziemy do sali wykładowej. Klerycy zdobywają tutaj ważną wiedzę, która pomoże im w osobistym rozwoju i przygotuje do przyszłej posługi.',
+          nextStep: 10,
+        ),
+        StepItem(
+          type: StepType.info,
+          title: "Zagadka",
+          description: 'Jak myślisz, czego uczą się klerycy na wykładach?',
+          imageAsset: "assets/images/trip04/trip04_04.jpg",
+          previousStep: 9,
+          nextStep: 11,
+        ),
+        StepItem(
+          type: StepType.selectList,
+          selection: [
+            SelectionItem(text: "Filozofii", stepLink: 12),
+            SelectionItem(text: "Informatyki", stepLink: 12),
+            SelectionItem(text: "Teologii", stepLink: 12),
+            SelectionItem(text: "Psychologii", stepLink: 12),
+          ],
+          correctSelection: 2, // [0,2,3]
+          imageAsset: "assets/images/trip04/trip04_04.jpg",
+          previousStep: 10,
+        ),
+        StepItem(
+          type: StepType.answer,
+          title: "Odpowiedź",
+          correctSelection: 2, // [0,2,3]
+          correctAnswer:
+              "Zgadza się! Przyszli księża muszą mieć szerokie wykształcenie, dlatego pilnie uczą się o Panu Bogu, o człowieku i o świecie.\n\nChodźmy teraz do pomieszczenia obok.",
+          incorrectAnswer:
+              'Niestety! Informatyka nie jest obowiązkowym przedmiotem w seminarium, ale można poznawać sekrety komputerów w wolnym czasie.\n\nChodźmy teraz do pomieszczenia obok.',
+          imageAsset: "assets/images/trip04/trip04_04a.jpg",
+          nextStep: 13,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip04/trip04_05.jpg",
+          title: "Zakrystia",
+          description:
+              'Zaraz obok sali wykładowej jest zakrystia. Obowiązuje tu cisza i skupienie. Jest to miejsce, gdzie przygotowujemy się do nabożeństw i Eucharystii.\n\nZnajduje się tu również wiele ważnych przedmiotów liturgicznych. Ciekawe, czy domyślasz się jakich?',
+          nextStep: 14,
+        ),
+        StepItem(
+          type: StepType.info,
+          title: "Zagadka",
+          description: 'Co znajduje się w zakrystii?',
+          imageAsset: "assets/images/trip04/trip04_05.jpg",
+          previousStep: 13,
+          nextStep: 15,
+        ),
+        StepItem(
+          type: StepType.selectList,
+          selection: [
+            SelectionItem(text: "Stuły i ornaty", stepLink: 16),
+            SelectionItem(text: "Kielich i ampułki", stepLink: 16),
+            SelectionItem(text: "Monstrancja", stepLink: 16),
+            SelectionItem(text: "Dzwonki", stepLink: 16),
+          ],
+          correctSelection: 0, // [0,1,2]
+          imageAsset: "assets/images/trip04/trip04_05.jpg",
+          previousStep: 14,
+        ),
+        StepItem(
+          type: StepType.answer,
+          title: "Odpowiedź",
+          correctSelection: 0, // [0,1,2]
+          correctAnswer:
+              "Znakomicie! W zakrystii znajdują się przeróżne szaty i naczynia liturgiczne. Przechowujemy je tutaj, aby służyły podczas codziennych modlitw i Mszy świętych.\n\nWstąpmy więc teraz do najważniejszego miejsca, czyli do naszej kaplicy.",
+          incorrectAnswer:
+              'A już myślałem, że odgadniesz. Niestety, dzwonki są w kaplicy.\n\nWstąpmy więc teraz do tego najważniejszego miejsca w naszym domu.',
+          imageAsset: "assets/images/trip04/trip04_05a.jpg",
+          nextStep: 17,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip04/trip04_06.jpg",
+          title: "Kaplica",
+          description:
+              'Sercem każdego klasztoru jest kaplica, ponieważ to właśnie tutaj mieszka Pan Jezus w tabernakulum. Bardzo Go kochamy, dlatego często Go odwiedzamy na wspólnej i osobistej modlitwie. Wypraszamy potrzebne łaski, dziękujemy za wszelkie dobro, i przepraszamy za to, co w nas słabe i grzeszne.',
+          nextStep: 18,
+        ),
+        StepItem(
+          type: StepType.info,
+          title: "Zagadka",
+          description: 'W jaki sposób współbracia modlą się najczęściej w kaplicy?',
+          imageAsset: "assets/images/trip04/trip04_06.jpg",
+          previousStep: 17,
+          nextStep: 19,
+        ),
+        StepItem(
+          type: StepType.selectList,
+          selection: [
+            SelectionItem(text: "Eucharystia", stepLink: 20),
+            SelectionItem(text: "Droga Krzyżowa", stepLink: 20),
+            SelectionItem(text: "Brewiarz", stepLink: 20),
+            SelectionItem(text: "Różaniec", stepLink: 20),
+          ],
+          correctSelection: 0, // [0,2,3]
+          imageAsset: "assets/images/trip04/trip04_06.jpg",
+          previousStep: 18,
+        ),
+        StepItem(
+          type: StepType.answer,
+          title: "Odpowiedź",
+          correctSelection: 0, // [0,2,3]
+          correctAnswer:
+              "Wspaniale! Codzienna Eucharystia, modlitwa brewiarzowa i różaniec to nasze ulubione formy modlitwy, choć nie jedyne.\n\nZapraszam do dalszej wędrówki.",
+          incorrectAnswer:
+              'Czasem rzeczywiście wspólnie odprawiamy Drogę Krzyżową w kaplicy, ale tylko podczas Wielkiego Postu. Jeśli pogoda pozwala towarzyszymy również Panu Jezusowi na drodze krzyżowej w naszym parku.\n\nZapraszam do dalszej wędrówki.',
+          imageAsset: "assets/images/trip04/trip04_06a.jpg",
+          nextStep: 21,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip04/trip04_07.jpg",
+          title: "Korytarz kamienny",
+          description:
+              'Korytarz kamienny łączy wszystkie pomieszczenia nowej części zamku. Patrząc w górę można podziwiać przepiękny sufit, a na ścianach tego korytarza znajduje się wiele ciekawych obrazów.',
+          nextStep: 22,
+        ),
+        StepItem(
+          type: StepType.info,
+          title: "Zagadka",
+          description: 'Jakie obrazy można zobaczyć na korytarzu kamiennym?',
+          imageAsset: "assets/images/trip04/trip04_07.jpg",
+          previousStep: 21,
+          nextStep: 23,
+        ),
+        StepItem(
+          type: StepType.selectList,
+          selection: [
+            SelectionItem(text: "Bł. Franciszka Jordana", stepLink: 24),
+            SelectionItem(text: "Ks. Rektora", stepLink: 24),
+            SelectionItem(text: "Ks. Generała", stepLink: 24),
+            SelectionItem(text: "Br. Feliksa Siernego", stepLink: 24),
+          ],
+          correctSelection: 3, // [0,2,3]
+          imageAsset: "assets/images/trip04/trip04_07.jpg",
+          previousStep: 24,
+        ),
+        StepItem(
+          type: StepType.answer,
+          title: "Odpowiedź",
+          correctSelection: 3, // [0,2,3]
+          correctAnswer:
+              "Masz rację! Na korytarzu można zobaczyć obrazy ważnych postaci dla naszego zgromadzenia: bł. Franciszka Jordana - naszego założyciela; brata Feliksa Siernego, który uratował ten dom podczas drugiej wojny światowej; i wszystkich księży pełniących funkcję generała zakonnego aż do dziś.\n\nPrzejdźmy teraz do kolejnego pomieszczenia.",
+          incorrectAnswer:
+              'Niestety nie! Ks. Rektor jest przełożonym naszej wspólnoty zakonnej, ale nie potrzebuje obrazu na ścianie, ponieważ możemy Go widywać na co dzień.\n\nPrzejdźmy teraz do kolejnego pomieszczenia.',
+          imageAsset: "assets/images/trip04/trip04_07a.jpg",
+          nextStep: 25,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip04/trip04_08.jpg",
+          title: "Duża kaplica",
+          description:
+              'Największym pomieszczeniem w naszym zamku jest główna kaplica. Aktualnie jest w remoncie i nie można jej zwiedzać, ale warto chociaż na zdjęciu zobaczyć jak kiedyś wyglądała. Po remoncie nabierze nowego blasku i będzie służyć przez wiele lat.',
+          nextStep: 26,
+        ),
+        StepItem(
+          type: StepType.info,
+          title: "Zagadka",
+          description: 'Jak myślisz, jakiej funkcji nie pełniło to pomieszczenie zanim przybyli tu salwatorianie?',
+          imageAsset: "assets/images/trip04/trip04_08.jpg",
+          previousStep: 25,
+          nextStep: 27,
+        ),
+        StepItem(
+          type: StepType.selectList,
+          selection: [
+            SelectionItem(text: "Sala balowa", stepLink: 28),
+            SelectionItem(text: "Jadalnia", stepLink: 28),
+            SelectionItem(text: "Sala kinowa", stepLink: 28),
+            SelectionItem(text: "Sala gimnastyczna", stepLink: 28),
+          ],
+          correctSelection: 1, // [1,2,3]
+          imageAsset: "assets/images/trip04/trip04_08.jpg",
+          previousStep: 26,
+        ),
+        StepItem(
+          type: StepType.answer,
+          title: "Odpowiedź",
+          correctSelection: 1, // [1,2,3]
+          correctAnswer:
+              "Świetnie! Poprzedni właściciel i budowniczy tej części zamku, pan Georg Kissling, zaprojektował to pomieszczenie jako salę balową.\n\nZobaczmy co kryje się dalej.",
+          incorrectAnswer:
+              'Niestety to niepoprawna odpowiedź! Poprzedni właściciel i budowniczy tej części zamku, pan Georg Kissling, zaprojektował to pomieszczenie właśnie jako salę balową.\n\nZobaczmy co kryje się dalej.',
+          imageAsset: "assets/images/trip04/trip04_08a.jpg",
+          nextStep: 29,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip04/trip04_09.jpg",
+          title: "Rozmównica",
+          description:
+              'Gościnność jest bardzo ważna w życiu zakonnym. Często korzystamy więc z rozmównicy. Jest to pomieszczenie, w którym przyjmujemy naszych gości. Można tutaj porozmawiać, wypić herbatę lub kawę, albo coś zjeść.',
+          nextStep: 30,
+        ),
+        StepItem(
+          type: StepType.info,
+          title: "Zagadka",
+          description: 'Spróbuj odgadnąć, jaki instrument muzyczny nie znajduje się w rozmównicy?',
+          imageAsset: "assets/images/trip04/trip04_09.jpg",
+          previousStep: 29,
+          nextStep: 31,
+        ),
+        StepItem(
+          type: StepType.selectList,
+          selection: [
+            SelectionItem(text: "Fortepian", stepLink: 32),
+            SelectionItem(text: "Pianino", stepLink: 32),
+            SelectionItem(text: "Akordeon", stepLink: 32),
+            SelectionItem(text: "Gitara", stepLink: 32),
+          ],
+          correctSelection: 3, // [1,2,3]
+          imageAsset: "assets/images/trip04/trip04_09.jpg",
+          previousStep: 30,
+        ),
+        StepItem(
+          type: StepType.answer,
+          title: "Odpowiedź",
+          correctSelection: 3, // [1,2,3]
+          correctAnswer:
+              "Bardzo dobrze! W rozmównicy znajduje się fortepian, który służy także klerykom do ćwiczeń. Gra na instrumencie jest wspaniałym sposobem na spędzanie wolnego czasu.\n\nZobaczmy teraz co kryje się w starej części zamku.",
+          incorrectAnswer:
+              'To była trudna zagadka. Niestety nie odgadłeś! W rozmównicy znajduje się fortepian, który służy także klerykom do ćwiczeń. Gra na instrumencie jest wspaniałym sposobem na spędzanie wolnego czasu.\n\nZobaczmy teraz co kryje się w starej części zamku.',
+          imageAsset: "assets/images/trip04/trip04_09a.jpg",
+          nextStep: 33,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip04/trip04_10.jpg",
+          title: "Refektarz",
+          description:
+              'Ważną częścią każdego dnia są posiłki. Spożywamy je razem w refektarzu. Jest to miejsce, gdzie się również modlimy, wzajemnie obsługujemy oraz rozmawiamy. Większość produktów na stole pochodzi z naszego ogrodu. Pracują tam nowicjusze i klerycy, a dyrektorem od bardzo wielu lat jest brat Hieronim.',
+          nextStep: 34,
+        ),
+        StepItem(
+          type: StepType.info,
+          title: "Zagadka",
+          description: 'Jak myślisz, które produkty pochodzą z naszego ogrodu?',
+          imageAsset: "assets/images/trip04/trip04_10.jpg",
+          previousStep: 33,
+          nextStep: 35,
+        ),
+        StepItem(
+          type: StepType.selectList,
+          selection: [
+            SelectionItem(text: "Pomidory", stepLink: 36),
+            SelectionItem(text: "Ogórki", stepLink: 36),
+            SelectionItem(text: "Ziemniaki", stepLink: 36),
+            SelectionItem(text: "Pomarańcze", stepLink: 36),
+          ],
+          correctSelection: 2, // [0,1,2]
+          imageAsset: "assets/images/trip04/trip04_10.jpg",
+          previousStep: 34,
+        ),
+        StepItem(
+          type: StepType.answer,
+          title: "Odpowiedź",
+          correctSelection: 2, // [0,1,2]
+          correctAnswer:
+              "Zgadza się! W klasztornym ogrodzie hodujemy bardzo wiele owoców, warzyw i jarzyn. Są to między innymi pomidory, ogórki i ziemniaki.\n\nCzeka nas jeszcze jedno pomieszczenie do zwiedzenia. Jesteś gotowy?",
+          incorrectAnswer:
+              'Niestety! W klasztornym ogrodzie hodujemy bardzo wiele owoców, warzyw i jarzyn, ale nie ma tam pomarańczy.\n\nCzeka nas jeszcze jedno pomieszczenie do zwiedzenia. Jesteś gotowy?',
+          imageAsset: "assets/images/trip04/trip04_10b.jpg", // TODO: change to a
+          nextStep: 37,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip04/trip04_11.jpg",
+          title: "Sala dębowa",
+          description:
+              'Sala dębowa to najbardziej reprezentatywna część starego zamku. Używamy jej do wielkich uroczystości, takich jak: inauguracja roku akademickiego, śpiewanie kolend przy kominku, lub gościnne wykłady. Znajduje się tu również wiele ciekawych zwierzątek wyrzeźbionych w drewnie, które czasem trudno jest dostrzec. Odwiedź nas i sprawdź na własne oczy!\n\nA teraz ostatnia zagadka…',
+          nextStep: 38,
+        ),
+        StepItem(
+          type: StepType.info,
+          title: "Zagadka",
+          description: 'Zgadnij jakie zwierzątko można zobaczyć wyrzeźbione w drewnie?',
+          imageAsset: "assets/images/trip04/trip04_11.jpg",
+          previousStep: 37,
+          nextStep: 39,
+        ),
+        StepItem(
+          type: StepType.selectList,
+          selection: [
+            SelectionItem(text: "Jaszczurkę", stepLink: 40),
+            SelectionItem(text: "Sowę", stepLink: 40),
+            SelectionItem(text: "Jelenia", stepLink: 40),
+            SelectionItem(text: "Orła", stepLink: 40),
+          ],
+          correctSelection: 3, // [0,1,3]
+          imageAsset: "assets/images/trip04/trip04_11.jpg",
+          previousStep: 38,
+        ),
+        StepItem(
+          type: StepType.answer,
+          title: "Odpowiedź",
+          correctSelection: 3, // [0,1,3]
+          correctAnswer:
+              "Wspaniale! Rzeczywiście można tu zobaczyć sowę, jaszczurkę i orła. Znalazłeś poprawną odpowiedź na ostatnie pytanie.",
+          incorrectAnswer: 'Nie martw się! Ta ostatnia zagadka była trudna, ale następnym razem będzie lepiej.',
+          imageAsset: "assets/images/trip04/trip04_11a.jpg",
+          nextStep: 41,
+        ),
+        StepItem(
+          type: StepType.end,
+          title: "Dziękujemy",
+          description:
+              'Gratuluję! Poznałeś nasz klasztor od wewnątrz i odkryłeś jak żyjemy na co dzień.\n\nJeśli jeszcze tego nie zrobiłeś, to zapraszamy Cię w odwiedziny. Oprowadzanie po zamku odbywa się zazwyczaj w niedziele, a dokładne godziny można sprawdzić w Internecie na naszej stronie seminaryjnej.\n\nMam nadzieję, że nas kiedyś odwiedzisz. Do zobaczenia!',
+          imageAsset: "assets/images/trip04/trip04_12.jpg",
+          nextStep: -1,
+        ),
+      ],
     ),
   ];
 }
