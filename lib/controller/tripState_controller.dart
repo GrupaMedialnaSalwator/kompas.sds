@@ -52,12 +52,12 @@ class TripStateController extends GetxController {
   }
 
   void gotoStepView(int step) {
-    print('_currentStep = ' + _currentStep.value.toString());
+    //print('_currentStep = ' + _currentStep.value.toString());
     _currentStep.value = step;
   }
 
   void gotoPreviousStep(int previousStep) {
-    print('_currentStep = ' + _currentStep.value.toString());
+    //print('_currentStep = ' + _currentStep.value.toString());
     _currentStep.value = previousStep;
   }
 

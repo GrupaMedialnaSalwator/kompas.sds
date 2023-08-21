@@ -40,12 +40,15 @@ class TripStepSelectBox extends StatelessWidget {
           ),
         ),
         onTap: () {
-          print("selected answer = " + selectionNum.toString());
+          // print("selected answer = " + selectionNum.toString());
           _tripStateController.setCurrentAnswer(selectionNum);
           _tripStateController.gotoStepView(
               _tripDataController.getStepItem(tripDataSelect: tripDataSelect).selection[selectionNum].stepLink);
-          if (selectionNum == _tripDataController.getStepItem(tripDataSelect: tripDataSelect).correctSelection) {
-            _tripStateController.incrementCurrentPoints();
+          // Check if any answer is correct in the selection array
+          for (int number in _tripDataController.getStepItem(tripDataSelect: tripDataSelect).correctSelection) {
+            if (selectionNum == number) {
+              _tripStateController.incrementCurrentPoints();
+            }
           }
         },
       );
@@ -66,12 +69,15 @@ class TripStepSelectBox extends StatelessWidget {
           ),
         ),
         onTap: () {
-          print("selected answer = " + selectionNum.toString());
+          // print("selected answer = " + selectionNum.toString());
           _tripStateController.setCurrentAnswer(selectionNum);
           _tripStateController.gotoStepView(
               _tripDataController.getStepItem(tripDataSelect: tripDataSelect).selection[selectionNum].stepLink);
-          if (selectionNum == _tripDataController.getStepItem(tripDataSelect: tripDataSelect).correctSelection) {
-            _tripStateController.incrementCurrentPoints();
+          // Check if any answer is correct in the selection array
+          for (int number in _tripDataController.getStepItem(tripDataSelect: tripDataSelect).correctSelection) {
+            if (selectionNum == number) {
+              _tripStateController.incrementCurrentPoints();
+            }
           }
         },
       );

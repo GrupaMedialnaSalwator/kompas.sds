@@ -56,7 +56,7 @@ class DrawerWidget extends StatelessWidget {
                 style: AppTextStyles.headerH6.copyWith(color: AppColors.primaryWhite),
               ),
               onTap: () {
-                print('dialog');
+                //print('dialog');
                 showDialog(
                   context: context,
                   builder: (context) => SimpleDialog(

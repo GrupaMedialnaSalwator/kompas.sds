@@ -21,13 +21,12 @@ class MapView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    MapTransformController controller = MapTransformController.init(
-        mapDataController.getMapInitX(), mapDataController.getMapInitY());
+    MapTransformController controller =
+        MapTransformController.init(mapDataController.getMapInitX(), mapDataController.getMapInitY());
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       floatingActionButton: Padding(
-        padding: const EdgeInsets.fromLTRB(
-            0, 0, 0, Constants.mapCardHeight - Constants.buttonMargin),
+        padding: const EdgeInsets.fromLTRB(0, 0, 0, Constants.mapCardHeight - Constants.buttonMargin),
         // TODO: GPS (position floating button)
         // child: FloatingActionButton(
         //   elevation: 8,
@@ -90,8 +89,7 @@ class MapView extends StatelessWidget {
             constrained: false,
             transformationController: controller,
             child: Stack(
-              children: List<Widget>.generate(1,
-                      (int index) => Image.asset("assets/images/wsd_map.png")) +
+              children: List<Widget>.generate(1, (int index) => Image.asset("assets/images/wsd_map.png")) +
                   List<Widget>.generate(
                     mapDataController.getLength(),
                     (int index) => MapPoint(
@@ -116,10 +114,10 @@ class MapView extends StatelessWidget {
             onInteractionEnd: (ScaleEndDetails scaleEndDetails) {
               // user clicked on the map view
               mapDataController.setCurrentMapIconIndex(-1);
-              print("x=" +
-                  controller.value.getTranslation().x.toString() +
-                  " y=" +
-                  controller.value.getTranslation().y.toString());
+              // print("x=" +
+              //     controller.value.getTranslation().x.toString() +
+              //     " y=" +
+              //     controller.value.getTranslation().y.toString());
               // print('Interaction End - Velocity: ${scaleEndDetails.velocity}');
             },
             onInteractionUpdate: (ScaleUpdateDetails scaleUpdateDetails) {
@@ -147,9 +145,7 @@ class MapView extends StatelessWidget {
                 //padding: EdgeInsets.all(20),
                 itemCount: mapDataController.getLength(),
                 separatorBuilder: (BuildContext context, int index) =>
-                    VerticalDivider(
-                        width: Constants.cardMargin,
-                        color: AppColors.transparent),
+                    VerticalDivider(width: Constants.cardMargin, color: AppColors.transparent),
                 itemBuilder: (BuildContext context, int index) => MapCardHero(
                   mapItemIndex: index,
                   onTap: () {
@@ -160,12 +156,10 @@ class MapView extends StatelessWidget {
 
                     // center and animate the map view on the item icon
                     var start = controller.value;
-                    var end = controller.getCenteredViewMatrix(
-                        mapDataController.getMapItem(index: index).locationX,
+                    var end = controller.getCenteredViewMatrix(mapDataController.getMapItem(index: index).locationX,
                         mapDataController.getMapItem(index: index).locationY);
                     mapDataController.setupMapAnimation(controller);
-                    mapDataController.navigateFromToPoint(
-                        start: start, end: end);
+                    mapDataController.navigateFromToPoint(start: start, end: end);
                     mapDataController.setCurrentMapIconIndex(index);
                   },
                 ),

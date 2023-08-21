@@ -43,7 +43,7 @@ class MapPoint extends StatelessWidget {
                 ),
               ),
               onTap: () {
-                print('pressed icon on map...');
+                //print('pressed icon on map...');
                 mapDataController.setCurrentMapIconIndex(mapItemIndex);
                 mapDataController.setScrollDestinationIndex(mapItemIndex);
                 // Function that scrolls the bottom card
