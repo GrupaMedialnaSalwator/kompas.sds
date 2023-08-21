@@ -1754,7 +1754,7 @@ List<TripItem> generateTripItems() {
           nextStep: 36,
         ),
         StepItem(
-          imageAsset: "assets/images/trip04/trip04_08a.jpg",
+          imageAsset: "assets/images/trip04/trip04_08b.jpg",
           title: "Odpowiedź",
           description:
               'Niestety to niepoprawna odpowiedź! Poprzedni właściciel i budowniczy tej części zamku, pan Georg Kissling, zaprojektował to pomieszczenie właśnie jako salę balową.\n\nZobaczmy co kryje się dalej.',
