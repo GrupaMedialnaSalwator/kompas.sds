@@ -38,6 +38,9 @@ class Constants {
   /// defaultImage of size 414x276 DPI=1
   static const String defaultImage = "assets/images/trip_01.png";
 
+  /// noImage = empty string
+  static const String noImage = "";
+
   /// defaultImageRatio = 2 / 3 relative to sides
   /// TODO: run tests to check if this assumption holds for all trip images
   static const double defaultImageRatio = 2 / 3;

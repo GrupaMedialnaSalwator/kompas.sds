@@ -17,15 +17,8 @@ class MapTransformController extends TransformationController {
   getViewX() => -this.value.row0.w;
   getViewY() => -this.value.row1.w;
 
-  Matrix4 getCenteredViewMatrixGPS(
-      double longitude,
-      double latitude,
-      double minX,
-      double minY,
-      double maxX,
-      double maxY,
-      double mapSizeX,
-      double mapSizeY) {
+  Matrix4 getCenteredViewMatrixGPS(double longitude, double latitude, double minX, double minY, double maxX,
+      double maxY, double mapSizeX, double mapSizeY) {
     // Convert longitude and latitude to x,y on the map
     double x, y;
     x = ((longitude - minX) / (maxX - minX)) * mapSizeX;
@@ -39,9 +32,8 @@ class MapTransformController extends TransformationController {
   Matrix4 getCenteredViewMatrix(double x, double y) {
     double dx, dy;
     double screenWidth = Get.width;
-    double screenHeight =
-        Get.height - 40; // TODO: make 40 a constant for bottom bar
-    print('x=' + x.toString() + ' y=' + y.toString());
+    double screenHeight = Get.height - 40; // TODO: make 40 a constant for bottom bar
+    // print('x=' + x.toString() + ' y=' + y.toString());
     if (x < (Constants.maxMapSizeX - (screenWidth / 2))) {
       if (x < (screenWidth / 2)) {
         dx = 0;

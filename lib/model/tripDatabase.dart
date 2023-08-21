@@ -92,9 +92,12 @@ class StepItem {
     this.caption = "",
     this.description = "Description",
     this.selection = const [],
-    this.correctSelection = 0, // TODO: run tests to check if this variable is set the same for select and answer steps
+    this.correctSelection = const [
+      0
+    ], // TODO: run tests to check if this variable is set the same for select and answer steps
     this.correctAnswer = "Correct!",
     this.incorrectAnswer = "Unfortunately this is not correct.",
+    this.incorrectImageAsset = Constants.noImage,
     this.previousStep = -1,
     this.nextStep = -1,
   });
@@ -105,9 +108,10 @@ class StepItem {
   String title;
   String description;
   List<SelectionItem> selection;
-  int correctSelection;
+  List<int> correctSelection; // possible multiple correct answers
   String correctAnswer;
   String incorrectAnswer;
+  String incorrectImageAsset;
   int previousStep;
   int nextStep;
 }
@@ -131,7 +135,7 @@ List<TripItem> generateTripItems() {
       uid: "01", // TODO: must fix
       title: "W Parku",
       subtitle: "dla całej rodziny",
-      time: "40",
+      time: "45",
       age: "6+",
       distance: "1,3",
       rating: "4,8",
@@ -174,14 +178,14 @@ List<TripItem> generateTripItems() {
             SelectionItem(text: "1", stepLink: 4),
             SelectionItem(text: "3", stepLink: 4),
           ],
-          correctSelection: 0,
+          correctSelection: [0],
           imageAsset: "assets/images/trip01/trip01_02.jpg",
           previousStep: 2,
         ),
         StepItem(
           type: StepType.answer,
           title: "Miejsca parkingowe",
-          correctSelection: 0,
+          correctSelection: [0],
           correctAnswer: "Gratuluję! Rozwiązałeś pierwszą zagadkę.\n\nMożemy ruszać dalej.",
           incorrectAnswer:
               "Niestety! To nie jest prawidłowa odpowiedź.\n\nPrzypatrz się dobrze niebieskiemu znakowi. Są tam dwa miejsca dla niepełnosprawnych. Ale nie przejmuj się. Pierwszy krok jest zawsze najtrudniejszy.\n\nJesteś gotowy do dalszej drogi?",
@@ -213,14 +217,14 @@ List<TripItem> generateTripItems() {
             SelectionItem(text: "B", stepLink: 8),
             SelectionItem(text: "K", stepLink: 8),
           ],
-          correctSelection: 2,
+          correctSelection: [2],
           imageAsset: "assets/images/trip01/trip01_05.jpg",
           previousStep: 6,
         ),
         StepItem(
           type: StepType.answer,
           title: "Błogosławiony Franciszek Jordan",
-          correctSelection: 2,
+          correctSelection: [2],
           correctAnswer:
               'Wspaniale! Pierwsza literka oznacza „Błogosławiony”.\n\nOjciec Franciszek Jordan jest założycielem Zgromadzenia Salwatorianów i sióstr Salwatorianek, którzy dzisiaj zamieszkują to miejsce.\n\nZostał beatyfikowany 15 maja 2021 roku.',
           incorrectAnswer:
@@ -253,14 +257,14 @@ List<TripItem> generateTripItems() {
             SelectionItem(text: "5", stepLink: 12),
             SelectionItem(text: "7", stepLink: 12),
           ],
-          correctSelection: 2,
+          correctSelection: [2],
           imageAsset: "assets/images/trip01/trip01_08.jpg",
           previousStep: 10,
         ),
         StepItem(
           type: StepType.answer,
           title: "Słupki z lampkami",
-          correctSelection: 2,
+          correctSelection: [2],
           correctAnswer:
               'Brawo!\n\nTo są słupki, które w nocy świecą, aby siostry i bracia zakonni mogli w zimowe wieczory bezpiecznie przechodzić pomiędzy zamkiem a ogrodem.\n\nJesteś gotowy do dalszej drogi?',
           incorrectAnswer:
@@ -293,14 +297,14 @@ List<TripItem> generateTripItems() {
             SelectionItem(text: "A", stepLink: 16),
             SelectionItem(text: "JST", stepLink: 16),
           ],
-          correctSelection: 3,
+          correctSelection: [3],
           imageAsset: "assets/images/trip01/trip01_11.jpg",
           previousStep: 14,
         ),
         StepItem(
           type: StepType.answer,
           title: "Józef Stanisław Tischner",
-          correctSelection: 3,
+          correctSelection: [3],
           correctAnswer:
               'Gratuluję! Odkryłeś myśl sławnego polskiego filozofa, którą warto zapamiętać.\n\nCzy jesteś gotowy na kolejne wyzwanie?',
           incorrectAnswer:
@@ -333,14 +337,14 @@ List<TripItem> generateTripItems() {
             SelectionItem(text: "Sosna", stepLink: 20),
             SelectionItem(text: "Topola", stepLink: 20),
           ],
-          correctSelection: 0,
+          correctSelection: [0],
           imageAsset: "assets/images/trip01/trip01_14.jpg",
           previousStep: 18,
         ),
         StepItem(
           type: StepType.answer,
           title: "Dąb szypułkowy",
-          correctSelection: 0,
+          correctSelection: [0],
           correctAnswer:
               'Tak jest!\n\nDąb to silne i wspaniałe drzewo. Jeśli się rozejrzysz, to zauważysz, że w parku znajduje się wiele ogromnych dębów.',
           incorrectAnswer:
@@ -373,14 +377,14 @@ List<TripItem> generateTripItems() {
             SelectionItem(text: "1932", stepLink: 24),
             SelectionItem(text: "1939", stepLink: 24),
           ],
-          correctSelection: 2,
+          correctSelection: [2],
           imageAsset: "assets/images/trip01/trip01_17.jpg",
           previousStep: 22,
         ),
         StepItem(
           type: StepType.answer,
           title: "Rok budowy groty",
-          correctSelection: 2,
+          correctSelection: [2],
           correctAnswer:
               'Masz rację. Już w 1932 roku Salwatorianie niemieccy wybudowali tutaj tę grotę i modlili się w jej cieniu.\n\nJeśli jesteś zmęczony możesz usiąść sobie na ławce, popatrzeć trochę na figurę Matki Bożej i odmówić znaną ci modlitwę.\n\nNie myśl jednak, że to koniec. Czeka nas jeszcze wiele ciekawych miejsc.',
           incorrectAnswer:
@@ -413,14 +417,14 @@ List<TripItem> generateTripItems() {
             SelectionItem(text: "PT", stepLink: 28),
             SelectionItem(text: "PP", stepLink: 28),
           ],
-          correctSelection: 3,
+          correctSelection: [3],
           imageAsset: "assets/images/trip01/trip01_20.jpg",
           previousStep: 26,
         ),
         StepItem(
           type: StepType.answer,
           title: "Apostołowie Piotr i Paweł",
-          correctSelection: 3,
+          correctSelection: [3],
           correctAnswer:
               'Zgadza się! Są to święty Piotr z kluczami i święty Paweł z mieczem. Przypominają nam, że każdy z nas jest powołany do bycia apostołem Pana Jezusa.\n\nA teraz w tył zwrot. Czeka nas długa droga w sam środek parku.',
           incorrectAnswer:
@@ -453,14 +457,14 @@ List<TripItem> generateTripItems() {
             SelectionItem(text: "Kwiaty", stepLink: 32),
             SelectionItem(text: "Chustkę", stepLink: 32),
           ],
-          correctSelection: 0,
+          correctSelection: [0],
           imageAsset: "assets/images/trip01/trip01_23.jpg",
           previousStep: 30,
         ),
         StepItem(
           type: StepType.answer,
           title: "Różaniec",
-          correctSelection: 0,
+          correctSelection: [0],
           correctAnswer:
               'Oczywiście! Matka Boża i Dzieciątko razem trzymają w ręku różaniec.\n\nByła to ulubiona modlitwa błogosławionego Franciszka Jordana, którego spotkaliśmy na początku naszej podróży. Gdziekolwiek szedł, zawsze w kieszeni przesuwał paciorki różańca.\n\nA czy Ty potrafisz modlić się na różańcu?',
           incorrectAnswer:
@@ -493,14 +497,14 @@ List<TripItem> generateTripItems() {
             SelectionItem(text: "Castitas", stepLink: 36),
             SelectionItem(text: "Coelus", stepLink: 36),
           ],
-          correctSelection: 2,
+          correctSelection: [2],
           imageAsset: "assets/images/trip01/trip01_26.jpg",
           previousStep: 34,
         ),
         StepItem(
           type: StepType.answer,
           title: "Czystość",
-          correctSelection: 2,
+          correctSelection: [2],
           correctAnswer:
               'Tak jest - CASTITAS. To oznacza w języku łacińskim ślub bezżennej czystości.\n\nNie chodzi tu oczywiście o częste mycie rąk, ale o oddanie całego siebie Panu Bogu. Dlatego właśnie zakonnicy nie zakładają rodzin, aby całkowicie poświęcić się Bogu i służyć wszystkim.\n\nDalej już nie pójdziemy. Musimy tu zawrócić. Jesteś gotowy?',
           incorrectAnswer:
@@ -533,14 +537,14 @@ List<TripItem> generateTripItems() {
             SelectionItem(text: "T", stepLink: 40),
             SelectionItem(text: "S", stepLink: 40),
           ],
-          correctSelection: 0,
+          correctSelection: [0],
           imageAsset: "assets/images/trip01/trip01_29.jpg",
           previousStep: 38,
         ),
         StepItem(
           type: StepType.answer,
           title: "Hydrant",
-          correctSelection: 0,
+          correctSelection: [0],
           correctAnswer:
               'Bardzo dobrze! Ta literka oznacza hydrant, czyli miejsce podłączenia do wody.\n\nW razie pożaru strażacy będą mogli tam podpiąć swój sprzęt i ugasić ogień. Miejmy nadzieję, że nigdy nie będą musieli tego robić.\n\nTo co? Jesteś gotowy do dalszej drogi?',
           incorrectAnswer:
@@ -573,14 +577,14 @@ List<TripItem> generateTripItems() {
             SelectionItem(text: "1932", stepLink: 44),
             SelectionItem(text: "1939", stepLink: 44),
           ],
-          correctSelection: 1,
+          correctSelection: [1],
           imageAsset: "assets/images/trip01/trip01_32.jpg",
           previousStep: 42,
         ),
         StepItem(
           type: StepType.answer,
           title: "Rok założenia seminarium",
-          correctSelection: 1,
+          correctSelection: [1],
           correctAnswer:
               'Wspaniale! W roku 1953 powstało w tym zamku Wyższe Seminarium Duchowne Salwatorianów.\n\nJest to taka szkoła, w której młodzi klerycy uczą się, aby w przyszłości zostać księżmi. Być może miałeś okazję spotkać jakiegoś kleryka w czarnym habicie podczas naszej podróży po parku.\n\nNo to pomału będziemy kończyć. Pozostało nam jeszcze tylko jedno miejsce. Jesteś gotowy?',
           incorrectAnswer:
@@ -613,14 +617,14 @@ List<TripItem> generateTripItems() {
             SelectionItem(text: "SDS", stepLink: 48),
             SelectionItem(text: "SJ", stepLink: 48),
           ],
-          correctSelection: 2,
+          correctSelection: [2],
           imageAsset: "assets/images/trip01/trip01_35.jpg",
           previousStep: 46,
         ),
         StepItem(
           type: StepType.answer,
           title: "Salwatorianie",
-          correctSelection: 2,
+          correctSelection: [2],
           correctAnswer:
               'Gratuluję! SDS to skrót łacińskiej nazwy „Societas Divini Salvatoris”, czyli po polsku „Towarzystwo Boskiego Zbawiciela” - Salwatorianie.\n\nW ten sposób zakończyłeś pomyślnie ostatnie zadanie i naszą podróż. Jestem z Ciebie dumny.',
           incorrectAnswer:
@@ -824,7 +828,7 @@ List<TripItem> generateTripItems() {
       uid: "03", // TODO: must fix
       title: "W Labiryncie",
       subtitle: "dla młodzieży",
-      time: "30",
+      time: "40",
       age: "12+",
       distance: "0,3",
       rating: "4,5",
@@ -882,14 +886,14 @@ List<TripItem> generateTripItems() {
             SelectionItem(text: "Hedonistów", stepLink: 6),
             SelectionItem(text: "Sceptyków", stepLink: 6),
           ],
-          correctSelection: 1,
+          correctSelection: [1],
           imageAsset: "assets/images/trip03/trip03_01a.png",
           previousStep: 4,
         ),
         StepItem(
           type: StepType.answer,
           title: "Odpowiedź Sokratesa",
-          correctSelection: 1,
+          correctSelection: [1],
           correctAnswer:
               "Gratuluję! Rozwiązałeś pierwszą zagadkę.\n\nŻyczę powodzenia na dalszej drodze. Szukaj placu nr 2.",
           incorrectAnswer:
@@ -922,14 +926,14 @@ List<TripItem> generateTripItems() {
             SelectionItem(text: "Akademia", stepLink: 10),
             SelectionItem(text: "Uniwersytet", stepLink: 10),
           ],
-          correctSelection: 2,
+          correctSelection: [2],
           imageAsset: "assets/images/trip03/trip03_02a.png",
           previousStep: 8,
         ),
         StepItem(
           type: StepType.answer,
           title: "Odpowiedź Platona",
-          correctSelection: 2,
+          correctSelection: [2],
           correctAnswer: "Wspaniale! Widzę, że znasz się na rzeczy.\n\nRuszaj dalej do placu nr 3.",
           incorrectAnswer: "Niestety nie. Moja szkoła to Akademia.\n\nRuszaj dalej do placu nr 3.",
           imageAsset: "assets/images/trip03/trip03_mapa.png",
@@ -959,14 +963,14 @@ List<TripItem> generateTripItems() {
             SelectionItem(text: "materia i forma", stepLink: 14),
             SelectionItem(text: "myślę, więc jestem", stepLink: 14),
           ],
-          correctSelection: 3,
+          correctSelection: [3],
           imageAsset: "assets/images/trip03/trip03_03a.png",
           previousStep: 12,
         ),
         StepItem(
           type: StepType.answer,
           title: "Odpowiedź Arystotelesa",
-          correctSelection: 3,
+          correctSelection: [3],
           correctAnswer:
               "Całkiem nieźle! Masz zadatki na filozofa.\n\nNie zatrzymuj się jednak. Idź dalej do placu nr 4.",
           incorrectAnswer:
@@ -998,14 +1002,14 @@ List<TripItem> generateTripItems() {
             SelectionItem(text: "Pitagoras", stepLink: 18),
             SelectionItem(text: "Epikur", stepLink: 18),
           ],
-          correctSelection: 0,
+          correctSelection: [0],
           imageAsset: "assets/images/trip03/trip03_04a.png",
           previousStep: 16,
         ),
         StepItem(
           type: StepType.answer,
           title: "Odpowiedź Augustyna",
-          correctSelection: 0,
+          correctSelection: [0],
           correctAnswer: "Dobrze! Wybrałeś właściwego filozofa.\n\nCzas na kolejne wyzwanie przy placu nr 5.",
           incorrectAnswer:
               'Nie tego miałem na myśli. Największym autorytetem był dla mnie Platon.\n\nCzas na kolejne wyzwanie przy placu nr 5.',
@@ -1038,14 +1042,14 @@ List<TripItem> generateTripItems() {
             SelectionItem(text: "czwarta", stepLink: 22),
             SelectionItem(text: "druga", stepLink: 22),
           ],
-          correctSelection: 0,
+          correctSelection: [0],
           imageAsset: "assets/images/trip03/trip03_05a.png",
           previousStep: 20,
         ),
         StepItem(
           type: StepType.answer,
           title: "Odpowiedź Tomasza",
-          correctSelection: 0,
+          correctSelection: [0],
           correctAnswer:
               "Tak jest! W trzeciej drodze odwołuję się do przyczyny celowej.\n\nZapraszam do dalszej drogi do placu nr 6.",
           incorrectAnswer:
@@ -1077,14 +1081,14 @@ List<TripItem> generateTripItems() {
             SelectionItem(text: "w miłość", stepLink: 26),
             SelectionItem(text: "w myślenie", stepLink: 26),
           ],
-          correctSelection: 3,
+          correctSelection: [3],
           imageAsset: "assets/images/trip03/trip03_06a.png",
           previousStep: 24,
         ),
         StepItem(
           type: StepType.answer,
           title: "Odpowiedź Kartezjusza",
-          correctSelection: 3,
+          correctSelection: [3],
           correctAnswer: "Oczywiście! Myślę, więc jestem.\n\nMasz ochotę na więcej? Czeka na Ciebie plac nr 7.",
           incorrectAnswer: 'Jednak nie. Myślę, więc jestem.\n\nMasz ochotę na więcej? Czeka na Ciebie plac nr 7.',
           imageAsset: "assets/images/trip03/trip03_mapa.png",
@@ -1116,14 +1120,14 @@ List<TripItem> generateTripItems() {
             SelectionItem(text: "zwyczajem", stepLink: 30),
             SelectionItem(text: "dogmatem", stepLink: 30),
           ],
-          correctSelection: 0,
+          correctSelection: [0],
           imageAsset: "assets/images/trip03/trip03_07a.png",
           previousStep: 28,
         ),
         StepItem(
           type: StepType.answer,
           title: "Odpowiedź Kanta",
-          correctSelection: 0,
+          correctSelection: [0],
           correctAnswer: "Niesamowite! Myślimy podobnie.\n\nNie zatrzymuj się. Szukaj placu nr 8.",
           incorrectAnswer: 'To było trudne. Chodziło o prawo.\n\nNie zatrzymuj się. Szukaj placu nr 8.',
           imageAsset: "assets/images/trip03/trip03_mapa.png",
@@ -1154,14 +1158,14 @@ List<TripItem> generateTripItems() {
             SelectionItem(text: "idea", stepLink: 34),
             SelectionItem(text: "logos", stepLink: 34),
           ],
-          correctSelection: 1,
+          correctSelection: [1],
           imageAsset: "assets/images/trip03/trip03_08a.png",
           previousStep: 32,
         ),
         StepItem(
           type: StepType.answer,
           title: "Odpowiedź Leibniza",
-          correctSelection: 1,
+          correctSelection: [1],
           correctAnswer: "Niebywałe! Jesteś tak mądry jak ja.\n\nZobacz co jest dalej przy placu nr 9.",
           incorrectAnswer:
               'Nie trafiłeś. Chodzi o monadę, ale nie przejmuj się. Mało kto jest tak mądry jak ja.\n\nZobacz co jest dalej przy placu nr 9.',
@@ -1194,14 +1198,14 @@ List<TripItem> generateTripItems() {
             SelectionItem(text: "ogół", stepLink: 38),
             SelectionItem(text: "są niezależne", stepLink: 38),
           ],
-          correctSelection: 2,
+          correctSelection: [2],
           imageAsset: "assets/images/trip03/trip03_09a.png",
           previousStep: 36,
         ),
         StepItem(
           type: StepType.answer,
           title: "Odpowiedź Hegla",
-          correctSelection: 2,
+          correctSelection: [2],
           correctAnswer:
               "Wielkie umysły myślą podobnie! Nie chcesz być moim asystentem?\n\nNo cóż, możesz iść dalej do placu nr 10.",
           incorrectAnswer:
@@ -1234,14 +1238,14 @@ List<TripItem> generateTripItems() {
             SelectionItem(text: "spirytualizm", stepLink: 42),
             SelectionItem(text: "egzystencjalizm", stepLink: 42),
           ],
-          correctSelection: 3,
+          correctSelection: [3],
           imageAsset: "assets/images/trip03/trip03_10a.png",
           previousStep: 40,
         ),
         StepItem(
           type: StepType.answer,
           title: "Odpowiedź Kierkegaarda",
-          correctSelection: 3,
+          correctSelection: [3],
           correctAnswer:
               "Właśnie o to chodzi! Będziesz wspaniałym filozofem.\n\nSzukaj mądrości na następnym placu nr 11.",
           incorrectAnswer:
@@ -1275,14 +1279,14 @@ List<TripItem> generateTripItems() {
             SelectionItem(text: "personalizm", stepLink: 46),
             SelectionItem(text: "filozofia procesu", stepLink: 46),
           ],
-          correctSelection: 1,
+          correctSelection: [1],
           imageAsset: "assets/images/trip03/trip03_11a.png",
           previousStep: 44,
         ),
         StepItem(
           type: StepType.answer,
           title: "Odpowiedź Tischnera",
-          correctSelection: 1,
+          correctSelection: [1],
           correctAnswer:
               "Brawo! Jesteś bystrym myślicielem! Widzę, że ciebie też interesuje dialog.\n\nPolecam więc kolejny plac nr 12.",
           incorrectAnswer: 'Każdy może się pomylić. Warto jednak szukać i pytać.\n\nPolecam kolejny plac nr 12.',
@@ -1315,14 +1319,14 @@ List<TripItem> generateTripItems() {
             SelectionItem(text: "godność osoby", stepLink: 50),
             SelectionItem(text: "korzyść", stepLink: 50),
           ],
-          correctSelection: 2,
+          correctSelection: [2],
           imageAsset: "assets/images/trip03/trip03_12a.png",
           previousStep: 48,
         ),
         StepItem(
           type: StepType.answer,
           title: "Odpowiedź Wojtyły",
-          correctSelection: 2,
+          correctSelection: [2],
           correctAnswer:
               "Jak też tak myślę! Godność osoby stoi u podstaw etyki.\n\nPowodzenia na dalszej drodze do placu nr 13.",
           incorrectAnswer:
@@ -1355,14 +1359,14 @@ List<TripItem> generateTripItems() {
             SelectionItem(text: "liberalizmem", stepLink: 54),
             SelectionItem(text: "relatywizmem", stepLink: 54),
           ],
-          correctSelection: 0,
+          correctSelection: [0],
           imageAsset: "assets/images/trip03/trip03_13a.png",
           previousStep: 52,
         ),
         StepItem(
           type: StepType.answer,
           title: "Odpowiedź Kołakowskiego",
-          correctSelection: 0,
+          correctSelection: [0],
           correctAnswer:
               "Rzeczywiście! Stałem się zagorzałym krytykiem marksizmu.\n\nDocierasz pomału do końca. Kieruj się do placu nr 14.",
           incorrectAnswer:
@@ -1395,14 +1399,14 @@ List<TripItem> generateTripItems() {
             SelectionItem(text: "Franciszkanie", stepLink: 58),
             SelectionItem(text: "Salwatorianie", stepLink: 58),
           ],
-          correctSelection: 3,
+          correctSelection: [3],
           imageAsset: "assets/images/trip03/trip03_14a.png",
           previousStep: 56,
         ),
         StepItem(
           type: StepType.answer,
           title: "Odpowiedź Stycznia",
-          correctSelection: 3,
+          correctSelection: [3],
           correctAnswer:
               "Cieszę się, że zapamiętałeś! Jako salwatorianin przez wiele lat prowadziłem tutaj wykłady dla kleryków.\n\nDo zobaczenia. Dobrze, że jesteś!",
           incorrectAnswer:
@@ -1420,15 +1424,18 @@ List<TripItem> generateTripItems() {
         ),
       ],
     ),
+    //////////////////////////////////
+    // W Zamku
+    //////////////////////////////////
     TripItem(
       uid: "04", // TODO: must fix
       title: "W Zamku",
       subtitle: "dla wszystkich",
-      time: "30",
+      time: "45",
       age: "6+",
-      distance: "0,3",
-      rating: "5,0",
-      description: "Wejdź do naszego zamku i odkryj tajemnice życia zakonnego",
+      distance: "0,1",
+      rating: "4,9",
+      description: "Wejdź do naszego zamku i odkryj tajemnice życia zakonnego.",
       imageAsset: "assets/images/trip_04.png",
       enabled: true,
       countPoints: true,
@@ -1437,7 +1444,7 @@ List<TripItem> generateTripItems() {
           imageAsset: "assets/images/trip04/trip04_01.jpg",
           title: "Zapraszamy do środka",
           description:
-              'Pałac w Bagnie jest wyjątkowym miejscem. Od wielu lat znajduje się tutaj Wyższe Seminarium Duchowne Salwatorianów. To właśnie tutaj młodzi mężczyźni przygotowują się do życia zakonnego i kapłańskiego.\n\nW tej przygodzi odsłonimy rąbka tajemnicy naszego codziennego życia i pokażemy od środka nasz piękny dom. Jesteś gotowy?',
+              'Pałac w Bagnie jest wyjątkowym miejscem. Od wielu lat znajduje się tutaj Wyższe Seminarium Duchowne Salwatorianów. To właśnie tutaj młodzi mężczyźni przygotowują się do życia zakonnego i kapłańskiego.\n\nW tej przygodzie odsłonimy rąbka tajemnicy naszego codziennego życia i pokażemy od środka nasz piękny dom. Jesteś gotowy?',
           nextStep: 1,
         ),
         StepItem(
@@ -1461,363 +1468,432 @@ List<TripItem> generateTripItems() {
           selection: [
             SelectionItem(text: "Odbiera telefony", stepLink: 4),
             SelectionItem(text: "Przyjmuje gości", stepLink: 4),
-            SelectionItem(text: "Sprzedaje bilety", stepLink: 4),
+            SelectionItem(text: "Sprzedaje bilety", stepLink: 5),
             SelectionItem(text: "Odbiera pocztę", stepLink: 4),
           ],
-          correctSelection: 0, // [0,1,3] TODO: implement multiple correct selections
+          correctSelection: [0, 1, 3],
           imageAsset: "assets/images/trip04/trip04_02.jpg",
           previousStep: 2,
         ),
         StepItem(
           type: StepType.answer,
           title: "Odpowiedź",
-          correctSelection: 0, // [0,1,3] TODO: implement multiple correct selections
+          correctSelection: [0, 1, 3],
           correctAnswer:
               "Zgadza się! Odwiedzając nasz zamek spotkasz furtianina, który między innymi odbiera telefony, przyjmuje gości i odbiera pocztę.\n\nWłaśnie rozwiązałeś pierwszą zagadkę. Zapraszam do wejścia głębiej.",
           incorrectAnswer:
               "Niestety to nie jest poprawna odpowiedź! Nie pobieramy opłat za oprowadzanie, chociaż można złożyć dobrowolną ofiarę.\n\nNie martw się jednak. Zapraszam do wejścia głębiej.",
-          imageAsset: "assets/images/trip04/trip04_02a.jpg", // TODO: implement multiple correct selections
-          nextStep: 5,
+          imageAsset: "assets/images/trip04/trip04_02a.jpg", // correct
+          nextStep: 6,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip04/trip04_02b.jpg",
+          title: "Odpowiedź",
+          description:
+              'Niestety to nie jest poprawna odpowiedź! Nie pobieramy opłat za oprowadzanie, chociaż można złożyć dobrowolną ofiarę.\n\nNie martw się jednak. Zapraszam do wejścia głębiej.',
+          nextStep: 6,
         ),
         StepItem(
           imageAsset: "assets/images/trip04/trip04_03.jpg",
           title: "Schody cesarskie",
           description:
               'Zaraz za furtą zobaczysz piękne schody cesarskie. Ich historia jest bardzo ciekawa. Możesz ją poznać podczas niedzielnego oprowadzania, gdy odwiedzisz nas osobiście.\n\nSchody cesarskie prowadzą na piętro, które jest zamknięte dla zwiedzających. Postaraj się więc uruchomić swoją wyobraźnię, aby odpowiedzieć na kolejne pytanie.',
-          nextStep: 6,
+          nextStep: 7,
         ),
         StepItem(
           type: StepType.info,
           title: "Zagadka",
           description: 'Jak myślisz, co znajduje się w górnej części zamku?',
           imageAsset: "assets/images/trip04/trip04_03.jpg",
-          previousStep: 5,
-          nextStep: 7,
+          previousStep: 6,
+          nextStep: 8,
         ),
         StepItem(
           type: StepType.selectList,
           selection: [
-            SelectionItem(text: "Świetlica", stepLink: 8),
-            SelectionItem(text: "Pokoje", stepLink: 8),
-            SelectionItem(text: "Sale wykładowe", stepLink: 8),
-            SelectionItem(text: "Kuchnia", stepLink: 8),
+            SelectionItem(text: "Świetlica", stepLink: 9),
+            SelectionItem(text: "Pokoje", stepLink: 9),
+            SelectionItem(text: "Sale wykładowe", stepLink: 9),
+            SelectionItem(text: "Kuchnia", stepLink: 10),
           ],
-          correctSelection: 1, // [0,1,2]
+          correctSelection: [0, 1, 2],
           imageAsset: "assets/images/trip04/trip04_03.jpg",
-          previousStep: 6,
+          previousStep: 7,
         ),
         StepItem(
           type: StepType.answer,
           title: "Odpowiedź",
-          correctSelection: 1, // [0,1,2]
+          correctSelection: [0, 1, 2],
           correctAnswer: "Tak jest! Na piętrze znajduje się świetlica, pokoje i sale wykładowe.\n\nRuszamy dalej?",
           incorrectAnswer:
               "Niestety nie! Kuchnia zakonna jest na dole. Posługują w niej nasze kochane siostry - Aniela i Daria.\n\nRuszamy dalej?",
           imageAsset: "assets/images/trip04/trip04_03a.jpg",
-          nextStep: 9,
+          nextStep: 11,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip04/trip04_03b.jpg",
+          title: "Odpowiedź",
+          description:
+              'Niestety nie! Kuchnia zakonna jest na dole. Posługują w niej nasze kochane siostry - Aniela i Daria.\n\nRuszamy dalej?',
+          nextStep: 11,
         ),
         StepItem(
           imageAsset: "assets/images/trip04/trip04_04.jpg",
           title: "Sala wykładowa",
           description:
               'Idąc w lewo dojdziemy do sali wykładowej. Klerycy zdobywają tutaj ważną wiedzę, która pomoże im w osobistym rozwoju i przygotuje do przyszłej posługi.',
-          nextStep: 10,
+          nextStep: 12,
         ),
         StepItem(
           type: StepType.info,
           title: "Zagadka",
           description: 'Jak myślisz, czego uczą się klerycy na wykładach?',
           imageAsset: "assets/images/trip04/trip04_04.jpg",
-          previousStep: 9,
-          nextStep: 11,
+          previousStep: 11,
+          nextStep: 13,
         ),
         StepItem(
           type: StepType.selectList,
           selection: [
-            SelectionItem(text: "Filozofii", stepLink: 12),
-            SelectionItem(text: "Informatyki", stepLink: 12),
-            SelectionItem(text: "Teologii", stepLink: 12),
-            SelectionItem(text: "Psychologii", stepLink: 12),
+            SelectionItem(text: "Filozofii", stepLink: 14),
+            SelectionItem(text: "Informatyki", stepLink: 15),
+            SelectionItem(text: "Teologii", stepLink: 14),
+            SelectionItem(text: "Psychologii", stepLink: 14),
           ],
-          correctSelection: 2, // [0,2,3]
+          correctSelection: [0, 2, 3],
           imageAsset: "assets/images/trip04/trip04_04.jpg",
-          previousStep: 10,
+          previousStep: 12,
         ),
         StepItem(
           type: StepType.answer,
           title: "Odpowiedź",
-          correctSelection: 2, // [0,2,3]
+          correctSelection: [0, 2, 3],
           correctAnswer:
               "Zgadza się! Przyszli księża muszą mieć szerokie wykształcenie, dlatego pilnie uczą się o Panu Bogu, o człowieku i o świecie.\n\nChodźmy teraz do pomieszczenia obok.",
           incorrectAnswer:
               'Niestety! Informatyka nie jest obowiązkowym przedmiotem w seminarium, ale można poznawać sekrety komputerów w wolnym czasie.\n\nChodźmy teraz do pomieszczenia obok.',
           imageAsset: "assets/images/trip04/trip04_04a.jpg",
-          nextStep: 13,
+          nextStep: 16,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip04/trip04_04b.jpg",
+          title: "Odpowiedź",
+          description:
+              'Niestety! Informatyka nie jest obowiązkowym przedmiotem w seminarium, ale można poznawać sekrety komputerów w wolnym czasie.\n\nChodźmy teraz do pomieszczenia obok.',
+          nextStep: 16,
         ),
         StepItem(
           imageAsset: "assets/images/trip04/trip04_05.jpg",
           title: "Zakrystia",
           description:
               'Zaraz obok sali wykładowej jest zakrystia. Obowiązuje tu cisza i skupienie. Jest to miejsce, gdzie przygotowujemy się do nabożeństw i Eucharystii.\n\nZnajduje się tu również wiele ważnych przedmiotów liturgicznych. Ciekawe, czy domyślasz się jakich?',
-          nextStep: 14,
+          nextStep: 17,
         ),
         StepItem(
           type: StepType.info,
           title: "Zagadka",
           description: 'Co znajduje się w zakrystii?',
           imageAsset: "assets/images/trip04/trip04_05.jpg",
-          previousStep: 13,
-          nextStep: 15,
+          previousStep: 16,
+          nextStep: 18,
         ),
         StepItem(
           type: StepType.selectList,
           selection: [
-            SelectionItem(text: "Stuły i ornaty", stepLink: 16),
-            SelectionItem(text: "Kielich i ampułki", stepLink: 16),
-            SelectionItem(text: "Monstrancja", stepLink: 16),
-            SelectionItem(text: "Dzwonki", stepLink: 16),
+            SelectionItem(text: "Stuły i ornaty", stepLink: 19),
+            SelectionItem(text: "Kielich i ampułki", stepLink: 19),
+            SelectionItem(text: "Monstrancja", stepLink: 19),
+            SelectionItem(text: "Dzwonki", stepLink: 20),
           ],
-          correctSelection: 0, // [0,1,2]
+          correctSelection: [0, 1, 2],
           imageAsset: "assets/images/trip04/trip04_05.jpg",
-          previousStep: 14,
+          previousStep: 17,
         ),
         StepItem(
           type: StepType.answer,
           title: "Odpowiedź",
-          correctSelection: 0, // [0,1,2]
+          correctSelection: [0, 1, 2],
           correctAnswer:
               "Znakomicie! W zakrystii znajdują się przeróżne szaty i naczynia liturgiczne. Przechowujemy je tutaj, aby służyły podczas codziennych modlitw i Mszy świętych.\n\nWstąpmy więc teraz do najważniejszego miejsca, czyli do naszej kaplicy.",
           incorrectAnswer:
               'A już myślałem, że odgadniesz. Niestety, dzwonki są w kaplicy.\n\nWstąpmy więc teraz do tego najważniejszego miejsca w naszym domu.',
           imageAsset: "assets/images/trip04/trip04_05a.jpg",
-          nextStep: 17,
+          nextStep: 21,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip04/trip04_05b.jpg",
+          title: "Odpowiedź",
+          description:
+              'A już myślałem, że odgadniesz. Niestety, dzwonki są w kaplicy.\n\nWstąpmy więc teraz do tego najważniejszego miejsca w naszym domu.',
+          nextStep: 21,
         ),
         StepItem(
           imageAsset: "assets/images/trip04/trip04_06.jpg",
           title: "Kaplica",
           description:
-              'Sercem każdego klasztoru jest kaplica, ponieważ to właśnie tutaj mieszka Pan Jezus w tabernakulum. Bardzo Go kochamy, dlatego często Go odwiedzamy na wspólnej i osobistej modlitwie. Wypraszamy potrzebne łaski, dziękujemy za wszelkie dobro, i przepraszamy za to, co w nas słabe i grzeszne.',
-          nextStep: 18,
+              'Sercem każdego klasztoru jest kaplica, ponieważ to właśnie tutaj mieszka Pan Jezus w tabernakulum.\n\nBardzo Go kochamy, dlatego często Go odwiedzamy na wspólnej i osobistej modlitwie. Wypraszamy potrzebne łaski, dziękujemy za wszelkie dobro, i przepraszamy za to, co w nas słabe i grzeszne.',
+          nextStep: 22,
         ),
         StepItem(
           type: StepType.info,
           title: "Zagadka",
           description: 'W jaki sposób współbracia modlą się najczęściej w kaplicy?',
           imageAsset: "assets/images/trip04/trip04_06.jpg",
-          previousStep: 17,
-          nextStep: 19,
-        ),
-        StepItem(
-          type: StepType.selectList,
-          selection: [
-            SelectionItem(text: "Eucharystia", stepLink: 20),
-            SelectionItem(text: "Droga Krzyżowa", stepLink: 20),
-            SelectionItem(text: "Brewiarz", stepLink: 20),
-            SelectionItem(text: "Różaniec", stepLink: 20),
-          ],
-          correctSelection: 0, // [0,2,3]
-          imageAsset: "assets/images/trip04/trip04_06.jpg",
-          previousStep: 18,
-        ),
-        StepItem(
-          type: StepType.answer,
-          title: "Odpowiedź",
-          correctSelection: 0, // [0,2,3]
-          correctAnswer:
-              "Wspaniale! Codzienna Eucharystia, modlitwa brewiarzowa i różaniec to nasze ulubione formy modlitwy, choć nie jedyne.\n\nZapraszam do dalszej wędrówki.",
-          incorrectAnswer:
-              'Czasem rzeczywiście wspólnie odprawiamy Drogę Krzyżową w kaplicy, ale tylko podczas Wielkiego Postu. Jeśli pogoda pozwala towarzyszymy również Panu Jezusowi na drodze krzyżowej w naszym parku.\n\nZapraszam do dalszej wędrówki.',
-          imageAsset: "assets/images/trip04/trip04_06a.jpg",
-          nextStep: 21,
-        ),
-        StepItem(
-          imageAsset: "assets/images/trip04/trip04_07.jpg",
-          title: "Korytarz kamienny",
-          description:
-              'Korytarz kamienny łączy wszystkie pomieszczenia nowej części zamku. Patrząc w górę można podziwiać przepiękny sufit, a na ścianach tego korytarza znajduje się wiele ciekawych obrazów.',
-          nextStep: 22,
-        ),
-        StepItem(
-          type: StepType.info,
-          title: "Zagadka",
-          description: 'Jakie obrazy można zobaczyć na korytarzu kamiennym?',
-          imageAsset: "assets/images/trip04/trip04_07.jpg",
           previousStep: 21,
           nextStep: 23,
         ),
         StepItem(
           type: StepType.selectList,
           selection: [
-            SelectionItem(text: "Bł. Franciszka Jordana", stepLink: 24),
-            SelectionItem(text: "Ks. Rektora", stepLink: 24),
-            SelectionItem(text: "Ks. Generała", stepLink: 24),
-            SelectionItem(text: "Br. Feliksa Siernego", stepLink: 24),
+            SelectionItem(text: "Eucharystia", stepLink: 24),
+            SelectionItem(text: "Droga Krzyżowa", stepLink: 25),
+            SelectionItem(text: "Brewiarz", stepLink: 24),
+            SelectionItem(text: "Różaniec", stepLink: 24),
           ],
-          correctSelection: 3, // [0,2,3]
-          imageAsset: "assets/images/trip04/trip04_07.jpg",
-          previousStep: 24,
+          correctSelection: [0, 2, 3],
+          imageAsset: "assets/images/trip04/trip04_06.jpg",
+          previousStep: 22,
         ),
         StepItem(
           type: StepType.answer,
           title: "Odpowiedź",
-          correctSelection: 3, // [0,2,3]
+          correctSelection: [0, 2, 3],
+          correctAnswer:
+              "Wspaniale! Codzienna Eucharystia, modlitwa brewiarzowa i różaniec to nasze ulubione formy modlitwy, choć nie jedyne.\n\nZapraszam do dalszej wędrówki.",
+          incorrectAnswer:
+              'Czasem rzeczywiście wspólnie odprawiamy Drogę Krzyżową w kaplicy, ale tylko podczas Wielkiego Postu. Jeśli pogoda pozwala towarzyszymy również Panu Jezusowi na drodze krzyżowej w naszym parku.\n\nZapraszam do dalszej wędrówki.',
+          imageAsset: "assets/images/trip04/trip04_06a.jpg",
+          nextStep: 26,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip04/trip04_06b.jpg",
+          title: "Odpowiedź",
+          description:
+              'Czasem rzeczywiście wspólnie odprawiamy Drogę Krzyżową w kaplicy, ale tylko podczas Wielkiego Postu. Jeśli pogoda pozwala towarzyszymy również Panu Jezusowi na drodze krzyżowej w naszym parku.\n\nZapraszam do dalszej wędrówki.',
+          nextStep: 26,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip04/trip04_07.jpg",
+          title: "Korytarz kamienny",
+          description:
+              'Korytarz kamienny łączy wszystkie pomieszczenia nowej części zamku. Patrząc w górę można podziwiać przepiękny sufit, a na ścianach tego korytarza znajduje się wiele ciekawych obrazów.',
+          nextStep: 27,
+        ),
+        StepItem(
+          type: StepType.info,
+          title: "Zagadka",
+          description: 'Jakie obrazy można zobaczyć na korytarzu kamiennym?',
+          imageAsset: "assets/images/trip04/trip04_07.jpg",
+          previousStep: 26,
+          nextStep: 28,
+        ),
+        StepItem(
+          type: StepType.selectList,
+          selection: [
+            SelectionItem(text: "Bł. Franciszka Jordana", stepLink: 29),
+            SelectionItem(text: "Ks. Rektora", stepLink: 30),
+            SelectionItem(text: "Ks. Generała", stepLink: 29),
+            SelectionItem(text: "Br. Feliksa Siernego", stepLink: 29),
+          ],
+          correctSelection: [0, 2, 3],
+          imageAsset: "assets/images/trip04/trip04_07.jpg",
+          previousStep: 27,
+        ),
+        StepItem(
+          type: StepType.answer,
+          title: "Odpowiedź",
+          correctSelection: [0, 2, 3],
           correctAnswer:
               "Masz rację! Na korytarzu można zobaczyć obrazy ważnych postaci dla naszego zgromadzenia: bł. Franciszka Jordana - naszego założyciela; brata Feliksa Siernego, który uratował ten dom podczas drugiej wojny światowej; i wszystkich księży pełniących funkcję generała zakonnego aż do dziś.\n\nPrzejdźmy teraz do kolejnego pomieszczenia.",
           incorrectAnswer:
               'Niestety nie! Ks. Rektor jest przełożonym naszej wspólnoty zakonnej, ale nie potrzebuje obrazu na ścianie, ponieważ możemy Go widywać na co dzień.\n\nPrzejdźmy teraz do kolejnego pomieszczenia.',
           imageAsset: "assets/images/trip04/trip04_07a.jpg",
-          nextStep: 25,
+          nextStep: 31,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip04/trip04_07b.jpg",
+          title: "Odpowiedź",
+          description:
+              'Niestety nie! Ks. Rektor jest przełożonym naszej wspólnoty zakonnej, ale nie potrzebuje obrazu na ścianie, ponieważ możemy Go widywać na co dzień.\n\nPrzejdźmy teraz do kolejnego pomieszczenia.',
+          nextStep: 31,
         ),
         StepItem(
           imageAsset: "assets/images/trip04/trip04_08.jpg",
           title: "Duża kaplica",
           description:
-              'Największym pomieszczeniem w naszym zamku jest główna kaplica. Aktualnie jest w remoncie i nie można jej zwiedzać, ale warto chociaż na zdjęciu zobaczyć jak kiedyś wyglądała. Po remoncie nabierze nowego blasku i będzie służyć przez wiele lat.',
-          nextStep: 26,
+              'Największym pomieszczeniem w naszym zamku jest główna kaplica. Aktualnie jest w remoncie i nie można jej zwiedzać, ale już niedługo nabierze nowego blasku i będzie służyć przez wiele lat.',
+          nextStep: 32,
         ),
         StepItem(
           type: StepType.info,
           title: "Zagadka",
           description: 'Jak myślisz, jakiej funkcji nie pełniło to pomieszczenie zanim przybyli tu salwatorianie?',
           imageAsset: "assets/images/trip04/trip04_08.jpg",
-          previousStep: 25,
-          nextStep: 27,
+          previousStep: 31,
+          nextStep: 33,
         ),
         StepItem(
           type: StepType.selectList,
           selection: [
-            SelectionItem(text: "Sala balowa", stepLink: 28),
-            SelectionItem(text: "Jadalnia", stepLink: 28),
-            SelectionItem(text: "Sala kinowa", stepLink: 28),
-            SelectionItem(text: "Sala gimnastyczna", stepLink: 28),
+            SelectionItem(text: "Sala balowa", stepLink: 35),
+            SelectionItem(text: "Jadalnia", stepLink: 34),
+            SelectionItem(text: "Sala kinowa", stepLink: 34),
+            SelectionItem(text: "Sala gimnastyczna", stepLink: 34),
           ],
-          correctSelection: 1, // [1,2,3]
+          correctSelection: [1, 2, 3],
           imageAsset: "assets/images/trip04/trip04_08.jpg",
-          previousStep: 26,
+          previousStep: 32,
         ),
         StepItem(
           type: StepType.answer,
           title: "Odpowiedź",
-          correctSelection: 1, // [1,2,3]
+          correctSelection: [1, 2, 3],
           correctAnswer:
               "Świetnie! Poprzedni właściciel i budowniczy tej części zamku, pan Georg Kissling, zaprojektował to pomieszczenie jako salę balową.\n\nZobaczmy co kryje się dalej.",
           incorrectAnswer:
               'Niestety to niepoprawna odpowiedź! Poprzedni właściciel i budowniczy tej części zamku, pan Georg Kissling, zaprojektował to pomieszczenie właśnie jako salę balową.\n\nZobaczmy co kryje się dalej.',
           imageAsset: "assets/images/trip04/trip04_08a.jpg",
-          nextStep: 29,
+          nextStep: 36,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip04/trip04_08a.jpg",
+          title: "Odpowiedź",
+          description:
+              'Niestety to niepoprawna odpowiedź! Poprzedni właściciel i budowniczy tej części zamku, pan Georg Kissling, zaprojektował to pomieszczenie właśnie jako salę balową.\n\nZobaczmy co kryje się dalej.',
+          nextStep: 36,
         ),
         StepItem(
           imageAsset: "assets/images/trip04/trip04_09.jpg",
           title: "Rozmównica",
           description:
               'Gościnność jest bardzo ważna w życiu zakonnym. Często korzystamy więc z rozmównicy. Jest to pomieszczenie, w którym przyjmujemy naszych gości. Można tutaj porozmawiać, wypić herbatę lub kawę, albo coś zjeść.',
-          nextStep: 30,
+          nextStep: 37,
         ),
         StepItem(
           type: StepType.info,
           title: "Zagadka",
           description: 'Spróbuj odgadnąć, jaki instrument muzyczny nie znajduje się w rozmównicy?',
           imageAsset: "assets/images/trip04/trip04_09.jpg",
-          previousStep: 29,
-          nextStep: 31,
+          previousStep: 36,
+          nextStep: 38,
         ),
         StepItem(
           type: StepType.selectList,
           selection: [
-            SelectionItem(text: "Fortepian", stepLink: 32),
-            SelectionItem(text: "Pianino", stepLink: 32),
-            SelectionItem(text: "Akordeon", stepLink: 32),
-            SelectionItem(text: "Gitara", stepLink: 32),
+            SelectionItem(text: "Fortepian", stepLink: 40),
+            SelectionItem(text: "Pianino", stepLink: 39),
+            SelectionItem(text: "Akordeon", stepLink: 39),
+            SelectionItem(text: "Gitara", stepLink: 39),
           ],
-          correctSelection: 3, // [1,2,3]
+          correctSelection: [1, 2, 3],
           imageAsset: "assets/images/trip04/trip04_09.jpg",
-          previousStep: 30,
+          previousStep: 37,
         ),
         StepItem(
           type: StepType.answer,
           title: "Odpowiedź",
-          correctSelection: 3, // [1,2,3]
+          correctSelection: [1, 2, 3],
           correctAnswer:
               "Bardzo dobrze! W rozmównicy znajduje się fortepian, który służy także klerykom do ćwiczeń. Gra na instrumencie jest wspaniałym sposobem na spędzanie wolnego czasu.\n\nZobaczmy teraz co kryje się w starej części zamku.",
           incorrectAnswer:
               'To była trudna zagadka. Niestety nie odgadłeś! W rozmównicy znajduje się fortepian, który służy także klerykom do ćwiczeń. Gra na instrumencie jest wspaniałym sposobem na spędzanie wolnego czasu.\n\nZobaczmy teraz co kryje się w starej części zamku.',
           imageAsset: "assets/images/trip04/trip04_09a.jpg",
-          nextStep: 33,
+          nextStep: 41,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip04/trip04_09b.jpg",
+          title: "Odpowiedź",
+          description:
+              'To była trudna zagadka. Niestety nie odgadłeś! W rozmównicy znajduje się fortepian, który służy także klerykom do ćwiczeń. Gra na instrumencie jest wspaniałym sposobem na spędzanie wolnego czasu.\n\nZobaczmy teraz co kryje się w starej części zamku.',
+          nextStep: 41,
         ),
         StepItem(
           imageAsset: "assets/images/trip04/trip04_10.jpg",
           title: "Refektarz",
           description:
-              'Ważną częścią każdego dnia są posiłki. Spożywamy je razem w refektarzu. Jest to miejsce, gdzie się również modlimy, wzajemnie obsługujemy oraz rozmawiamy. Większość produktów na stole pochodzi z naszego ogrodu. Pracują tam nowicjusze i klerycy, a dyrektorem od bardzo wielu lat jest brat Hieronim.',
-          nextStep: 34,
+              'Ważną częścią każdego dnia są posiłki. Spożywamy je razem w refektarzu. Jest to miejsce, gdzie się również modlimy, wzajemnie obsługujemy oraz rozmawiamy.\n\nWiększość produktów na stole pochodzi z naszego ogrodu. Pracują tam nowicjusze i klerycy, a dyrektorem od bardzo wielu lat jest brat Hieronim.',
+          nextStep: 42,
         ),
         StepItem(
           type: StepType.info,
           title: "Zagadka",
           description: 'Jak myślisz, które produkty pochodzą z naszego ogrodu?',
           imageAsset: "assets/images/trip04/trip04_10.jpg",
-          previousStep: 33,
-          nextStep: 35,
+          previousStep: 41,
+          nextStep: 43,
         ),
         StepItem(
           type: StepType.selectList,
           selection: [
-            SelectionItem(text: "Pomidory", stepLink: 36),
-            SelectionItem(text: "Ogórki", stepLink: 36),
-            SelectionItem(text: "Ziemniaki", stepLink: 36),
-            SelectionItem(text: "Pomarańcze", stepLink: 36),
+            SelectionItem(text: "Pomidory", stepLink: 44),
+            SelectionItem(text: "Ogórki", stepLink: 44),
+            SelectionItem(text: "Ziemniaki", stepLink: 44),
+            SelectionItem(text: "Pomarańcze", stepLink: 45),
           ],
-          correctSelection: 2, // [0,1,2]
+          correctSelection: [0, 1, 2],
           imageAsset: "assets/images/trip04/trip04_10.jpg",
-          previousStep: 34,
+          previousStep: 42,
         ),
         StepItem(
           type: StepType.answer,
           title: "Odpowiedź",
-          correctSelection: 2, // [0,1,2]
+          correctSelection: [0, 1, 2],
           correctAnswer:
               "Zgadza się! W klasztornym ogrodzie hodujemy bardzo wiele owoców, warzyw i jarzyn. Są to między innymi pomidory, ogórki i ziemniaki.\n\nCzeka nas jeszcze jedno pomieszczenie do zwiedzenia. Jesteś gotowy?",
           incorrectAnswer:
               'Niestety! W klasztornym ogrodzie hodujemy bardzo wiele owoców, warzyw i jarzyn, ale nie ma tam pomarańczy.\n\nCzeka nas jeszcze jedno pomieszczenie do zwiedzenia. Jesteś gotowy?',
-          imageAsset: "assets/images/trip04/trip04_10b.jpg", // TODO: change to a
-          nextStep: 37,
+          imageAsset: "assets/images/trip04/trip04_10a.jpg",
+          nextStep: 46,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip04/trip04_10b.jpg",
+          title: "Odpowiedź",
+          description:
+              'Niestety! W klasztornym ogrodzie hodujemy bardzo wiele owoców, warzyw i jarzyn, ale nie ma tam pomarańczy.\n\nCzeka nas jeszcze jedno pomieszczenie do zwiedzenia. Jesteś gotowy?',
+          nextStep: 46,
         ),
         StepItem(
           imageAsset: "assets/images/trip04/trip04_11.jpg",
           title: "Sala dębowa",
           description:
-              'Sala dębowa to najbardziej reprezentatywna część starego zamku. Używamy jej do wielkich uroczystości, takich jak: inauguracja roku akademickiego, śpiewanie kolend przy kominku, lub gościnne wykłady. Znajduje się tu również wiele ciekawych zwierzątek wyrzeźbionych w drewnie, które czasem trudno jest dostrzec. Odwiedź nas i sprawdź na własne oczy!\n\nA teraz ostatnia zagadka…',
-          nextStep: 38,
+              'Sala dębowa to najbardziej reprezentatywna część starego zamku. Używamy jej do wielkich uroczystości, takich jak: inauguracja roku akademickiego, śpiewanie kolend przy kominku, lub gościnne wykłady.\n\nZnajduje się tu również wiele ciekawych zwierzątek wyrzeźbionych w drewnie, które czasem trudno jest dostrzec. Odwiedź nas i sprawdź na własne oczy!\n\nA teraz ostatnia zagadka…',
+          nextStep: 47,
         ),
         StepItem(
           type: StepType.info,
           title: "Zagadka",
-          description: 'Zgadnij jakie zwierzątko można zobaczyć wyrzeźbione w drewnie?',
+          description: 'Zgadnij jakie zwierzątko można tu zobaczyć wyrzeźbione w drewnie?',
           imageAsset: "assets/images/trip04/trip04_11.jpg",
-          previousStep: 37,
-          nextStep: 39,
+          previousStep: 46,
+          nextStep: 48,
         ),
         StepItem(
           type: StepType.selectList,
           selection: [
-            SelectionItem(text: "Jaszczurkę", stepLink: 40),
-            SelectionItem(text: "Sowę", stepLink: 40),
-            SelectionItem(text: "Jelenia", stepLink: 40),
-            SelectionItem(text: "Orła", stepLink: 40),
+            SelectionItem(text: "Jaszczurkę", stepLink: 49),
+            SelectionItem(text: "Sowę", stepLink: 49),
+            SelectionItem(text: "Jelenia", stepLink: 50),
+            SelectionItem(text: "Orła", stepLink: 49),
           ],
-          correctSelection: 3, // [0,1,3]
+          correctSelection: [0, 1, 3],
           imageAsset: "assets/images/trip04/trip04_11.jpg",
-          previousStep: 38,
+          previousStep: 47,
         ),
         StepItem(
           type: StepType.answer,
           title: "Odpowiedź",
-          correctSelection: 3, // [0,1,3]
+          correctSelection: [0, 1, 3],
           correctAnswer:
               "Wspaniale! Rzeczywiście można tu zobaczyć sowę, jaszczurkę i orła. Znalazłeś poprawną odpowiedź na ostatnie pytanie.",
           incorrectAnswer: 'Nie martw się! Ta ostatnia zagadka była trudna, ale następnym razem będzie lepiej.',
           imageAsset: "assets/images/trip04/trip04_11a.jpg",
-          nextStep: 41,
+          nextStep: 51,
+        ),
+        StepItem(
+          imageAsset: "assets/images/trip04/trip04_11b.jpg",
+          title: "Odpowiedź",
+          description: 'Nie martw się! Ta ostatnia zagadka była trudna, ale następnym razem będzie lepiej.',
+          nextStep: 51,
         ),
         StepItem(
           type: StepType.end,

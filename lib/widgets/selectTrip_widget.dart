@@ -120,7 +120,8 @@ Stack _cardStack(TripDataController tripController, int tripIndex, double topSta
                       style: AppTextStyles.headerH3.copyWith(color: AppColors.primaryNormal),
                     ),
                     style: TextButton.styleFrom(
-                      foregroundColor: AppColors.primaryNormal, padding: EdgeInsets.fromLTRB(
+                      foregroundColor: AppColors.primaryNormal,
+                      padding: EdgeInsets.fromLTRB(
                           Constants.endMargin, Constants.bottomMargin, Constants.endMargin, Constants.bottomMargin),
                       backgroundColor: AppColors.primaryWhite,
                       shape: RoundedRectangleBorder(
@@ -128,7 +129,7 @@ Stack _cardStack(TripDataController tripController, int tripIndex, double topSta
                       ),
                     ),
                     onPressed: () {
-                      print("screen width: " + Get.width.toString());
+                      // print("screen width: " + Get.width.toString());
                       Get.to(() => TripPage(
                             tripIndex: tripIndex,
                           ));
