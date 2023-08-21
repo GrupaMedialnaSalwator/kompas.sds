@@ -198,8 +198,13 @@ class TripViewStepSwitch extends StatelessWidget {
   }
 
   bool _correctAnswer(TripDataSelect tripDataSelect) {
-    return (tripStateController.getCurrentAnswer() ==
-        tripDataController.getStepItem(tripDataSelect: tripDataSelect).correctSelection);
+    // Check if any answer is correct in the selection array
+    for (int number in tripDataController.getStepItem(tripDataSelect: tripDataSelect).correctSelection) {
+      if (tripStateController.getCurrentAnswer() == number) {
+        return true;
+      }
+    }
+    return false;
   }
 }
 
@@ -210,7 +215,7 @@ Axis getAxisLayout() {
   var availableHeight = Get.height -
       (Get.width * Constants.defaultImageRatio) -
       80; // TODO: programatically find height of the navigation
-  print('availableHeight = ' + availableHeight.toString() + ', screen width = ' + Get.width.toString());
+  // print('availableHeight = ' + availableHeight.toString() + ', screen width = ' + Get.width.toString());
   if (availableHeight > Get.width)
     return Axis.vertical;
   else
@@ -221,10 +226,11 @@ String getAnswerText(
     {required TripStateController tripStateController,
     required TripDataController tripDataController,
     required TripDataSelect tripDataSelect}) {
-  if (tripStateController.getCurrentAnswer() ==
-      tripDataController.getStepItem(tripDataSelect: tripDataSelect).correctSelection) {
-    return tripDataController.getStepItem(tripDataSelect: tripDataSelect).correctAnswer;
-  } else {
-    return tripDataController.getStepItem(tripDataSelect: tripDataSelect).incorrectAnswer;
+  // Check if any answer is correct in the selection array
+  for (int number in tripDataController.getStepItem(tripDataSelect: tripDataSelect).correctSelection) {
+    if (tripStateController.getCurrentAnswer() == number) {
+      return tripDataController.getStepItem(tripDataSelect: tripDataSelect).correctAnswer;
+    }
   }
+  return tripDataController.getStepItem(tripDataSelect: tripDataSelect).incorrectAnswer;
 }
