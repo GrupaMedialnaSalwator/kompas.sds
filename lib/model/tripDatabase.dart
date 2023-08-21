@@ -97,7 +97,6 @@ class StepItem {
     ], // TODO: run tests to check if this variable is set the same for select and answer steps
     this.correctAnswer = "Correct!",
     this.incorrectAnswer = "Unfortunately this is not correct.",
-    this.incorrectImageAsset = Constants.noImage,
     this.previousStep = -1,
     this.nextStep = -1,
   });
@@ -111,7 +110,6 @@ class StepItem {
   List<int> correctSelection; // possible multiple correct answers
   String correctAnswer;
   String incorrectAnswer;
-  String incorrectImageAsset;
   int previousStep;
   int nextStep;
 }
