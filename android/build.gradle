@@ -9,7 +9,6 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:8.3.0"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        // classpath "dev.flutter:flutter-gradle-plugin"
     }
 }
 
@@ -31,95 +30,3 @@ subprojects {
 tasks.register("clean", Delete) {
     delete rootProject.buildDir
 }
-
-
-// ////////// OLD CODE //////////
-// plugins {
-//     id 'com.android.application'
-//     id 'org.jetbrains.kotlin.android'
-//     id 'dev.flutter.flutter-gradle-plugin'
-// }
-
-// // new properties for Gradle wrapper
-// buildscript {
-//     repositories {
-//         google()
-//         mavenCentral()
-//     }
-//     dependencies {
-//         classpath 'com.android.tools.build:gradle:8.4.1'  // Use matching AGP version
-//         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.10"
-//     }
-// }
-
-// def localProperties = new Properties()
-// def localPropertiesFile = rootProject.file('local.properties')
-
-// if (localPropertiesFile.exists()) {
-//     localPropertiesFile.withReader('UTF-8') { reader -> 
-//         localProperties.load(reader)
-//     }
-// } else {
-//     throw new GradleException("local.properties file not found!")
-// }
-
-// def flutterRoot = localProperties.getProperty('flutter.sdk')
-// if (flutterRoot == null) {
-//     throw new GradleException("flutter.sdk not defined in local.properties")
-// }
-
-// def flutterVersionCode = localProperties.getProperty('flutter.versionCode') ?: '1'
-// def flutterVersionName = localProperties.getProperty('flutter.versionName') ?: '1.0'
-
-// android {
-//     namespace 'pl.sds.kompas'  // Use namespace instead of applicationId here (AGP 7.0+)
-//     compileSdk 35
-
-//     defaultConfig {
-//         applicationId "pl.sds.kompas"  // applicationId goes here
-//         minSdk 24
-//         targetSdk 35
-
-//         versionCode flutterVersionCode.toInteger()
-//         versionName flutterVersionName
-//     }
-
-//     signingConfigs {
-//         release {
-//             if (System.getenv()["CI"]) { // Codemagic CI environment variables
-//                 storeFile file(System.getenv()["CM_KEYSTORE_PATH"])
-//                 storePassword System.getenv()["CM_KEYSTORE_PASSWORD"]
-//                 keyAlias System.getenv()["CM_KEY_ALIAS"]
-//                 keyPassword System.getenv()["CM_KEY_PASSWORD"]
-//             } else {
-//                 // local signing config here (commented out)
-//                 // storeFile file("/path/to/keystore.jks")
-//                 // storePassword "password"
-//                 // keyAlias "alias"
-//                 // keyPassword "password"
-//             }
-//         }
-//     }
-
-//     buildTypes {
-//         release {
-//             if (System.getenv()["CI"]) {
-//                 signingConfig signingConfigs.release
-//                 minifyEnabled false
-//                 shrinkResources false
-//                 proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-//             } else {
-//                 signingConfig signingConfigs.debug
-//             }
-//         }
-//     }
-
-//     sourceSets {
-//         main.java.srcDirs += 'src/main/kotlin'
-//     }
-// }
-
-// dependencies {
-//     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-//     // Add other dependencies here
-// }
