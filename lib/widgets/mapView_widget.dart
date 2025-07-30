@@ -83,90 +83,92 @@ class MapView extends StatelessWidget {
         //   },
         // ),
       ),
-      body: Stack(
-        children: [
-          InteractiveViewer(
-            constrained: false,
-            transformationController: controller,
-            child: Stack(
-              children: List<Widget>.generate(1, (int index) => Image.asset("assets/images/wsd_map.png")) +
-                  List<Widget>.generate(
-                    mapDataController.getLength(),
-                    (int index) => MapPoint(
-                      mapTransformController: controller,
-                      mapItemIndex: index,
-                      mapDataController: mapDataController,
-                      scrollController: _scrollController,
+      body: SafeArea(
+        child: Stack(
+          children: [
+            InteractiveViewer(
+              constrained: false,
+              transformationController: controller,
+              child: Stack(
+                children: List<Widget>.generate(1, (int index) => Image.asset("assets/images/wsd_map.png")) +
+                    List<Widget>.generate(
+                      mapDataController.getLength(),
+                      (int index) => MapPoint(
+                        mapTransformController: controller,
+                        mapItemIndex: index,
+                        mapDataController: mapDataController,
+                        scrollController: _scrollController,
+                      ),
+                      // TODO: add this segment to display icon for present gps position
+                      // ) +
+                      // List<Widget>.generate(
+                      //   1,
+                      //   (int index) => GPSPoint(
+                      //     mapDataController: mapDataController,
+                      //   ),
                     ),
-                    // TODO: add this segment to display icon for present gps position
-                    // ) +
-                    // List<Widget>.generate(
-                    //   1,
-                    //   (int index) => GPSPoint(
-                    //     mapDataController: mapDataController,
-                    //   ),
-                  ),
+              ),
+              onInteractionStart: (ScaleStartDetails scaleStartDetails) {
+                // print('Interaction Start - Focal point: ${scaleStartDetails.focalPoint}'
+                //     ', Local focal point: ${scaleStartDetails.localFocalPoint}');
+              },
+              onInteractionEnd: (ScaleEndDetails scaleEndDetails) {
+                // user clicked on the map view
+                mapDataController.setCurrentMapIconIndex(-1);
+                // print("x=" +
+                //     controller.value.getTranslation().x.toString() +
+                //     " y=" +
+                //     controller.value.getTranslation().y.toString());
+                // print('Interaction End - Velocity: ${scaleEndDetails.velocity}');
+              },
+              onInteractionUpdate: (ScaleUpdateDetails scaleUpdateDetails) {
+                // print(
+                //     'Interaction Update - Focal point: ${scaleUpdateDetails.focalPoint}'
+                //     ', Local focal point: ${scaleUpdateDetails.localFocalPoint}'
+                //     ', Scale: ${scaleUpdateDetails.scale}'
+                //     ', Horizontal scale: ${scaleUpdateDetails.horizontalScale}'
+                //     ', Vertical scale: ${scaleUpdateDetails.verticalScale}'
+                //     ', Rotation: ${scaleUpdateDetails.rotation}');
+              },
             ),
-            onInteractionStart: (ScaleStartDetails scaleStartDetails) {
-              // print('Interaction Start - Focal point: ${scaleStartDetails.focalPoint}'
-              //     ', Local focal point: ${scaleStartDetails.localFocalPoint}');
-            },
-            onInteractionEnd: (ScaleEndDetails scaleEndDetails) {
-              // user clicked on the map view
-              mapDataController.setCurrentMapIconIndex(-1);
-              // print("x=" +
-              //     controller.value.getTranslation().x.toString() +
-              //     " y=" +
-              //     controller.value.getTranslation().y.toString());
-              // print('Interaction End - Velocity: ${scaleEndDetails.velocity}');
-            },
-            onInteractionUpdate: (ScaleUpdateDetails scaleUpdateDetails) {
-              // print(
-              //     'Interaction Update - Focal point: ${scaleUpdateDetails.focalPoint}'
-              //     ', Local focal point: ${scaleUpdateDetails.localFocalPoint}'
-              //     ', Scale: ${scaleUpdateDetails.scale}'
-              //     ', Horizontal scale: ${scaleUpdateDetails.horizontalScale}'
-              //     ', Vertical scale: ${scaleUpdateDetails.verticalScale}'
-              //     ', Rotation: ${scaleUpdateDetails.rotation}');
-            },
-          ),
-          Positioned(
-            height: Constants.mapCardHeight,
-            width: Get.width,
-            left: 0,
-            bottom: 0,
-            child: Container(
+            Positioned(
               height: Constants.mapCardHeight,
-              color: AppColors.transparent,
-              child: ListView.separated(
-                controller: _scrollController,
-                scrollDirection: Axis.horizontal,
-                shrinkWrap: true,
-                //padding: EdgeInsets.all(20),
-                itemCount: mapDataController.getLength(),
-                separatorBuilder: (BuildContext context, int index) =>
-                    VerticalDivider(width: Constants.cardMargin, color: AppColors.transparent),
-                itemBuilder: (BuildContext context, int index) => MapCardHero(
-                  mapItemIndex: index,
-                  onTap: () {
-                    print('tapped map card... x:' +
-                        controller.getViewX().toString() +
-                        ' y:' +
-                        controller.getViewY().toString());
-
-                    // center and animate the map view on the item icon
-                    var start = controller.value;
-                    var end = controller.getCenteredViewMatrix(mapDataController.getMapItem(index: index).locationX,
-                        mapDataController.getMapItem(index: index).locationY);
-                    mapDataController.setupMapAnimation(controller);
-                    mapDataController.navigateFromToPoint(start: start, end: end);
-                    mapDataController.setCurrentMapIconIndex(index);
-                  },
+              width: Get.width,
+              left: 0,
+              bottom: 0,
+              child: Container(
+                height: Constants.mapCardHeight,
+                color: AppColors.transparent,
+                child: ListView.separated(
+                  controller: _scrollController,
+                  scrollDirection: Axis.horizontal,
+                  shrinkWrap: true,
+                  //padding: EdgeInsets.all(20),
+                  itemCount: mapDataController.getLength(),
+                  separatorBuilder: (BuildContext context, int index) =>
+                      VerticalDivider(width: Constants.cardMargin, color: AppColors.transparent),
+                  itemBuilder: (BuildContext context, int index) => MapCardHero(
+                    mapItemIndex: index,
+                    onTap: () {
+                      print('tapped map card... x:' +
+                          controller.getViewX().toString() +
+                          ' y:' +
+                          controller.getViewY().toString());
+        
+                      // center and animate the map view on the item icon
+                      var start = controller.value;
+                      var end = controller.getCenteredViewMatrix(mapDataController.getMapItem(index: index).locationX,
+                          mapDataController.getMapItem(index: index).locationY);
+                      mapDataController.setupMapAnimation(controller);
+                      mapDataController.navigateFromToPoint(start: start, end: end);
+                      mapDataController.setCurrentMapIconIndex(index);
+                    },
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

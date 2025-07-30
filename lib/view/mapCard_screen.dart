@@ -19,26 +19,28 @@ class MapCardPage extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: AppColors.primaryNormal,
-      body: Container(
-        alignment: Alignment.topCenter,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topRight,
-            end: Alignment.bottomLeft,
-            colors: [
-              AppColors.primaryDark,
-              AppColors.primaryLight,
-            ],
+      body: SafeArea(
+        child: Container(
+          alignment: Alignment.topCenter,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topRight,
+              end: Alignment.bottomLeft,
+              colors: [
+                AppColors.primaryDark,
+                AppColors.primaryLight,
+              ],
+            ),
           ),
-        ),
-        child: ClipPath(
-          clipper: RoundedClipPath.down(), // create rounded corners at the bottom of an image
-          child: Image.asset(
-            _mapDataController.getMapItem(index: mapItemIndex).imageAsset,
-            height: Get.height * (1 - Constants.tripBottomSheetRatio) + (Constants.borderRadius / 2),
-            width: Get.width,
-            fit: BoxFit.cover,
-            gaplessPlayback: true, // prevents flicker on switching images
+          child: ClipPath(
+            clipper: RoundedClipPath.down(), // create rounded corners at the bottom of an image
+            child: Image.asset(
+              _mapDataController.getMapItem(index: mapItemIndex).imageAsset,
+              height: Get.height * (1 - Constants.tripBottomSheetRatio) + (Constants.borderRadius / 2),
+              width: Get.width,
+              fit: BoxFit.cover,
+              gaplessPlayback: true, // prevents flicker on switching images
+            ),
           ),
         ),
       ),
