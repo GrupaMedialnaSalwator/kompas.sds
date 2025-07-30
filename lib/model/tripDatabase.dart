@@ -1522,7 +1522,7 @@ List<TripItem> generateTripItems() {
           type: StepType.answer,
           title: "Odpowiedź",
           correctSelection: [0, 1, 2],
-          correctAnswer: "Tak jest! Na piętrze znajduje się świetlica, pokoje i sale wykładowe.\n\nRuszamy dalej?",
+          correctAnswer: "Tak jest! Na piętrze znajdują się pokoje, sale wykładowe i świetlica.\n\nRuszamy dalej?",
           incorrectAnswer:
               "Niestety nie! Kuchnia zakonna jest na dole. Posługują w niej nasze kochane siostry - Aniela i Daria.\n\nRuszamy dalej?",
           imageAsset: "assets/images/trip04/trip04_03a.jpg",

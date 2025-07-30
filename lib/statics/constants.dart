@@ -57,11 +57,13 @@ class Constants {
   /// opacity0 = 0.0
   static const double opacity0 = 0.0;
 
-  /// opacity25 = 0.25
+  /// opacity25 = 0.25 with equivalent alpha value of 64
   static const double opacity25 = 0.25;
+  static const int alpha64 = 64;
 
-  /// opacity75 = 0.75
+  /// opacity75 = 0.75 with equivalent alpha value of 191
   static const double opacity75 = 0.75;
+  static const int alpha191 = 191;
 
   /// maxMapSizeX = 1499.0
   static const double maxMapSizeX = 1600.0; // TODO: check for this - testing

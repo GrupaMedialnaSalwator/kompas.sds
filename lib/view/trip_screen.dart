@@ -61,7 +61,7 @@ class TripPage extends StatelessWidget {
                     child: Container(
                       padding: EdgeInsets.all(12),
                       decoration: BoxDecoration(
-                        color: AppColors.primaryNormal.withOpacity(Constants.opacity75),
+                        color: AppColors.primaryNormal.withAlpha(Constants.alpha191),
                         shape: BoxShape.rectangle,
                         borderRadius: BorderRadius.all(
                           Radius.circular(Constants.borderRadius),
@@ -90,7 +90,7 @@ class TripPage extends StatelessWidget {
         actions: <Widget>[
           Container(
             decoration: BoxDecoration(
-              color: AppColors.primaryNormal.withOpacity(Constants.opacity75),
+              color: AppColors.primaryNormal.withAlpha(Constants.alpha191),
               shape: BoxShape.circle,
             ),
             child: Center(
