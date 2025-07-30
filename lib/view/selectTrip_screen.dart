@@ -16,15 +16,17 @@ class SelectTripPage extends StatelessWidget {
     final TripDataController _tripDataController = Get.find();
 
     return Scaffold(
-      body: Container(
-        height: Get.height * (1 - Constants.tripBottomSheetRatio),
-        width: Get.width,
-        child: Hero(
-          tag: tripIndex.toString(),
-          child: Image.asset(
-            _tripDataController.getTripItem(index: tripIndex).imageAsset,
-            fit: BoxFit.cover,
-            gaplessPlayback: true, // prevents flicker on switching images
+      body: SafeArea(
+        child: Container(
+          height: Get.height * (1 - Constants.tripBottomSheetRatio),
+          width: Get.width,
+          child: Hero(
+            tag: tripIndex.toString(),
+            child: Image.asset(
+              _tripDataController.getTripItem(index: tripIndex).imageAsset,
+              fit: BoxFit.cover,
+              gaplessPlayback: true, // prevents flicker on switching images
+            ),
           ),
         ),
       ),

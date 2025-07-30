@@ -134,34 +134,36 @@ class _HomePageState extends State<HomePage>
           )),
         ],
       ),
-      body: PopScope(
-        canPop: false, // Disable default pop behavior
-        onPopInvokedWithResult: (bool didPop, Object? result) async {
-          if (didPop) {
-            return;
-          }
-          if (_tabController.index != 0) {
-            _tabController.index = 0; // Intercept and switch tab
-          } else {
-            SystemNavigator.pop(); // force app exit immediately
-          }
-        },
-        child: Container(
-          //margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/images/background_compass_v3.jpg"),
-              fit: BoxFit.cover,
+      body: SafeArea(
+        child: PopScope(
+          canPop: false, // Disable default pop behavior
+          onPopInvokedWithResult: (bool didPop, Object? result) async {
+            if (didPop) {
+              return;
+            }
+            if (_tabController.index != 0) {
+              _tabController.index = 0; // Intercept and switch tab
+            } else {
+              SystemNavigator.pop(); // force app exit immediately
+            }
+          },
+          child: Container(
+            //margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/images/background_compass_v3.jpg"),
+                fit: BoxFit.cover,
+              ),
             ),
-          ),
-          child: TabBarView(
-            controller: _tabController,
-            physics: NeverScrollableScrollPhysics(),
-            children: [
-              KeepAliveWrapper(child: HomeView()),
-              KeepAliveWrapper(child: MapView()),
-              KeepAliveWrapper(child: InfoView()),
-            ],
+            child: TabBarView(
+              controller: _tabController,
+              physics: NeverScrollableScrollPhysics(),
+              children: [
+                KeepAliveWrapper(child: HomeView()),
+                KeepAliveWrapper(child: MapView()),
+                KeepAliveWrapper(child: InfoView()),
+              ],
+            ),
           ),
         ),
       ),

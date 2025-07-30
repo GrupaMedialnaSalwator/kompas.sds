@@ -110,11 +110,13 @@ class TripPage extends StatelessWidget {
           )
         ],
       ),
-      body: Obx(
-        () => TripViewStep(
-          tripStateController: _tripStateController,
-          tripDataController: _tripDataController,
-          tripDataSelect: TripDataSelect(tripIndex: tripIndex, stepIndex: _tripStateController.getCurrentStep()),
+      body: SafeArea(
+        child: Obx(
+          () => TripViewStep(
+            tripStateController: _tripStateController,
+            tripDataController: _tripDataController,
+            tripDataSelect: TripDataSelect(tripIndex: tripIndex, stepIndex: _tripStateController.getCurrentStep()),
+          ),
         ),
       ),
     );
