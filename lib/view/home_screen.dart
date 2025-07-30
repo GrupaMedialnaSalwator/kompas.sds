@@ -22,7 +22,8 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
+class _HomePageState extends State<HomePage>
+    with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
   bool shouldRedraw = true; // used to change screen titles on tab change
@@ -43,13 +44,16 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
   Widget build(BuildContext context) {
     // Controllers used throughout the app
     // ignore: unused_local_variable
-    final TripDataController _tripDataController = Get.put(TripDataController());
+    final TripDataController _tripDataController =
+        Get.put(TripDataController());
     // ignore: unused_local_variable
-    final TripStateController _tripStateController = Get.put(TripStateController());
+    final TripStateController _tripStateController =
+        Get.put(TripStateController());
     // ignore: unused_local_variable
     final MapDataController _mapDataController = Get.put(MapDataController());
     // ignore: unused_local_variable
-    final AchievementTrackerController _achievementTrackerController = Get.put(AchievementTrackerController());
+    final AchievementTrackerController _achievementTrackerController =
+        Get.put(AchievementTrackerController());
     _achievementTrackerController.reloadState();
 
     // Listens to tab change and forces title to redraw
@@ -70,21 +74,27 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
         });
         switch (_tabController.index) {
           case 0:
-            return Text('Witamy w Bagnie', style: TextStyle(color: AppColors.primaryDark));
+            return Text('Witamy w Bagnie',
+                style: TextStyle(color: AppColors.primaryDark));
           case 1:
-            return Text('Mapka klasztoru', style: TextStyle(color: AppColors.primaryDark));
+            return Text('Mapka klasztoru',
+                style: TextStyle(color: AppColors.primaryDark));
           case 2:
-            return Text('Informacje', style: TextStyle(color: AppColors.primaryDark));
+            return Text('Informacje',
+                style: TextStyle(color: AppColors.primaryDark));
           default:
             assert(false, "_getTitle() error: unexpected screen view");
         }
       }
-      return Text('Witamy w Bagnie', style: TextStyle(color: AppColors.primaryDark));
+      return Text('Witamy w Bagnie',
+          style: TextStyle(color: AppColors.primaryDark));
     }
 
     return Scaffold(
-      drawer:
-          SizedBox(width: MediaQuery.of(context).size.width * Constants.drawerWidthPercentage, child: DrawerWidget()),
+      drawer: SizedBox(
+          width: MediaQuery.of(context).size.width *
+              Constants.drawerWidthPercentage,
+          child: DrawerWidget()),
       extendBodyBehindAppBar: true,
       backgroundColor: AppColors.primaryWhite,
       appBar: AppBar(
@@ -96,7 +106,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           statusBarBrightness: Brightness.dark, // For iOS (dark icons)
         ),
         iconTheme: IconThemeData(color: AppColors.primaryNormal),
-        backgroundColor: AppColors.primaryWhite.withOpacity(Constants.opacity25),
+        backgroundColor: AppColors.primaryWhite.withAlpha(Constants.alpha64),
         foregroundColor: AppColors.primaryWhite,
         elevation: 0,
         title: _getTitle(context),
@@ -124,14 +134,16 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           )),
         ],
       ),
-      body: WillPopScope(
-        // Override back button
-        onWillPop: () async {
+      body: PopScope(
+        canPop: false, // Disable default pop behavior
+        onPopInvokedWithResult: (bool didPop, Object? result) async {
+          if (didPop) {
+            return;
+          }
           if (_tabController.index != 0) {
-            _tabController.index = 0;
-            return false;
+            _tabController.index = 0; // Intercept and switch tab
           } else {
-            return true;
+            SystemNavigator.pop(); // force app exit immediately
           }
         },
         child: Container(
@@ -139,7 +151,6 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage("assets/images/background_compass_v3.jpg"),
-              //colorFilter: ColorFilter.mode(Colors.white.withOpacity(1.0), BlendMode.modulate),
               fit: BoxFit.cover,
             ),
           ),

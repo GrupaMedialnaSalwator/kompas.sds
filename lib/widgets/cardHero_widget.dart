@@ -66,7 +66,7 @@ class CardHero extends StatelessWidget {
                 child: Container(
                   padding: EdgeInsets.all(12),
                   decoration: BoxDecoration(
-                    color: AppColors.primaryNormal.withOpacity(Constants.opacity75),
+                    color: AppColors.primaryNormal.withAlpha(Constants.alpha191),
                     shape: BoxShape.circle,
                     border: Border.all(width: 1.5, color: AppColors.primaryWhite),
                   ),
