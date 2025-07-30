@@ -114,33 +114,6 @@ class InfoView extends StatelessWidget {
                     ExpansionTile(
                         iconColor: AppColors.accentSelect,
                         textColor: AppColors.accentSelect,
-                        leading: Icon(LineIcons.users),
-                        title: KompasText(
-                          style: AppTextStyles.headerH5,
-                          text: "Zakonnicy w klasztorze",
-                        ),
-                        subtitle: Text("Ilu ich tutaj mieszka?"),
-                        children: [
-                          Container(
-                            margin: EdgeInsets.symmetric(horizontal: Constants.insideMargin),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                KompasText(
-                                    style: AppTextStyles.paragraphSubtext,
-                                    text: "Na terenie klasztoru w Bagnie obecnie mieszka:\n"),
-                                KompasText(style: AppTextStyles.paragraphSubtext, text: "6 księży"),
-                                KompasText(style: AppTextStyles.paragraphSubtext, text: "12 kleryków"),
-                                KompasText(style: AppTextStyles.paragraphSubtext, text: "2 siostry zakonne"),
-                                KompasText(style: AppTextStyles.paragraphSubtext, text: "4 braci zakonnych"),
-                              ],
-                            ),
-                          ),
-                          SizedBox(height: Constants.cardMargin),
-                        ]),
-                    ExpansionTile(
-                        iconColor: AppColors.accentSelect,
-                        textColor: AppColors.accentSelect,
                         leading: Icon(LineIcons.binoculars),
                         title: KompasText(
                           style: AppTextStyles.headerH5,
