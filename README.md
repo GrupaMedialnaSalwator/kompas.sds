@@ -1,5 +1,4 @@
 # kompas.sds
-[![Codemagic build status](https://api.codemagic.io/apps/6233966ca41ae21747fac0d8/6233966ca41ae21747fac0d7/status_badge.svg)](https://codemagic.io/apps/6233966ca41ae21747fac0d8/6233966ca41ae21747fac0d7/latest_build)
 
 ![zamek_jesien_mobile](https://user-images.githubusercontent.com/42238956/139399262-2e2ca06c-35b7-4ffe-9dd7-8fa3d9fef1b2.jpg)
 
@@ -26,3 +25,17 @@ samples, guidance on mobile development, and a full API reference.
 1. Clone this project into your local machine (see tutorial for details and more or else).
 2. Ask for membership in the project to contribute code.
 3. Test all you code.
+
+## Build and publish
+
+1. Update version in `pubspec.yaml`
+- ex. `version: 1.2.0+67`
+
+2. Build release version
+```bash
+flutter clean
+flutter pub get
+flutter analyze
+flutter build appbundle
+```
+3. Publish `app-release.aab` to Google Play Console
