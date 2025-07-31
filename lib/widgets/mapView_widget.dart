@@ -136,33 +136,36 @@ class MapView extends StatelessWidget {
               width: Get.width,
               left: 0,
               bottom: 0,
-              child: Container(
-                height: Constants.mapCardHeight,
-                color: AppColors.transparent,
-                child: ListView.separated(
-                  controller: _scrollController,
-                  scrollDirection: Axis.horizontal,
-                  shrinkWrap: true,
-                  //padding: EdgeInsets.all(20),
-                  itemCount: mapDataController.getLength(),
-                  separatorBuilder: (BuildContext context, int index) =>
-                      VerticalDivider(width: Constants.cardMargin, color: AppColors.transparent),
-                  itemBuilder: (BuildContext context, int index) => MapCardHero(
-                    mapItemIndex: index,
-                    onTap: () {
-                      print('tapped map card... x:' +
-                          controller.getViewX().toString() +
-                          ' y:' +
-                          controller.getViewY().toString());
-        
-                      // center and animate the map view on the item icon
-                      var start = controller.value;
-                      var end = controller.getCenteredViewMatrix(mapDataController.getMapItem(index: index).locationX,
-                          mapDataController.getMapItem(index: index).locationY);
-                      mapDataController.setupMapAnimation(controller);
-                      mapDataController.navigateFromToPoint(start: start, end: end);
-                      mapDataController.setCurrentMapIconIndex(index);
-                    },
+              child: SafeArea(
+                top: false, // Prevents the map card from overlapping with the system UI
+                child: Container(
+                  height: Constants.mapCardHeight,
+                  color: AppColors.transparent,
+                  child: ListView.separated(
+                    controller: _scrollController,
+                    scrollDirection: Axis.horizontal,
+                    shrinkWrap: true,
+                    //padding: EdgeInsets.all(20),
+                    itemCount: mapDataController.getLength(),
+                    separatorBuilder: (BuildContext context, int index) =>
+                        VerticalDivider(width: Constants.cardMargin, color: AppColors.transparent),
+                    itemBuilder: (BuildContext context, int index) => MapCardHero(
+                      mapItemIndex: index,
+                      onTap: () {
+                        print('tapped map card... x:' +
+                            controller.getViewX().toString() +
+                            ' y:' +
+                            controller.getViewY().toString());
+                        
+                        // center and animate the map view on the item icon
+                        var start = controller.value;
+                        var end = controller.getCenteredViewMatrix(mapDataController.getMapItem(index: index).locationX,
+                            mapDataController.getMapItem(index: index).locationY);
+                        mapDataController.setupMapAnimation(controller);
+                        mapDataController.navigateFromToPoint(start: start, end: end);
+                        mapDataController.setCurrentMapIconIndex(index);
+                      },
+                    ),
                   ),
                 ),
               ),
