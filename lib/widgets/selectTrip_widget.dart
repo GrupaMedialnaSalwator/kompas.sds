@@ -10,7 +10,9 @@ import 'package:kompas/view/trip_screen.dart';
 import 'package:kompas/widgets/tripProperty_widget.dart';
 
 class SelectTrip extends StatelessWidget {
-  const SelectTrip({Key? key, required this.onTapButton, required this.tripIndex}) : super(key: key);
+  const SelectTrip(
+      {Key? key, required this.onTapButton, required this.tripIndex})
+      : super(key: key);
 
   final VoidCallback onTapButton;
   final int tripIndex;
@@ -20,13 +22,15 @@ class SelectTrip extends StatelessWidget {
     final TripDataController _tripDataController = Get.find();
     return Container(
       // bottomsheet starts 60% lower because it is without an image at the top
-      height: Get.height * Constants.tripBottomSheetRatio + Constants.borderRadius,
+      height:
+          Get.height * Constants.tripBottomSheetRatio + Constants.borderRadius,
       child: _cardStack(_tripDataController, tripIndex, 0),
     );
   }
 }
 
-Stack _cardStack(TripDataController tripController, int tripIndex, double topStart) {
+Stack _cardStack(
+    TripDataController tripController, int tripIndex, double topStart) {
   return Stack(
     fit: StackFit.expand,
     alignment: AlignmentDirectional.topCenter,
@@ -35,7 +39,8 @@ Stack _cardStack(TripDataController tripController, int tripIndex, double topSta
         top: topStart,
         child: Container(
           width: Get.width,
-          height: Get.height * Constants.tripBottomSheetRatio + Constants.borderRadius,
+          height: Get.height * Constants.tripBottomSheetRatio +
+              Constants.borderRadius,
           decoration: BoxDecoration(
             color: AppColors.primaryNormal,
             borderRadius: BorderRadius.vertical(
@@ -44,7 +49,8 @@ Stack _cardStack(TripDataController tripController, int tripIndex, double topSta
             ),
           ),
           child: Container(
-            margin: EdgeInsets.fromLTRB(Constants.borderRadius, 0, Constants.borderRadius, 0),
+            margin: EdgeInsets.fromLTRB(
+                Constants.borderRadius, 0, Constants.borderRadius, 0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -63,7 +69,8 @@ Stack _cardStack(TripDataController tripController, int tripIndex, double topSta
                       alignment: Alignment.topLeft,
                       child: Text(
                         tripController.getTripItem(index: tripIndex).title,
-                        style: AppTextStyles.headerH3.copyWith(color: AppColors.primaryWhite),
+                        style: AppTextStyles.headerH3
+                            .copyWith(color: AppColors.primaryWhite),
                         maxLines: 1,
                       ),
                     ),
@@ -71,8 +78,11 @@ Stack _cardStack(TripDataController tripController, int tripIndex, double topSta
                       alignment: Alignment.topLeft,
                       padding: const EdgeInsets.symmetric(vertical: 16),
                       child: KompasText(
-                        text: tripController.getTripItem(index: tripIndex).description,
-                        style: AppTextStyles.paragraphText.copyWith(color: AppColors.primaryWhite),
+                        text: tripController
+                            .getTripItem(index: tripIndex)
+                            .description,
+                        style: AppTextStyles.paragraphText
+                            .copyWith(color: AppColors.primaryWhite),
                         maxLines: 3,
                       ),
                     ),
@@ -100,40 +110,52 @@ Stack _cardStack(TripDataController tripController, int tripIndex, double topSta
                   children: [
                     Center(
                       child: TripProperty(
-                        text: tripController.getTripItem(index: tripIndex).distance,
+                        text: tripController
+                            .getTripItem(index: tripIndex)
+                            .distance,
                         type: TripPropertyType.distance,
                       ),
                     ),
                     Center(
                       child: TripProperty(
-                        text: tripController.getTripItem(index: tripIndex).rating,
+                        text:
+                            tripController.getTripItem(index: tripIndex).rating,
                         type: TripPropertyType.rating,
                       ),
                     )
                   ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(Constants.bottomMargin),
-                  child: OutlinedButton(
-                    child: KompasText(
-                      text: "Zaczynamy",
-                      style: AppTextStyles.headerH3.copyWith(color: AppColors.primaryNormal),
-                    ),
-                    style: TextButton.styleFrom(
-                      foregroundColor: AppColors.primaryNormal,
-                      padding: EdgeInsets.fromLTRB(
-                          Constants.endMargin, Constants.bottomMargin, Constants.endMargin, Constants.bottomMargin),
-                      backgroundColor: AppColors.primaryWhite,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(Constants.borderRadius),
+                SafeArea(
+                  top:
+                      false, // Prevents the button from overlapping with the system UI
+                  child: Padding(
+                    padding: const EdgeInsets.all(Constants.bottomMargin),
+                    child: OutlinedButton(
+                      child: KompasText(
+                        text: "Zaczynamy",
+                        style: AppTextStyles.headerH3
+                            .copyWith(color: AppColors.primaryNormal),
                       ),
+                      style: TextButton.styleFrom(
+                        foregroundColor: AppColors.primaryNormal,
+                        padding: EdgeInsets.fromLTRB(
+                            Constants.endMargin,
+                            Constants.bottomMargin,
+                            Constants.endMargin,
+                            Constants.bottomMargin),
+                        backgroundColor: AppColors.primaryWhite,
+                        shape: RoundedRectangleBorder(
+                          borderRadius:
+                              BorderRadius.circular(Constants.borderRadius),
+                        ),
+                      ),
+                      onPressed: () {
+                        // print("screen width: " + Get.width.toString());
+                        Get.to(() => TripPage(
+                              tripIndex: tripIndex,
+                            ));
+                      },
                     ),
-                    onPressed: () {
-                      // print("screen width: " + Get.width.toString());
-                      Get.to(() => TripPage(
-                            tripIndex: tripIndex,
-                          ));
-                    },
                   ),
                 ),
               ],

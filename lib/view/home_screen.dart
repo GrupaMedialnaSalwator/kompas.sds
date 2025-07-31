@@ -111,28 +111,31 @@ class _HomePageState extends State<HomePage>
         elevation: 0,
         title: _getTitle(context),
       ),
-      bottomNavigationBar: TabBar(
-        controller: _tabController,
-        labelColor: AppColors.primaryWhite,
-        unselectedLabelColor: AppColors.primaryNormal,
-        indicator: TabOutlineIndicator(),
-        tabs: [
-          Tab(
-              icon: Icon(
-            LineIcons.compass,
-            //CupertinoIcons.compass,
-          )),
-          Tab(
-              icon: Icon(
-            LineIcons.alternateMapMarked,
-            //CupertinoIcons.map,
-          )),
-          Tab(
-              icon: Icon(
-            LineIcons.info,
-            //CupertinoIcons.question,
-          )),
-        ],
+      bottomNavigationBar: SafeArea(
+        top: false, // Prevents the bottom navigation bar from overlapping with the system UI
+        child: TabBar(
+          controller: _tabController,
+          labelColor: AppColors.primaryWhite,
+          unselectedLabelColor: AppColors.primaryNormal,
+          indicator: TabOutlineIndicator(),
+          tabs: [
+            Tab(
+                icon: Icon(
+              LineIcons.compass,
+              //CupertinoIcons.compass,
+            )),
+            Tab(
+                icon: Icon(
+              LineIcons.alternateMapMarked,
+              //CupertinoIcons.map,
+            )),
+            Tab(
+                icon: Icon(
+              LineIcons.info,
+              //CupertinoIcons.question,
+            )),
+          ],
+        ),
       ),
       body: SafeArea(
         child: PopScope(
