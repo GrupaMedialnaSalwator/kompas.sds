@@ -30,6 +30,7 @@ class TripPage extends StatelessWidget {
       extendBodyBehindAppBar: true,
       backgroundColor: AppColors.primaryWhite,
       appBar: AppBar(
+        toolbarHeight: Constants.appBarHeight,
         elevation: 0, // no shadow
         backgroundColor: AppColors.transparent,
         foregroundColor: AppColors.primaryWhite,
@@ -54,7 +55,7 @@ class TripPage extends StatelessWidget {
                       ));
                     },
                     child: Container(
-                      padding: EdgeInsets.all(12),
+                      padding: EdgeInsets.fromLTRB(12, 12, 12, 12),
                       decoration: BoxDecoration(
                         color: AppColors.primaryNormal
                             .withAlpha(Constants.alpha191),
