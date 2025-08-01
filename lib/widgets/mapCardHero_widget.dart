@@ -97,7 +97,6 @@ class MapCardHero extends StatelessWidget {
                                   text: 'poczytaj więcej',
                                   recognizer: TapGestureRecognizer()
                                     ..onTap = () {
-                                      // Your tap handler
                                       Get.to(
                                         () => MapCardPage(
                                           mapItemIndex: mapItemIndex,
