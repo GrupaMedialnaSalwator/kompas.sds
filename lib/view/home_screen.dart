@@ -98,71 +98,75 @@ class _HomePageState extends State<HomePage>
       extendBodyBehindAppBar: true,
       backgroundColor: AppColors.primaryWhite,
       appBar: AppBar(
-        systemOverlayStyle: SystemUiOverlayStyle(
-          // Status bar color
-          statusBarColor: AppColors.primaryNormal,
-          // Status bar brightness (optional)
-          statusBarIconBrightness: Brightness.light, // For Android (dark icons)
-          statusBarBrightness: Brightness.dark, // For iOS (dark icons)
-        ),
         iconTheme: IconThemeData(color: AppColors.primaryNormal),
         backgroundColor: AppColors.primaryWhite.withAlpha(Constants.alpha64),
         foregroundColor: AppColors.primaryWhite,
         elevation: 0,
         title: _getTitle(context),
       ),
-      bottomNavigationBar: TabBar(
-        controller: _tabController,
-        labelColor: AppColors.primaryWhite,
-        unselectedLabelColor: AppColors.primaryNormal,
-        indicator: TabOutlineIndicator(),
-        tabs: [
-          Tab(
-              icon: Icon(
-            LineIcons.compass,
-            //CupertinoIcons.compass,
-          )),
-          Tab(
-              icon: Icon(
-            LineIcons.alternateMapMarked,
-            //CupertinoIcons.map,
-          )),
-          Tab(
-              icon: Icon(
-            LineIcons.info,
-            //CupertinoIcons.question,
-          )),
-        ],
+      bottomNavigationBar: SafeArea(
+        top: false, // Prevents the bottom navigation bar from overlapping with the system UI
+        child: TabBar(
+          controller: _tabController,
+          labelColor: AppColors.primaryWhite,
+          unselectedLabelColor: AppColors.primaryNormal,
+          indicator: TabOutlineIndicator(),
+          tabs: [
+            Tab(
+                icon: Icon(
+              LineIcons.compass,
+              //CupertinoIcons.compass,
+            )),
+            Tab(
+                icon: Icon(
+              LineIcons.alternateMapMarked,
+              //CupertinoIcons.map,
+            )),
+            Tab(
+                icon: Icon(
+              LineIcons.info,
+              //CupertinoIcons.question,
+            )),
+          ],
+        ),
       ),
-      body: SafeArea(
-        child: PopScope(
-          canPop: false, // Disable default pop behavior
-          onPopInvokedWithResult: (bool didPop, Object? result) async {
-            if (didPop) {
-              return;
-            }
-            if (_tabController.index != 0) {
-              _tabController.index = 0; // Intercept and switch tab
-            } else {
-              SystemNavigator.pop(); // force app exit immediately
-            }
-          },
-          child: Container(
-            //margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("assets/images/background_compass_v3.jpg"),
-                fit: BoxFit.cover,
+      body: AnnotatedRegion<SystemUiOverlayStyle>(
+        value: SystemUiOverlayStyle.light.copyWith(
+          statusBarColor: Colors.transparent,
+          statusBarIconBrightness: Brightness.dark,
+          systemNavigationBarColor: Colors.white,
+          systemNavigationBarIconBrightness: Brightness.dark,
+        ),
+        child: SafeArea(
+          child: PopScope(
+            canPop: false, // Disable default pop behavior
+            onPopInvokedWithResult: (bool didPop, Object? result) async {
+              if (didPop) {
+                return;
+              }
+              if (_tabController.index != 0) {
+                _tabController.index = 0; // Intercept and switch tab
+              } else {
+                SystemNavigator.pop(); // force app exit immediately
+              }
+            },
+            child: Container(
+              //margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/images/background_compass_v3.jpg"),
+                  fit: BoxFit.cover,
+                ),
               ),
-            ),
-            child: TabBarView(
-              controller: _tabController,
-              physics: NeverScrollableScrollPhysics(),
-              children: [
-                KeepAliveWrapper(child: HomeView()),
-                KeepAliveWrapper(child: MapView()),
-                KeepAliveWrapper(child: InfoView()),
-              ],
+              child: TabBarView(
+                controller: _tabController,
+                physics: NeverScrollableScrollPhysics(),
+                children: [
+                  KeepAliveWrapper(child: HomeView()),
+                  KeepAliveWrapper(child: MapView()),
+                  KeepAliveWrapper(child: InfoView()),
+                ],
+              ),
             ),
           ),
         ),

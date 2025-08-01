@@ -25,78 +25,81 @@ class MapCardBottomSheet extends StatelessWidget {
         minChildSize: _sheetSizePercent / 3,
         snapSizes: [_sheetSizePercent],
         snap: true,
-        builder: (BuildContext context, ScrollController scrollController) => Container(
-          // bottomsheet starts 60% lower because it is without an image at the top
-          height: _sheetSizePercent * Get.height,
-          decoration: BoxDecoration(
-            color: AppColors.primaryWhite,
-            borderRadius: BorderRadius.vertical(top: Radius.circular(Constants.borderRadius)),
-          ),
-          child: ListView(
-            padding: EdgeInsets.all(Constants.insideMargin),
-            controller: scrollController,
-            children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 0, 0, Constants.cardMargin),
-                child: Center(
-                  child: Icon(
-                    Icons.maximize_rounded,
-                    color: AppColors.primaryNormal,
+        builder: (BuildContext context, ScrollController scrollController) => SafeArea(
+          top: false, // only apply bottom padding
+          child: Container(
+            // bottomsheet starts 60% lower because it is without an image at the top
+            height: _sheetSizePercent * Get.height,
+            decoration: BoxDecoration(
+              color: AppColors.primaryWhite,
+              borderRadius: BorderRadius.vertical(top: Radius.circular(Constants.borderRadius)),
+            ),
+            child: ListView(
+              padding: EdgeInsets.all(Constants.insideMargin),
+              controller: scrollController,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 0, Constants.cardMargin),
+                  child: Center(
+                    child: Icon(
+                      Icons.maximize_rounded,
+                      color: AppColors.primaryNormal,
+                    ),
                   ),
                 ),
-              ),
-              Center(
-                child: Container(
-                  margin: EdgeInsets.symmetric(vertical: Constants.cardMargin),
+                Center(
+                  child: Container(
+                    margin: EdgeInsets.symmetric(vertical: Constants.cardMargin),
+                    child: Text(
+                      _mapDataController.getMapItem(index: selectedIndex).title,
+                      style: AppTextStyles.headerH3.copyWith(color: AppColors.primaryDark),
+                    ),
+                  ),
+                ),
+                Center(
                   child: Text(
-                    _mapDataController.getMapItem(index: selectedIndex).title,
-                    style: AppTextStyles.headerH3.copyWith(color: AppColors.primaryDark),
+                    _mapDataController.getMapItem(index: selectedIndex).subtitle,
+                    style: AppTextStyles.headerH6.copyWith(color: AppColors.primaryDark),
                   ),
                 ),
-              ),
-              Center(
-                child: Text(
-                  _mapDataController.getMapItem(index: selectedIndex).subtitle,
-                  style: AppTextStyles.headerH6.copyWith(color: AppColors.primaryDark),
+                Padding(padding: EdgeInsets.all(Constants.cardMargin)),
+                Container(
+                  margin: EdgeInsets.all(Constants.insideMargin),
+                  child: Text(
+                    _mapDataController.getMapItem(index: selectedIndex).description,
+                    style: AppTextStyles.paragraphText.copyWith(color: AppColors.primaryDark),
+                  ),
                 ),
-              ),
-              Padding(padding: EdgeInsets.all(Constants.cardMargin)),
-              Container(
-                margin: EdgeInsets.all(Constants.insideMargin),
-                child: Text(
-                  _mapDataController.getMapItem(index: selectedIndex).description,
-                  style: AppTextStyles.paragraphText.copyWith(color: AppColors.primaryDark),
-                ),
-              ),
-              // Add a link button to the appropriate trip if needed
-              (_mapDataController.getMapItem(index: selectedIndex).tripIndexLink != -1)
-                  ? Padding(
-                      padding: const EdgeInsets.fromLTRB(
-                          Constants.insideMargin, Constants.cardMargin, Constants.insideMargin, Constants.endMargin),
-                      child: OutlinedButton(
-                        child: KompasText(
-                          text: "Zaczynamy",
-                          style: AppTextStyles.headerH3.copyWith(color: AppColors.primaryWhite),
-                        ),
-                        style: TextButton.styleFrom(
-                          foregroundColor: AppColors.primaryWhite, padding: EdgeInsets.fromLTRB(
-                              Constants.endMargin, Constants.bottomMargin, Constants.endMargin, Constants.bottomMargin),
-                          backgroundColor: AppColors.primaryNormal,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(Constants.borderRadius),
+                // Add a link button to the appropriate trip if needed
+                (_mapDataController.getMapItem(index: selectedIndex).tripIndexLink != -1)
+                    ? Padding(
+                        padding: const EdgeInsets.fromLTRB(
+                            Constants.insideMargin, Constants.cardMargin, Constants.insideMargin, Constants.endMargin),
+                        child: OutlinedButton(
+                          child: KompasText(
+                            text: "Zaczynamy",
+                            style: AppTextStyles.headerH3.copyWith(color: AppColors.primaryWhite),
                           ),
+                          style: TextButton.styleFrom(
+                            foregroundColor: AppColors.primaryWhite, padding: EdgeInsets.fromLTRB(
+                                Constants.endMargin, Constants.bottomMargin, Constants.endMargin, Constants.bottomMargin),
+                            backgroundColor: AppColors.primaryNormal,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(Constants.borderRadius),
+                            ),
+                          ),
+                          onPressed: () {
+                            Get.to(() => TripPage(
+                                  tripIndex: _mapDataController.getMapItem(index: selectedIndex).tripIndexLink,
+                                  skipIntro: true, // skip the first intro step
+                                ));
+                          },
                         ),
-                        onPressed: () {
-                          Get.to(() => TripPage(
-                                tripIndex: _mapDataController.getMapItem(index: selectedIndex).tripIndexLink,
-                                skipIntro: true, // skip the first intro step
-                              ));
-                        },
-                      ),
-                    )
-                  : // Placeholder
-                  SizedBox(width: Constants.minMargin),
-            ],
+                      )
+                    : // Placeholder
+                    SizedBox(width: Constants.minMargin),
+              ],
+            ),
           ),
         ),
       ),

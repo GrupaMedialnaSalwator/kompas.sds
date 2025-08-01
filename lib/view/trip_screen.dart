@@ -22,20 +22,15 @@ class TripPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final TripDataController _tripDataController = Get.find();
-    final TripStateController _tripStateController = Get.put(TripStateController());
+    final TripStateController _tripStateController =
+        Get.put(TripStateController());
     _tripStateController.setSkipIntro(skipIntro);
 
     return Scaffold(
       extendBodyBehindAppBar: true,
       backgroundColor: AppColors.primaryWhite,
       appBar: AppBar(
-        systemOverlayStyle: SystemUiOverlayStyle(
-          // Status bar color
-          statusBarColor: AppColors.primaryNormal,
-          // Status bar brightness (optional)
-          statusBarIconBrightness: Brightness.light, // For Android (dark icons)
-          statusBarBrightness: Brightness.dark, // For iOS (dark icons)
-        ),
+        toolbarHeight: Constants.appBarHeight,
         elevation: 0, // no shadow
         backgroundColor: AppColors.transparent,
         foregroundColor: AppColors.primaryWhite,
@@ -54,14 +49,16 @@ class TripPage extends StatelessWidget {
                         ),
                         behavior: SnackBarBehavior.floating,
                         duration: Duration(seconds: Constants.snackBarDuration),
-                        margin: EdgeInsets.only(bottom: Constants.snackBarPosition),
+                        margin:
+                            EdgeInsets.only(bottom: Constants.snackBarPosition),
                         backgroundColor: AppColors.primaryNormal,
                       ));
                     },
                     child: Container(
-                      padding: EdgeInsets.all(12),
+                      padding: EdgeInsets.fromLTRB(12, 12, 12, 12),
                       decoration: BoxDecoration(
-                        color: AppColors.primaryNormal.withAlpha(Constants.alpha191),
+                        color: AppColors.primaryNormal
+                            .withAlpha(Constants.alpha191),
                         shape: BoxShape.rectangle,
                         borderRadius: BorderRadius.all(
                           Radius.circular(Constants.borderRadius),
@@ -73,7 +70,10 @@ class TripPage extends StatelessWidget {
                             const Icon(LineIcons.trophy),
                             Obx(
                               () => Text(
-                                ' ' + _tripStateController.getCurrentPoints().toString(),
+                                ' ' +
+                                    _tripStateController
+                                        .getCurrentPoints()
+                                        .toString(),
                                 style: TextStyle(color: AppColors.primaryWhite),
                               ),
                             ),
@@ -98,7 +98,8 @@ class TripPage extends StatelessWidget {
                 icon: const Icon(Icons.close),
                 color: AppColors.primaryWhite,
                 onPressed: () {
-                  _tripStateController.resetState(); // redundant, since controller will be destroyed
+                  _tripStateController
+                      .resetState(); // redundant, since controller will be destroyed
                   Get.until((route) => Get.currentRoute == AppRoutes.home);
                 },
               ),
@@ -110,12 +111,23 @@ class TripPage extends StatelessWidget {
           )
         ],
       ),
-      body: SafeArea(
-        child: Obx(
-          () => TripViewStep(
-            tripStateController: _tripStateController,
-            tripDataController: _tripDataController,
-            tripDataSelect: TripDataSelect(tripIndex: tripIndex, stepIndex: _tripStateController.getCurrentStep()),
+      body: AnnotatedRegion<SystemUiOverlayStyle>(
+        value: SystemUiOverlayStyle.light.copyWith(
+          statusBarColor: Colors.transparent,
+          statusBarIconBrightness: Brightness.dark,
+          systemNavigationBarColor: Colors.white,
+          systemNavigationBarIconBrightness: Brightness.dark,
+        ),
+        child: SafeArea(
+          top: false, // Prevents the body from overlapping with the status bar
+          child: Obx(
+            () => TripViewStep(
+              tripStateController: _tripStateController,
+              tripDataController: _tripDataController,
+              tripDataSelect: TripDataSelect(
+                  tripIndex: tripIndex,
+                  stepIndex: _tripStateController.getCurrentStep()),
+            ),
           ),
         ),
       ),

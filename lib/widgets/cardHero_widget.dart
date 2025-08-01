@@ -64,7 +64,7 @@ class CardHero extends StatelessWidget {
                   )),
               Positioned(
                 child: Container(
-                  padding: EdgeInsets.all(12),
+                  padding: EdgeInsets.all(16),
                   decoration: BoxDecoration(
                     color: AppColors.primaryNormal.withAlpha(Constants.alpha191),
                     shape: BoxShape.circle,
@@ -76,11 +76,13 @@ class CardHero extends StatelessWidget {
                       children: [
                         Text(
                           _tripDataController.getTripItem(index: tripIndex).time,
-                          style: AppTextStyles.headerH2.copyWith(color: AppColors.primaryWhite),
+                          style: AppTextStyles.headerH2.copyWith(color: AppColors.primaryWhite, fontSize: 26, fontWeight: FontWeight.bold),
+                          textScaler: TextScaler.linear(1.0), // Ensures system changes in text size will not affect this text
                         ),
                         Text(
                           "min",
-                          style: AppTextStyles.paragraphSubtext.copyWith(color: AppColors.primaryWhite),
+                          style: AppTextStyles.paragraphSubtext.copyWith(color: AppColors.primaryWhite, fontSize: 16),
+                          textScaler: TextScaler.linear(1.0), // Ensures system changes in text size will not affect this text
                         ),
                       ],
                     ),

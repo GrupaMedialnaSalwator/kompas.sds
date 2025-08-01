@@ -23,10 +23,6 @@ class InfoView extends StatelessWidget {
       margin: EdgeInsets.all(Constants.insideMargin),
       child: Column(
         children: [
-          //an empty box to prevent text overlay with AppBar
-          SizedBox(
-            height: AppBar().preferredSize.height,
-          ),
           Expanded(
             child: SingleChildScrollView(
                 physics: BouncingScrollPhysics(),
@@ -143,12 +139,13 @@ class InfoView extends StatelessWidget {
                           Container(
                             margin: EdgeInsets.symmetric(horizontal: Constants.insideMargin),
                             child: RichText(
+                              textScaler: MediaQuery.textScalerOf(context), // Ensures system changes in text size will affect this text
                               text: TextSpan(
                                 children: [
                                   TextSpan(
+                                    style: AppTextStyles.paragraphSubtext,
                                     text:
                                         'Dom „ToTu” to salwatoriański ośrodek z szeroką ofertą spotkań i zajęć dla młodzieży, który wspiera ją w odkrywaniu celu i sensu życia.\n\nZapraszamy na naszą stronkę:\n',
-                                    style: Theme.of(context).textTheme.bodyMedium,
                                   ),
                                   TextSpan(
                                     text: 'www.totu.sds.pl',
@@ -178,6 +175,7 @@ class InfoView extends StatelessWidget {
                           Container(
                             margin: EdgeInsets.symmetric(horizontal: Constants.insideMargin),
                             child: RichText(
+                              textScaler: MediaQuery.textScalerOf(context), // Ensures system changes in text size will affect this text
                               text: TextSpan(
                                 children: [
                                   TextSpan(

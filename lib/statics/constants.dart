@@ -11,6 +11,9 @@ class Constants {
   /// snackBarPosition = 75
   static const double snackBarPosition = 76;
 
+  /// appBarHeight = 80
+  static const double appBarHeight = 80;
+
   /// minMargin = 4.0
   static const double minMargin = 4.0;
 
