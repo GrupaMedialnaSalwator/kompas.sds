@@ -31,11 +31,17 @@ class TripViewStep extends StatelessWidget {
           alignment: AlignmentDirectional.topCenter,
           children: [
             ClipPath(
-              clipper: RoundedClipPath.up(), // create rounded corners at the bottom of an image
-              child: Image.asset(
-                tripDataController.getStepItem(tripDataSelect: tripDataSelect).imageAsset,
-                fit: BoxFit.fill,
-                gaplessPlayback: true, // prevents flicker on switching images
+              clipper: RoundedClipPath
+                  .up(), // create rounded corners at the bottom of an image
+              child: SizedBox(
+                width: double.infinity, // ensures full width,
+                child: Image.asset(
+                  tripDataController
+                      .getStepItem(tripDataSelect: tripDataSelect)
+                      .imageAsset,
+                  fit: BoxFit.cover,
+                  gaplessPlayback: true, // prevents flicker on switching images
+                ),
               ),
             ),
           ],

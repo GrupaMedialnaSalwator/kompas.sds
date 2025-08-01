@@ -118,6 +118,7 @@ class TripPage extends StatelessWidget {
           systemNavigationBarIconBrightness: Brightness.dark,
         ),
         child: SafeArea(
+          top: false, // Prevents the body from overlapping with the status bar
           child: Obx(
             () => TripViewStep(
               tripStateController: _tripStateController,
